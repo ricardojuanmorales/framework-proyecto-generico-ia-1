@@ -1,0 +1,36 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Obsidian workspace state
+.obsidian/workspace.json
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Dependency directories
+node_modules/
+
+# Environment files
+.env
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+
+# Ignore generated Python bytecode
+__pycache__/
+*.py[cod]
+*.$py.class
