@@ -245,6 +245,113 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 @media(max-width:1100px){.kb{grid-template-columns:repeat(2,1fr)}.gen-layout,.rev-layout{grid-template-columns:1fr}.wiki-layout{grid-template-columns:1fr}}
 @media(max-width:780px){.app{grid-template-columns:1fr}.sidebar{display:none}.stats{grid-template-columns:repeat(2,1fr)}.kb{grid-template-columns:1fr}.result-grid,.success-grid{grid-template-columns:1fr}}
 
+/* ════ ACCESIBILIDAD — tamaños legibles ════ */
+body { font-size: 17px; }
+
+/* Sidebar */
+.s-label  { font-size: 11px; }
+.nav-item { font-size: 15px; padding: 10px 18px; }
+.nav-badge{ font-size: 10px; }
+
+/* Topbar */
+.logo     { font-size: 17px; }
+.ver-badge{ font-size: 10px; }
+.topbar-meta { font-size: 10px; }
+.tb-btn   { font-size: 11px; padding: 6px 13px; }
+
+/* Cabeceras de página */
+.pt { font-size: 28px; }
+.ps { font-size: 15px; }
+
+/* Labels y tags generales */
+.card-label { font-size: 11px; }
+.tag        { font-size: 10px; padding: 3px 8px; }
+
+/* Botones */
+.btn  { font-size: 12px; padding: 9px 18px; }
+.f-label { font-size: 11px; }
+.f-input, .f-select, .f-textarea { font-size: 15px; }
+
+/* Explorador */
+.fb       { font-size: 11px; padding: 5px 13px; }
+.cc-num   { font-size: 10px; }
+.cc-name  { font-size: 15px; }
+.cc-desc  { font-size: 13px; }
+.est-badge{ font-size: 10px; }
+
+/* Kanban */
+.kc-title { font-size: 11px; }
+.kc-n     { font-size: 10px; }
+.kk-title { font-size: 15px; }
+.kk-meta  { font-size: 10px; }
+.kk-badge { font-size: 10px; padding: 3px 8px; }
+.add-btn  { font-size: 11px; }
+
+/* Generador */
+.pb-name  { font-size: 14px; }
+.pb-id    { font-size: 10px; }
+.tl-name  { font-size: 11px; }
+.tl-dl    { font-size: 10px; }
+.preview-box { font-size: 12px; line-height: 1.9; }
+
+/* Revisor */
+.pt-tab   { font-size: 11px; }
+.ci-name  { font-size: 15px; }
+.ci-ref   { font-size: 10px; }
+.gate-q   { font-size: 14px; }
+.gate-id  { font-size: 10px; }
+.sc-num   { font-size: 28px; }
+.sc-tot   { font-size: 10px; }
+.sc-lbl   { font-size: 11px; }
+.veredicto{ font-size: 14px; }
+.gap-item { font-size: 13px; }
+
+/* Activación */
+.q-num    { font-size: 11px; }
+.q-text   { font-size: 19px; }
+.q-hint   { font-size: 14px; }
+.q-input  { font-size: 15px; }
+.q-count  { font-size: 11px; }
+.result-label { font-size: 11px; }
+.result-val   { font-size: 17px; }
+.result-sub   { font-size: 13px; }
+.risk-item    { font-size: 14px; }
+.sc-item span { font-size: 13px !important; }
+.wp-step { font-size: 10px; }
+
+/* Perfil */
+.cs-id   { font-size: 11px; }
+.cs-name { font-size: 11px; }
+.prog-label { font-size: 10px; }
+.snap-val   { font-size: 24px; }
+.snap-lbl   { font-size: 10px; }
+.io-zone-title { font-size: 16px; }
+.io-zone-sub   { font-size: 13px; }
+.hi-label { font-size: 14px; }
+.hi-time  { font-size: 10px; }
+.hi-dl    { font-size: 10px; }
+
+/* Wiki */
+.wn-item  { font-size: 15px; }
+.wc       { font-size: 17px; }
+.wc h1    { font-size: 26px; }
+.wc h2    { font-size: 20px; }
+.wc h3    { font-size: 16px; }
+.wc table { font-size: 14px; }
+.wc th    { font-size: 11px; }
+.wc code  { font-size: 13px; }
+.wc pre code { font-size: 13px; }
+
+/* Dashboard */
+.sv { font-size: 30px; }
+.sl { font-size: 10px; }
+.st { font-size: 11px; }
+.tt { font-size: 14px; }
+.tm { font-size: 10px; }
+
+/* Toast */
+.toast { font-size: 12px; }
+
 /* ════ PERFIL + IMPORT/EXPORT ════ */
 .topbar-actions{display:flex;gap:6px;align-items:center}
 .tb-btn{font-family:'Space Mono',monospace;font-size:9px;padding:5px 11px;border-radius:var(--r);cursor:pointer;transition:all .15s;letter-spacing:.04em;display:flex;align-items:center;gap:5px}
