@@ -1,6 +1,9 @@
 Framework_Generico_V4_1_1_Repositorio_Modelo/
   README.md
   README_Framework_Generico_V4_1_1_Ilustrado.md
+  .github/
+    ISSUE_TEMPLATE/
+      issue_ligero_framework.md
   00_CONTROL_MAESTRO/
     2026-05-04_Apertura_Framework_Generico_V4_1_1_Repositorio_Modelo_v0-1.md
     2026-05-04_Aprobacion_Framework_Generico_V4_1_0_Estable_v1-0.md
@@ -111,6 +114,10 @@ Framework_Generico_V4_1_1_Repositorio_Modelo/
       2026-05-04_Reporte_Cierre_Situacion_Actual_Framework_Generico_V4_para_Archivo_Historico_v1-0.md
     06_Prompts_de_Sesion/
       nada.md
+    07_Segundo_Cerebro/
+      2026-05-04_Dashboard_Segundo_Cerebro_Framework_Generico_V4_1_1_v0-1.md
+      2026-05-04_Instrucciones_Operacionalizacion_Modelo_C_Issues_Ligeros_Framework_Generico_V4_1_1_v0-1.md
+      2026-05-04_Modelo_Triple_Memoria_Operativa_Framework_Generico_V4_1_1_v0-1.md
   19_IMPLEMENTACION_Y_DESPLIEGUE/
     README.md
   20_MANTENIMIENTO_Y_EVOLUCION/
@@ -181,6 +188,7 @@ Framework_Generico_V4_1_1_Repositorio_Modelo/
         2026-05-04_WIKI_SYNC_Framework_Generico_V4_1_0_Borrador_v0-1.md
       ZIP/
         2026-05-04_Wiki_Prioritaria_Framework_Generico_V4_1_0_v0-1.zip
+        Segundo_Cerebro_Framework_Generico_V4_1_1_Obsidian_Import.zip
     Releases/
       nada.md
       Framework_Generico_V4_1_0_Estable/

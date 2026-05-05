@@ -252,5 +252,12 @@
   "latest_record_document": "00_CONTROL_MAESTRO/2026-05-04_Framework_Generico_V4_1_1_Record_Version_Actualizada_v1-0.md",
   "root_readme": "README.md",
   "illustrated_readme": "README_Framework_Generico_V4_1_1_Ilustrado.md",
-  "updated_at": "2026-05-04"
+  "updated_at": "2026-05-04",
+  "second_brain": {
+    "model": "Triple Memoria Operativa + Issues ligeros",
+    "dashboard": "18_DOCUMENTACION_ACTIVA/07_Segundo_Cerebro/2026-05-04_Dashboard_Segundo_Cerebro_Framework_Generico_V4_1_1_v0-1.md",
+    "obsidian_import_zip": "99_ARCHIVO_HISTORICO/Exportaciones_Finales/ZIP/Segundo_Cerebro_Framework_Generico_V4_1_1_Obsidian_Import.zip",
+    "issue_template": ".github/ISSUE_TEMPLATE/issue_ligero_framework.md",
+    "status": "primera_version_creada"
+  }
 }
