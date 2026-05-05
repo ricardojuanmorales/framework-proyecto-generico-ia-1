@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Framework Genérico V4.1.1 — Plataforma Viva</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+
+<style>
+:root {
+  --ink:       #0d1117;
+  --ink2:      #161c26;
+  --ink3:      #1e2635;
+  --border:    #2a3545;
+  --border2:   #3a4a60;
+  --gold:      #d4a853;
+  --gold2:     #f0c96a;
+  --gold-dim:  #6b4f1a;
+  --teal:      #3fbcad;
+  --teal-dim:  #1a5c55;
+  --coral:     #e06b5a;
+  --coral-dim: #6b2a1f;
+  --violet:    #8b6fcb;
+  --violet-dim:#3d2d6b;
+  --sage:      #6bab7a;
+  --sage-dim:  #2a4d32;
+  --text:      #c8d4e0;
+  --text2:     #7a8fa6;
+  --text3:     #4a5f75;
+  --white:     #f0f4f8;
+  --accent:    var(--gold);
+  --r:         8px;
+  --r2:        12px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--ink);
+  color: var(--text);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Grid pattern background ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Layout ── */
+.app { display: grid; grid-template-columns: 260px 1fr; grid-template-rows: 56px 1fr; min-height: 100vh; position: relative; z-index: 1; }
+
+/* ── Topbar ── */
+.topbar {
+  grid-column: 1 / -1;
+  background: var(--ink2);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  gap: 20px;
+}
+.topbar-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--gold2);
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.topbar-logo .ver-badge {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  background: var(--gold-dim);
+  color: var(--gold2);
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-weight: 400;
+}
+.topbar-divider { flex: 1; }
+.topbar-meta {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--text3);
+  text-align: right;
+  line-height: 1.5;
+}
+.status-dot {
+  display: inline-block;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--teal);
+  margin-right: 5px;
+  box-shadow: 0 0 6px var(--teal);
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  background: var(--ink2);
+  border-right: 1px solid var(--border);
+  padding: 20px 0;
+  overflow-y: auto;
+  position: sticky;
+  top: 56px;
+  height: calc(100vh - 56px);
+}
+.sidebar-section { margin-bottom: 6px; }
+.sidebar-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: var(--text3);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 10px 20px 4px;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 20px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  font-family: 'Crimson Pro', serif;
+  font-size: 14.5px;
+  color: var(--text2);
+  border-left: 2px solid transparent;
+  user-select: none;
+}
+.nav-item:hover { background: var(--ink3); color: var(--text); }
+.nav-item.active {
+  background: rgba(212,168,83,0.08);
+  color: var(--gold2);
+  border-left-color: var(--gold);
+}
+.nav-icon { font-size: 14px; opacity: 0.7; min-width: 18px; text-align: center; }
+.nav-badge {
+  margin-left: auto;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  background: var(--ink3);
+  border: 1px solid var(--border);
+  padding: 1px 6px;
+  border-radius: 10px;
+  color: var(--text3);
+}
+.nav-item.active .nav-badge { background: var(--gold-dim); border-color: var(--gold-dim); color: var(--gold2); }
+
+/* ── Main ── */
+.main {
+  overflow-y: auto;
+  padding: 28px 32px;
+  height: calc(100vh - 56px);
+}
+
+/* ── Pages ── */
+.page { display: none; animation: fadein 0.25s ease; }
+.page.active { display: block; }
+@keyframes fadein { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ── Page headers ── */
+.page-header { margin-bottom: 28px; }
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.page-title em { color: var(--gold2); font-style: normal; }
+.page-subtitle { font-size: 15px; color: var(--text2); }
+
+/* ── Cards ── */
+.card {
+  background: var(--ink2);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  padding: 20px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.card:hover { border-color: var(--border2); }
+.card-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: var(--text3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+/* ── ═══ EXPLORADOR ═══ ── */
+.explorador-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text2);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.filter-btn:hover { border-color: var(--border2); color: var(--text); }
+.filter-btn.active { background: var(--gold-dim); border-color: var(--gold); color: var(--gold2); }
+
+.carpetas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 14px;
+}
+.carpeta-card {
+  background: var(--ink2);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.carpeta-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--color, var(--gold));
+  opacity: 0.6;
+}
+.carpeta-card:hover {
+  border-color: var(--color, var(--gold));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+.carpeta-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--text3);
+  margin-bottom: 6px;
+}
+.carpeta-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.carpeta-desc {
+  font-size: 12px;
+  color: var(--text2);
+  line-height: 1.4;
+}
+.carpeta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 10px;
+}
+.tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: var(--ink3);
+  color: var(--text3);
+  border: 1px solid var(--border);
+}
+.tag.active-tag { background: var(--gold-dim); color: var(--gold2); border-color: var(--gold-dim); }
+.estado-badge {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 6px;
+}
+.estado-activo { background: rgba(63,188,173,0.15); color: var(--teal); }
+.estado-pendiente { background: rgba(212,168,83,0.12); color: var(--gold); }
+.estado-archivo { background: rgba(139,111,203,0.15); color: var(--violet); }
+
+/* Modal */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--ink2);
+  border: 1px solid var(--border2);
+  border-radius: 16px;
+  width: 560px;
+  max-width: 95vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 28px;
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 16px; right: 20px;
+  background: none; border: none;
+  color: var(--text2); font-size: 20px;
+  cursor: pointer;
+}
+.modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.modal-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+.modal-section-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 14px 0 6px;
+}
+.modal-docs { list-style: none; }
+.modal-docs li {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--text2);
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border);
+}
+.modal-docs li:last-child { border-bottom: none; }
+
+/* ── ═══ KANBAN ═══ ── */
+.kanban-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+.kanban-col {
+  background: var(--ink2);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  overflow: hidden;
+}
+.kanban-col-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.kanban-col-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.kanban-col-count {
+  margin-left: auto;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  background: var(--ink3);
+  border: 1px solid var(--border);
+  padding: 1px 7px;
+  border-radius: 10px;
+  color: var(--text3);
+}
+.kanban-col-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+}
+.kanban-cards { padding: 12px; display: flex; flex-direction: column; gap: 10px; min-height: 120px; }
+
+.k-card {
+  background: var(--ink3);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 12px 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+.k-card:hover { border-color: var(--border2); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+.k-card-title {
+  font-family: 'Crimson Pro', serif;
+  font-size: 14px;
+  color: var(--white);
+  font-weight: 400;
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+.k-card-meta {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: var(--text3);
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.k-profile-badge {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-top: 7px;
+  display: inline-block;
+}
+.add-card-btn {
+  width: 100%;
+  padding: 8px;
+  background: transparent;
+  border: 1px dashed var(--border);
+  border-radius: var(--r);
+  color: var(--text3);
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  cursor: pointer;
+  transition: all 0.15s;
+  margin-top: 4px;
+}
+.add-card-btn:hover { border-color: var(--gold); color: var(--gold); background: rgba(212,168,83,0.05); }
+
+/* New project modal */
+.form-field { margin-bottom: 16px; }
+.form-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--text2);
+  display: block;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  background: var(--ink3);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  color: var(--text);
+  font-family: 'Crimson Pro', serif;
+  font-size: 15px;
+  padding: 9px 12px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--gold); }
+.form-select option { background: var(--ink2); }
+.form-textarea { resize: vertical; min-height: 80px; }
+.btn-primary {
+  background: var(--gold-dim);
+  border: 1px solid var(--gold);
+  color: var(--gold2);
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  padding: 9px 20px;
+  border-radius: var(--r);
+  cursor: pointer;
+  transition: all 0.15s;
+  letter-spacing: 0.05em;
+}
+.btn-primary:hover { background: rgba(212,168,83,0.25); }
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text2);
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  padding: 9px 20px;
+  border-radius: var(--r);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-secondary:hover { border-color: var(--border2); color: var(--text); }
+
+/* ── ═══ GENERADOR ═══ ── */
+.gen-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.perfil-selector { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+.perfil-btn {
+  background: var(--ink3);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+.perfil-btn:hover { border-color: var(--border2); }
+.perfil-btn.selected { border-color: var(--teal); background: rgba(63,188,173,0.08); }
+.perfil-btn-name { font-family: 'Crimson Pro', serif; font-size: 14px; color: var(--white); margin-bottom: 3px; }
+.perfil-btn-desc { font-size: 11px; color: var(--text3); font-family: 'Space Mono', monospace; }
+.template-list { display: flex; flex-direction: column; gap: 8px; }
+.template-item {
+  background: var(--ink3);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.template-icon { font-size: 16px; min-width: 24px; text-align: center; }
+.template-name { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--text); flex: 1; }
+.template-size { font-family: 'Space Mono', monospace; font-size: 9px; color: var(--text3); }
+.download-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text3);
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.download-btn:hover { border-color: var(--teal); color: var(--teal); }
+.gen-preview {
+  background: var(--ink3);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  padding: 20px;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--text2);
+  line-height: 1.8;
+  min-height: 300px;
+  white-space: pre-wrap;
+  overflow-y: auto;
+}
+
+/* ── ═══ REVISOR ═══ ── */
+.revisor-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 20px; }
+.check-list { display: flex; flex-direction: column; gap: 10px; }
+.check-item {
+  background: var(--ink3);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.check-item:hover { border-color: var(--border2); }
+.check-status {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px;
+  flex-shrink: 0;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.check-status.ok { background: rgba(107,171,122,0.2); border-color: var(--sage); color: var(--sage); }
+.check-status.warn { background: rgba(212,168,83,0.15); border-color: var(--gold); color: var(--gold); }
+.check-status.fail { background: rgba(224,107,90,0.15); border-color: var(--coral); color: var(--coral); }
+.check-name { font-family: 'Crimson Pro', serif; font-size: 14px; color: var(--white); margin-bottom: 3px; }
+.check-desc { font-size: 12px; color: var(--text2); }
+.check-ref { font-family: 'Space Mono', monospace; font-size: 9px; color: var(--text3); margin-top: 4px; }
+.score-ring {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--ink3);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  margin-bottom: 16px;
+}
+.score-circle {
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  border: 6px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  margin-bottom: 12px;
+  position: relative;
+}
+.score-num { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--white); }
+.score-label { font-family: 'Space Mono', monospace; font-size: 9px; color: var(--text3); margin-top: 2px; }
+.score-title { font-family: 'Space Mono', monospace; font-size: 10px; color: var(--text2); text-transform: uppercase; letter-spacing: 0.1em; }
+.veredicto {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--r);
+  font-family: 'Crimson Pro', serif;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 12px;
+  border: 1px solid;
+}
+.veredicto.pass { background: rgba(107,171,122,0.12); border-color: var(--sage); color: var(--sage); }
+.veredicto.warn { background: rgba(212,168,83,0.1); border-color: var(--gold); color: var(--gold); }
+.veredicto.fail { background: rgba(224,107,90,0.1); border-color: var(--coral); color: var(--coral); }
+.informe-box {
+  background: var(--ink3);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  padding: 18px;
+}
+.informe-item {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text2);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.informe-item:last-child { border-bottom: none; }
+.informe-dot { width: 6px; height: 6px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+
+/* ── ═══ WIKI ═══ ── */
+.wiki-layout { display: grid; grid-template-columns: 200px 1fr; gap: 20px; }
+.wiki-nav { display: flex; flex-direction: column; gap: 4px; }
+.wiki-nav-item {
+  padding: 7px 12px;
+  border-radius: var(--r);
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text2);
+  transition: all 0.15s;
+  border: 1px solid transparent;
+}
+.wiki-nav-item:hover { background: var(--ink3); color: var(--text); }
+.wiki-nav-item.active { background: rgba(212,168,83,0.08); border-color: var(--gold-dim); color: var(--gold2); }
+.wiki-content {
+  background: var(--ink2);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  padding: 28px 32px;
+  font-family: 'Crimson Pro', serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text);
+}
+.wiki-content h1 { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--white); margin-bottom: 12px; }
+.wiki-content h2 { font-family: 'Playfair Display', serif; font-size: 19px; color: var(--gold2); margin: 24px 0 10px; }
+.wiki-content h3 { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--text); margin: 18px 0 8px; }
+.wiki-content p { margin-bottom: 12px; }
+.wiki-content code { font-family: 'Space Mono', monospace; font-size: 12px; background: var(--ink3); padding: 2px 7px; border-radius: 4px; color: var(--teal); }
+.wiki-content pre { background: var(--ink3); border: 1px solid var(--border); border-radius: var(--r); padding: 16px; overflow-x: auto; margin-bottom: 16px; }
+.wiki-content pre code { background: none; padding: 0; font-size: 12px; color: var(--text2); }
+.wiki-content ul, .wiki-content ol { padding-left: 20px; margin-bottom: 12px; }
+.wiki-content li { margin-bottom: 4px; }
+.wiki-content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 14px; }
+.wiki-content th { background: var(--ink3); color: var(--gold2); padding: 8px 12px; text-align: left; font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase; }
+.wiki-content td { padding: 8px 12px; border-bottom: 1px solid var(--border); }
+.wiki-content blockquote { border-left: 3px solid var(--gold); padding-left: 16px; color: var(--text2); font-style: italic; margin: 16px 0; }
+
+/* ── Dashboard stats ── */
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 24px; }
+.stat-card {
+  background: var(--ink2);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  padding: 18px 20px;
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--glow-color, var(--gold)) 0%, transparent 70%);
+  opacity: 0.08;
+}
+.stat-value { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--white); }
+.stat-label { font-family: 'Space Mono', monospace; font-size: 9px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
+.stat-trend { font-family: 'Space Mono', monospace; font-size: 10px; margin-top: 8px; }
+
+/* Dashboard timeline */
+.timeline { display: flex; flex-direction: column; gap: 0; }
+.timeline-item { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.timeline-item:last-child { border-bottom: none; }
+.tl-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+.tl-content { flex: 1; }
+.tl-title { font-size: 14px; color: var(--white); margin-bottom: 2px; }
+.tl-meta { font-family: 'Space Mono', monospace; font-size: 9px; color: var(--text3); }
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .kanban-board { grid-template-columns: repeat(2, 1fr); }
+  .gen-grid { grid-template-columns: 1fr; }
+  .revisor-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 780px) {
+  .app { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .kanban-board { grid-template-columns: 1fr; }
+  .wiki-layout { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════ DATA ══════════════════════════════════════ -->
+<script>
+const DATA = {
+  version: "V4.1.1",
+  nivel_activo: "N3",
+  fecha: "2026-05-04",
+
+  carpetas: [
+    { num:"00", name:"Control Maestro", desc:"Registro de versiones, decisiones, changelog y manifiesto del repositorio.", tags:["gobernanza","control"], perfil:"C7", estado:"activo", color:"var(--gold)", docs:["README_REPOSITORIO.md","manifest_repositorio.json","TREE_REPOSITORIO.txt","Record_Version.md"] },
+    { num:"01", name:"Fundamento Filosófico", desc:"Principios epistemológicos, éticos y ontológicos del framework.", tags:["filosofía","fundamento"], perfil:"C2", estado:"activo", color:"var(--violet)", docs:["principios_fundacionales.md","epistemologia.md"] },
+    { num:"02", name:"Arquitectura Conceptual", desc:"Modelo teórico, mapas conceptuales y estructura del framework.", tags:["arquitectura","modelo"], perfil:"C1", estado:"activo", color:"var(--teal)", docs:["arquitectura_v4.md","mapas_conceptuales/"] },
+    { num:"03", name:"Metodología y Flujo de Trabajo", desc:"Protocolos de trabajo, flujos N1–N4 y guías operativas.", tags:["metodología","flujo"], perfil:"C1", estado:"activo", color:"var(--teal)", docs:["flujo_n1_n4.md","protocolo_sesion.md"] },
+    { num:"04", name:"Gobernanza, Ética y Riesgos", desc:"Decisiones D-Axx, matriz de riesgos, CHECKS éticos y de accesibilidad.", tags:["ética","gobernanza","riesgos"], perfil:"C7", estado:"activo", color:"var(--coral)", docs:["matriz_riesgos.md","registro_decisiones.md","CHECKS/"] },
+    { num:"05", name:"Competencias y Perfiles", desc:"Definición de perfiles transversales: Programador Humanista, Investigador, Artista, Caleidoscopio.", tags:["perfiles","competencias"], perfil:"C4", estado:"activo", color:"var(--violet)", docs:["perfiles_transversales.md","caleidoscopio_c1_c7.md"] },
+    { num:"06", name:"Pastillas Modulares", desc:"Unidades de conocimiento autónomas y reutilizables.", tags:["modular","contenido"], perfil:"C5", estado:"activo", color:"var(--sage)", docs:["pastilla_template.md","indice_pastillas.md"] },
+    { num:"07", name:"Plantillas y Modelos", desc:"Documentos base para proyectos, reportes, decisiones y releases.", tags:["plantillas","modelos"], perfil:"C1", estado:"activo", color:"var(--gold)", docs:["plantilla_proyecto.md","plantilla_decision.md","plantilla_release.md"] },
+    { num:"08", name:"Cursos, Programas y Trayectorias", desc:"Diseño curricular, trayectorias de aprendizaje y programas multimodales.", tags:["educación","currículo"], perfil:"C5", estado:"activo", color:"var(--sage)", docs:["trayectoria_base.md","programa_n1_n4.md"] },
+    { num:"09", name:"IA, Agentes y Copilotos", desc:"Definición de agentes Orquestador, Revisor y Generador. Prompts y workflows.", tags:["IA","agentes"], perfil:"C1", estado:"activo", color:"var(--teal)", docs:["agente_orquestador.md","agente_revisor.md","agente_generador.md"] },
+    { num:"10", name:"Repositorios y Flujo Técnico", desc:"Estructura GitHub, GitHub Actions, CI/CD y flujo de contribución.", tags:["técnico","github"], perfil:"C1", estado:"activo", color:"var(--gold)", docs:["github_actions.yml","flujo_contribucion.md"] },
+    { num:"11", name:"Multimodalidad y Publicación", desc:"Estrategias de publicación en múltiples formatos y canales.", tags:["publicación","multimodal"], perfil:"C3", estado:"pendiente", color:"var(--violet)", docs:["nada.md"] },
+    { num:"12", name:"Diseño Instruccional Universal", desc:"Principios DUA aplicados al framework para máxima accesibilidad.", tags:["DUA","accesibilidad"], perfil:"C5", estado:"pendiente", color:"var(--sage)", docs:["nada.md"] },
+    { num:"13", name:"Investigación y Evidencia", desc:"Bases de datos de evidencia, metodologías de investigación y citaciones.", tags:["investigación","evidencia"], perfil:"C2", estado:"pendiente", color:"var(--violet)", docs:["nada.md"] },
+    { num:"14", name:"Comunidad, Transferencia y Escalamiento", desc:"Estrategias para crecer la comunidad y escalar el framework.", tags:["comunidad","escalamiento"], perfil:"C6", estado:"pendiente", color:"var(--sage)", docs:["nada.md"] },
+    { num:"15", name:"Evaluación, Calidad y Auditoría", desc:"Rúbricas, criterios de calidad y protocolos de auditoría N4.", tags:["evaluación","auditoría"], perfil:"C7", estado:"pendiente", color:"var(--coral)", docs:["nada.md"] },
+    { num:"16", name:"Seguridad, Privacidad y Datos", desc:"Políticas de datos, privacidad y seguridad del ecosistema.", tags:["seguridad","privacidad"], perfil:"C7", estado:"pendiente", color:"var(--coral)", docs:["nada.md"] },
+    { num:"17", name:"Internacionalización y Localización", desc:"Adaptación del framework a contextos culturales e idiomáticos.", tags:["i18n","localización"], perfil:"C6", estado:"pendiente", color:"var(--gold)", docs:["nada.md"] },
+    { num:"18", name:"Documentación Activa", desc:"Changelog, estado de situación y documentación en tiempo real.", tags:["documentación","changelog"], perfil:"C1", estado:"activo", color:"var(--teal)", docs:["01_Changelog/","estado_situacion.md"] },
+    { num:"19", name:"Implementación y Despliegue", desc:"Guías de instalación, configuración y puesta en producción.", tags:["deploy","implementación"], perfil:"C1", estado:"pendiente", color:"var(--gold)", docs:["nada.md"] },
+    { num:"20", name:"Mantenimiento y Evolución", desc:"Protocolos para actualizar, deprecar y evolucionar el framework.", tags:["mantenimiento","evolución"], perfil:"C7", estado:"activo", color:"var(--teal)", docs:["protocolo_mantenimiento.md"] },
+    { num:"21", name:"Wiki Documentación Humana", desc:"Páginas de wiki colaborativa para usuarios, colaboradores e instituciones.", tags:["wiki","colaboración"], perfil:"C6", estado:"activo", color:"var(--violet)", docs:["inicio.md","guia_colaboradores.md","glosario.md"] },
+    { num:"99", name:"Archivo Histórico", desc:"Release V4.1.0 preservado. Base histórica V4.0.0 archivada.", tags:["archivo","historia"], perfil:"C7", estado:"archivo", color:"var(--violet)", docs:["release_v4_1_0/","V4_0_0_base_historica/"] }
+  ],
+
+  proyectos: [
+    { id:1, titulo:"Trayectoria Programador Humanista v0.1", perfil:"C1", nivel:"N2", fase:"Metodología", prioridad:"alta", fecha:"2026-04-12", desc:"Diseño de trayectoria curricular para perfil PH con integración IA." },
+    { id:2, titulo:"Pastillas Modulares — Lote 01", perfil:"C5", nivel:"N1", fase:"Fundamento", prioridad:"media", fecha:"2026-04-20", desc:"Primeras 10 pastillas modulares sobre fundamento filosófico." },
+    { id:3, titulo:"Wiki Secundaria V4.1.2", perfil:"C6", nivel:"N3", fase:"Avanzado", prioridad:"alta", fecha:"2026-05-01", desc:"Expansión de wiki con secciones de comunidad y transferencia." },
+    { id:4, titulo:"Piloto Artista Transdisciplinario", perfil:"C3", nivel:"N4", fase:"Institucional", prioridad:"alta", fecha:"2026-05-04", desc:"Primer piloto aplicado con equipo real de artistas." },
+    { id:5, titulo:"Integración GitHub Actions", perfil:"C1", nivel:"N2", fase:"Metodología", prioridad:"media", fecha:"2026-04-28", desc:"Automatización del manifest y árbol documental." },
+  ],
+
+  perfiles: [
+    { id:"C1", nombre:"Programador Humanista", color:"var(--teal)", colorDim:"var(--teal-dim)" },
+    { id:"C2", nombre:"Investigador Transdisciplinario", color:"var(--violet)", colorDim:"var(--violet-dim)" },
+    { id:"C3", nombre:"Artista Transdisciplinario", color:"var(--coral)", colorDim:"var(--coral-dim)" },
+    { id:"C4", nombre:"Caleidoscopio Integral", color:"var(--gold)", colorDim:"var(--gold-dim)" },
+    { id:"C5", nombre:"Pedagógico", color:"var(--sage)", colorDim:"var(--sage-dim)" },
+    { id:"C6", nombre:"Comunitario", color:"var(--teal)", colorDim:"var(--teal-dim)" },
+    { id:"C7", nombre:"Institucional", color:"var(--violet)", colorDim:"var(--violet-dim)" },
+  ],
+
+  checks: [
+    { id:"C-ETI", nombre:"Declaración ética", desc:"El proyecto tiene declaración explícita de valores y compromisos éticos.", ref:"04_GOBERNANZA_ETICA_Y_RIESGOS/", nivel:"N1", estado:"ok" },
+    { id:"C-ACC", nombre:"Accesibilidad universal", desc:"Se documenta cumplimiento de principios DUA y WCAG 2.1.", ref:"12_DISENO_INSTRUCCIONAL_UNIVERSAL/", nivel:"N2", estado:"warn" },
+    { id:"C-DOC", nombre:"Coherencia documental", desc:"Changelog y manifest están actualizados con la versión en curso.", ref:"18_DOCUMENTACION_ACTIVA/01_Changelog/", nivel:"N1", estado:"ok" },
+    { id:"C-PRI", nombre:"Política de privacidad", desc:"Los datos de usuarios tienen política documentada y firmada.", ref:"16_SEGURIDAD_PRIVACIDAD_Y_DATOS/", nivel:"N3", estado:"fail" },
+    { id:"C-VER", nombre:"Control de versiones", desc:"El repositorio usa versionado semántico y releases etiquetadas.", ref:"10_REPOSITORIOS_Y_FLUJO_TECNICO/", nivel:"N1", estado:"ok" },
+    { id:"C-RIS", nombre:"Matriz de riesgos activa", desc:"La matriz de riesgos está documentada, revisada y con mitigaciones.", ref:"04_GOBERNANZA_ETICA_Y_RIESGOS/matriz_riesgos.md", nivel:"N2", estado:"warn" },
+    { id:"C-ARC", nombre:"Archivo histórico preservado", desc:"Las versiones anteriores están archivadas en 99_ARCHIVO_HISTORICO/.", ref:"99_ARCHIVO_HISTORICO/", nivel:"N1", estado:"ok" },
+    { id:"C-GOB", nombre:"Registro de decisiones D-Axx", desc:"Todas las decisiones tienen registro con impacto, riesgo y estado.", ref:"04_GOBERNANZA_ETICA_Y_RIESGOS/registro_decisiones.md", nivel:"N2", estado:"ok" },
+  ],
+
+  wikiPages: {
+    "inicio": {
+      titulo: "Bienvenida al Framework",
+      contenido: `# Framework Genérico V4.1.1
+
+> *Un ecosistema vivo para la investigación, creación y gestión de proyectos académicos multimodales.*
+
+## ¿Qué es esto?
+
+El **Framework Genérico V4.1.1** es una arquitectura documental, metodológica y operativa diseñada para organizar proyectos complejos que integran investigación, creación artística y tecnología.
+
+No es una metodología rígida — es un **espacio de trabajo** que puede habitarse, expandirse y evolucionar con cada proyecto.
+
+## Niveles de madurez
+
+| Nivel | Nombre | Descripción |
+|-------|--------|-------------|
+| N1 | Fundamento | Bases filosóficas y documentales establecidas |
+| N2 | Metodológico | Flujos de trabajo y gobernanza activos |
+| N3 | Avanzado | Repositorio vivo y colaboración operativa |
+| N4 | Institucional | Automatización y auditoría formal |
+
+## Estado actual
+
+El framework se encuentra en **N3 — Avanzado** con V4.1.1 operativa en repositorio modelo.
+
+## Próximos pasos
+
+- Completar wiki secundaria (V4.1.2)
+- Primer piloto aplicado con equipo real
+- Matriz de riesgos ampliada
+`
+    },
+    "perfiles": {
+      titulo: "Perfiles Transversales",
+      contenido: `# Perfiles Transversales del Framework
+
+## El Sistema Caleidoscopio
+
+El framework opera a través de **7 perfiles Caleidoscopio** que representan distintas formas de habitar el conocimiento.
+
+## C1 — Programador Humanista
+
+Integra lógica computacional con comprensión humanística. Diseña sistemas que respetan la complejidad humana.
+
+**Áreas primarias:** Arquitectura técnica, flujo de trabajo, repositorios
+
+## C2 — Investigador Transdisciplinario
+
+Cruza fronteras disciplinares para generar conocimiento nuevo. Trabaja con metodologías mixtas.
+
+**Áreas primarias:** Fundamento filosófico, investigación, evidencia
+
+## C3 — Artista Transdisciplinario
+
+Explora la intersección entre arte, tecnología e investigación como forma de conocimiento.
+
+**Áreas primarias:** Multimodalidad, publicación, creación
+
+## C4 — Caleidoscopio Integral
+
+Integra los cuatro cuadrantes del conocimiento con igual fluidez.
+
+**Áreas primarias:** Competencias, integración, síntesis
+
+## C5 — Pedagógico
+
+Diseña experiencias de aprendizaje accesibles, significativas y transferibles.
+
+**Áreas primarias:** Cursos, trayectorias, pastillas modulares
+
+## C6 — Comunitario
+
+Facilita la transferencia del conocimiento y el crecimiento de comunidades de práctica.
+
+**Áreas primarias:** Comunidad, escalamiento, wiki
+
+## C7 — Institucional
+
+Garantiza la gobernanza, calidad y sostenibilidad del ecosistema.
+
+**Áreas primarias:** Control maestro, ética, auditoría
+`
+    },
+    "decisiones": {
+      titulo: "Registro de Decisiones",
+      contenido: `# Registro de Decisiones D-Axx
+
+Las decisiones son el **sistema nervioso del framework**. Cada decisión tiene identificador único, tipo, impacto, riesgo y estado.
+
+## Decisiones activas recientes
+
+### D-A44 — Apertura V4.1.1 como repositorio modelo
+- **Tipo:** Ajuste menor operativo
+- **Impacto:** Alto — habilita operación real en GitHub
+- **Riesgo:** Bajo
+- **Estado:** Ejecutada ✓
+
+### D-A43 — Aprobación V4.1.0-estable como base documental
+- **Tipo:** Decisión de versión
+- **Impacto:** Alto — cierra ciclo de arquitectura conceptual
+- **Riesgo:** Bajo
+- **Estado:** Ejecutada ✓
+
+### D-A42 — Bloqueo de automatización hasta N4
+- **Tipo:** Decisión de gobernanza
+- **Impacto:** Medio — protege integridad del framework
+- **Riesgo:** Bajo
+- **Estado:** Activa ✓
+
+## Próxima decisión pendiente
+
+**D-A45** — Apertura V4.1.2 para wiki secundaria y primer piloto aplicado.
+
+> *"Una decisión sin registro no existe."*
+`
+    },
+    "glosario": {
+      titulo: "Glosario",
+      contenido: `# Glosario del Framework
+
+## Términos fundamentales
+
+**Cartapacio** — Carpeta estructurada del repositorio con función específica dentro del framework. No es simplemente un directorio: es un territorio con propósito.
+
+**Caleidoscopio** — Sistema de 7 perfiles transversales (C1-C7) que describen formas de habitar y contribuir al conocimiento.
+
+**Check** — Criterio verificable de calidad, ética o accesibilidad que debe cumplirse para avanzar de nivel.
+
+**D-Axx** — Decisión registrada con número secuencial, contexto, impacto, riesgo y estado. El prefijo D-A indica decisión del agente.
+
+**Gate** — Punto de control entre niveles N1→N4. El agente Revisor evalúa si el proyecto cumple los criterios para avanzar.
+
+**N1-N4** — Niveles de madurez del framework: Fundamento, Metodológico, Avanzado, Institucional.
+
+**nada.md** — Archivo placeholder que hace visible un cartapacio vacío en GitHub. Contiene la descripción de su función futura.
+
+**Orquestador Humano-IA** — Agente que gestiona el ciclo de vida del framework, coordinando decisiones, versiones y actores.
+
+**Pastilla modular** — Unidad de conocimiento autónoma, reutilizable e interoperable. Como una cápsula que puede insertarse en distintos contextos.
+
+**Release Note** — Documento que certifica el cierre de un ciclo de versión, con evidencia de lo que se aprobó.
+
+**V4.x.x** — Esquema de versionado: versión mayor . versión menor . patch operativo.
+`
+    }
+  },
+
+  templates: {
+    "C1": [
+      { nombre:"00_CONTROL_MAESTRO/record_version.md", icono:"📋", desc:"Registro de versión con metadatos completos" },
+      { nombre:"03_METODOLOGIA/flujo_trabajo.md", icono:"🔄", desc:"Flujo N1-N4 adaptado al perfil técnico" },
+      { nombre:"10_REPOSITORIOS/github_actions.yml", icono:"⚙️", desc:"Workflow de CI/CD para el repositorio" },
+      { nombre:"18_DOCUMENTACION/changelog.md", icono:"📝", desc:"Plantilla de changelog por versión" },
+    ],
+    "C2": [
+      { nombre:"01_FUNDAMENTO/marco_epistemologico.md", icono:"🔬", desc:"Marco epistemológico del proyecto" },
+      { nombre:"13_INVESTIGACION/protocolo_inv.md", icono:"📊", desc:"Protocolo de investigación transdisciplinar" },
+      { nombre:"04_GOBERNANZA/matriz_riesgos.md", icono:"⚠️", desc:"Matriz de riesgos adaptada a investigación" },
+    ],
+    "C3": [
+      { nombre:"11_MULTIMODALIDAD/plan_publicacion.md", icono:"🎨", desc:"Plan de publicación multimodal" },
+      { nombre:"06_PASTILLAS/pastilla_creativa.md", icono:"✨", desc:"Plantilla de pastilla modular creativa" },
+      { nombre:"08_CURSOS/trayectoria_artistica.md", icono:"🎭", desc:"Trayectoria de aprendizaje artístico" },
+    ],
+    "C5": [
+      { nombre:"08_CURSOS/diseno_curricular.md", icono:"📚", desc:"Diseño curricular con principios DUA" },
+      { nombre:"06_PASTILLAS/pastilla_pedagogica.md", icono:"🧩", desc:"Pastilla modular pedagógica" },
+      { nombre:"12_DISENO/accesibilidad.md", icono:"♿", desc:"Declaración de accesibilidad universal" },
+    ],
+    "C7": [
+      { nombre:"00_CONTROL_MAESTRO/estado_situacion.md", icono:"📈", desc:"Estado de situación del proyecto" },
+      { nombre:"04_GOBERNANZA/registro_decisiones.md", icono:"⚖️", desc:"Registro de decisiones D-Axx" },
+      { nombre:"15_EVALUACION/rubrica_auditoria.md", icono:"🔍", desc:"Rúbrica de auditoría N4" },
+      { nombre:"04_GOBERNANZA/declaracion_etica.md", icono:"🤝", desc:"Declaración ética del proyecto" },
+    ],
+  }
+};
+
+// Helper para generar contenido MD de plantilla
+function generarMDPlantilla(template, perfil, proyecto) {
+  const fecha = new Date().toISOString().split('T')[0];
+  const perfilData = DATA.perfiles.find(p => p.id === perfil) || DATA.perfiles[0];
+  return `# ${template.icono} ${template.nombre.split('/').pop().replace('.md','').replace(/_/g,' ').replace(/\b\w/g, c => c.toUpperCase())}
+
+**Archivo:** \`${template.nombre}\`
+**Fecha:** ${fecha}
+**Versión:** V4.1.1
+**Perfil:** ${perfilData.nombre} (${perfil})
+**Proyecto:** ${proyecto || 'Sin nombre'}
+
+---
+
+## Contexto
+
+> Completa esta sección con el contexto específico del proyecto.
+
+## Propósito
+
+> Describe el propósito de este documento dentro del framework.
+
+## Contenido principal
+
+### Sección 1
+
+Contenido de la sección 1.
+
+### Sección 2
+
+Contenido de la sección 2.
+
+## Estado
+
+| Campo | Valor |
+|-------|-------|
+| Estado | Borrador |
+| Responsable | — |
+| Revisado por | — |
+| Próxima revisión | — |
+
+---
+
+*Generado por Framework Genérico V4.1.1 — ${fecha}*
+`;
+}
+</script>
+
+<!-- ══════════════════════════════════════ HTML ══════════════════════════════════════ -->
+
+<div class="app">
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="topbar-logo">
+      ◈ Framework Genérico
+      <span class="ver-badge">V4.1.1</span>
+    </div>
+    <div class="topbar-divider"></div>
+    <div class="topbar-meta">
+      <span class="status-dot"></span>N3 — Avanzado<br/>
+      2026-05-04 · 23 cartapacios
+    </div>
+  </header>
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Navegación</div>
+      <div class="nav-item active" onclick="showPage('dashboard')">
+        <span class="nav-icon">◉</span> Dashboard
+      </div>
+      <div class="nav-item" onclick="showPage('explorador')">
+        <span class="nav-icon">◫</span> Explorador
+        <span class="nav-badge">23</span>
+      </div>
+      <div class="nav-item" onclick="showPage('proyectos')">
+        <span class="nav-icon">◧</span> Proyectos
+        <span class="nav-badge">5</span>
+      </div>
+      <div class="nav-item" onclick="showPage('generador')">
+        <span class="nav-icon">◈</span> Generador
+      </div>
+      <div class="nav-item" onclick="showPage('revisor')">
+        <span class="nav-icon">◎</span> Revisor
+      </div>
+      <div class="nav-item" onclick="showPage('wiki')">
+        <span class="nav-icon">◪</span> Wiki
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Perfiles activos</div>
+      <div class="nav-item" onclick="filterByPerfil('C1')"><span class="nav-icon" style="color:var(--teal)">●</span> C1 Técnico</div>
+      <div class="nav-item" onclick="filterByPerfil('C2')"><span class="nav-icon" style="color:var(--violet)">●</span> C2 Investigativo</div>
+      <div class="nav-item" onclick="filterByPerfil('C3')"><span class="nav-icon" style="color:var(--coral)">●</span> C3 Creativo</div>
+      <div class="nav-item" onclick="filterByPerfil('C5')"><span class="nav-icon" style="color:var(--sage)">●</span> C5 Pedagógico</div>
+      <div class="nav-item" onclick="filterByPerfil('C7')"><span class="nav-icon" style="color:var(--gold)">●</span> C7 Institucional</div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Versiones</div>
+      <div class="nav-item"><span class="nav-icon" style="color:var(--gold)">◆</span> V4.1.1 <span class="nav-badge" style="color:var(--teal);border-color:var(--teal-dim)">activa</span></div>
+      <div class="nav-item"><span class="nav-icon" style="color:var(--text3)">◇</span> V4.1.0-estable</div>
+      <div class="nav-item"><span class="nav-icon" style="color:var(--text3)">◇</span> V4.0.0 histórica</div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <!-- ─── DASHBOARD ─── -->
+    <div class="page active" id="page-dashboard">
+      <div class="page-header">
+        <div class="page-title">Bienvenida al <em>Framework</em></div>
+        <div class="page-subtitle">Estado general del ecosistema · V4.1.1 · N3 Avanzado</div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-card" style="--glow-color:var(--gold)">
+          <div class="stat-value">23</div>
+          <div class="stat-label">Cartapacios</div>
+          <div class="stat-trend" style="color:var(--teal)">↑ 10 activos</div>
+        </div>
+        <div class="stat-card" style="--glow-color:var(--teal)">
+          <div class="stat-value">5</div>
+          <div class="stat-label">Proyectos</div>
+          <div class="stat-trend" style="color:var(--gold)">→ 3 en N2-N3</div>
+        </div>
+        <div class="stat-card" style="--glow-color:var(--coral)">
+          <div class="stat-value">44</div>
+          <div class="stat-label">Decisiones D-A</div>
+          <div class="stat-trend" style="color:var(--sage)">✓ D-A44 cerrada</div>
+        </div>
+        <div class="stat-card" style="--glow-color:var(--violet)">
+          <div class="stat-value">75%</div>
+          <div class="stat-label">CHECKS OK</div>
+          <div class="stat-trend" style="color:var(--coral)">⚠ 2 pendientes</div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:20px;margin-bottom:20px">
+        <div class="card">
+          <div class="card-label">Actividad reciente</div>
+          <div class="timeline" style="margin-top:12px">
+            <div class="timeline-item">
+              <div class="tl-dot" style="background:var(--gold)"></div>
+              <div class="tl-content">
+                <div class="tl-title">V4.1.1 generada como repositorio modelo</div>
+                <div class="tl-meta">D-A44 · 2026-05-04 · C7 Institucional</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot" style="background:var(--teal)"></div>
+              <div class="tl-content">
+                <div class="tl-title">ZIP listo para GitHub</div>
+                <div class="tl-meta">10_REPOSITORIOS · 2026-05-04 · C1 Técnico</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot" style="background:var(--violet)"></div>
+              <div class="tl-content">
+                <div class="tl-title">Wiki prioritaria incluida en V4.1.1</div>
+                <div class="tl-meta">21_WIKI · 2026-05-04 · C6 Comunitario</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot" style="background:var(--sage)"></div>
+              <div class="tl-content">
+                <div class="tl-title">Primer borrador MVP lanzado</div>
+                <div class="tl-meta">09_IA_AGENTES · 2026-05-04 · C1+C7</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-label">Próximo ciclo recomendado</div>
+          <div style="margin-top:14px">
+            <div style="background:var(--ink3);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin-bottom:10px">
+              <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--gold2);margin-bottom:6px">V4.1.2 — Recomendado</div>
+              <div style="font-size:14px;color:var(--text)">Wiki secundaria + primer piloto aplicado</div>
+              <div style="font-size:12px;color:var(--text3);margin-top:4px">Consolidar antes de automatizar</div>
+            </div>
+            <div style="background:var(--ink3);border:1px solid var(--border);border-radius:var(--r);padding:14px">
+              <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--text3);margin-bottom:6px">V4.2.0 — Posterior</div>
+              <div style="font-size:14px;color:var(--text2)">Automatización + Auditoría N4</div>
+              <div style="font-size:12px;color:var(--text3);margin-top:4px">Requiere N4 institucional activo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Stack tecnológico — hoja de ruta</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px">
+          <div style="text-align:center;padding:14px;background:var(--ink3);border-radius:var(--r);border:1px solid var(--border)">
+            <div style="font-size:22px;margin-bottom:8px">🗂️</div>
+            <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--teal)">AHORA</div>
+            <div style="font-size:13px;color:var(--white);margin-top:4px">HTML + JSON</div>
+            <div style="font-size:11px;color:var(--text3)">GitHub Pages</div>
+          </div>
+          <div style="text-align:center;padding:14px;background:var(--ink3);border-radius:var(--r);border:1px solid var(--border)">
+            <div style="font-size:22px;margin-bottom:8px">🧠</div>
+            <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--gold)">FASE 2</div>
+            <div style="font-size:13px;color:var(--white);margin-top:4px">Obsidian Sync</div>
+            <div style="font-size:11px;color:var(--text3)">obsidian-git</div>
+          </div>
+          <div style="text-align:center;padding:14px;background:var(--ink3);border-radius:var(--r);border:1px solid var(--border)">
+            <div style="font-size:22px;margin-bottom:8px">🗄️</div>
+            <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--violet)">FASE 3</div>
+            <div style="font-size:13px;color:var(--white);margin-top:4px">Supabase DB</div>
+            <div style="font-size:11px;color:var(--text3)">Auth + Realtime</div>
+          </div>
+          <div style="text-align:center;padding:14px;background:var(--ink3);border-radius:var(--r);border:1px solid var(--border)">
+            <div style="font-size:22px;margin-bottom:8px">🤖</div>
+            <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--coral)">FASE 4</div>
+            <div style="font-size:13px;color:var(--white);margin-top:4px">IA en Render</div>
+            <div style="font-size:11px;color:var(--text3)">Ollama · Mistral</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── EXPLORADOR ─── -->
+    <div class="page" id="page-explorador">
+      <div class="page-header">
+        <div class="page-title">Explorador del <em>Framework</em></div>
+        <div class="page-subtitle">23 cartapacios · haz clic en cualquiera para ver detalles</div>
+      </div>
+
+      <div class="explorador-controls">
+        <button class="filter-btn active" onclick="filtrarCarpetas('todos',this)">Todos (23)</button>
+        <button class="filter-btn" onclick="filtrarCarpetas('activo',this)">Activos</button>
+        <button class="filter-btn" onclick="filtrarCarpetas('pendiente',this)">Pendientes</button>
+        <button class="filter-btn" onclick="filtrarCarpetas('archivo',this)">Archivo</button>
+        <button class="filter-btn" onclick="filtrarCarpetas('C1',this)">C1 Técnico</button>
+        <button class="filter-btn" onclick="filtrarCarpetas('C2',this)">C2 Investigativo</button>
+        <button class="filter-btn" onclick="filtrarCarpetas('C5',this)">C5 Pedagógico</button>
+        <button class="filter-btn" onclick="filtrarCarpetas('C7',this)">C7 Institucional</button>
+      </div>
+
+      <div class="carpetas-grid" id="carpetas-grid"></div>
+    </div>
+
+    <!-- ─── PROYECTOS ─── -->
+    <div class="page" id="page-proyectos">
+      <div class="page-header" style="display:flex;align-items:flex-start;justify-content:space-between">
+        <div>
+          <div class="page-title">Tablero de <em>Proyectos</em></div>
+          <div class="page-subtitle">Kanban por nivel N1 → N4</div>
+        </div>
+        <button class="btn-primary" onclick="abrirNuevoProyecto()" style="margin-top:4px">+ Nuevo proyecto</button>
+      </div>
+
+      <div class="kanban-board" id="kanban-board"></div>
+    </div>
+
+    <!-- ─── GENERADOR ─── -->
+    <div class="page" id="page-generador">
+      <div class="page-header">
+        <div class="page-title">Generador de <em>Plantillas</em></div>
+        <div class="page-subtitle">Selecciona un perfil y obtén un paquete de documentos listo para tu proyecto</div>
+      </div>
+
+      <div class="gen-grid">
+        <div>
+          <div class="card-label" style="margin-bottom:10px">1. Elige tu perfil Caleidoscopio</div>
+          <div class="perfil-selector" id="perfil-selector"></div>
+
+          <div class="card-label" style="margin-bottom:10px;margin-top:16px">2. Nombre del proyecto</div>
+          <input class="form-input" id="gen-proyecto" placeholder="Ej: Trayectoria Investigador v0.1" style="margin-bottom:16px"/>
+
+          <div class="card-label" style="margin-bottom:10px">3. Plantillas disponibles</div>
+          <div class="template-list" id="template-list"></div>
+
+          <button class="btn-primary" style="margin-top:14px;width:100%" onclick="generarPaquete()">⬇ Generar paquete completo</button>
+        </div>
+
+        <div>
+          <div class="card-label" style="margin-bottom:10px">Vista previa del documento</div>
+          <div class="gen-preview" id="gen-preview">Selecciona un perfil y haz clic en una plantilla para ver la vista previa...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── REVISOR ─── -->
+    <div class="page" id="page-revisor">
+      <div class="page-header">
+        <div class="page-title">Panel del <em>Revisor</em></div>
+        <div class="page-subtitle">Evaluación de CHECKS · Gate de avance por nivel</div>
+      </div>
+
+      <div style="margin-bottom:16px;display:flex;gap:10px;align-items:center">
+        <div class="card-label">Evaluando nivel:</div>
+        <select class="form-select" id="nivel-select" onchange="actualizarRevisor()" style="width:auto;padding:6px 12px">
+          <option value="N1">N1 — Fundamento</option>
+          <option value="N2">N2 — Metodológico</option>
+          <option value="N3" selected>N3 — Avanzado</option>
+          <option value="N4">N4 — Institucional</option>
+        </select>
+      </div>
+
+      <div class="revisor-grid">
+        <div>
+          <div class="card-label" style="margin-bottom:12px">CHECKS del framework</div>
+          <div class="check-list" id="check-list"></div>
+        </div>
+
+        <div>
+          <div class="score-ring" id="score-ring">
+            <div class="score-circle" id="score-circle">
+              <div class="score-num" id="score-num">—</div>
+              <div class="score-label">/ 8 checks</div>
+            </div>
+            <div class="score-title">Puntuación Gate</div>
+            <div class="veredicto" id="veredicto">Evaluando...</div>
+          </div>
+
+          <div class="informe-box">
+            <div class="card-label" style="margin-bottom:10px">Informe de gaps</div>
+            <div id="informe-gaps"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── WIKI ─── -->
+    <div class="page" id="page-wiki">
+      <div class="page-header">
+        <div class="page-title"><em>Wiki</em> del Framework</div>
+        <div class="page-subtitle">Documentación viva · Markdown renderizado</div>
+      </div>
+
+      <div class="wiki-layout">
+        <div>
+          <div class="card-label" style="margin-bottom:10px">Páginas</div>
+          <div class="wiki-nav" id="wiki-nav">
+            <div class="wiki-nav-item active" onclick="showWiki('inicio',this)">◈ Bienvenida</div>
+            <div class="wiki-nav-item" onclick="showWiki('perfiles',this)">◉ Perfiles</div>
+            <div class="wiki-nav-item" onclick="showWiki('decisiones',this)">◧ Decisiones</div>
+            <div class="wiki-nav-item" onclick="showWiki('glosario',this)">◫ Glosario</div>
+          </div>
+        </div>
+
+        <div class="wiki-content" id="wiki-content"></div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- Modal explorador -->
+<div class="modal-overlay" id="modal-carpeta" onclick="cerrarModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="cerrarModal()">✕</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<!-- Modal nuevo proyecto -->
+<div class="modal-overlay" id="modal-proyecto" onclick="cerrarModalProyecto(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="cerrarModalProyecto()">✕</button>
+    <div class="modal-title" style="margin-bottom:4px">Nuevo Proyecto</div>
+    <div class="modal-num" style="margin-bottom:20px">Registrar en el tablero Kanban</div>
+    <div class="form-field">
+      <label class="form-label">Título del proyecto</label>
+      <input class="form-input" id="np-titulo" placeholder="Ej: Investigación Multimodal v0.1"/>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div class="form-field">
+        <label class="form-label">Perfil Caleidoscopio</label>
+        <select class="form-select" id="np-perfil">
+          <option value="C1">C1 — Técnico-investigativo</option>
+          <option value="C2">C2 — Investigativo-creativo</option>
+          <option value="C3">C3 — Creativo-técnico</option>
+          <option value="C4">C4 — Integral</option>
+          <option value="C5">C5 — Pedagógico</option>
+          <option value="C6">C6 — Comunitario</option>
+          <option value="C7">C7 — Institucional</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label class="form-label">Nivel inicial</label>
+        <select class="form-select" id="np-nivel">
+          <option value="N1">N1 — Fundamento</option>
+          <option value="N2">N2 — Metodológico</option>
+          <option value="N3">N3 — Avanzado</option>
+          <option value="N4">N4 — Institucional</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-field">
+      <label class="form-label">Descripción</label>
+      <textarea class="form-textarea" id="np-desc" placeholder="Describe brevemente el proyecto..."></textarea>
+    </div>
+    <div style="display:flex;gap:10px;justify-content:flex-end">
+      <button class="btn-secondary" onclick="cerrarModalProyecto()">Cancelar</button>
+      <button class="btn-primary" onclick="crearProyecto()">Crear proyecto</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ JS ══════════════════════════════════════ -->
+<script>
+// ── Navegación ──────────────────────────────────────────────────────────────────
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  event && event.currentTarget && event.currentTarget.classList.add('active');
+
+  if (id === 'explorador') renderCarpetas('todos');
+  if (id === 'proyectos') renderKanban();
+  if (id === 'generador') renderGenerador();
+  if (id === 'revisor') renderRevisor();
+  if (id === 'wiki') showWiki('inicio');
+}
+
+// Forzar activación del link
+document.querySelectorAll('.nav-item[onclick]').forEach(el => {
+  el.addEventListener('click', function(){ 
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── Explorador ──────────────────────────────────────────────────────────────────
+let filtroActual = 'todos';
+
+function renderCarpetas(filtro) {
+  filtroActual = filtro;
+  const grid = document.getElementById('carpetas-grid');
+  const items = DATA.carpetas.filter(c => {
+    if (filtro === 'todos') return true;
+    if (['activo','pendiente','archivo'].includes(filtro)) return c.estado === filtro;
+    return c.perfil === filtro;
+  });
+
+  grid.innerHTML = items.map(c => `
+    <div class="carpeta-card" style="--color:${c.color}" onclick="abrirCarpeta('${c.num}')">
+      <div class="carpeta-num">${c.num.padStart(2,'0')}_</div>
+      <div class="carpeta-name">${c.name}</div>
+      <div class="carpeta-desc">${c.desc}</div>
+      <div class="carpeta-tags">
+        ${c.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+        <span class="tag" style="color:${c.color};border-color:${c.color};background:transparent">${c.perfil}</span>
+      </div>
+      <span class="estado-badge estado-${c.estado}">${c.estado.toUpperCase()}</span>
+    </div>
+  `).join('');
+}
+
+function filtrarCarpetas(filtro, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCarpetas(filtro);
+}
+
+function abrirCarpeta(num) {
+  const c = DATA.carpetas.find(x => x.num === num);
+  if (!c) return;
+  document.getElementById('modal-body').innerHTML = `
+    <div class="modal-num">${num.padStart(2,'0')}_${c.name.toUpperCase().replace(/ /g,'_')}/</div>
+    <div class="modal-title">${c.name}</div>
+    <div style="margin:14px 0 8px;font-size:14px;color:var(--text2)">${c.desc}</div>
+    <span class="estado-badge estado-${c.estado}" style="margin-bottom:14px;display:inline-block">${c.estado.toUpperCase()}</span>
+    <div class="modal-section-label">Perfil Caleidoscopio</div>
+    <div style="font-size:14px;color:${c.color}">${c.perfil} — ${(DATA.perfiles.find(p=>p.id===c.perfil)||{nombre:c.perfil}).nombre}</div>
+    <div class="modal-section-label">Etiquetas</div>
+    <div class="carpeta-tags" style="margin-bottom:14px">${c.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+    <div class="modal-section-label">Documentos en este cartapacio</div>
+    <ul class="modal-docs">${c.docs.map(d=>`<li>📄 ${d}</li>`).join('')}</ul>
+  `;
+  document.getElementById('modal-carpeta').classList.add('open');
+}
+
+function cerrarModal(e) {
+  if (!e || e.target === document.getElementById('modal-carpeta'))
+    document.getElementById('modal-carpeta').classList.remove('open');
+}
+
+// ── Kanban ──────────────────────────────────────────────────────────────────────
+const columnas = [
+  { nivel:"N1", fase:"Fundamento", color:"var(--teal)" },
+  { nivel:"N2", fase:"Metodología", color:"var(--gold)" },
+  { nivel:"N3", fase:"Avanzado", color:"var(--violet)" },
+  { nivel:"N4", fase:"Institucional", color:"var(--coral)" }
+];
+
+function renderKanban() {
+  const board = document.getElementById('kanban-board');
+  board.innerHTML = columnas.map(col => {
+    const cards = DATA.proyectos.filter(p => p.nivel === col.nivel);
+    return `
+    <div class="kanban-col">
+      <div class="kanban-col-header">
+        <div class="kanban-col-dot" style="background:${col.color}"></div>
+        <div class="kanban-col-title">${col.nivel} · ${col.fase}</div>
+        <div class="kanban-col-count">${cards.length}</div>
+      </div>
+      <div class="kanban-cards">
+        ${cards.map(p => {
+          const perfil = DATA.perfiles.find(pr => pr.id === p.perfil) || {};
+          return `
+          <div class="k-card" title="${p.desc}">
+            <div class="k-card-title">${p.titulo}</div>
+            <div class="k-card-meta">
+              <span>📅 ${p.fecha}</span>
+            </div>
+            <span class="k-profile-badge" style="background:${perfil.colorDim||'var(--ink3)'};color:${perfil.color||'var(--text2)'};border:1px solid ${perfil.colorDim||'var(--border)'}">${p.perfil}</span>
+          </div>`;
+        }).join('')}
+        <button class="add-card-btn" onclick="abrirNuevoProyectoEnNivel('${col.nivel}')">+ Añadir</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function abrirNuevoProyecto() {
+  document.getElementById('modal-proyecto').classList.add('open');
+}
+function abrirNuevoProyectoEnNivel(nivel) {
+  document.getElementById('np-nivel').value = nivel;
+  document.getElementById('modal-proyecto').classList.add('open');
+}
+function cerrarModalProyecto(e) {
+  if (!e || e.target === document.getElementById('modal-proyecto'))
+    document.getElementById('modal-proyecto').classList.remove('open');
+}
+function crearProyecto() {
+  const titulo = document.getElementById('np-titulo').value.trim();
+  if (!titulo) return;
+  const fecha = new Date().toISOString().split('T')[0];
+  DATA.proyectos.push({
+    id: Date.now(),
+    titulo,
+    perfil: document.getElementById('np-perfil').value,
+    nivel: document.getElementById('np-nivel').value,
+    fase: document.getElementById('np-nivel').options[document.getElementById('np-nivel').selectedIndex].text.split('—')[1].trim(),
+    prioridad: "media",
+    fecha,
+    desc: document.getElementById('np-desc').value
+  });
+  cerrarModalProyecto();
+  document.getElementById('np-titulo').value = '';
+  document.getElementById('np-desc').value = '';
+  renderKanban();
+}
+
+// ── Generador ──────────────────────────────────────────────────────────────────
+let perfilSeleccionado = 'C1';
+
+function renderGenerador() {
+  const sel = document.getElementById('perfil-selector');
+  sel.innerHTML = DATA.perfiles.slice(0,4).map(p => `
+    <div class="perfil-btn ${p.id===perfilSeleccionado?'selected':''}" onclick="seleccionarPerfil('${p.id}')">
+      <div class="perfil-btn-name">${p.nombre}</div>
+      <div class="perfil-btn-desc">${p.id}</div>
+    </div>
+  `).join('') + DATA.perfiles.slice(4).map(p => `
+    <div class="perfil-btn ${p.id===perfilSeleccionado?'selected':''}" onclick="seleccionarPerfil('${p.id}')">
+      <div class="perfil-btn-name">${p.nombre}</div>
+      <div class="perfil-btn-desc">${p.id}</div>
+    </div>
+  `).join('');
+  renderTemplates();
+}
+
+function seleccionarPerfil(id) {
+  perfilSeleccionado = id;
+  document.querySelectorAll('.perfil-btn').forEach(b => b.classList.remove('selected'));
+  event.currentTarget.classList.add('selected');
+  renderTemplates();
+  document.getElementById('gen-preview').textContent = 'Haz clic en una plantilla para ver la vista previa...';
+}
+
+function renderTemplates() {
+  const list = document.getElementById('template-list');
+  const templates = DATA.templates[perfilSeleccionado] || DATA.templates['C1'];
+  list.innerHTML = templates.map((t,i) => `
+    <div class="template-item" onclick="previsualizarTemplate(${i})">
+      <span class="template-icon">${t.icono}</span>
+      <div>
+        <div class="template-name">${t.nombre}</div>
+        <div style="font-size:11px;color:var(--text3);font-family:'Crimson Pro',serif">${t.desc}</div>
+      </div>
+      <button class="download-btn" onclick="descargarTemplate(event,${i})">↓</button>
+    </div>
+  `).join('');
+}
+
+function previsualizarTemplate(idx) {
+  const templates = DATA.templates[perfilSeleccionado] || DATA.templates['C1'];
+  const t = templates[idx];
+  const proyecto = document.getElementById('gen-proyecto').value || 'Mi Proyecto';
+  document.getElementById('gen-preview').textContent = generarMDPlantilla(t, perfilSeleccionado, proyecto);
+}
+
+function descargarTemplate(e, idx) {
+  e.stopPropagation();
+  const templates = DATA.templates[perfilSeleccionado] || DATA.templates['C1'];
+  const t = templates[idx];
+  const proyecto = document.getElementById('gen-proyecto').value || 'mi_proyecto';
+  const contenido = generarMDPlantilla(t, perfilSeleccionado, proyecto);
+  const blob = new Blob([contenido], {type:'text/markdown'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = t.nombre.split('/').pop();
+  a.click();
+}
+
+function generarPaquete() {
+  const templates = DATA.templates[perfilSeleccionado] || DATA.templates['C1'];
+  const proyecto = document.getElementById('gen-proyecto').value || 'mi_proyecto';
+  templates.forEach((t,i) => {
+    setTimeout(() => {
+      const contenido = generarMDPlantilla(t, perfilSeleccionado, proyecto);
+      const blob = new Blob([contenido], {type:'text/markdown'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = t.nombre.split('/').pop();
+      a.click();
+    }, i * 300);
+  });
+}
+
+// ── Revisor ──────────────────────────────────────────────────────────────────────
+function renderRevisor() {
+  const nivel = document.getElementById('nivel-select').value;
+  const checks = DATA.checks;
+  const list = document.getElementById('check-list');
+
+  list.innerHTML = checks.map((c,i) => {
+    const icon = c.estado==='ok'?'✓':c.estado==='warn'?'!':'✗';
+    return `
+    <div class="check-item">
+      <div class="check-status ${c.estado}" onclick="toggleCheck(${i})">${icon}</div>
+      <div>
+        <div class="check-name">${c.nombre}</div>
+        <div class="check-desc">${c.desc}</div>
+        <div class="check-ref">${c.ref} · Nivel ${c.nivel}</div>
+      </div>
+    </div>`;
+  }).join('');
+
+  actualizarScore();
+}
+
+function toggleCheck(idx) {
+  const estados = ['ok','warn','fail'];
+  const c = DATA.checks[idx];
+  c.estado = estados[(estados.indexOf(c.estado)+1)%3];
+  renderRevisor();
+}
+
+function actualizarRevisor() { renderRevisor(); }
+
+function actualizarScore() {
+  const oks = DATA.checks.filter(c=>c.estado==='ok').length;
+  const warns = DATA.checks.filter(c=>c.estado==='warn').length;
+  const fails = DATA.checks.filter(c=>c.estado==='fail').length;
+  const total = DATA.checks.length;
+
+  document.getElementById('score-num').textContent = oks;
+
+  const circle = document.getElementById('score-circle');
+  const pct = oks/total;
+  const color = pct>=0.875?'var(--sage)':pct>=0.625?'var(--gold)':'var(--coral)';
+  circle.style.borderColor = color;
+
+  const ver = document.getElementById('veredicto');
+  if (fails === 0 && warns <= 1) {
+    ver.className = 'veredicto pass';
+    ver.textContent = '✓ Gate aprobado — puede avanzar de nivel';
+  } else if (fails <= 1) {
+    ver.className = 'veredicto warn';
+    ver.textContent = '⚠ Gate condicional — resolver advertencias primero';
+  } else {
+    ver.className = 'veredicto fail';
+    ver.textContent = '✗ Gate bloqueado — hay ' + fails + ' checks críticos pendientes';
+  }
+
+  const gaps = document.getElementById('informe-gaps');
+  const problemáticos = DATA.checks.filter(c=>c.estado!=='ok');
+  if (problemáticos.length === 0) {
+    gaps.innerHTML = '<div style="color:var(--sage);font-size:14px;padding:8px 0">✓ Todos los CHECKS superados. El proyecto está listo para avanzar.</div>';
+  } else {
+    gaps.innerHTML = problemáticos.map(c => `
+      <div class="informe-item">
+        <div class="informe-dot" style="background:${c.estado==='warn'?'var(--gold)':'var(--coral)'}"></div>
+        <div>
+          <div style="color:var(--white);font-size:13px">${c.nombre}</div>
+          <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--text3);margin-top:2px">${c.ref}</div>
+          <div style="font-size:12px;color:var(--text3);margin-top:2px">${c.desc}</div>
+        </div>
+      </div>
+    `).join('');
+  }
+}
+
+// ── Wiki ──────────────────────────────────────────────────────────────────────
+function showWiki(key, btn) {
+  const page = DATA.wikiPages[key];
+  if (!page) return;
+  document.getElementById('wiki-content').innerHTML = marked.parse(page.contenido);
+  document.querySelectorAll('.wiki-nav-item').forEach(n => n.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  else {
+    const navItems = document.querySelectorAll('.wiki-nav-item');
+    const keys = ['inicio','perfiles','decisiones','glosario'];
+    const idx = keys.indexOf(key);
+    if (idx >= 0 && navItems[idx]) navItems[idx].classList.add('active');
+  }
+}
+
+// ── Filtro por perfil desde sidebar ──────────────────────────────────────────
+function filterByPerfil(perfil) {
+  showPage('explorador');
+  setTimeout(() => {
+    const btn = document.querySelector(`.filter-btn`);
+    filtrarCarpetas(perfil, document.querySelectorAll('.filter-btn')[
+      ['C1','C2','C3','C5','C7'].indexOf(perfil) + 4
+    ] || btn);
+  }, 50);
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+showWiki('inicio');
+renderCarpetas('todos');
+</script>
+</body>
+</html>
