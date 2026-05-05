@@ -3,7 +3,7 @@
   "created_at": "2026-05-04",
   "base_version": "Framework Genérico V4.1.0-estable",
   "operational_version": "Framework Genérico V4.1.1 Repositorio Modelo",
-  "status": "actualizado_con_framework_integral_autosostenido_v4_1_0",
+  "status": "actualizado_con_perfiles_transversales_regenerados_md",
   "level": "N3",
   "decision_suggested": {
     "id": "D-A44",
@@ -281,29 +281,26 @@
   "framework_active_version": "V4.1.1",
   "stable_framework_reference": "V4.1.0 Integral Autosostenido",
   "latest_update": {
-    "id": "D-A48",
-    "title": "Agregar versión integral autosostenida del Framework Genérico V4.1.0 en formatos MD y JSON",
-    "type": "ajuste_mayor_de_transferencia_documental_sin_cambio_estructural",
-    "impact": "alto",
+    "id": "D-A49",
+    "title": "Actualizar manifest y TREE tras regenerar documentos MD del Artista Transdisciplinario y Caleidoscopio",
+    "type": "actualizacion_documental_de_control",
+    "impact": "medio_alto",
     "risk": "bajo",
-    "reason": "Permite que colegas implementen el Framework V4.1.0 en proyectos nuevos sin depender de V4.0.0 ni del historial completo del repositorio.",
-    "documents_added": [
-      "00_CONTROL_MAESTRO/2026-05-04_Framework_Generico_V4_1_0_Integral_Autosostenido_v1-0.md",
-      "00_CONTROL_MAESTRO/2026-05-04_Framework_Generico_V4_1_0_Integral_Autosostenido_v1-0.json"
-    ],
-    "documents_updated": [
+    "reason": "Mantener sincronizados el manifest y el árbol del repositorio luego de incorporar los MD regenerados de dos componentes transversales esenciales.",
+    "documents_added_or_updated": [
+      "02_ARQUITECTURA_CONCEPTUAL/07_Perfiles_Transversales/03_Artista_Transdisciplinario/2026-05-04_Perfil_Artista_Transdisciplinario_Framework_Generico_V4_v0-1_REGENERADO.md",
+      "02_ARQUITECTURA_CONCEPTUAL/07_Perfiles_Transversales/04_Caleidoscopio/2026-05-04_Caleidoscopio_Logica_Integradora_Framework_Generico_V4_v0-1_REGENERADO.md",
       "00_CONTROL_MAESTRO/manifest_repositorio_v4_1_1.json",
-      "00_CONTROL_MAESTRO/TREE_REPOSITORIO_V4_1_1.txt",
-      "18_DOCUMENTACION_ACTIVA/01_Changelog/2026-05-04_Changelog_Actualizacion_Framework_Integral_Autosostenido_V4_1_0_Framework_Generico_V4_1_1_v0-5.md",
-      "18_DOCUMENTACION_ACTIVA/02_Registro_Decisiones/2026-05-04_Registro_Decisiones_Actualizacion_Framework_Integral_Autosostenido_V4_1_0_Framework_Generico_V4_1_1_DA48_v0-5.md"
+      "00_CONTROL_MAESTRO/TREE_REPOSITORIO_V4_1_1.md"
     ],
-    "recommended_commit": "docs: agregar framework integral autosostenido v4.1.0"
+    "recommended_commit": "docs: actualizar manifest y tree tras regenerar artista y caleidoscopio"
   },
   "control_master_documents": {
     "integral_framework_md": "00_CONTROL_MAESTRO/2026-05-04_Framework_Generico_V4_1_0_Integral_Autosostenido_v1-0.md",
     "integral_framework_json": "00_CONTROL_MAESTRO/2026-05-04_Framework_Generico_V4_1_0_Integral_Autosostenido_v1-0.json",
     "manifest": "00_CONTROL_MAESTRO/manifest_repositorio_v4_1_1.json",
-    "tree": "00_CONTROL_MAESTRO/TREE_REPOSITORIO_V4_1_1.txt"
+    "tree": "00_CONTROL_MAESTRO/TREE_REPOSITORIO_V4_1_1.txt",
+    "tree_markdown": "00_CONTROL_MAESTRO/TREE_REPOSITORIO_V4_1_1.md"
   },
   "governance_updates": {
     "changelog": "18_DOCUMENTACION_ACTIVA/01_Changelog/2026-05-04_Changelog_Actualizacion_Framework_Integral_Autosostenido_V4_1_0_Framework_Generico_V4_1_1_v0-5.md",
@@ -313,14 +310,42 @@
   "folder_policy": {
     "new_integral_documents": "00_CONTROL_MAESTRO/",
     "changelog_updates": "18_DOCUMENTACION_ACTIVA/01_Changelog/",
-    "decision_records": "18_DOCUMENTACION_ACTIVA/02_Registro_Decisiones/"
+    "decision_records": "18_DOCUMENTACION_ACTIVA/02_Registro_Decisiones/",
+    "artista_transdisciplinario": "02_ARQUITECTURA_CONCEPTUAL/07_Perfiles_Transversales/03_Artista_Transdisciplinario/",
+    "caleidoscopio": "02_ARQUITECTURA_CONCEPTUAL/07_Perfiles_Transversales/04_Caleidoscopio/",
+    "manifest": "00_CONTROL_MAESTRO/",
+    "tree": "00_CONTROL_MAESTRO/"
   },
   "file_inventory_summary": {
-    "total_files": 155,
+    "total_files": 157,
     "last_inventory_refresh": "2026-05-04"
   },
   "key_files_added_this_update": [
     "00_CONTROL_MAESTRO/2026-05-04_Framework_Generico_V4_1_0_Integral_Autosostenido_v1-0.md",
     "00_CONTROL_MAESTRO/2026-05-04_Framework_Generico_V4_1_0_Integral_Autosostenido_v1-0.json"
-  ]
+  ],
+  "transversal_profiles": {
+    "programador_humanista": {
+      "status": "cerrado_funcional",
+      "version": "v0.2",
+      "folder": "02_ARQUITECTURA_CONCEPTUAL/07_Perfiles_Transversales/01_Programador_Humanista/"
+    },
+    "investigador_transdisciplinario": {
+      "status": "formalizado_preliminar",
+      "version": "v0.1",
+      "folder": "02_ARQUITECTURA_CONCEPTUAL/07_Perfiles_Transversales/02_Investigador_Transdisciplinario/"
+    },
+    "artista_transdisciplinario": {
+      "status": "formalizado_preliminar_regenerado_md",
+      "version": "v0.1",
+      "folder": "02_ARQUITECTURA_CONCEPTUAL/07_Perfiles_Transversales/03_Artista_Transdisciplinario/",
+      "latest_md": "02_ARQUITECTURA_CONCEPTUAL/07_Perfiles_Transversales/03_Artista_Transdisciplinario/2026-05-04_Perfil_Artista_Transdisciplinario_Framework_Generico_V4_v0-1_REGENERADO.md"
+    },
+    "caleidoscopio": {
+      "status": "formalizado_como_logica_integradora_regenerado_md",
+      "version": "v0.1",
+      "folder": "02_ARQUITECTURA_CONCEPTUAL/07_Perfiles_Transversales/04_Caleidoscopio/",
+      "latest_md": "02_ARQUITECTURA_CONCEPTUAL/07_Perfiles_Transversales/04_Caleidoscopio/2026-05-04_Caleidoscopio_Logica_Integradora_Framework_Generico_V4_v0-1_REGENERADO.md"
+    }
+  }
 }

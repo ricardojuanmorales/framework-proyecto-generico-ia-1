@@ -1,3 +1,53 @@
+# TREE Repositorio
+## Framework Genérico V4.1.1
+
+**Archivo oficial:** `TREE_REPOSITORIO_V4_1_1.md`  
+**Archivo descargable:** `2026-05-04_TREE_REPOSITORIO_V4_1_1_actualizado_artista_caleidoscopio.md`  
+**Fecha:** 2026-05-04  
+**Versión:** v1.1  
+**Estado:** Actualizado tras regenerar MD del Artista Transdisciplinario y Caleidoscopio  
+**Framework activo:** Framework Genérico V4.1.1  
+**Cartapacio destino:** `00_CONTROL_MAESTRO/`  
+**Tipo de documento:** Mapa estructural del repositorio / árbol de archivos en Markdown  
+
+---
+
+## 1. Propósito
+
+Este documento presenta el árbol actualizado del repositorio **Framework Genérico V4.1.1** en formato Markdown.
+
+La actualización incorpora los documentos MD regenerados de:
+
+```text
+Artista Transdisciplinario v0.1
+Caleidoscopio v0.1
+```
+
+---
+
+## 2. Archivos destacados de esta actualización
+
+```text
+02_ARQUITECTURA_CONCEPTUAL/07_Perfiles_Transversales/03_Artista_Transdisciplinario/2026-05-04_Perfil_Artista_Transdisciplinario_Framework_Generico_V4_v0-1_REGENERADO.md
+02_ARQUITECTURA_CONCEPTUAL/07_Perfiles_Transversales/04_Caleidoscopio/2026-05-04_Caleidoscopio_Logica_Integradora_Framework_Generico_V4_v0-1_REGENERADO.md
+```
+
+---
+
+## 3. Reglas de sincronización
+
+```text
+1. Este TREE debe actualizarse cuando cambie la estructura del repositorio.
+2. Debe mantenerse sincronizado con manifest_repositorio_v4_1_1.json.
+3. Su cartapacio oficial es 00_CONTROL_MAESTRO/.
+4. Si se agregan documentos oficiales, también debe revisarse changelog y registro de decisiones.
+```
+
+---
+
+## 4. Árbol actualizado del repositorio
+
+```text
 Framework_Generico_V4_1_1_Repositorio_Modelo/
   .gitignore
   README.md
@@ -12,6 +62,8 @@ Framework_Generico_V4_1_1_Repositorio_Modelo/
     2026-05-04_Aprobacion_Framework_Generico_V4_1_0_Estable_v1-0.md
     2026-05-04_Borrador_Framework_Generico_V4_1_0_Apertura_v0-1.md
     2026-05-04_Estado_Situacion_Framework_Generico_V4_1_0_Estable_Post_Aprobacion_v1-0.md
+    2026-05-04_Framework_Generico_V4_1_0_Integral_Autosostenido_v1-0.json
+    2026-05-04_Framework_Generico_V4_1_0_Integral_Autosostenido_v1-0.md
     2026-05-04_Framework_Generico_V4_1_1_Record_Version_Actualizada_v1-0.md
     2026-05-04_Indice_Maestro_Documentos_Framework_Generico_V4_1_0_Borrador_v0-1.md
     2026-05-04_README_Framework_Generico_V4_1_0_Borrador_v0-1.md
@@ -36,8 +88,10 @@ Framework_Generico_V4_1_1_Repositorio_Modelo/
       02_Investigador_Transdisciplinario/
         2026-05-04_Perfil_Investigador_Transdisciplinario_Framework_Generico_V4_v0-1.md
       03_Artista_Transdisciplinario/
+        2026-05-04_Perfil_Artista_Transdisciplinario_Framework_Generico_V4_v0-1_REGENERADO.md
         nada.md
       04_Caleidoscopio/
+        2026-05-04_Caleidoscopio_Logica_Integradora_Framework_Generico_V4_v0-1_REGENERADO.md
         2026-05-04_Marco_Caleidoscopio_Framework_Generico_V4_v0-1.md
         2026-05-04_Matriz_Caleidoscopio_C1_C7_Ejemplos_Framework_Generico_V4_v0-1.md
   03_METODOLOGIA_Y_FLUJO_DE_TRABAJO/
@@ -100,10 +154,12 @@ Framework_Generico_V4_1_1_Repositorio_Modelo/
   18_DOCUMENTACION_ACTIVA/
     README.md
     01_Changelog/
+      2026-05-04_Changelog_Actualizacion_Framework_Integral_Autosostenido_V4_1_0_Framework_Generico_V4_1_1_v0-5.md
       2026-05-04_Changelog_Actualizacion_Perfiles_Transversales_y_Apertura_V4_1_0_Framework_Generico_V4_v0-2.md
       2026-05-04_Changelog_Cierre_Sesion_Ruta_B_Obsidian_GitHub_Framework_Generico_V4_1_1_v0-4.md
       2026-05-04_Changelog_Gobernanza_V4_1_0_Borrador_DA29_DA37_v0-3.md
     02_Registro_Decisiones/
+      2026-05-04_Registro_Decisiones_Actualizacion_Framework_Integral_Autosostenido_V4_1_0_Framework_Generico_V4_1_1_DA48_v0-5.md
       2026-05-04_Registro_Decisiones_Actualizacion_Perfiles_Transversales_y_Apertura_V4_1_0_Framework_Generico_V4_v0-2.md
       2026-05-04_Registro_Decisiones_Cierre_Sesion_Ruta_B_Obsidian_GitHub_Framework_Generico_V4_1_1_DA45_DA47_v0-4.md
       2026-05-04_Registro_Decisiones_Gobernanza_V4_1_0_Borrador_DA29_DA37_v0-3.md
@@ -219,3 +275,15 @@ Framework_Generico_V4_1_1_Repositorio_Modelo/
         2026-05-04_Reporte_Cierre_Situacion_Actual_Framework_Generico_V4_para_Archivo_Historico_v1-0.md
     Wiki_Archivada/
       nada.md
+```
+
+---
+
+## 5. Commit sugerido
+
+```bash
+git add 00_CONTROL_MAESTRO/manifest_repositorio_v4_1_1.json
+git add 00_CONTROL_MAESTRO/TREE_REPOSITORIO_V4_1_1.md
+git commit -m "docs: actualizar manifest y tree tras regenerar artista y caleidoscopio"
+git push
+```
