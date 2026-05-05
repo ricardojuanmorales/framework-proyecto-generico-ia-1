@@ -8,7 +8,7 @@
 **Framework activo:** Framework Genérico V4.1.1  
 **Modelo operativo:** Triple Memoria Operativa + Issues ligeros  
 **Herramienta destino sugerida:** Obsidian  
-**Repositorio GitHub:** `REEMPLAZAR_CON_URL_DEL_REPOSITORIO`  
+**Repositorio GitHub:** (https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1)`  
 
 ---
 
@@ -51,16 +51,16 @@ mantener alineación humano-IA.
 
 ## 3. Enlaces principales
 
-| Recurso | Enlace / ubicación |
-|---|---|
-| Repositorio GitHub | `REEMPLAZAR_CON_URL_DEL_REPOSITORIO` |
-| README principal | `README.md` |
-| Manifest repositorio | `00_CONTROL_MAESTRO/manifest_repositorio_v4_1_1.json` |
-| Árbol del repositorio | `00_CONTROL_MAESTRO/TREE_REPOSITORIO_V4_1_1.txt` |
-| Control maestro | `00_CONTROL_MAESTRO/` |
-| Documentación activa | `18_DOCUMENTACION_ACTIVA/` |
-| Wiki humana | `21_WIKI_DOCUMENTACION_HUMANA/` |
-| Archivo histórico | `99_ARCHIVO_HISTORICO/` |
+| Recurso               | Enlace / ubicación                                                       |
+| --------------------- | ------------------------------------------------------------------------ |
+| Repositorio GitHub    | (https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1) |
+| README principal      | `README.md`                                                              |
+| Manifest repositorio  | `00_CONTROL_MAESTRO/manifest_repositorio_v4_1_1.json`                    |
+| Árbol del repositorio | `00_CONTROL_MAESTRO/TREE_REPOSITORIO_V4_1_1.txt`                         |
+| Control maestro       | `00_CONTROL_MAESTRO/`                                                    |
+| Documentación activa  | `18_DOCUMENTACION_ACTIVA/`                                               |
+| Wiki humana           | `21_WIKI_DOCUMENTACION_HUMANA/`                                          |
+| Archivo histórico     | `99_ARCHIVO_HISTORICO/`                                                  |
 
 ---
 
