@@ -1,361 +1,362 @@
 # 🌐 Framework Genérico V4.1.1  
-## Human-AI Operational Framework for Projects, Research, Creation, Governance and Continuity
+## Repositorio Modelo Operativo para Proyectos Humano-IA
 
-> **Español principal | International-ready | Human-centered AI | Research + Creation + Technology + Governance**
+> **Marco de trabajo para diseñar, documentar, evaluar, archivar y evolucionar proyectos con inteligencia artificial, investigación, creación, tecnología, ética y continuidad.**
 
 ---
 
-## 🧭 Executive Summary
+## 🧭 Resumen ejecutivo
 
-The **Framework Genérico V4.1.1** is a human-centered operational framework for designing, managing, documenting, evaluating and evolving complex projects with the support of artificial intelligence.
+El **Framework Genérico V4.1.1** es un marco operativo centrado en el juicio humano para diseñar, gestionar, documentar, evaluar y evolucionar proyectos complejos con apoyo de inteligencia artificial.
 
-It is designed for educators, researchers, artists, developers, community leaders, institutions and interdisciplinary teams that need a clear way to move from an idea or need to an implemented, documented and reusable project.
+Está pensado para docentes, investigadores, artistas, programadores, gestores de proyectos, comunidades, instituciones y equipos transdisciplinarios que necesitan pasar de una necesidad o idea inicial a un proyecto implementado, documentado, evaluable y reutilizable.
 
-The framework integrates:
+El framework integra:
 
 ```text
-human judgment
-artificial intelligence
-research
-creative practice
-programming
-ethics
-accessibility
-governance
-documentation
-evaluation
-wiki-based knowledge transfer
-historical archiving
-continuity across sessions and teams
+juicio humano
+inteligencia artificial
+investigación
+creación
+programación
+ética
+accesibilidad
+gobernanza
+documentación activa
+evaluación
+wiki humana
+archivo histórico
+continuidad entre sesiones y equipos
 ```
 
-This repository is also designed to function as an **Obsidian vault**, making it both a formal GitHub repository and a living second brain for project navigation.
+Este repositorio también está preparado para funcionar como una **bóveda de Obsidian**, de modo que pueda ser usado simultáneamente como repositorio formal en GitHub y como segundo cerebro operativo para navegar el proyecto.
 
 ---
 
-## 🏛️ Current Status
+## 🏛️ Estado actual
 
-| Area | Status |
+| Área | Estado |
 |---|---|
-| 🧱 Base framework | **Framework Genérico V4.1.0 Integral Autosostenido** |
-| 🧰 Operational repository | **Framework Genérico V4.1.1** |
-| ✅ Stable methodological version | **V4.1.0** |
-| 🧠 Second brain model | **Active** |
-| 🗂️ Repository as Obsidian vault | **Prepared** |
-| 🧾 GitHub Issues workflow | **Lightweight issue model prepared** |
-| 🤖 Institutional automation | **Pending, not activated** |
-| 🏛️ Institutional N4 adoption | **Pending future phase** |
+| 🧱 Marco base | **Framework Genérico V4.1.0 Integral Autosostenido** |
+| 🧰 Repositorio operativo | **Framework Genérico V4.1.1** |
+| ✅ Versión metodológica estable | **V4.1.0** |
+| 🧠 Segundo cerebro | **Activo** |
+| 🗂️ Repositorio como bóveda Obsidian | **Preparado** |
+| 🧾 Flujo de Issues GitHub | **Modelo ligero preparado** |
+| 🤖 Automatización institucional | **Pendiente, no activada** |
+| 🏛️ Adopción institucional N4 | **Pendiente para fase futura** |
 
 ---
 
-## ✨ What Makes This Framework Different?
+## ✨ ¿Qué hace diferente a este framework?
 
-This framework does not only help you produce outputs. It helps you preserve the conditions that made those outputs possible.
+Este framework no solo ayuda a producir documentos o productos. Ayuda a preservar las condiciones que hicieron posible ese trabajo.
 
-It asks:
+Pregunta:
 
 ```text
-What is the real need?
-Who is affected?
-What level of governance is required?
-Which profile or integration mode should be activated?
-What evidence proves progress?
-What risks must be considered?
-What should be documented?
-What should be archived?
-How can someone else continue the work?
+¿Cuál es la necesidad real?
+¿Quiénes se ven afectados?
+¿Qué nivel de gobernanza requiere el proyecto?
+¿Qué perfil transversal debe activarse?
+¿Hace falta integración Caleidoscopio?
+¿Qué evidencia demuestra avance?
+¿Qué riesgos deben revisarse?
+¿Qué debe documentarse?
+¿Qué debe archivarse?
+¿Cómo puede otra persona continuar el trabajo?
 ```
 
-It is not just a folder system.  
-It is not just a prompt library.  
-It is not just a project template.  
+No es solamente una estructura de carpetas.  
+No es solamente una biblioteca de prompts.  
+No es solamente una plantilla de proyecto.  
 
-It is a **living operational architecture** for human-AI collaboration.
-
----
-
-## 🧩 Core Capabilities
-
-### 🧭 Project Activation
-
-- Identify user needs.
-- Define scope.
-- Select level N1-N4.
-- Activate the appropriate transversal profile.
-- Determine whether Caleidoscopio integration is required.
-- Establish expected evidence and deliverables.
-
-### 🧠 Human-AI Collaboration
-
-- Use AI as assistant, not authority.
-- Preserve human judgment.
-- Document AI involvement.
-- Review risks, limits and validation needs.
-- Keep traceability across sessions.
-
-### 🧪 Research and Evidence
-
-- Define research questions.
-- Organize sources.
-- Track evidence.
-- Identify epistemic risks.
-- Support multimodal publication and open educational resources.
-
-### 🎨 Creation and Multimodality
-
-- Support artistic, cultural and symbolic production.
-- Document creative processes.
-- Address authorship, cultural rights and representation.
-- Prepare multimodal publication and archive.
-
-### 💻 Technical and Repository Work
-
-- Organize code, agents, workflows and skills.
-- Support GitHub-based collaboration.
-- Maintain manifests, changelogs and release packages.
-- Use Obsidian as a second brain over the same repository.
-
-### ⚖️ Governance and Ethics
-
-- Register decisions.
-- Apply Gates and CHECKS.
-- Review accessibility.
-- Track risks.
-- Prepare continuity and archive.
+Es una **arquitectura operativa viva** para colaboración humano-IA.
 
 ---
 
-## 🧑‍💻🧪🎨 Transversal Profiles
+## 🧩 Capacidades principales
 
-The framework uses **Transversal Profiles** to decide which mode of work is active. These profiles are not job titles. They are operational lenses.
+### 🧭 Activación de proyectos
+
+- Identificar necesidades del usuario.
+- Definir alcance.
+- Seleccionar nivel N1-N4.
+- Activar el perfil transversal adecuado.
+- Determinar si se requiere Caleidoscopio.
+- Definir evidencia esperada y productos tangibles.
+
+### 🧠 Colaboración humano-IA
+
+- Usar IA como asistente, no como autoridad final.
+- Preservar el juicio humano.
+- Documentar el uso de IA.
+- Revisar riesgos, límites y necesidades de validación.
+- Mantener trazabilidad entre sesiones.
+
+### 🧪 Investigación y evidencia
+
+- Formular preguntas de investigación.
+- Organizar fuentes.
+- Registrar evidencia.
+- Identificar riesgos epistemológicos.
+- Apoyar publicaciones multimodales y recursos educativos abiertos.
+
+### 🎨 Creación y multimodalidad
+
+- Apoyar producción artística, cultural y simbólica.
+- Documentar procesos creativos.
+- Revisar autoría, derechos culturales y representación.
+- Preparar publicación y archivo multimodal.
+
+### 💻 Trabajo técnico y repositorio
+
+- Organizar código, agentes, flujos y skills.
+- Facilitar colaboración en GitHub.
+- Mantener manifests, changelogs y paquetes de release.
+- Usar Obsidian como segundo cerebro sobre el mismo repositorio.
+
+### ⚖️ Gobernanza y ética
+
+- Registrar decisiones.
+- Aplicar Gates y CHECKS.
+- Revisar accesibilidad.
+- Monitorear riesgos.
+- Preparar continuidad y archivo.
+
+---
+
+## 🧑‍💻🧪🎨 Perfiles Transversales
+
+El framework utiliza **Perfiles Transversales** para identificar qué tipo de trabajo está activo. Estos perfiles no son cargos laborales. Son lentes operativos.
 
 ---
 
 ## 🧑‍💻 Programador Humanista
 
-The **Programador Humanista** is activated when the project requires technical construction with human-centered judgment.
+El **Programador Humanista** se activa cuando el proyecto requiere construcción técnica con juicio humano, responsabilidad y documentación.
 
-### Use this profile when the project involves:
+### Usar este perfil cuando el proyecto incluye:
 
 ```text
-code
+código
 scripts
-repositories
-data flows
-prototypes
-automation
-testing
-technical documentation
-security
-deployment
-maintenance
+repositorios
+flujos de datos
+prototipos
+automatización
+pruebas
+documentación técnica
+seguridad
+despliegue
+mantenimiento
 ```
 
-### Typical outputs
+### Productos típicos
 
 ```text
-technical README
-repository structure
-prototype
+README técnico
+estructura de repositorio
+prototipo
 script
-test plan
+plan de pruebas
 workflow
-agent or skill definition
-release package
-technical decision record
+definición de agente o skill
+paquete de release
+registro de decisión técnica
 ```
 
-### Key risks
+### Riesgos clave
 
 ```text
-premature automation
-undocumented dependencies
-weak security
-unvalidated AI-generated code
-data exposure
-lack of maintenance plan
+automatización prematura
+dependencias no documentadas
+seguridad débil
+código generado por IA sin validación
+exposición de datos
+ausencia de plan de mantenimiento
 ```
 
 ---
 
 ## 🧪 Investigador Transdisciplinario
 
-The **Investigador Transdisciplinario** is activated when the project requires inquiry, sources, evidence and knowledge production across disciplines.
+El **Investigador Transdisciplinario** se activa cuando el proyecto requiere indagación, fuentes, evidencia y producción de conocimiento entre disciplinas.
 
-### Use this profile when the project involves:
+### Usar este perfil cuando el proyecto incluye:
 
 ```text
-research questions
-literature review
-source analysis
-bibliography
-evidence synthesis
-methodology
-academic writing
-open educational resources
-community or institutional knowledge
+preguntas de investigación
+revisión de literatura
+análisis de fuentes
+bibliografía
+síntesis de evidencia
+metodología
+escritura académica
+recursos educativos abiertos
+conocimiento comunitario o institucional
 ```
 
-### Typical outputs
+### Productos típicos
 
 ```text
-research brief
-source registry
+brief investigativo
+registro de fuentes
 evidence ledger
-conceptual framework
-methodology note
-annotated bibliography
-synthesis report
-publication plan
+marco conceptual
+nota metodológica
+bibliografía anotada
+reporte de síntesis
+plan de publicación
 ```
 
-### Key risks
+### Riesgos clave
 
 ```text
-weak sources
-bias
-confusing evidence with interpretation
-AI summaries without verification
-extractive knowledge practices
-missing citation or attribution
+fuentes débiles
+sesgos
+confusión entre evidencia e interpretación
+resúmenes generados por IA sin verificación
+extracción epistémica
+falta de citación o atribución
 ```
 
 ---
 
 ## 🎨 Artista Transdisciplinario
 
-The **Artista Transdisciplinario** is activated when the project involves creation, culture, memory, narrative, multimodality or symbolic production.
+El **Artista Transdisciplinario** se activa cuando el proyecto involucra creación, cultura, memoria, narrativa, multimodalidad o producción simbólica.
 
-### Use this profile when the project involves:
+### Usar este perfil cuando el proyecto incluye:
 
 ```text
-artistic creation
-avatars
-narratives
-curation
-installations
-memory work
-territory
-symbols
-multimodal publishing
-cultural rights
-creative archives
+creación artística
+avatares
+narrativas
+curaduría
+instalaciones
+memoria
+territorio
+símbolos
+publicación multimodal
+derechos culturales
+archivo creativo
 ```
 
-### Typical outputs
+### Productos típicos
 
 ```text
-artist statement
-concept note
-prototype
-curatorial file
-multimodal publication
-rights note
-archive record
-accessibility note
+statement artístico
+nota conceptual
+prototipo
+ficha curatorial
+publicación multimodal
+nota de derechos
+registro de archivo
+nota de accesibilidad
 ```
 
-### Key risks
+### Riesgos clave
 
 ```text
-cultural appropriation
-unclear authorship
-unlicensed media
-representation harms
-lack of accessibility
-weak archive practices
+apropiación cultural
+autoría poco clara
+uso de medios sin licencia
+daños por representación
+falta de accesibilidad
+archivo incompleto
 ```
 
 ---
 
 ## 🔮 Caleidoscopio
 
-The **Caleidoscopio** is the integrative logic of the framework.
+El **Caleidoscopio** es la lógica integradora del framework.
 
-It is activated when one profile is not enough and the project requires emergence across research, creation, programming, pedagogy, community or institutional work.
+Se activa cuando un solo perfil no basta y el proyecto requiere emergencia entre investigación, creación, programación, pedagogía, comunidad o institución.
 
-### Central question
+### Pregunta central
 
 ```text
-What emerges when programming, research and creation transform one another through evidence, ethics, accessibility, documentation and transfer?
+¿Qué emerge cuando programación, investigación y creación se transforman mutuamente mediante evidencia, ética, accesibilidad, documentación y transferencia?
 ```
 
-### Caleidoscopio modes
+### Modos Caleidoscopio
 
-| Mode | Integration | Typical Use |
+| Modo | Integración | Uso típico |
 |---|---|---|
-| 🔬💻 **C1 Technical-Research** | Programador + Investigador | dashboards, research apps, data pipelines |
-| 🔬🎨 **C2 Research-Creation** | Investigador + Artista | memory projects, multimodal publications |
-| 🎨💻 **C3 Creative-Technical** | Artista + Programador | interactive galleries, avatars, interfaces |
-| 🔬🎨💻 **C4 Integral** | Three profiles | AVAT, REA, agentic ecosystems |
-| 🧑‍🏫 **C5 Pedagogical** | Profiles as needed | courses, learning modules, OVAT |
-| 🌱 **C6 Community** | Community + profiles | living archives, territorial memory |
-| 🏛️ **C7 Institutional** | Profiles + governance | labs, programs, policies, manuals |
+| 🔬💻 **C1 Técnico-investigativo** | Programador + Investigador | dashboards, apps de investigación, pipelines de datos |
+| 🔬🎨 **C2 Investigativo-creativo** | Investigador + Artista | memoria, publicaciones multimodales, investigación-creación |
+| 🎨💻 **C3 Creativo-técnico** | Artista + Programador | galerías interactivas, avatares, interfaces |
+| 🔬🎨💻 **C4 Integral** | Tres perfiles | AVAT, REA, ecosistemas agénticos |
+| 🧑‍🏫 **C5 Pedagógico** | Perfiles según necesidad | cursos, módulos, OVAT |
+| 🌱 **C6 Comunitario** | Comunidad + perfiles | archivos vivos, memoria territorial |
+| 🏛️ **C7 Institucional** | Perfiles + gobernanza | laboratorios, programas, políticas, manuales |
 
 ---
 
-## 📏 Levels of Activation N1-N4
+## 📏 Niveles de activación N1-N4
 
-Not every project needs the full framework. The framework scales.
+No todo proyecto necesita activar todo el framework. El sistema escala según necesidad.
 
-| Level | Name | Use When | Minimum Documentation |
+| Nivel | Nombre | Cuándo usarlo | Documentación mínima |
 |---|---|---|---|
-| 🟢 **N1** | Minimal Controlled | Short, low-risk task | purpose, output, brief closure |
-| 🔵 **N2** | Operational | Multi-step project or small team | brief, README, checklist, basic decisions |
-| 🟣 **N3** | Advanced | AI, integration, risks, wiki, archive | Gates, CHECKS, changelog, decisions, primer |
-| 🏛️ **N4** | Institutional | Formal adoption, audit, training | governance, RACI, audit, maintenance |
+| 🟢 **N1** | Mínimo controlado | tarea breve, bajo riesgo | propósito, producto, cierre breve |
+| 🔵 **N2** | Operativo | proyecto de varias fases o equipo pequeño | brief, README, checklist, decisiones básicas |
+| 🟣 **N3** | Avanzado | IA, integración, riesgos, wiki, archivo | Gates, CHECKS, changelog, decisiones, primer |
+| 🏛️ **N4** | Institucional | adopción formal, auditoría, capacitación | gobernanza, RACI, auditoría, mantenimiento |
 
-### Quick rule
+### Regla rápida
 
 ```text
-Small task → N1
-Project with follow-up → N2
-Complex human-AI project → N3
-Institutional adoption → N4
+Tarea pequeña → N1
+Proyecto con seguimiento → N2
+Proyecto humano-IA complejo → N3
+Adopción institucional → N4
 ```
 
 ---
 
-## 🚦 Gates and CHECKS
+## 🚦 Gates y CHECKS
 
-The framework uses **Gates** and **CHECKS** to support quality and continuity.
+El framework usa **Gates** y **CHECKS** para sostener calidad, evaluación y continuidad.
 
-### 🚦 Gates ask:
+### 🚦 Los Gates preguntan:
 
 ```text
-Can we move forward?
+¿Podemos avanzar?
 ```
 
-### ✅ CHECKS ask:
+### ✅ Los CHECKS verifican:
 
 ```text
-What must be verified before moving forward?
+¿Qué debe revisarse antes de avanzar?
 ```
 
-Core Gates include:
+Gates centrales:
 
 ```text
-purpose
-location in the system
-profile or Caleidoscopio activation
-methodology
-evidence
-responsible AI
-ethics and rights
-accessibility
-quality
-documentation
+propósito
+ubicación en el sistema
+perfil o Caleidoscopio activo
+metodología
+evidencia
+IA responsable
+ética y derechos
+accesibilidad
+calidad
+documentación
 wiki sync
-archive
-continuity
-stabilization
+archivo
+continuidad
+estabilización
 ```
 
 ---
 
-## 🗂️ Repository Structure
+## 🗂️ Estructura del repositorio
 
-The repository is organized into cartapacios. Each cartapacio has a function.
+El repositorio se organiza en cartapacios. Cada cartapacio tiene una función.
 
 ```text
 00_CONTROL_MAESTRO/
@@ -385,58 +386,58 @@ The repository is organized into cartapacios. Each cartapacio has a function.
 
 ---
 
-## 📁 Cartapacio Guide
+## 📁 Guía de cartapacios
 
-| Cartapacio | Purpose |
+| Cartapacio | Propósito |
 |---|---|
-| `00_CONTROL_MAESTRO/` | Master documents, manifests, indexes, integral framework files |
-| `01_FUNDAMENTO_FILOSOFICO/` | Foundational philosophy, principles and deep conceptual frame |
-| `02_ARQUITECTURA_CONCEPTUAL/` | Architecture, maps, transversal profiles and Caleidoscopio |
-| `03_METODOLOGIA_Y_FLUJO_DE_TRABAJO/` | Methods, workflows and activation levels |
-| `04_GOBERNANZA_ETICA_Y_RIESGOS/` | Governance, ethics, rights and risks |
-| `05_COMPETENCIAS_Y_PERFILES/` | Competencies and profile development |
-| `06_PASTILLAS_MODULARES/` | Modular learning or working capsules |
-| `07_PLANTILLAS_Y_MODELOS/` | Templates and reusable models |
-| `08_CURSOS_PROGRAMAS_Y_TRAYECTORIAS/` | Courses, programs and learning pathways |
-| `09_IA_AGENTES_Y_COPILOTOS/` | AI agents, copilots, skills and workflows |
-| `10_REPOSITORIOS_Y_FLUJO_TECNICO/` | GitHub, repositories and technical flow |
-| `11_MULTIMODALIDAD_Y_PUBLICACION/` | Multimodal publishing, AVAT, OVAT and REA |
-| `12_DISENO_INSTRUCCIONAL_UNIVERSAL/` | Universal Design for Learning and accessibility |
-| `13_INVESTIGACION_Y_EVIDENCIA/` | Research, evidence, sources and validation |
-| `14_COMUNIDAD_TRANSFERENCIA_Y_ESCALAMIENTO/` | Community, transfer and scaling |
-| `15_EVALUACION_CALIDAD_Y_AUDITORIA/` | Gates, CHECKS, quality and audit |
-| `16_SEGURIDAD_PRIVACIDAD_Y_DATOS/` | Security, privacy and data governance |
-| `17_INTERNACIONALIZACION_LOCALIZACION/` | Internationalization and localization |
-| `18_DOCUMENTACION_ACTIVA/` | Changelog, decisions, primers, closures and second brain |
-| `19_IMPLEMENTACION_Y_DESPLIEGUE/` | Implementation and deployment |
-| `20_MANTENIMIENTO_Y_EVOLUCION/` | Maintenance, roadmap and future versions |
-| `21_WIKI_DOCUMENTACION_HUMANA/` | Human-readable wiki and guides |
-| `99_ARCHIVO_HISTORICO/` | Historical archive, releases and exports |
+| `00_CONTROL_MAESTRO/` | Documentos maestros, manifests, índices y versiones integrales |
+| `01_FUNDAMENTO_FILOSOFICO/` | Filosofía, principios y marco conceptual profundo |
+| `02_ARQUITECTURA_CONCEPTUAL/` | Arquitectura, mapas, perfiles transversales y Caleidoscopio |
+| `03_METODOLOGIA_Y_FLUJO_DE_TRABAJO/` | Métodos, flujos y niveles de activación |
+| `04_GOBERNANZA_ETICA_Y_RIESGOS/` | Gobernanza, ética, derechos y riesgos |
+| `05_COMPETENCIAS_Y_PERFILES/` | Competencias y desarrollo de perfiles |
+| `06_PASTILLAS_MODULARES/` | Cápsulas modulares de aprendizaje o trabajo |
+| `07_PLANTILLAS_Y_MODELOS/` | Plantillas y modelos reutilizables |
+| `08_CURSOS_PROGRAMAS_Y_TRAYECTORIAS/` | Cursos, programas y trayectorias formativas |
+| `09_IA_AGENTES_Y_COPILOTOS/` | Agentes IA, copilotos, skills y workflows |
+| `10_REPOSITORIOS_Y_FLUJO_TECNICO/` | GitHub, repositorios y flujo técnico |
+| `11_MULTIMODALIDAD_Y_PUBLICACION/` | Publicación multimodal, AVAT, OVAT y REA |
+| `12_DISENO_INSTRUCCIONAL_UNIVERSAL/` | DUA, accesibilidad y diseño instruccional |
+| `13_INVESTIGACION_Y_EVIDENCIA/` | Investigación, evidencia, fuentes y validación |
+| `14_COMUNIDAD_TRANSFERENCIA_Y_ESCALAMIENTO/` | Comunidad, transferencia y escalamiento |
+| `15_EVALUACION_CALIDAD_Y_AUDITORIA/` | Gates, CHECKS, calidad y auditoría |
+| `16_SEGURIDAD_PRIVACIDAD_Y_DATOS/` | Seguridad, privacidad y gobernanza de datos |
+| `17_INTERNACIONALIZACION_LOCALIZACION/` | Internacionalización y localización |
+| `18_DOCUMENTACION_ACTIVA/` | Changelog, decisiones, primers, cierres y segundo cerebro |
+| `19_IMPLEMENTACION_Y_DESPLIEGUE/` | Implementación y despliegue |
+| `20_MANTENIMIENTO_Y_EVOLUCION/` | Mantenimiento, roadmap y versiones futuras |
+| `21_WIKI_DOCUMENTACION_HUMANA/` | Wiki humana, guías y documentación de transferencia |
+| `99_ARCHIVO_HISTORICO/` | Archivo histórico, releases y exportaciones |
 
 ---
 
-## 🧠 Obsidian + GitHub Operating Logic
+## 🧠 Lógica operativa Obsidian + GitHub
 
-This repository is designed to be opened directly as an **Obsidian vault**.
+Este repositorio está diseñado para abrirse directamente como una **bóveda Obsidian**.
 
-### Recommended operating model
+### Modelo recomendado
 
 ```text
-GitHub = official versioned source
-Obsidian = human navigation and second brain
-ChatGPT = session orchestrator
-Issues = lightweight task tracking
+GitHub = fuente oficial versionada
+Obsidian = navegación humana y segundo cerebro
+ChatGPT = orquestador de sesión
+Issues = seguimiento ligero de tareas
 ```
 
-### Start in Obsidian
+### Inicio en Obsidian
 
-Open:
+Abrir:
 
 ```text
 18_DOCUMENTACION_ACTIVA/07_Segundo_Cerebro/Home_Obsidian_Framework_Generico.md
 ```
 
-Then review:
+Luego revisar:
 
 ```text
 Dashboard_Framework_Generico_V4_1_1.md
@@ -448,274 +449,274 @@ Indice_Wiki_Humana_Obsidian.md
 
 ---
 
-## 🧾 Lightweight Issues
+## 🧾 Issues ligeros
 
-The repository includes a GitHub Issue template:
+El repositorio incluye una plantilla de GitHub Issue:
 
 ```text
 .github/ISSUE_TEMPLATE/issue_ligero_framework.md
 ```
 
-Use Issues for:
+Usar Issues para:
 
 ```text
-wiki updates
-pilot projects
-risk matrix
-profile refinements
-Caleidoscopio tests
-release tasks
-governance updates
+actualizaciones de wiki
+pilotos
+matriz de riesgos
+refinamiento de perfiles
+pruebas Caleidoscopio
+tareas de release
+actualizaciones de gobernanza
 ```
 
-Each Issue should define:
+Cada Issue debe definir:
 
 ```text
-purpose
-level N1-N4
-active profile or component
-affected documents
-expected evidence
+propósito
+nivel N1-N4
+perfil o componente activo
+documentos afectados
+evidencia esperada
 Gates/CHECKS
-risks
-closure criteria
+riesgos
+criterio de cierre
 ```
 
 ---
 
-## 🧪 How to Start a New Project
+## 🧪 Cómo iniciar un proyecto nuevo
 
-Use the autosustained framework document in:
+Usar el documento integral autosostenido:
 
 ```text
 00_CONTROL_MAESTRO/2026-05-04_Framework_Generico_V4_1_0_Integral_Autosostenido_v1-0.md
 ```
 
-### Activation sequence
+### Secuencia de activación
 
 ```text
-1. Identify user needs.
-2. Determine level N1-N4.
-3. Select profile or Caleidoscopio mode.
-4. Create project brief.
-5. Define expected evidence.
-6. Identify risks.
-7. Apply Gates and CHECKS.
-8. Document decisions.
-9. Close and archive.
-10. Leave continuity primer.
+1. Identificar necesidades del usuario.
+2. Determinar nivel N1-N4.
+3. Seleccionar perfil o modo Caleidoscopio.
+4. Crear brief de proyecto.
+5. Definir evidencia esperada.
+6. Identificar riesgos.
+7. Aplicar Gates y CHECKS.
+8. Documentar decisiones.
+9. Cerrar y archivar.
+10. Dejar primer de continuidad.
 ```
 
 ---
 
-## 🧭 Minimum Project Brief
+## 🧭 Brief mínimo de proyecto
 
 ```text
-Project name:
-Date:
-Responsible person/team:
-Need:
-Context:
-Affected people or communities:
-Expected output:
-Level N1-N4:
-Active profile or Caleidoscopio mode:
-Use of AI:
-Risks:
-Evidence:
-Documentation space:
-Closure criteria:
-Next step:
+Nombre del proyecto:
+Fecha:
+Persona o equipo responsable:
+Necesidad:
+Contexto:
+Personas o comunidades afectadas:
+Producto esperado:
+Nivel N1-N4:
+Perfil activo o modo Caleidoscopio:
+Uso de IA:
+Riesgos:
+Evidencia:
+Espacio de documentación:
+Criterio de cierre:
+Próximo paso:
 ```
 
 ---
 
-## 🌍 International Collaboration Notes
+## 🌍 Notas para colaboración internacional
 
-This framework is ready for international collaborators, but local adaptation matters.
+Este framework está preparado para colaboraciones internacionales, pero debe adaptarse al contexto local.
 
-When using it across contexts, consider:
+Al usarlo en diferentes países, instituciones o comunidades, considerar:
 
 ```text
-language access
-cultural context
-local laws and policies
-data protection rules
-institutional expectations
-community consent
-indigenous, Afro-descendant, migrant or local knowledge systems
-accessibility needs
-technology availability
-licensing and copyright
+idioma
+contexto cultural
+leyes y políticas locales
+reglas de protección de datos
+expectativas institucionales
+consentimiento comunitario
+sistemas de conocimiento indígenas, afrodescendientes, migrantes o locales
+necesidades de accesibilidad
+disponibilidad tecnológica
+licencias y derechos de autor
 ```
 
-### Translation and localization
+### Traducción y localización
 
-Recommended approach:
+Recomendación:
 
 ```text
-Do not translate mechanically.
-Localize examples, risks and governance language.
-Preserve version numbers and document IDs.
-Record localization decisions.
+No traducir mecánicamente.
+Localizar ejemplos, riesgos y lenguaje de gobernanza.
+Preservar números de versión e IDs documentales.
+Registrar decisiones de localización.
 ```
 
 ---
 
-## ♿ Accessibility Commitments
+## ♿ Compromisos de accesibilidad
 
-Projects should consider:
+Los proyectos deben considerar:
 
 ```text
-clear language
-structured headings
-screen-reader friendly documents
-alt text for images
-captions or transcripts for media
-contrast and readability
-multiple ways to participate
-multiple ways to express learning or contribution
+lenguaje claro
+jerarquía de títulos
+documentos compatibles con lectores de pantalla
+texto alternativo para imágenes
+subtítulos o transcripciones para medios
+contraste y legibilidad
+múltiples formas de participación
+múltiples formas de expresión
 ```
 
-Guiding references inside the framework:
+Referencias internas:
 
 ```text
 DUA = Diseño Universal para el Aprendizaje
-POUR = Perceptible, Operable, Understandable, Robust
+POUR = Perceptible, Operable, Comprensible, Robusto
 ```
 
 ---
 
-## ⚖️ Ethics and Rights
+## ⚖️ Ética y derechos
 
-Before publishing or sharing outputs, check:
+Antes de publicar o compartir productos, revisar:
 
 ```text
-Who is represented?
-Who benefits?
-Who may be harmed?
-Who owns or co-owns the material?
-Was consent needed?
-Are there cultural rights involved?
-Was AI used?
-Does AI use need disclosure?
-Are sources cited?
-Are licenses clear?
+¿Quién está representado?
+¿Quién se beneficia?
+¿Quién podría verse afectado?
+¿Quién posee o co-crea el material?
+¿Se necesitó consentimiento?
+¿Hay derechos culturales involucrados?
+¿Se usó IA?
+¿Debe declararse el uso de IA?
+¿Las fuentes están citadas?
+¿Las licencias son claras?
 ```
 
 ---
 
-## 🧬 Key Documents
+## 🧬 Documentos clave
 
-| Document | Location |
+| Documento | Ubicación |
 |---|---|
-| Integral V4.1.0 MD | `00_CONTROL_MAESTRO/` |
-| Integral V4.1.0 JSON | `00_CONTROL_MAESTRO/` |
+| Framework Integral V4.1.0 MD | `00_CONTROL_MAESTRO/` |
+| Framework Integral V4.1.0 JSON | `00_CONTROL_MAESTRO/` |
 | Manifest | `00_CONTROL_MAESTRO/manifest_repositorio_v4_1_1.json` |
-| Repository TREE | `00_CONTROL_MAESTRO/TREE_REPOSITORIO_V4_1_1.txt` and `.md` |
+| Árbol del repositorio | `00_CONTROL_MAESTRO/TREE_REPOSITORIO_V4_1_1.txt` y `.md` |
 | Changelog | `18_DOCUMENTACION_ACTIVA/01_Changelog/` |
-| Decision Register | `18_DOCUMENTACION_ACTIVA/02_Registro_Decisiones/` |
-| Continuity Primers | `18_DOCUMENTACION_ACTIVA/04_Primers_Continuidad/` |
-| Session Closures | `18_DOCUMENTACION_ACTIVA/05_Cierres_Reportes/` |
-| Second Brain | `18_DOCUMENTACION_ACTIVA/07_Segundo_Cerebro/` |
-| Human Wiki | `21_WIKI_DOCUMENTACION_HUMANA/` |
-| Historical Archive | `99_ARCHIVO_HISTORICO/` |
+| Registro de decisiones | `18_DOCUMENTACION_ACTIVA/02_Registro_Decisiones/` |
+| Primers de continuidad | `18_DOCUMENTACION_ACTIVA/04_Primers_Continuidad/` |
+| Cierres de sesión | `18_DOCUMENTACION_ACTIVA/05_Cierres_Reportes/` |
+| Segundo cerebro | `18_DOCUMENTACION_ACTIVA/07_Segundo_Cerebro/` |
+| Wiki humana | `21_WIKI_DOCUMENTACION_HUMANA/` |
+| Archivo histórico | `99_ARCHIVO_HISTORICO/` |
 
 ---
 
-## 🛠️ Recommended Daily Workflow
+## 🛠️ Flujo diario recomendado
 
 ```text
 git pull
-open repository root as Obsidian vault
-open Home_Obsidian_Framework_Generico.md
-review Dashboard and Issues
-work on active session
-update documents in correct cartapacio
-update changelog or decisions if needed
-update manifest or TREE if structure changed
+abrir raíz del repositorio como bóveda Obsidian
+abrir Home_Obsidian_Framework_Generico.md
+revisar Dashboard e Issues
+trabajar en la sesión activa
+actualizar documentos en el cartapacio correcto
+actualizar changelog o decisiones si aplica
+actualizar manifest o TREE si cambió la estructura
 git add .
-git commit -m "docs: describe update"
+git commit -m "docs: describir actualización"
 git push
 ```
 
 ---
 
-## 🚫 What Not To Do
+## 🚫 Qué no hacer
 
 ```text
-Do not rewrite stable versions without decision.
-Do not treat Obsidian notes as official if GitHub is not updated.
-Do not create new macrofolders without governance.
-Do not activate institutional automation prematurely.
-Do not use Caleidoscopio as a simple sum of profiles.
-Do not publish without checking ethics, accessibility and rights.
-Do not close a session without continuity.
+No reescribir versiones estables sin decisión.
+No tratar notas de Obsidian como oficiales si GitHub no está actualizado.
+No crear macrocarpetas nuevas sin gobernanza.
+No activar automatización institucional prematuramente.
+No usar Caleidoscopio como simple suma de perfiles.
+No publicar sin revisar ética, accesibilidad y derechos.
+No cerrar sesión sin continuidad.
 ```
 
 ---
 
-## 🧭 Recommended Next Steps
+## 🧭 Próximos pasos recomendados
 
 ```text
-1. Create real GitHub Issues from the lightweight template.
-2. Update Issues_Vivos_Framework.md with real URLs.
-3. Update Dashboard with repository URL.
-4. Run a first pilot project using the integral V4.1.0 document.
-5. Create a secondary wiki expansion.
-6. Create an expanded risk matrix.
-7. Refine Investigador Transdisciplinario v0.2.
-8. Refine Artista Transdisciplinario v0.2.
-9. Test Caleidoscopio C1-C7 in a real case.
+1. Crear Issues reales en GitHub desde la plantilla ligera.
+2. Actualizar Issues_Vivos_Framework.md con URLs reales.
+3. Actualizar Dashboard con la URL del repositorio.
+4. Ejecutar un primer piloto usando el Framework Integral V4.1.0.
+5. Crear wiki secundaria.
+6. Crear matriz de riesgos ampliada.
+7. Refinar Investigador Transdisciplinario v0.2.
+8. Refinar Artista Transdisciplinario v0.2.
+9. Probar Caleidoscopio C1-C7 en un caso real.
 ```
 
 ---
 
-## 🤝 Contributing
+## 🤝 Cómo contribuir
 
-Contributors are invited to work through Issues and documented proposals.
+Las colaboraciones deben canalizarse mediante Issues y propuestas documentadas.
 
-Recommended contribution format:
+Formato recomendado:
 
 ```text
-1. Open or select an Issue.
-2. Identify level N1-N4.
-3. Identify active profile or component.
-4. State affected documents.
-5. Produce evidence.
-6. Update documentation.
-7. Request review.
-8. Close with summary and next step.
+1. Abrir o seleccionar un Issue.
+2. Identificar nivel N1-N4.
+3. Identificar perfil o componente activo.
+4. Indicar documentos afectados.
+5. Producir evidencia.
+6. Actualizar documentación.
+7. Solicitar revisión.
+8. Cerrar con resumen y próximo paso.
 ```
 
 ---
 
-## 📦 Versioning Logic
+## 📦 Lógica de versionado
 
 ```text
-V4.1.0 = stable integral framework for implementation
-V4.1.1 = operational repository and second brain structure
-V4.1.2 = suggested next cycle for pilots, wiki expansion and risk matrix
-V4.2.0 = possible future cycle for controlled automation and institutional N4 preparation
+V4.1.0 = framework integral estable para implementación
+V4.1.1 = repositorio operativo y estructura de segundo cerebro
+V4.1.2 = ciclo sugerido para pilotos, wiki secundaria y matriz de riesgos
+V4.2.0 = posible ciclo futuro para automatización controlada y preparación N4
 ```
 
 ---
 
-## 🏁 Closing Note
+## 🏁 Cierre
 
-This repository is not only a collection of documents. It is a working environment for responsible human-AI collaboration.
+Este repositorio no es solo una colección de documentos. Es un ambiente de trabajo para colaboración humano-IA responsable.
 
-It gives the project:
+Le da al proyecto:
 
 ```text
-a map
-a memory
-a method
-a governance layer
-a human wiki
-a second brain
-a way to continue
+mapa
+memoria
+método
+gobernanza
+wiki humana
+segundo cerebro
+continuidad
 ```
 
-Welcome to the Framework Genérico V4.1.1.  
-Bring curiosity, evidence, care and a good changelog. 🧭✨
+Bienvenidas y bienvenidos al **Framework Genérico V4.1.1**.  
+Traigan curiosidad, evidencia, cuidado y un buen changelog. 🧭✨
