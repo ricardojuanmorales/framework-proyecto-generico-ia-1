@@ -254,10 +254,19 @@
   "illustrated_readme": "README_Framework_Generico_V4_1_1_Ilustrado.md",
   "updated_at": "2026-05-04",
   "second_brain": {
-    "model": "Triple Memoria Operativa + Issues ligeros",
-    "dashboard": "18_DOCUMENTACION_ACTIVA/07_Segundo_Cerebro/2026-05-04_Dashboard_Segundo_Cerebro_Framework_Generico_V4_1_1_v0-1.md",
-    "obsidian_import_zip": "99_ARCHIVO_HISTORICO/Exportaciones_Finales/ZIP/Segundo_Cerebro_Framework_Generico_V4_1_1_Obsidian_Import.zip",
-    "issue_template": ".github/ISSUE_TEMPLATE/issue_ligero_framework.md",
-    "status": "primera_version_creada"
+    "mode": "repository_root_as_obsidian_vault",
+    "status": "active",
+    "home": "18_DOCUMENTACION_ACTIVA/07_Segundo_Cerebro/Home_Obsidian_Framework_Generico.md",
+    "dashboard": "18_DOCUMENTACION_ACTIVA/07_Segundo_Cerebro/Dashboard_Framework_Generico_V4_1_1.md",
+    "navigation_map": "18_DOCUMENTACION_ACTIVA/07_Segundo_Cerebro/Mapa_Navegacion_Obsidian_GitHub.md",
+    "wiki_index": "18_DOCUMENTACION_ACTIVA/07_Segundo_Cerebro/Indice_Wiki_Humana_Obsidian.md",
+    "issues_live": "18_DOCUMENTACION_ACTIVA/07_Segundo_Cerebro/Issues_Vivos_Framework.md",
+    "active_session": "18_DOCUMENTACION_ACTIVA/07_Segundo_Cerebro/Sesion_Activa_Framework.md",
+    "templates": "18_DOCUMENTACION_ACTIVA/07_Segundo_Cerebro/Templates/",
+    "github_issue_template": ".github/ISSUE_TEMPLATE/issue_ligero_framework.md"
+  },
+  "latest_operational_decision": {
+    "id": "D-A46",
+    "summary": "Implementar Ruta B híbrida: repositorio completo como bóveda Obsidian, preservando GitHub como fuente oficial y segundo cerebro como navegación liviana."
   }
 }

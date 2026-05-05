@@ -1,9 +1,12 @@
 Framework_Generico_V4_1_1_Repositorio_Modelo/
+  .gitignore
   README.md
   README_Framework_Generico_V4_1_1_Ilustrado.md
   .github/
     ISSUE_TEMPLATE/
       issue_ligero_framework.md
+  .obsidian/
+    app.json
   00_CONTROL_MAESTRO/
     2026-05-04_Apertura_Framework_Generico_V4_1_1_Repositorio_Modelo_v0-1.md
     2026-05-04_Aprobacion_Framework_Generico_V4_1_0_Estable_v1-0.md
@@ -118,6 +121,18 @@ Framework_Generico_V4_1_1_Repositorio_Modelo/
       2026-05-04_Dashboard_Segundo_Cerebro_Framework_Generico_V4_1_1_v0-1.md
       2026-05-04_Instrucciones_Operacionalizacion_Modelo_C_Issues_Ligeros_Framework_Generico_V4_1_1_v0-1.md
       2026-05-04_Modelo_Triple_Memoria_Operativa_Framework_Generico_V4_1_1_v0-1.md
+      Dashboard_Framework_Generico_V4_1_1.md
+      Home_Obsidian_Framework_Generico.md
+      Indice_Wiki_Humana_Obsidian.md
+      Issues_Vivos_Framework.md
+      Mapa_Navegacion_Obsidian_GitHub.md
+      Riesgos_Vivos_Framework.md
+      Sesion_Activa_Framework.md
+      Templates/
+        Template_Issue_Local.md
+        Template_Nota_Documento_Oficial.md
+        Template_Revision_Gobernanza.md
+        Template_Sesion_Framework.md
   19_IMPLEMENTACION_Y_DESPLIEGUE/
     README.md
   20_MANTENIMIENTO_Y_EVOLUCION/
