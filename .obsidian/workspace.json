@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "087ef5e0a0526346",
+        "id": "d2ebc78da34ca84d",
         "type": "tabs",
         "children": [
           {
-            "id": "7902692d5e6c74fe",
+            "id": "e0d7c94b826d4ed3",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "18_DOCUMENTACION_ACTIVA/07_Segundo_Cerebro/Dashboard_Framework_Generico_V4_1_1.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Dashboard_Framework_Generico_V4_1_1"
+              "title": "New tab"
             }
           }
         ]
@@ -94,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "18_DOCUMENTACION_ACTIVA/07_Segundo_Cerebro/Dashboard_Framework_Generico_V4_1_1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Dashboard_Framework_Generico_V4_1_1"
+              "title": "Backlinks"
             }
           },
           {
@@ -113,12 +108,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "18_DOCUMENTACION_ACTIVA/07_Segundo_Cerebro/Dashboard_Framework_Generico_V4_1_1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Dashboard_Framework_Generico_V4_1_1"
+              "title": "Outgoing links"
             }
           },
           {
@@ -183,8 +177,43 @@
       "bases:Create new base": false
     }
   },
-  "active": "7902692d5e6c74fe",
+  "active": "e26dbe443fd5724b",
   "lastOpenFiles": [
-    "18_DOCUMENTACION_ACTIVA/07_Segundo_Cerebro/Home_Obsidian_Framework_Generico.md"
+    "99_ARCHIVO_HISTORICO/Versiones_Cerradas/V4_0_0/2026-05-04_Reporte_Cierre_Situacion_Actual_Framework_Generico_V4_para_Archivo_Historico_v1-0.md",
+    "99_ARCHIVO_HISTORICO/Releases/Framework_Generico_V4_1_0_Estable/2026-05-04_Framework_Generico_V4_1_0_Estable_Release.zip",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/ZIP/Segundo_Cerebro_Framework_Generico_V4_1_1_Obsidian_Import.zip",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/ZIP/2026-05-04_Wiki_Prioritaria_Framework_Generico_V4_1_0_v0-1.zip",
+    "99_ARCHIVO_HISTORICO/Ciclos_Completados/2026-05-04_Perfiles_Transversales_Caleidoscopio/2026-05-04_Plantillas_Base_Agents_Skills_Workflows_Checks_WikiSync_Framework_Generico_V4_v0-1.md",
+    "99_ARCHIVO_HISTORICO/Ciclos_Completados/2026-05-04_Perfiles_Transversales_Caleidoscopio/2026-05-04_Paquete_Consolidado_Perfiles_Transversales_Caleidoscopio_Framework_Generico_V4_v0-1.md",
+    "99_ARCHIVO_HISTORICO/Ciclos_Completados/2026-05-04_Perfiles_Transversales_Caleidoscopio/2026-05-04_Matriz_Comparativa_Perfiles_Transversales_Framework_Generico_V4_v0-1.md",
+    "99_ARCHIVO_HISTORICO/Ciclos_Completados/2026-05-04_Perfiles_Transversales_Caleidoscopio/2026-05-04_Matriz_Caleidoscopio_C1_C7_Ejemplos_Framework_Generico_V4_v0-1.md",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/MD/2026-05-04_WIKI_SYNC_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/MD/2026-05-04_Reporte_Evaluacion_Preparacion_Framework_Generico_V4_1_0_Estable_v0-1.md",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/MD/2026-05-04_Reporte_Cierre_Situacion_Actual_Framework_Generico_V4_para_Archivo_Historico_v1-0.md",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/MD/2026-05-04_Release_Notes_Framework_Generico_V4_1_0_Estable_v1-0.md",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/MD/2026-05-04_Registro_Decisiones_Gobernanza_V4_1_0_Borrador_DA29_DA37_v0-3.md",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/MD/2026-05-04_Registro_Decisiones_Actualizacion_Perfiles_Transversales_y_Apertura_V4_1_0_Framework_Generico_V4_v0-2.md",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/MD/2026-05-04_README_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/MD/2026-05-04_Protocolo_Paso_Borrador_a_Estable_Framework_Generico_V4_1_0_v0-1.md",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/MD/2026-05-04_Primer_Continuidad_Framework_Generico_V4_Perfiles_Transversales_v0-1.md",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/MD/2026-05-04_Primer_Continuidad_Framework_Generico_V4_1_0_Borrador_v0-2.md",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/MD/2026-05-04_Primer_Continuidad_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/MD/2026-05-04_Plantillas_Base_Agents_Skills_Workflows_Checks_WikiSync_Framework_Generico_V4_v0-1.md",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/MD/2026-05-04_Plan_Archivo_Historico_Framework_Generico_V4_0_0_y_V4_1_0_Borrador_v0-1.md",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/MD/2026-05-04_Perfil_Investigador_Transdisciplinario_Framework_Generico_V4_v0-1.md",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/MD/2026-05-04_Perfil_Final_Programador_Humanista_Framework_Generico_V4_v0-2.md",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/MD/2026-05-04_Paquete_Consolidado_Perfiles_Transversales_Caleidoscopio_Framework_Generico_V4_v0-1.md",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/MD/2026-05-04_Matriz_N1_N4_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/MD/2026-05-04_Matriz_Gates_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/MD/2026-05-04_Matriz_Comparativa_Perfiles_Transversales_Framework_Generico_V4_v0-1.md",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/MD/2026-05-04_Matriz_Caleidoscopio_C1_C7_Ejemplos_Framework_Generico_V4_v0-1.md",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/MD/2026-05-04_Marco_Caleidoscopio_Framework_Generico_V4_v0-1.md",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/JSON/2026-05-04_manifest_framework_v4_1_0_borrador_v0-1.json",
+    "99_ARCHIVO_HISTORICO/Versiones_Cerradas/V4_0_0",
+    "99_ARCHIVO_HISTORICO/Releases/Framework_Generico_V4_1_0_Estable",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/ZIP",
+    "99_ARCHIVO_HISTORICO/Ciclos_Completados/2026-05-04_Perfiles_Transversales_Caleidoscopio",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/MD",
+    "99_ARCHIVO_HISTORICO/Exportaciones_Finales/JSON"
   ]
 }

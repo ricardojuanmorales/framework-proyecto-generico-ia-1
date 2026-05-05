@@ -101,17 +101,21 @@ Framework_Generico_V4_1_1_Repositorio_Modelo/
     README.md
     01_Changelog/
       2026-05-04_Changelog_Actualizacion_Perfiles_Transversales_y_Apertura_V4_1_0_Framework_Generico_V4_v0-2.md
+      2026-05-04_Changelog_Cierre_Sesion_Ruta_B_Obsidian_GitHub_Framework_Generico_V4_1_1_v0-4.md
       2026-05-04_Changelog_Gobernanza_V4_1_0_Borrador_DA29_DA37_v0-3.md
     02_Registro_Decisiones/
       2026-05-04_Registro_Decisiones_Actualizacion_Perfiles_Transversales_y_Apertura_V4_1_0_Framework_Generico_V4_v0-2.md
+      2026-05-04_Registro_Decisiones_Cierre_Sesion_Ruta_B_Obsidian_GitHub_Framework_Generico_V4_1_1_DA45_DA47_v0-4.md
       2026-05-04_Registro_Decisiones_Gobernanza_V4_1_0_Borrador_DA29_DA37_v0-3.md
     03_WIKI_SYNC/
       2026-05-04_WIKI_SYNC_Framework_Generico_V4_1_0_Borrador_v0-1.md
     04_Primers_Continuidad/
       2026-05-04_Primer_Continuidad_Framework_Generico_V4_1_0_Borrador_v0-1.md
       2026-05-04_Primer_Continuidad_Framework_Generico_V4_1_0_Borrador_v0-2.md
+      2026-05-04_Primer_Continuidad_Framework_Generico_V4_1_1_Post_Ruta_B_Obsidian_GitHub_v0-3.md
       2026-05-04_Primer_Continuidad_Framework_Generico_V4_Perfiles_Transversales_v0-1.md
     05_Cierres_Reportes/
+      2026-05-04_Cierre_Sesion_Framework_Generico_V4_1_1_Ruta_B_Obsidian_GitHub_v1-0.md
       2026-05-04_Compendio_Sesion_Perfiles_Transversales_Framework_Generico_V4_v0-1.md
       2026-05-04_Estado_Situacion_Framework_Generico_V4_1_0_Estable_Post_Aprobacion_v1-0.md
       2026-05-04_Reporte_Cierre_Situacion_Actual_Framework_Generico_V4_para_Archivo_Historico_v1-0.md
@@ -120,6 +124,7 @@ Framework_Generico_V4_1_1_Repositorio_Modelo/
     07_Segundo_Cerebro/
       2026-05-04_Dashboard_Segundo_Cerebro_Framework_Generico_V4_1_1_v0-1.md
       2026-05-04_Instrucciones_Operacionalizacion_Modelo_C_Issues_Ligeros_Framework_Generico_V4_1_1_v0-1.md
+      2026-05-04_Integracion_Obsidian_GitHub_Ruta_B_Hibrida_Framework_Generico_V4_1_1_v0-1.md
       2026-05-04_Modelo_Triple_Memoria_Operativa_Framework_Generico_V4_1_1_v0-1.md
       Dashboard_Framework_Generico_V4_1_1.md
       Home_Obsidian_Framework_Generico.md

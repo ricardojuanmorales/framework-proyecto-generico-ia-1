@@ -268,5 +268,14 @@
   "latest_operational_decision": {
     "id": "D-A46",
     "summary": "Implementar Ruta B híbrida: repositorio completo como bóveda Obsidian, preservando GitHub como fuente oficial y segundo cerebro como navegación liviana."
+  },
+  "session_closure": {
+    "date": "2026-05-04",
+    "status": "closed",
+    "closure_report": "18_DOCUMENTACION_ACTIVA/05_Cierres_Reportes/2026-05-04_Cierre_Sesion_Framework_Generico_V4_1_1_Ruta_B_Obsidian_GitHub_v1-0.md",
+    "continuity_primer": "18_DOCUMENTACION_ACTIVA/04_Primers_Continuidad/2026-05-04_Primer_Continuidad_Framework_Generico_V4_1_1_Post_Ruta_B_Obsidian_GitHub_v0-3.md",
+    "changelog": "18_DOCUMENTACION_ACTIVA/01_Changelog/2026-05-04_Changelog_Cierre_Sesion_Ruta_B_Obsidian_GitHub_Framework_Generico_V4_1_1_v0-4.md",
+    "decision_register": "18_DOCUMENTACION_ACTIVA/02_Registro_Decisiones/2026-05-04_Registro_Decisiones_Cierre_Sesion_Ruta_B_Obsidian_GitHub_Framework_Generico_V4_1_1_DA45_DA47_v0-4.md",
+    "next_action": "Crear Issues reales en GitHub y actualizar Dashboard / Issues_Vivos con URLs."
   }
 }
