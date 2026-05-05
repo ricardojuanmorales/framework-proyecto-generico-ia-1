@@ -1,0 +1,256 @@
+{
+  "repository_name": "Framework_Generico_V4_1_1_Repositorio_Modelo",
+  "created_at": "2026-05-04",
+  "base_version": "Framework Genérico V4.1.0-estable",
+  "operational_version": "Framework Genérico V4.1.1 Repositorio Modelo",
+  "status": "estructura_modelo_actualizada_con_record_v4_1_1_y_readme_ilustrado",
+  "level": "N3",
+  "decision_suggested": {
+    "id": "D-A44",
+    "summary": "Abrir Framework Genérico V4.1.1 como actualización menor operativa para repositorio modelo GitHub.",
+    "status": "aceptada_por_instruccion_humana"
+  },
+  "macrofolders": [
+    "00_CONTROL_MAESTRO",
+    "01_FUNDAMENTO_FILOSOFICO",
+    "02_ARQUITECTURA_CONCEPTUAL",
+    "03_METODOLOGIA_Y_FLUJO_DE_TRABAJO",
+    "04_GOBERNANZA_ETICA_Y_RIESGOS",
+    "05_COMPETENCIAS_Y_PERFILES",
+    "06_PASTILLAS_MODULARES",
+    "07_PLANTILLAS_Y_MODELOS",
+    "08_CURSOS_PROGRAMAS_Y_TRAYECTORIAS",
+    "09_IA_AGENTES_Y_COPILOTOS",
+    "10_REPOSITORIOS_Y_FLUJO_TECNICO",
+    "11_MULTIMODALIDAD_Y_PUBLICACION",
+    "12_DISENO_INSTRUCCIONAL_UNIVERSAL",
+    "13_INVESTIGACION_Y_EVIDENCIA",
+    "14_COMUNIDAD_TRANSFERENCIA_Y_ESCALAMIENTO",
+    "15_EVALUACION_CALIDAD_Y_AUDITORIA",
+    "16_SEGURIDAD_PRIVACIDAD_Y_DATOS",
+    "17_INTERNACIONALIZACION_LOCALIZACION",
+    "18_DOCUMENTACION_ACTIVA",
+    "19_IMPLEMENTACION_Y_DESPLIEGUE",
+    "20_MANTENIMIENTO_Y_EVOLUCION",
+    "21_WIKI_DOCUMENTACION_HUMANA",
+    "99_ARCHIVO_HISTORICO"
+  ],
+  "copied_documents": [
+    {
+      "source": "generado",
+      "destination": "README.md"
+    },
+    {
+      "source": "generado",
+      "destination": "00_CONTROL_MAESTRO/2026-05-04_Apertura_Framework_Generico_V4_1_1_Repositorio_Modelo_v0-1.md"
+    },
+    {
+      "source": "generado",
+      "destination": "00_CONTROL_MAESTRO/README_REPOSITORIO_MODELO_V4_1_1.md"
+    },
+    {
+      "source": "2026-05-04_Aprobacion_Framework_Generico_V4_1_0_Estable_v1-0.md",
+      "destination": "00_CONTROL_MAESTRO/2026-05-04_Aprobacion_Framework_Generico_V4_1_0_Estable_v1-0.md"
+    },
+    {
+      "source": "2026-05-04_Borrador_Framework_Generico_V4_1_0_Apertura_v0-1.md",
+      "destination": "00_CONTROL_MAESTRO/2026-05-04_Borrador_Framework_Generico_V4_1_0_Apertura_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_Estado_Situacion_Framework_Generico_V4_1_0_Estable_Post_Aprobacion_v1-0.md",
+      "destination": "00_CONTROL_MAESTRO/2026-05-04_Estado_Situacion_Framework_Generico_V4_1_0_Estable_Post_Aprobacion_v1-0.md"
+    },
+    {
+      "source": "2026-05-04_Indice_Maestro_Documentos_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+      "destination": "00_CONTROL_MAESTRO/2026-05-04_Indice_Maestro_Documentos_Framework_Generico_V4_1_0_Borrador_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_README_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+      "destination": "00_CONTROL_MAESTRO/2026-05-04_README_Framework_Generico_V4_1_0_Borrador_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_Release_Notes_Framework_Generico_V4_1_0_Estable_v1-0.md",
+      "destination": "00_CONTROL_MAESTRO/2026-05-04_Release_Notes_Framework_Generico_V4_1_0_Estable_v1-0.md"
+    },
+    {
+      "source": "2026-05-04_Reporte_Evaluacion_Preparacion_Framework_Generico_V4_1_0_Estable_v0-1.md",
+      "destination": "00_CONTROL_MAESTRO/2026-05-04_Reporte_Evaluacion_Preparacion_Framework_Generico_V4_1_0_Estable_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_manifest_framework_v4_1_0_borrador_v0-1.json",
+      "destination": "00_CONTROL_MAESTRO/2026-05-04_manifest_framework_v4_1_0_borrador_v0-1.json"
+    },
+    {
+      "source": "2026-05-04_Matriz_Comparativa_Perfiles_Transversales_Framework_Generico_V4_v0-1.md",
+      "destination": "02_ARQUITECTURA_CONCEPTUAL/07_Perfiles_Transversales/2026-05-04_Matriz_Comparativa_Perfiles_Transversales_Framework_Generico_V4_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_Paquete_Consolidado_Perfiles_Transversales_Caleidoscopio_Framework_Generico_V4_v0-1.md",
+      "destination": "02_ARQUITECTURA_CONCEPTUAL/07_Perfiles_Transversales/2026-05-04_Paquete_Consolidado_Perfiles_Transversales_Caleidoscopio_Framework_Generico_V4_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_Perfil_Final_Programador_Humanista_Framework_Generico_V4_v0-2.md",
+      "destination": "02_ARQUITECTURA_CONCEPTUAL/07_Perfiles_Transversales/01_Programador_Humanista/2026-05-04_Perfil_Final_Programador_Humanista_Framework_Generico_V4_v0-2.md"
+    },
+    {
+      "source": "2026-05-04_Perfil_Investigador_Transdisciplinario_Framework_Generico_V4_v0-1.md",
+      "destination": "02_ARQUITECTURA_CONCEPTUAL/07_Perfiles_Transversales/02_Investigador_Transdisciplinario/2026-05-04_Perfil_Investigador_Transdisciplinario_Framework_Generico_V4_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_Marco_Caleidoscopio_Framework_Generico_V4_v0-1.md",
+      "destination": "02_ARQUITECTURA_CONCEPTUAL/07_Perfiles_Transversales/04_Caleidoscopio/2026-05-04_Marco_Caleidoscopio_Framework_Generico_V4_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_Matriz_Caleidoscopio_C1_C7_Ejemplos_Framework_Generico_V4_v0-1.md",
+      "destination": "02_ARQUITECTURA_CONCEPTUAL/07_Perfiles_Transversales/04_Caleidoscopio/2026-05-04_Matriz_Caleidoscopio_C1_C7_Ejemplos_Framework_Generico_V4_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_Mapa_Macro_Meso_Micro_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+      "destination": "02_ARQUITECTURA_CONCEPTUAL/01_Mapas/2026-05-04_Mapa_Macro_Meso_Micro_Framework_Generico_V4_1_0_Borrador_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_Matriz_N1_N4_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+      "destination": "03_METODOLOGIA_Y_FLUJO_DE_TRABAJO/01_Niveles_N1_N4/2026-05-04_Matriz_N1_N4_Framework_Generico_V4_1_0_Borrador_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_Gobernanza_Aprobacion_Framework_Generico_V4_1_0_Estable_DA38_DA43_v1-0.md",
+      "destination": "04_GOBERNANZA_ETICA_Y_RIESGOS/01_Decisiones/2026-05-04_Gobernanza_Aprobacion_Framework_Generico_V4_1_0_Estable_DA38_DA43_v1-0.md"
+    },
+    {
+      "source": "2026-05-04_Plantillas_Base_Agents_Skills_Workflows_Checks_WikiSync_Framework_Generico_V4_v0-1.md",
+      "destination": "09_IA_AGENTES_Y_COPILOTOS/08_Sistema_Operativo_Agentes_Skills/2026-05-04_Plantillas_Base_Agents_Skills_Workflows_Checks_WikiSync_Framework_Generico_V4_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_CHECKS_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+      "destination": "15_EVALUACION_CALIDAD_Y_AUDITORIA/01_Gates_Checks_Evaluacion/2026-05-04_CHECKS_Framework_Generico_V4_1_0_Borrador_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_Matriz_Gates_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+      "destination": "15_EVALUACION_CALIDAD_Y_AUDITORIA/01_Gates_Checks_Evaluacion/2026-05-04_Matriz_Gates_Framework_Generico_V4_1_0_Borrador_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_Protocolo_Paso_Borrador_a_Estable_Framework_Generico_V4_1_0_v0-1.md",
+      "destination": "15_EVALUACION_CALIDAD_Y_AUDITORIA/01_Gates_Checks_Evaluacion/2026-05-04_Protocolo_Paso_Borrador_a_Estable_Framework_Generico_V4_1_0_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_Reporte_Evaluacion_Preparacion_Framework_Generico_V4_1_0_Estable_v0-1.md",
+      "destination": "15_EVALUACION_CALIDAD_Y_AUDITORIA/01_Gates_Checks_Evaluacion/2026-05-04_Reporte_Evaluacion_Preparacion_Framework_Generico_V4_1_0_Estable_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_Changelog_Actualizacion_Perfiles_Transversales_y_Apertura_V4_1_0_Framework_Generico_V4_v0-2.md",
+      "destination": "18_DOCUMENTACION_ACTIVA/01_Changelog/2026-05-04_Changelog_Actualizacion_Perfiles_Transversales_y_Apertura_V4_1_0_Framework_Generico_V4_v0-2.md"
+    },
+    {
+      "source": "2026-05-04_Changelog_Gobernanza_V4_1_0_Borrador_DA29_DA37_v0-3.md",
+      "destination": "18_DOCUMENTACION_ACTIVA/01_Changelog/2026-05-04_Changelog_Gobernanza_V4_1_0_Borrador_DA29_DA37_v0-3.md"
+    },
+    {
+      "source": "2026-05-04_Registro_Decisiones_Actualizacion_Perfiles_Transversales_y_Apertura_V4_1_0_Framework_Generico_V4_v0-2.md",
+      "destination": "18_DOCUMENTACION_ACTIVA/02_Registro_Decisiones/2026-05-04_Registro_Decisiones_Actualizacion_Perfiles_Transversales_y_Apertura_V4_1_0_Framework_Generico_V4_v0-2.md"
+    },
+    {
+      "source": "2026-05-04_Registro_Decisiones_Gobernanza_V4_1_0_Borrador_DA29_DA37_v0-3.md",
+      "destination": "18_DOCUMENTACION_ACTIVA/02_Registro_Decisiones/2026-05-04_Registro_Decisiones_Gobernanza_V4_1_0_Borrador_DA29_DA37_v0-3.md"
+    },
+    {
+      "source": "2026-05-04_WIKI_SYNC_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+      "destination": "18_DOCUMENTACION_ACTIVA/03_WIKI_SYNC/2026-05-04_WIKI_SYNC_Framework_Generico_V4_1_0_Borrador_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_Primer_Continuidad_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+      "destination": "18_DOCUMENTACION_ACTIVA/04_Primers_Continuidad/2026-05-04_Primer_Continuidad_Framework_Generico_V4_1_0_Borrador_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_Primer_Continuidad_Framework_Generico_V4_1_0_Borrador_v0-2.md",
+      "destination": "18_DOCUMENTACION_ACTIVA/04_Primers_Continuidad/2026-05-04_Primer_Continuidad_Framework_Generico_V4_1_0_Borrador_v0-2.md"
+    },
+    {
+      "source": "2026-05-04_Primer_Continuidad_Framework_Generico_V4_Perfiles_Transversales_v0-1.md",
+      "destination": "18_DOCUMENTACION_ACTIVA/04_Primers_Continuidad/2026-05-04_Primer_Continuidad_Framework_Generico_V4_Perfiles_Transversales_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_Compendio_Sesion_Perfiles_Transversales_Framework_Generico_V4_v0-1.md",
+      "destination": "18_DOCUMENTACION_ACTIVA/05_Cierres_Reportes/2026-05-04_Compendio_Sesion_Perfiles_Transversales_Framework_Generico_V4_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_Estado_Situacion_Framework_Generico_V4_1_0_Estable_Post_Aprobacion_v1-0.md",
+      "destination": "18_DOCUMENTACION_ACTIVA/05_Cierres_Reportes/2026-05-04_Estado_Situacion_Framework_Generico_V4_1_0_Estable_Post_Aprobacion_v1-0.md"
+    },
+    {
+      "source": "2026-05-04_Reporte_Cierre_Situacion_Actual_Framework_Generico_V4_para_Archivo_Historico_v1-0.md",
+      "destination": "18_DOCUMENTACION_ACTIVA/05_Cierres_Reportes/2026-05-04_Reporte_Cierre_Situacion_Actual_Framework_Generico_V4_para_Archivo_Historico_v1-0.md"
+    },
+    {
+      "source": "wiki_zip:Home_Framework_Generico_V4_1_0.md",
+      "destination": "21_WIKI_DOCUMENTACION_HUMANA/13_Guias_Framework_Generico_V4_1_0/Home_Framework_Generico_V4_1_0.md"
+    },
+    {
+      "source": "wiki_zip:Guia_Inicio_Rapido_V4_1_0.md",
+      "destination": "21_WIKI_DOCUMENTACION_HUMANA/13_Guias_Framework_Generico_V4_1_0/Guia_Inicio_Rapido_V4_1_0.md"
+    },
+    {
+      "source": "wiki_zip:Guia_Niveles_N1_N4.md",
+      "destination": "21_WIKI_DOCUMENTACION_HUMANA/13_Guias_Framework_Generico_V4_1_0/Guia_Niveles_N1_N4.md"
+    },
+    {
+      "source": "wiki_zip:Guia_Gates_CHECKS.md",
+      "destination": "21_WIKI_DOCUMENTACION_HUMANA/13_Guias_Framework_Generico_V4_1_0/Guia_Gates_CHECKS.md"
+    },
+    {
+      "source": "wiki_zip:Guia_Modos_C1_C7.md",
+      "destination": "21_WIKI_DOCUMENTACION_HUMANA/13_Guias_Framework_Generico_V4_1_0/Guia_Modos_C1_C7.md"
+    },
+    {
+      "source": "wiki_zip:README_Wiki_Prioritaria.md",
+      "destination": "21_WIKI_DOCUMENTACION_HUMANA/13_Guias_Framework_Generico_V4_1_0/README_Wiki_Prioritaria.md"
+    },
+    {
+      "source": "2026-05-04_Wiki_Prioritaria_Framework_Generico_V4_1_0_v0-1.zip",
+      "destination": "99_ARCHIVO_HISTORICO/Exportaciones_Finales/ZIP/2026-05-04_Wiki_Prioritaria_Framework_Generico_V4_1_0_v0-1.zip"
+    },
+    {
+      "source": "2026-05-04_Plan_Archivo_Historico_Framework_Generico_V4_0_0_y_V4_1_0_Borrador_v0-1.md",
+      "destination": "99_ARCHIVO_HISTORICO/00_Planes_Archivo/2026-05-04_Plan_Archivo_Historico_Framework_Generico_V4_0_0_y_V4_1_0_Borrador_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_Framework_Generico_V4_1_0_Estable_Release.zip",
+      "destination": "99_ARCHIVO_HISTORICO/Releases/Framework_Generico_V4_1_0_Estable/2026-05-04_Framework_Generico_V4_1_0_Estable_Release.zip"
+    },
+    {
+      "source": "2026-05-04_Reporte_Cierre_Situacion_Actual_Framework_Generico_V4_para_Archivo_Historico_v1-0.md",
+      "destination": "99_ARCHIVO_HISTORICO/Versiones_Cerradas/V4_0_0/2026-05-04_Reporte_Cierre_Situacion_Actual_Framework_Generico_V4_para_Archivo_Historico_v1-0.md"
+    },
+    {
+      "source": "2026-05-04_Matriz_Caleidoscopio_C1_C7_Ejemplos_Framework_Generico_V4_v0-1.md",
+      "destination": "99_ARCHIVO_HISTORICO/Ciclos_Completados/2026-05-04_Perfiles_Transversales_Caleidoscopio/2026-05-04_Matriz_Caleidoscopio_C1_C7_Ejemplos_Framework_Generico_V4_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_Matriz_Comparativa_Perfiles_Transversales_Framework_Generico_V4_v0-1.md",
+      "destination": "99_ARCHIVO_HISTORICO/Ciclos_Completados/2026-05-04_Perfiles_Transversales_Caleidoscopio/2026-05-04_Matriz_Comparativa_Perfiles_Transversales_Framework_Generico_V4_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_Paquete_Consolidado_Perfiles_Transversales_Caleidoscopio_Framework_Generico_V4_v0-1.md",
+      "destination": "99_ARCHIVO_HISTORICO/Ciclos_Completados/2026-05-04_Perfiles_Transversales_Caleidoscopio/2026-05-04_Paquete_Consolidado_Perfiles_Transversales_Caleidoscopio_Framework_Generico_V4_v0-1.md"
+    },
+    {
+      "source": "2026-05-04_Plantillas_Base_Agents_Skills_Workflows_Checks_WikiSync_Framework_Generico_V4_v0-1.md",
+      "destination": "99_ARCHIVO_HISTORICO/Ciclos_Completados/2026-05-04_Perfiles_Transversales_Caleidoscopio/2026-05-04_Plantillas_Base_Agents_Skills_Workflows_Checks_WikiSync_Framework_Generico_V4_v0-1.md"
+    },
+    {
+      "source": "generado",
+      "destination": "00_CONTROL_MAESTRO/TREE_REPOSITORIO_V4_1_1.txt"
+    }
+  ],
+  "empty_placeholders_added_count": 19,
+  "rules": [
+    "No reescribir V4.1.0-estable dentro de V4.1.1.",
+    "Usar V4.1.1 para operación, organización, piloto, wiki secundaria y refinamientos.",
+    "Mantener nada.md en carpetas vacías para visibilidad en GitHub.",
+    "No activar automatización institucional sin fase N4."
+  ],
+  "next_recommended_cycle": "V4.1.1 — wiki secundaria, piloto práctico, matriz de riesgos ampliada y refinamiento de perfiles v0.2.",
+  "latest_record_document": "00_CONTROL_MAESTRO/2026-05-04_Framework_Generico_V4_1_1_Record_Version_Actualizada_v1-0.md",
+  "root_readme": "README.md",
+  "illustrated_readme": "README_Framework_Generico_V4_1_1_Ilustrado.md",
+  "updated_at": "2026-05-04"
+}

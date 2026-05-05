@@ -1,0 +1,617 @@
+{
+  "schema": {
+    "name": "Framework Generico V4.1.0 Draft Manifest",
+    "schema_version": "0.1",
+    "format": "json",
+    "created_at": "2026-05-04",
+    "language": "es"
+  },
+  "framework": {
+    "name": "Framework Genérico",
+    "previous_stable_base": "V4.0.0",
+    "active_branch": "V4.1.0-borrador",
+    "branch_status": "borrador evolutivo controlado",
+    "activation_level": "N3",
+    "governance_state": "D-A28 aceptada y ejecutada documentalmente",
+    "core_rule": "V4.1.0-borrador evoluciona V4.0.0 sin reescribirla ni sustituirla todavía.",
+    "protection_sequence": [
+      "Mapa",
+      "Documento",
+      "Carpeta",
+      "Automatización"
+    ]
+  },
+  "purpose": {
+    "summary": "Registrar en formato legible por máquina los documentos, perfiles, decisiones, estados, riesgos, sincronizaciones wiki, objetivos de archivo y próximos pasos de la rama Framework Genérico V4.1.0-borrador.",
+    "use_cases": [
+      "navegación documental",
+      "interoperabilidad con repositorios",
+      "activación por agentes IA",
+      "sincronización wiki",
+      "archivo histórico",
+      "evaluación de madurez",
+      "preparación de automatización futura"
+    ]
+  },
+  "documents": {
+    "base_v4_0_0": [
+      {
+        "id": "B-01",
+        "filename": "reporte_situacion_actual_framework_generico_v_4.md",
+        "version": "v4.0.0",
+        "status": "cerrado para archivo histórico",
+        "type": "reporte_situacion",
+        "role": "diagnostico_estructural_y_continuidad"
+      },
+      {
+        "id": "B-02",
+        "filename": "2026-05-04_Compendio_Sesion_Perfiles_Transversales_Framework_Generico_V4_v0-1.md",
+        "version": "v0.1",
+        "status": "compendio_cierre",
+        "type": "compendio",
+        "role": "memoria_de_sesion_decisiones_productos"
+      },
+      {
+        "id": "B-03",
+        "filename": "2026-05-04_Primer_Continuidad_Framework_Generico_V4_Perfiles_Transversales_v0-1.md",
+        "version": "v0.1",
+        "status": "primer_continuidad",
+        "type": "primer",
+        "role": "reactivacion_capa_transversal"
+      },
+      {
+        "id": "B-04",
+        "filename": "2026-05-04_Perfil_Final_Programador_Humanista_Framework_Generico_V4_v0-2.md",
+        "version": "v0.2",
+        "status": "cerrado_funcional",
+        "type": "perfil_transversal",
+        "role": "perfil_tecnico_operativo_base"
+      },
+      {
+        "id": "B-05",
+        "filename": "2026-05-04_Perfil_Investigador_Transdisciplinario_Framework_Generico_V4_v0-1.md",
+        "version": "v0.1",
+        "status": "formalizado_preliminar",
+        "type": "perfil_transversal",
+        "role": "perfil_investigativo"
+      },
+      {
+        "id": "B-06",
+        "filename": "2026-05-04_Perfil_Artista_Transdisciplinario_Framework_Generico_V4_v0-1.md",
+        "version": "v0.1",
+        "status": "formalizado_preliminar",
+        "type": "perfil_transversal",
+        "role": "perfil_creativo_cultural"
+      },
+      {
+        "id": "B-07",
+        "filename": "2026-05-04_Marco_Caleidoscopio_Framework_Generico_V4_v0-1.md",
+        "version": "v0.1",
+        "status": "formalizado_preliminar",
+        "type": "logica_integradora",
+        "role": "integracion_emergente_perfiles_transversales"
+      }
+    ],
+    "derived_consolidation": [
+      {
+        "id": "D-01",
+        "filename": "2026-05-04_Paquete_Consolidado_Perfiles_Transversales_Caleidoscopio_Framework_Generico_V4_v0-1.md",
+        "version": "v0.1",
+        "status": "producido",
+        "type": "paquete_consolidado",
+        "role": "ordenar_y_conectar_componentes_transversales"
+      },
+      {
+        "id": "D-02",
+        "filename": "2026-05-04_Matriz_Comparativa_Perfiles_Transversales_Framework_Generico_V4_v0-1.md",
+        "version": "v0.1",
+        "status": "producido",
+        "type": "matriz_comparativa",
+        "role": "comparar_perfiles_evidencias_riesgos_usos"
+      },
+      {
+        "id": "D-03",
+        "filename": "2026-05-04_Matriz_Caleidoscopio_C1_C7_Ejemplos_Framework_Generico_V4_v0-1.md",
+        "version": "v0.1",
+        "status": "producido",
+        "type": "matriz_ejemplos",
+        "role": "ejemplificar_integracion_c1_c7"
+      },
+      {
+        "id": "D-04",
+        "filename": "2026-05-04_Plantillas_Base_Agents_Skills_Workflows_Checks_WikiSync_Framework_Generico_V4_v0-1.md",
+        "version": "v0.1",
+        "status": "producido",
+        "type": "plantillas_operativas",
+        "role": "activar_agents_skills_workflows_checks_wiki_sync"
+      },
+      {
+        "id": "D-05",
+        "filename": "2026-05-04_Indice_Maestro_Documentos_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+        "version": "v0.1",
+        "status": "producido",
+        "type": "indice_maestro",
+        "role": "navegacion_y_trazabilidad_documental"
+      }
+    ],
+    "governance": [
+      {
+        "id": "G-01",
+        "filename": "2026-05-04_Reporte_Cierre_Situacion_Actual_Framework_Generico_V4_para_Archivo_Historico_v1-0.md",
+        "version": "v1.0",
+        "status": "producido",
+        "type": "reporte_cierre",
+        "role": "cierre_formal_v4_0_0"
+      },
+      {
+        "id": "G-02",
+        "filename": "2026-05-04_Changelog_Actualizacion_Perfiles_Transversales_y_Apertura_V4_1_0_Framework_Generico_V4_v0-2.md",
+        "version": "v0.2",
+        "status": "producido",
+        "type": "changelog",
+        "role": "registro_cambios_da24_da28"
+      },
+      {
+        "id": "G-03",
+        "filename": "2026-05-04_Registro_Decisiones_Actualizacion_Perfiles_Transversales_y_Apertura_V4_1_0_Framework_Generico_V4_v0-2.md",
+        "version": "v0.2",
+        "status": "producido",
+        "type": "registro_decisiones",
+        "role": "registro_decisiones_da24_da28"
+      },
+      {
+        "id": "G-04",
+        "filename": "2026-05-04_Primer_Continuidad_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+        "version": "v0.1",
+        "status": "producido",
+        "type": "primer",
+        "role": "reactivacion_v4_1_0_borrador"
+      },
+      {
+        "id": "G-05",
+        "filename": "2026-05-04_Borrador_Framework_Generico_V4_1_0_Apertura_v0-1.md",
+        "version": "v0.1",
+        "status": "producido",
+        "type": "apertura_version",
+        "role": "abrir_rama_v4_1_0"
+      },
+      {
+        "id": "G-06",
+        "filename": "2026-05-04_README_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+        "version": "v0.1",
+        "status": "producido",
+        "type": "readme",
+        "role": "entrada_principal_v4_1_0_borrador"
+      },
+      {
+        "id": "G-07",
+        "filename": "2026-05-04_manifest_framework_v4_1_0_borrador_v0-1.json",
+        "version": "v0.1",
+        "status": "actual",
+        "type": "manifest_json",
+        "role": "inventario_legible_por_maquina"
+      }
+    ],
+    "recommended_next": [
+      {
+        "id": "R-01",
+        "filename": "2026-05-04_Mapa_Macro_Meso_Micro_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+        "priority": "alta",
+        "type": "mapa_arquitectura",
+        "role": "ubicar_capas_perfiles_documentos_flujos"
+      },
+      {
+        "id": "R-02",
+        "filename": "2026-05-04_Matriz_N1_N4_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+        "priority": "alta",
+        "type": "matriz_niveles",
+        "role": "definir_minimos_por_nivel"
+      },
+      {
+        "id": "R-03",
+        "filename": "2026-05-04_Matriz_Gates_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+        "priority": "alta",
+        "type": "matriz_gates",
+        "role": "formalizar_gates_integrados"
+      },
+      {
+        "id": "R-04",
+        "filename": "2026-05-04_WIKI_SYNC_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+        "priority": "alta",
+        "type": "wiki_sync",
+        "role": "sincronizar_wiki_humana"
+      },
+      {
+        "id": "R-05",
+        "filename": "2026-05-04_CHECKS_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+        "priority": "alta",
+        "type": "checks",
+        "role": "validaciones_minimas_antes_de_avanzar"
+      }
+    ]
+  },
+  "profiles": [
+    {
+      "id": "programador_humanista",
+      "name": "Programador Humanista",
+      "version": "v0.2",
+      "status": "cerrado_funcional",
+      "protection": "no_reescribir_sin_decision_explicita",
+      "core_function": "Construir sistemas sociotécnicos con juicio humano, programación responsable, documentación, seguridad, accesibilidad, evaluación, cierre y transferencia.",
+      "operating_documents": [
+        "AGENTS.md",
+        "SKILLS.md",
+        "WORKFLOWS.md",
+        "CHECKS.md",
+        "WIKI_SYNC.md"
+      ]
+    },
+    {
+      "id": "investigador_transdisciplinario",
+      "name": "Investigador Transdisciplinario",
+      "version": "v0.1",
+      "status": "formalizado_preliminar",
+      "protection": "no_cerrar_v0_2_sin_revision_y_decision",
+      "core_function": "Producir conocimiento situado, validable, documentado, publicable y transferible.",
+      "operating_documents": [
+        "RESEARCH_AGENTS.md",
+        "RESEARCH_SKILLS.md",
+        "INQUIRY_WORKFLOWS.md",
+        "SOURCE_REGISTRY.md",
+        "EVIDENCE_LEDGER.md",
+        "BIBLIOMETRY_NOTES.md",
+        "MULTIMODAL_PUBLICATIONS.md",
+        "OER_REA_PUBLICATION_GUIDE.md",
+        "CHECKS.md",
+        "WIKI_SYNC.md"
+      ]
+    },
+    {
+      "id": "artista_transdisciplinario",
+      "name": "Artista Transdisciplinario",
+      "version": "v0.1",
+      "status": "formalizado_preliminar",
+      "protection": "no_cerrar_v0_2_sin_revision_y_decision",
+      "core_function": "Crear, documentar, curar y transferir obras, narrativas, avatares, colecciones y experiencias multimodales.",
+      "operating_documents": [
+        "ART_AGENTS.md",
+        "CREATIVE_SKILLS.md",
+        "CREATION_WORKFLOWS.md",
+        "COLLECTION_REGISTRY.md",
+        "MULTIMODAL_LEDGER.md",
+        "RIGHTS_LICENSES.md",
+        "EXHIBITION_PLAN.md",
+        "CURATORIAL_NOTES.md",
+        "CHECKS.md",
+        "WIKI_SYNC.md"
+      ]
+    },
+    {
+      "id": "caleidoscopio",
+      "name": "Caleidoscopio",
+      "version": "v0.1",
+      "status": "logica_integradora_preliminar",
+      "protection": "no_tratar_como_cuarto_perfil_tradicional",
+      "core_function": "Orquestar combinaciones entre perfiles para producir emergencia transdisciplinaria.",
+      "operating_documents": [
+        "KALEIDOSCOPE_AGENTS.md",
+        "KALEIDOSCOPE_SKILLS.md",
+        "INTEGRATION_WORKFLOWS.md",
+        "PROFILE_COMBINATION_MATRIX.md",
+        "TRANSDISCIPLINARY_EVIDENCE_LEDGER.md",
+        "MULTIMODAL_OUTPUT_REGISTRY.md",
+        "ETHICS_RIGHTS_ACCESSIBILITY_CHECKS.md",
+        "TRANSFER_ARCHIVE_PLAN.md",
+        "CHECKS.md",
+        "WIKI_SYNC.md"
+      ]
+    }
+  ],
+  "kaleidoscope_modes": [
+    {
+      "id": "C1",
+      "name": "Técnico-investigativo",
+      "profiles": [
+        "Programador Humanista",
+        "Investigador Transdisciplinario"
+      ],
+      "typical_outputs": [
+        "aplicacion",
+        "dashboard",
+        "pipeline",
+        "repositorio",
+        "visualizacion"
+      ]
+    },
+    {
+      "id": "C2",
+      "name": "Investigativo-creativo",
+      "profiles": [
+        "Investigador Transdisciplinario",
+        "Artista Transdisciplinario"
+      ],
+      "typical_outputs": [
+        "publicacion_multimodal",
+        "exposicion_documentada",
+        "investigacion_creacion"
+      ]
+    },
+    {
+      "id": "C3",
+      "name": "Creativo-técnico",
+      "profiles": [
+        "Artista Transdisciplinario",
+        "Programador Humanista"
+      ],
+      "typical_outputs": [
+        "galeria_interactiva",
+        "avatar",
+        "instalacion_digital",
+        "experiencia_inmersiva"
+      ]
+    },
+    {
+      "id": "C4",
+      "name": "Integral",
+      "profiles": [
+        "Programador Humanista",
+        "Investigador Transdisciplinario",
+        "Artista Transdisciplinario"
+      ],
+      "typical_outputs": [
+        "AVAT",
+        "REA_multimodal",
+        "ecosistema_agentico",
+        "archivo_vivo"
+      ]
+    },
+    {
+      "id": "C5",
+      "name": "Pedagógico",
+      "profiles": [
+        "Investigador Transdisciplinario",
+        "Artista Transdisciplinario",
+        "Programador Humanista_si_aplica"
+      ],
+      "typical_outputs": [
+        "curso",
+        "modulo",
+        "OVAT",
+        "ruta_formativa"
+      ]
+    },
+    {
+      "id": "C6",
+      "name": "Comunitario",
+      "profiles": [
+        "Artista Transdisciplinario",
+        "Investigador Transdisciplinario",
+        "comunidad",
+        "Programador Humanista_si_aplica"
+      ],
+      "typical_outputs": [
+        "archivo_comunitario",
+        "mapa_interactivo",
+        "memoria_viva",
+        "galeria_territorial"
+      ]
+    },
+    {
+      "id": "C7",
+      "name": "Institucional",
+      "profiles": [
+        "Programador Humanista",
+        "Investigador Transdisciplinario",
+        "Artista Transdisciplinario",
+        "gobernanza"
+      ],
+      "typical_outputs": [
+        "laboratorio",
+        "programa",
+        "manual",
+        "politica",
+        "wiki_institucional"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D-A24",
+      "status": "aceptada",
+      "summary": "Crear Paquete Consolidado de Perfiles Transversales y Caleidoscopio v0.1.",
+      "type": "ajuste_menor_documental_extension_modular"
+    },
+    {
+      "id": "D-A25",
+      "status": "aceptada",
+      "summary": "Crear Matriz Comparativa Transversal v0.1.",
+      "type": "extension_modular"
+    },
+    {
+      "id": "D-A26",
+      "status": "aceptada",
+      "summary": "Crear Matriz Caleidoscopio C1-C7 con ejemplos operativos.",
+      "type": "extension_modular"
+    },
+    {
+      "id": "D-A27",
+      "status": "aceptada",
+      "summary": "Crear Plantillas Base Agents, Skills, Workflows, Checks y Wiki Sync.",
+      "type": "extension_modular_operativa"
+    },
+    {
+      "id": "D-A28",
+      "status": "aceptada_y_ejecutada_documentalmente",
+      "summary": "Descongelar controladamente V4.0.0 y abrir V4.1.0-borrador.",
+      "type": "cambio_de_gobernanza_controlada"
+    },
+    {
+      "id": "D-A29",
+      "status": "propuesta_para_registro",
+      "summary": "Crear Índice Maestro de Documentos V4.1.0-borrador.",
+      "type": "ajuste_menor_de_gobernanza_documental"
+    },
+    {
+      "id": "D-A30",
+      "status": "propuesta_para_validacion",
+      "summary": "Crear manifest JSON V4.1.0-borrador v0.1 como inventario legible por máquina.",
+      "type": "extension_tecnica_documental"
+    }
+  ],
+  "levels": {
+    "N1": {
+      "name": "Mínimo controlado",
+      "description": "Propósito, documento mínimo, evidencia básica, cierre y continuidad."
+    },
+    "N2": {
+      "name": "Operativo",
+      "description": "Añade matrices, documentación técnica, wiki mínima y checks iniciales."
+    },
+    "N3": {
+      "name": "Avanzado",
+      "description": "Añade perfiles, Caleidoscopio, agentes/skills, Gates, gobernanza, evaluación y archivo."
+    },
+    "N4": {
+      "name": "Institucional",
+      "description": "Añade auditoría, automatización, capacitación, dashboards, transferencia y adopción formal."
+    }
+  },
+  "governance": {
+    "required_before_stabilization": [
+      "manifest_json",
+      "matriz_n1_n4",
+      "matriz_gates",
+      "checks_formales",
+      "wiki_sync_formal",
+      "plan_archivo_historico",
+      "protocolo_paso_borrador_a_estable"
+    ],
+    "change_types": [
+      "ajuste_menor",
+      "extension_modular",
+      "cambio_metodologico",
+      "cambio_de_gobernanza",
+      "cambio_estructural"
+    ],
+    "all_changes_must_include": [
+      "justificacion",
+      "impacto",
+      "riesgo",
+      "documentos_afectados",
+      "version_afectada",
+      "recomendacion_de_continuidad"
+    ]
+  },
+  "wiki_sync_targets": [
+    {
+      "path": "21_WIKI_DOCUMENTACION_HUMANA/09_Guias_Programador_Humanista/",
+      "status": "pendiente_sincronizacion"
+    },
+    {
+      "path": "21_WIKI_DOCUMENTACION_HUMANA/10_Guias_Investigador_Transdisciplinario/",
+      "status": "pendiente_sincronizacion"
+    },
+    {
+      "path": "21_WIKI_DOCUMENTACION_HUMANA/11_Guias_Artista_Transdisciplinario/",
+      "status": "pendiente_sincronizacion"
+    },
+    {
+      "path": "21_WIKI_DOCUMENTACION_HUMANA/12_Guias_Caleidoscopio/",
+      "status": "pendiente_sincronizacion"
+    },
+    {
+      "path": "21_WIKI_DOCUMENTACION_HUMANA/13_Guias_Framework_Generico_V4_1_0/",
+      "status": "propuesta_subcarpeta_wiki_no_macrocarpeta"
+    }
+  ],
+  "archive_targets": [
+    {
+      "path": "99_ARCHIVO_HISTORICO/Releases/",
+      "status": "pendiente_paquete_release"
+    },
+    {
+      "path": "99_ARCHIVO_HISTORICO/Versiones_Cerradas/",
+      "status": "recibir_cierre_v4_0_0"
+    },
+    {
+      "path": "99_ARCHIVO_HISTORICO/Ciclos_Completados/",
+      "status": "recibir_ciclo_perfiles_transversales"
+    },
+    {
+      "path": "99_ARCHIVO_HISTORICO/Exportaciones_Finales/",
+      "status": "pendiente_exportacion_final"
+    }
+  ],
+  "risk_register": [
+    {
+      "id": "RISK-01",
+      "name": "reescritura_accidental_v4_0_0",
+      "severity": "alta",
+      "mitigation": "mantener V4.1.0 como rama borrador evolutiva y preservar documentos base"
+    },
+    {
+      "id": "RISK-02",
+      "name": "inflacion_documental",
+      "severity": "media_alta",
+      "mitigation": "usar indice maestro, manifest y reglas de proposito/version/estado"
+    },
+    {
+      "id": "RISK-03",
+      "name": "automatizacion_prematura",
+      "severity": "alta",
+      "mitigation": "no automatizar antes de checks, gates, wiki_sync y manifest"
+    },
+    {
+      "id": "RISK-04",
+      "name": "wiki_desincronizada",
+      "severity": "media",
+      "mitigation": "crear WIKI_SYNC formal como producto prioritario"
+    },
+    {
+      "id": "RISK-05",
+      "name": "confundir_caleidoscopio_con_cuarto_perfil",
+      "severity": "media",
+      "mitigation": "mantener Caleidoscopio como logica integradora emergente"
+    }
+  ],
+  "readiness": {
+    "ready_to_open_v4_1_0_draft": true,
+    "ready_to_call_v4_1_0_stable": false,
+    "missing_for_stable": [
+      "Matriz N1-N4 formal",
+      "Matriz Gates formal",
+      "CHECKS formal",
+      "WIKI_SYNC formal",
+      "Plan de archivo histórico",
+      "Protocolo de paso de borrador a estable",
+      "Validación humana final"
+    ]
+  },
+  "next_actions": [
+    {
+      "order": 1,
+      "filename": "2026-05-04_Mapa_Macro_Meso_Micro_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+      "reason": "Ubicar capas, perfiles, documentos y flujos antes de seguir expandiendo."
+    },
+    {
+      "order": 2,
+      "filename": "2026-05-04_Matriz_N1_N4_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+      "reason": "Definir mínimos operativos por nivel de activación."
+    },
+    {
+      "order": 3,
+      "filename": "2026-05-04_Matriz_Gates_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+      "reason": "Formalizar validaciones antes de automatizar."
+    },
+    {
+      "order": 4,
+      "filename": "2026-05-04_WIKI_SYNC_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+      "reason": "Sincronizar documentación humana con documentos oficiales."
+    },
+    {
+      "order": 5,
+      "filename": "2026-05-04_CHECKS_Framework_Generico_V4_1_0_Borrador_v0-1.md",
+      "reason": "Crear controles mínimos para calidad, ética, accesibilidad y continuidad."
+    }
+  ]
+}
