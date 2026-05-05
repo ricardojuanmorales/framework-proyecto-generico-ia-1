@@ -3,7 +3,7 @@
   "created_at": "2026-05-04",
   "base_version": "Framework Genérico V4.1.0-estable",
   "operational_version": "Framework Genérico V4.1.1 Repositorio Modelo",
-  "status": "estructura_modelo_actualizada_con_record_v4_1_1_y_readme_ilustrado",
+  "status": "actualizado_con_framework_integral_autosostenido_v4_1_0",
   "level": "N3",
   "decision_suggested": {
     "id": "D-A44",
@@ -277,5 +277,50 @@
     "changelog": "18_DOCUMENTACION_ACTIVA/01_Changelog/2026-05-04_Changelog_Cierre_Sesion_Ruta_B_Obsidian_GitHub_Framework_Generico_V4_1_1_v0-4.md",
     "decision_register": "18_DOCUMENTACION_ACTIVA/02_Registro_Decisiones/2026-05-04_Registro_Decisiones_Cierre_Sesion_Ruta_B_Obsidian_GitHub_Framework_Generico_V4_1_1_DA45_DA47_v0-4.md",
     "next_action": "Crear Issues reales en GitHub y actualizar Dashboard / Issues_Vivos con URLs."
-  }
+  },
+  "framework_active_version": "V4.1.1",
+  "stable_framework_reference": "V4.1.0 Integral Autosostenido",
+  "latest_update": {
+    "id": "D-A48",
+    "title": "Agregar versión integral autosostenida del Framework Genérico V4.1.0 en formatos MD y JSON",
+    "type": "ajuste_mayor_de_transferencia_documental_sin_cambio_estructural",
+    "impact": "alto",
+    "risk": "bajo",
+    "reason": "Permite que colegas implementen el Framework V4.1.0 en proyectos nuevos sin depender de V4.0.0 ni del historial completo del repositorio.",
+    "documents_added": [
+      "00_CONTROL_MAESTRO/2026-05-04_Framework_Generico_V4_1_0_Integral_Autosostenido_v1-0.md",
+      "00_CONTROL_MAESTRO/2026-05-04_Framework_Generico_V4_1_0_Integral_Autosostenido_v1-0.json"
+    ],
+    "documents_updated": [
+      "00_CONTROL_MAESTRO/manifest_repositorio_v4_1_1.json",
+      "00_CONTROL_MAESTRO/TREE_REPOSITORIO_V4_1_1.txt",
+      "18_DOCUMENTACION_ACTIVA/01_Changelog/2026-05-04_Changelog_Actualizacion_Framework_Integral_Autosostenido_V4_1_0_Framework_Generico_V4_1_1_v0-5.md",
+      "18_DOCUMENTACION_ACTIVA/02_Registro_Decisiones/2026-05-04_Registro_Decisiones_Actualizacion_Framework_Integral_Autosostenido_V4_1_0_Framework_Generico_V4_1_1_DA48_v0-5.md"
+    ],
+    "recommended_commit": "docs: agregar framework integral autosostenido v4.1.0"
+  },
+  "control_master_documents": {
+    "integral_framework_md": "00_CONTROL_MAESTRO/2026-05-04_Framework_Generico_V4_1_0_Integral_Autosostenido_v1-0.md",
+    "integral_framework_json": "00_CONTROL_MAESTRO/2026-05-04_Framework_Generico_V4_1_0_Integral_Autosostenido_v1-0.json",
+    "manifest": "00_CONTROL_MAESTRO/manifest_repositorio_v4_1_1.json",
+    "tree": "00_CONTROL_MAESTRO/TREE_REPOSITORIO_V4_1_1.txt"
+  },
+  "governance_updates": {
+    "changelog": "18_DOCUMENTACION_ACTIVA/01_Changelog/2026-05-04_Changelog_Actualizacion_Framework_Integral_Autosostenido_V4_1_0_Framework_Generico_V4_1_1_v0-5.md",
+    "decision_register": "18_DOCUMENTACION_ACTIVA/02_Registro_Decisiones/2026-05-04_Registro_Decisiones_Actualizacion_Framework_Integral_Autosostenido_V4_1_0_Framework_Generico_V4_1_1_DA48_v0-5.md"
+  },
+  "implementation_note": "La versión integral autosostenida funciona como puerta de entrada portátil para proyectos nuevos. Debe tratarse como documento maestro de transferencia y activación.",
+  "folder_policy": {
+    "new_integral_documents": "00_CONTROL_MAESTRO/",
+    "changelog_updates": "18_DOCUMENTACION_ACTIVA/01_Changelog/",
+    "decision_records": "18_DOCUMENTACION_ACTIVA/02_Registro_Decisiones/"
+  },
+  "file_inventory_summary": {
+    "total_files": 155,
+    "last_inventory_refresh": "2026-05-04"
+  },
+  "key_files_added_this_update": [
+    "00_CONTROL_MAESTRO/2026-05-04_Framework_Generico_V4_1_0_Integral_Autosostenido_v1-0.md",
+    "00_CONTROL_MAESTRO/2026-05-04_Framework_Generico_V4_1_0_Integral_Autosostenido_v1-0.json"
+  ]
 }
