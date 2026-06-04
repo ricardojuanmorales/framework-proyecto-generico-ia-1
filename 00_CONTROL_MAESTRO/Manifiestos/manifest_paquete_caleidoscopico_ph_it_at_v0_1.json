@@ -1,0 +1,48 @@
+{
+  "paquete": "Paquete_Caleidoscopico_PH_IT_AT_Fase2_v0_1",
+  "fecha": "2026-06-02",
+  "estado": "Borrador rector para carga manual",
+  "framework_maestro_estable": "Framework Generico V4.1.0",
+  "repositorio_operativo": "Framework Generico V4.1.1",
+  "archivos": [
+    {
+      "archivo": "Marco_Ruta_Caleidoscopica_PH_IT_AT_v0_1.md",
+      "ruta": "05_COMPETENCIAS_Y_PERFILES/_Marco_Triada_Caleidoscopica/00_Marco_Ruta"
+    },
+    {
+      "archivo": "Protocolo_Curaduria_Transdisciplinaria_v0_1.md",
+      "ruta": "05_COMPETENCIAS_Y_PERFILES/_Marco_Triada_Caleidoscopica/01_Curaduria_Transdisciplinaria"
+    },
+    {
+      "archivo": "Modelo_Niveles_N1_N4_Caleidoscopio_PH_IT_AT_v0_1.md",
+      "ruta": "05_COMPETENCIAS_Y_PERFILES/_Marco_Triada_Caleidoscopica/02_Niveles_N1_N4"
+    },
+    {
+      "archivo": "Plantilla_Activacion_Proyecto_Caleidoscopico_v0_1.md",
+      "ruta": "05_COMPETENCIAS_Y_PERFILES/_Marco_Triada_Caleidoscopica/03_Plantillas"
+    },
+    {
+      "archivo": "Plantilla_Lente_Latente_PH_IT_AT_v0_1.md",
+      "ruta": "05_COMPETENCIAS_Y_PERFILES/_Marco_Triada_Caleidoscopica/03_Plantillas"
+    },
+    {
+      "archivo": "Bitacora_Transferencia_Reversible_Fase_2_PH_IT_AT_v0_1.md",
+      "ruta": "18_DOCUMENTACION_ACTIVA/Transferencia_Simetrica/Bitacoras"
+    },
+    {
+      "archivo": "Mapa_Base_Conocimiento_Comun_PH_IT_AT_v0_1.md",
+      "ruta": "05_COMPETENCIAS_Y_PERFILES/_Marco_Triada_Caleidoscopica/04_Base_Conocimiento_Comun"
+    },
+    {
+      "archivo": "INSTRUCCIONES_CARGA_MANUAL_PAQUETE_CALEIDOSCOPICO_PH_IT_AT_v0_1.md",
+      "ruta": "."
+    }
+  ],
+  "locks_respetados": [
+    "AGENTS.md",
+    "CLAUDE.md",
+    "SKILLS.md",
+    "workflows operativos finales"
+  ],
+  "proxima_accion": "Crear Alcance_Operativo_Fase_2_Base_Conocimiento_Comun_PH_IT_AT_v0_1.md"
+}
