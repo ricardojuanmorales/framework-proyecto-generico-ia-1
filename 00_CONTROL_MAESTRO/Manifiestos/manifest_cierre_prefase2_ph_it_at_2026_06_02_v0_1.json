@@ -1,0 +1,62 @@
+{
+  "codigo_documental": "manifest_cierre_prefase2_ph_it_at_2026_06_02_v0_1",
+  "version": "v0.1",
+  "fecha": "2026-06-02",
+  "estado": "paquete de cierre de sesion pre-Fase 2",
+  "framework_maestro_estable": "Framework Generico V4.1.0",
+  "repositorio_operativo": "Framework Generico V4.1.1",
+  "perfil_activo": "Programador Humanista v3.0.0",
+  "locks_vigentes": [
+    "no AGENTS.md",
+    "no CLAUDE.md",
+    "no SKILLS.md",
+    "no workflows operativos finales"
+  ],
+  "archivos": [
+    {
+      "archivo": "2026-06-02_Compendio_Cierre_Sesion_PreFase2_PH_IT_AT_v0_1.md",
+      "destino": "18_DOCUMENTACION_ACTIVA/Cierres_Reportes/Compendios/"
+    },
+    {
+      "archivo": "2026-06-02_Bitacora_Sesion_PreFase2_PH_IT_AT_v0_1.md",
+      "destino": "18_DOCUMENTACION_ACTIVA/Cierres_Reportes/Bitacoras/"
+    },
+    {
+      "archivo": "2026-06-02_Bitacora_Transferencia_Reversible_Fase_2_PH_IT_AT_v0_2.md",
+      "destino": "18_DOCUMENTACION_ACTIVA/Cierres_Reportes/Bitacoras/"
+    },
+    {
+      "archivo": "2026-06-02_Registro_Gobernanza_PreFase2_PH_v3_0_0_v0_1.md",
+      "destino": "05_COMPETENCIAS_Y_PERFILES/Programador_Humanista/Perfil_Operativo_v3_0_0/Gobernanza_Perfil/"
+    },
+    {
+      "archivo": "2026-06-02_Registro_Decisiones_PreFase2_Caleidoscopico_DA49_DA56_v0_1.md",
+      "destino": "18_DOCUMENTACION_ACTIVA/Registro_Decisiones/"
+    },
+    {
+      "archivo": "2026-06-02_Changelog_PreFase2_PH_IT_AT_v0_1.md",
+      "destino": "18_DOCUMENTACION_ACTIVA/Changelog/"
+    },
+    {
+      "archivo": "2026-06-02_Primer_Continuidad_PreFase2_PH_IT_AT_v0_1.md",
+      "destino": "18_DOCUMENTACION_ACTIVA/Primers_Continuidad/"
+    },
+    {
+      "archivo": "2026-06-02_Prompt_Activacion_Verificacion_Estado_y_Plan_Fase_2_PH_v0_1.md",
+      "destino": "00_CONTROL_MAESTRO/Prompts_Activacion/"
+    },
+    {
+      "archivo": "2026-06-02_Instrucciones_Actualizacion_Manual_Cierre_PreFase2_PH_IT_AT_v0_1.md",
+      "destino": "18_DOCUMENTACION_ACTIVA/Cierres_Reportes/Cierres_Sesion/"
+    },
+    {
+      "archivo": "manifest_cierre_prefase2_ph_it_at_2026_06_02_v0_1.json",
+      "destino": "00_CONTROL_MAESTRO/Manifiestos/"
+    }
+  ],
+  "archivo_relacionado_preexistente": {
+    "archivo": "Mapa_Ruta_Desarrollo_Perfiles_Simetricos_PH_IT_AT_Fases_1_6_v0_1.md",
+    "destino_correcto": "03_METODOLOGIA_Y_FLUJO_DE_TRABAJO/Secuencias_Fase_Por_Fase/"
+  },
+  "proxima_sesion": "verificar estado del repositorio e iniciar plan detallado Fase 2 Programador Humanista"
+}
