@@ -1,24 +1,26 @@
-# MAPA COMPLETO DE ESTRUCTURA — Framework Genérico V4.1.1
-**Fecha de actualización:** 2026-06-04
-**Estado:** Activo — Paquete Caleidoscópico PH-IT-AT v0_1 integrado
+# Mapa Completo de Estructura — Framework Genérico V4.1.1
+**Fecha:** 2026-06-05  
+**Versión:** v0.2  
+**Generado por:** Claude Code (claude-sonnet-4-6)  
+**Rama:** main  
 
 ---
 
 ## Raíz del Repositorio
 
 ```
-/
+framework-proyecto-generico-ia-1/
+├── .gitignore
+├── .obsidian/
+│   ├── app.json
+│   ├── appearance.json
+│   ├── core-plugins.json
+│   └── workspace.json
+├── index.html
+├── MAPA_COMPLETO_ESTRUCTURA.md
 ├── README.md
 ├── README_English.md
-├── README_Framework_Generico_V4_1_1_Perfiles_Activos_v0_2.md
-├── MAPA_COMPLETO_ESTRUCTURA.md
-├── index.html
-├── .gitignore
-└── .obsidian/
-    ├── app.json
-    ├── appearance.json
-    ├── core-plugins.json
-    └── workspace.json
+└── README_Framework_Generico_V4_1_1_Perfiles_Activos_v0_2.md
 ```
 
 ---
@@ -27,12 +29,6 @@
 
 ```
 00_CONTROL_MAESTRO/
-├── README_REPOSITORIO_MODELO_V4_1_1.md
-├── README_REPOSITORIO_MODELO_V4_1_1_SIMPLE.md
-├── TREE_REPOSITORIO_V4_1_1.md
-├── Framework_Generico_V4_1_0_Integral_Autosostenido_v1-0.md
-├── Framework_Generico_V4_1_0_Integral_Autosostenido_v1-0.json
-├── manifest_repositorio_v4_1_1.json
 ├── 2026-05-04_Apertura_Framework_Generico_V4_1_1_Repositorio_Modelo_v0-1.md
 ├── 2026-05-04_Aprobacion_Framework_Generico_V4_1_0_Estable_v1-0.md
 ├── 2026-05-04_Borrador_Framework_Generico_V4_1_0_Apertura_v0-1.md
@@ -46,6 +42,13 @@
 ├── 2026-05-04_Reporte_Evaluacion_Preparacion_Framework_Generico_V4_1_0_Estable_v0-1.md
 ├── 2026-05-04_TREE_REPOSITORIO_V4_1_1.md
 ├── 2026-05-04_manifest_framework_v4_1_0_borrador_v0-1.json
+├── Framework_Generico_V4_1_0_Integral_Autosostenido_v1-0.json
+├── Framework_Generico_V4_1_0_Integral_Autosostenido_v1-0.md
+├── manifest_repositorio_v4_1_1.json
+├── README_REPOSITORIO_MODELO_V4_1_1.md
+├── README_REPOSITORIO_MODELO_V4_1_1_SIMPLE.md
+├── TREE_REPOSITORIO_V4_1_1.md
+│
 ├── Control_Versiones/
 │   └── README.md
 ├── Convenciones_Nombres/
@@ -53,25 +56,28 @@
 ├── Indices_Maestros/
 │   └── README.md
 ├── Manifiestos/
-│   ├── README.md
 │   ├── 2026-05-28_Manifest_Actualizacion_Cartapacios_Framework_Generico_V4_1_1_v0-1.md
 │   ├── manifest_cierre_prefase2_ph_it_at_2026_06_02_v0_1.json
-│   └── manifest_paquete_caleidoscopico_ph_it_at_v0_1.json          ← NUEVO
+│   ├── manifest_paquete_caleidoscopico_ph_it_at_v0_1.json
+│   └── README.md
 ├── Mapas_Repositorio/
-│   ├── README.md
 │   ├── 2026-05-28_Reporte_Creacion_Estructura_Cartapacios_v0-1.md
 │   ├── MAPA_ESTRUCTURA_CARTAPACIOS_2026-05-29.md
 │   ├── MAPA_REPOSITORIO_2026-05-28.md
-│   └── Mapa_Estructura_Cartapacios_2026_06_02_v0_1.md
+│   ├── Mapa_Completo_Estructura_2026_06_02_v0_1.md
+│   ├── Mapa_Completo_Estructura_2026_06_04_v0_1.md
+│   ├── Mapa_Completo_Estructura_2026_06_05_v0_2.md  ← ESTE ARCHIVO
+│   ├── Mapa_Estructura_Cartapacios_2026_06_02_v0_1.md
+│   └── README.md
 ├── Protocolos_Cierre_Sesion/
-│   ├── README.md
-│   └── 2026-05-28_Protocolo_Cierre_Sesion_Framework_Generico_V4_1_1_v0-1.md
+│   ├── 2026-05-28_Protocolo_Cierre_Sesion_Framework_Generico_V4_1_1_v0-1.md
+│   └── README.md
 ├── Reglas_Colocacion_Documental/
-│   ├── README.md
-│   └── 2026-05-28_Reglas_Colocacion_Documental_Framework_Generico_V4_1_1_v0-1.md
-└── Tablas_Ubicacion_Documental/
-    ├── README.md
-    └── 2026-05-28_Tabla_Ubicacion_Documental_Framework_Generico_V4_1_1_v0-1.md
+│   ├── 2026-05-28_Reglas_Colocacion_Documental_Framework_Generico_V4_1_1_v0-1.md
+│   └── README.md
+├── Tablas_Ubicacion_Documental/
+│   ├── 2026-05-28_Tabla_Ubicacion_Documental_Framework_Generico_V4_1_1_v0-1.md
+│   └── README.md
 ```
 
 ---
@@ -107,29 +113,29 @@
 ├── Macro_Meso_Micro/
 │   └── README.md
 ├── Mapas/
-│   ├── README.md
-│   └── 2026-05-04_Mapa_Macro_Meso_Micro_Framework_Generico_V4_1_0_Borrador_v0-1.md
+│   ├── 2026-05-04_Mapa_Macro_Meso_Micro_Framework_Generico_V4_1_0_Borrador_v0-1.md
+│   └── README.md
 ├── Matrices_Comparativas/
 │   └── README.md
 └── Perfiles_Transversales/
-    ├── README.md
     ├── 2026-05-04_Matriz_Comparativa_Perfiles_Transversales_Framework_Generico_V4_v0-1.md
     ├── 2026-05-04_Paquete_Consolidado_Perfiles_Transversales_Caleidoscopio_Framework_Generico_V4_v0-1.md
+    ├── README.md
     ├── Artista_Transdisciplinario/
-    │   ├── README.md
-    │   └── 2026-05-04_Perfil_Artista_Transdisciplinario_Framework_Generico_V4_v0-1.md
+    │   ├── 2026-05-04_Perfil_Artista_Transdisciplinario_Framework_Generico_V4_v0-1.md
+    │   └── README.md
     ├── Caleidoscopio/
-    │   ├── README.md
     │   ├── 2026-05-04_Caleidoscopio_Logica_Integradora_Framework_Generico_V4_v0-1.md
     │   ├── 2026-05-04_Marco_Caleidoscopio_Framework_Generico_V4_v0-1.md
     │   ├── 2026-05-04_Matriz_Caleidoscopio_C1_C7_Ejemplos_Framework_Generico_V4_v0-1.md
-    │   └── Marco_Ruta_Caleidoscopica_PH_IT_AT_v0_1.md                ← NUEVO
+    │   ├── Marco_Ruta_Caleidoscopica_PH_IT_AT_v0_1.md
+    │   └── README.md
     ├── Investigador_Transdisciplinario/
-    │   ├── README.md
-    │   └── 2026-05-04_Perfil_Investigador_Transdisciplinario_Framework_Generico_V4_v0-1.md
+    │   ├── 2026-05-04_Perfil_Investigador_Transdisciplinario_Framework_Generico_V4_v0-1.md
+    │   └── README.md
     └── Programador_Humanista/
-        ├── README.md
-        └── 2026-05-04_Perfil_Final_Programador_Humanista_Framework_Generico_V4_v0-2.md
+        ├── 2026-05-04_Perfil_Final_Programador_Humanista_Framework_Generico_V4_v0-2.md
+        └── README.md
 ```
 
 ---
@@ -144,17 +150,17 @@
 ├── Entrada_Normalizada_Usuarios/
 │   └── README.md
 ├── Niveles_N1_N4/
-│   ├── README.md
 │   ├── 2026-05-04_Matriz_N1_N4_Framework_Generico_V4_1_0_Borrador_v0-1.md
-│   └── Modelo_Niveles_N1_N4_Caleidoscopio_PH_IT_AT_v0_1.md           ← NUEVO
+│   ├── Modelo_Niveles_N1_N4_Caleidoscopio_PH_IT_AT_v0_1.md
+│   └── README.md
 ├── Plantillas_Metodologicas/
 │   └── README.md
 ├── Protocolos_Trabajo_Humano_IA/
-│   ├── README.md
-│   └── Protocolo_Curaduria_Transdisciplinaria_v0_1.md                ← NUEVO
+│   ├── Protocolo_Curaduria_Transdisciplinaria_v0_1.md
+│   └── README.md
 ├── Secuencias_Fase_Por_Fase/
-│   ├── README.md
-│   └── Mapa_Ruta_Desarrollo_Perfiles_Simetricos_PH_IT_AT_Fases_1_6_v0_1.md
+│   ├── Mapa_Ruta_Desarrollo_Perfiles_Simetricos_PH_IT_AT_Fases_1_6_v0_1.md
+│   └── README.md
 └── Workflows/
     └── README.md
 ```
@@ -169,8 +175,8 @@
 ├── Criterios_Aprobacion/
 │   └── README.md
 ├── Decisiones/
-│   ├── README.md
-│   └── 2026-05-04_Gobernanza_Aprobacion_Framework_Generico_V4_1_0_Estable_DA38_DA43_v1-0.md
+│   ├── 2026-05-04_Gobernanza_Aprobacion_Framework_Generico_V4_1_0_Estable_DA38_DA43_v1-0.md
+│   └── README.md
 ├── Etica_Derechos_Accesibilidad/
 │   └── README.md
 ├── Politicas_Gobernanza/
@@ -193,8 +199,8 @@
 ├── Artista_Transdisciplinario/
 │   └── README.md
 ├── Caleidoscopio/
-│   ├── README.md
-│   └── Mapa_Base_Conocimiento_Comun_PH_IT_AT_v0_1.md                 ← NUEVO
+│   ├── Mapa_Base_Conocimiento_Comun_PH_IT_AT_v0_1.md
+│   └── README.md
 ├── Investigador_Transdisciplinario/
 │   └── README.md
 ├── Matrices_Competencias/
@@ -204,9 +210,9 @@
 │   └── Perfil_Operativo_v3_0_0/
 │       ├── README.md
 │       ├── Alcance_Operativo/
-│       │   ├── README.md
 │       │   ├── Alcance_Operativo_Programador_Humanista_v3_0_0_v0_1.md
-│       │   └── Alcance_Operativo_Programador_Humanista_v3_0_0_v0_2.md
+│       │   ├── Alcance_Operativo_Programador_Humanista_v3_0_0_v0_2.md
+│       │   └── README.md
 │       ├── Aplicaciones_Educativas/
 │       │   └── README.md
 │       ├── Arquitectura_Humano_Maquina_IA/
@@ -216,32 +222,32 @@
 │       ├── Bases_Conocimiento/
 │       │   └── README.md
 │       ├── Competencias/
-│       │   ├── README.md
-│       │   └── matriz_competencias_programador_humanista_v_3_0_0_v_0_2.md
+│       │   ├── matriz_competencias_programador_humanista_v_3_0_0_v_0_2.md
+│       │   └── README.md
 │       ├── Enlaces_Espejo/
-│       │   ├── README.md
-│       │   └── enlaces_espejo_programador_humanista_v_3_0_0_v_0_2.md
+│       │   ├── enlaces_espejo_programador_humanista_v_3_0_0_v_0_2.md
+│       │   └── README.md
 │       ├── Formula_Nuclear/
-│       │   ├── README.md
-│       │   └── formula_nuclear_programador_humanista_v_3_0_0_v_0_2.md
+│       │   ├── formula_nuclear_programador_humanista_v_3_0_0_v_0_2.md
+│       │   └── README.md
 │       ├── Gobernanza_Perfil/
-│       │   ├── README.md
 │       │   ├── 2026-06-02_Registro_Gobernanza_PreFase2_PH_v3_0_0_v0_1.md
 │       │   ├── changelog_fase_1_ph_v_3_0_0_v_0_2.md
-│       │   └── registro_gobernanza_perfil_ph_v_3_0_0_v_0_2.md
+│       │   ├── registro_gobernanza_perfil_ph_v_3_0_0_v_0_2.md
+│       │   └── README.md
 │       ├── Mapa_Rector/
-│       │   ├── README.md
-│       │   └── Mapa_Rector_Programador_Humanista_v3_0_0_v0_2.md
+│       │   ├── Mapa_Rector_Programador_Humanista_v3_0_0_v0_2.md
+│       │   └── README.md
 │       ├── Metricas/
-│       │   ├── README.md
 │       │   ├── matriz_seguridad_longitudinal_ph_v_3_0_0_v_0_1.md
-│       │   └── metricas_iniciales_programador_humanista_n_3_n_4_v_0_2.md
+│       │   ├── metricas_iniciales_programador_humanista_n_3_n_4_v_0_2.md
+│       │   └── README.md
 │       ├── Transferencia_Simetrica/
-│       │   ├── README.md
-│       │   └── matriz_transferencia_simetrica_triada_ph_it_at_v_0_2.md
+│       │   ├── matriz_transferencia_simetrica_triada_ph_it_at_v_0_2.md
+│       │   └── README.md
 │       └── Unidades_Nucleares/
-│           ├── README.md
-│           └── Unidades_Nucleares_Programador_Humanista_v3_0_0_v0_1.md
+│           ├── Unidades_Nucleares_Programador_Humanista_v3_0_0_v0_1.md
+│           └── README.md
 └── Taxonomias/
     └── README.md
 ```
@@ -287,9 +293,9 @@
 ├── Plantillas_Gobernanza/
 │   └── README.md
 ├── Plantillas_Proyectos/
-│   ├── README.md
-│   ├── Plantilla_Activacion_Proyecto_Caleidoscopico_v0_1.md          ← NUEVO
-│   └── Plantilla_Lente_Latente_PH_IT_AT_v0_1.md                     ← NUEVO
+│   ├── Plantilla_Activacion_Proyecto_Caleidoscopico_v0_1.md
+│   ├── Plantilla_Lente_Latente_PH_IT_AT_v0_1.md
+│   └── README.md
 └── Plantillas_Wiki/
     └── README.md
 ```
@@ -335,8 +341,8 @@
 └── Sistema_Operativo_Agentes_Skills/
     ├── README.md
     ├── Plantillas_Base/
-    │   ├── README.md
-    │   └── 2026-05-04_Plantillas_Base_Agents_Skills_Workflows_Checks_WikiSync_Framework_Generico_V4_v0-1.md
+    │   ├── 2026-05-04_Plantillas_Base_Agents_Skills_Workflows_Checks_WikiSync_Framework_Generico_V4_v0-1.md
+    │   └── README.md
     └── Perfiles/
         ├── README.md
         ├── Artista_Transdisciplinario/
@@ -547,11 +553,11 @@
 ├── Evidencias_Validacion/
 │   └── README.md
 ├── Gates_Checks_Evaluacion/
-│   ├── README.md
 │   ├── 2026-05-04_CHECKS_Framework_Generico_V4_1_0_Borrador_v0-1.md
 │   ├── 2026-05-04_Matriz_Gates_Framework_Generico_V4_1_0_Borrador_v0-1.md
 │   ├── 2026-05-04_Protocolo_Paso_Borrador_a_Estable_Framework_Generico_V4_1_0_v0-1.md
-│   └── 2026-05-04_Reporte_Evaluacion_Preparacion_Framework_Generico_V4_1_0_Estable_v0-1.md
+│   ├── 2026-05-04_Reporte_Evaluacion_Preparacion_Framework_Generico_V4_1_0_Estable_v0-1.md
+│   └── README.md
 ├── Metricas_Internas/
 │   └── README.md
 ├── Reportes_Auditoria/
@@ -624,93 +630,93 @@
 18_DOCUMENTACION_ACTIVA/
 ├── README.md
 ├── Changelog/
-│   ├── README.md
 │   ├── 2026-05-04_Changelog_Actualizacion_Framework_Integral_Autosostenido_V4_1_0_Framework_Generico_V4_1_1_v0-5.md
 │   ├── 2026-05-04_Changelog_Actualizacion_Perfiles_Transversales_y_Apertura_V4_1_0_Framework_Generico_V4_v0-2.md
 │   ├── 2026-05-04_Changelog_Cierre_Sesion_Ruta_B_Obsidian_GitHub_Framework_Generico_V4_1_1_v0-4.md
 │   ├── 2026-05-04_Changelog_Gobernanza_V4_1_0_Borrador_DA29_DA37_v0-3.md
 │   ├── 2026-05-28_Changelog_Actualizacion_Cartapacios_Framework_Generico_V4_1_1_v0-1.md
-│   └── 2026-06-02_Changelog_PreFase2_PH_IT_AT_v0_1.md
+│   ├── 2026-06-02_Changelog_PreFase2_PH_IT_AT_v0_1.md
+│   └── README.md
 ├── Cierres_Reportes/
 │   ├── README.md
 │   ├── Bitacoras/
-│   │   ├── README.md
 │   │   ├── 2026-06-02_Bitacora_Sesion_PreFase2_PH_IT_AT_v0_1.md
 │   │   ├── 2026-06-02_Bitacora_Transferencia_Reversible_Fase_2_PH_IT_AT_v0_2.md
 │   │   ├── Bitacora_Continuidad_Transferencia_Simetrica_Reversible_PH_IT_AT_2026_05_31_v0_2.md
 │   │   ├── Bitacora_Proceso_Fase_1_PH_v3_0_0_2026_05_31_v0_2_ACTUALIZADA.md
 │   │   ├── Bitacora_Sesion_Auditoria_Estructura_2026_06_02_v0_1.md
-│   │   └── Bitacora_Transferencia_Reversible_Fase_2_PH_IT_AT_v0_1.md  ← NUEVO
+│   │   ├── Bitacora_Transferencia_Reversible_Fase_2_PH_IT_AT_v0_1.md
+│   │   └── README.md
 │   ├── Cierres_Sesion/
-│   │   ├── README.md
 │   │   ├── 2026-05-04_Cierre_Sesion_Framework_Generico_V4_1_1_Ruta_B_Obsidian_GitHub_v1-0.md
 │   │   ├── 2026-05-04_Estado_Situacion_Framework_Generico_V4_1_0_Estable_Post_Aprobacion_v1-0.md
 │   │   ├── 2026-06-02_Instrucciones_Actualizacion_Manual_Cierre_PreFase2_PH_IT_AT_v0_1.md
 │   │   ├── Cierre_Sesion_Fase_1_PH_v3_0_0_2026_05_31_v0_2.md
-│   │   └── INSTRUCCIONES_CARGA_MANUAL_PAQUETE_CALEIDOSCOPICO_PH_IT_AT_v0_1.md  ← NUEVO
+│   │   ├── INSTRUCCIONES_CARGA_MANUAL_PAQUETE_CALEIDOSCOPICO_PH_IT_AT_v0_1.md
+│   │   └── README.md
 │   ├── Compendios/
-│   │   ├── README.md
 │   │   ├── 2026-05-04_Compendio_Sesion_Perfiles_Transversales_Framework_Generico_V4_v0-1.md
 │   │   ├── 2026-06-02_Compendio_Cierre_Sesion_PreFase2_PH_IT_AT_v0_1.md
 │   │   ├── Compendio_Estado_Proyecto_Framework_Generico_V4_1_1_2026_06_02_v0_1.md
-│   │   └── Compendio_Sesion_Fase_1_PH_v3_0_0_2026_05_31_v0_2.md
+│   │   ├── Compendio_Sesion_Fase_1_PH_v3_0_0_2026_05_31_v0_2.md
+│   │   └── README.md
 │   ├── Manifiestos_Sesion/
 │   │   └── README.md
 │   └── Reportes_Evaluacion/
-│       ├── README.md
-│       └── 2026-05-04_Reporte_Cierre_Situacion_Actual_Framework_Generico_V4_para_Archivo_Historico_v1-0.md
+│       ├── 2026-05-04_Reporte_Cierre_Situacion_Actual_Framework_Generico_V4_para_Archivo_Historico_v1-0.md
+│       └── README.md
 ├── Primers_Continuidad/
-│   ├── README.md
 │   ├── 2026-05-04_Primer_Continuidad_Framework_Generico_V4_1_0_Borrador_v0-1.md
 │   ├── 2026-05-04_Primer_Continuidad_Framework_Generico_V4_1_0_Borrador_v0-2.md
 │   ├── 2026-05-04_Primer_Continuidad_Framework_Generico_V4_1_1_Post_Ruta_B_Obsidian_GitHub_v0-3.md
 │   ├── 2026-05-04_Primer_Continuidad_Framework_Generico_V4_Perfiles_Transversales_v0-1.md
 │   ├── 2026-05-28_Primer_Continuidad_Post_Actualizacion_Cartapacios_PH_v3_0_0_v0-1.md
-│   └── 2026-06-02_Primer_Continuidad_PreFase2_PH_IT_AT_v0_1.md
+│   ├── 2026-06-02_Primer_Continuidad_PreFase2_PH_IT_AT_v0_1.md
+│   └── README.md
 ├── Prompts_Activacion/
 │   └── README.md
 ├── Prompts_de_Sesion/
 │   └── README.md
 ├── Registro_Decisiones/
-│   ├── README.md
 │   ├── 2026-05-04_Registro_Decisiones_Actualizacion_Framework_Integral_Autosostenido_V4_1_0_Framework_Generico_V4_1_1_DA48_v0-5.md
 │   ├── 2026-05-04_Registro_Decisiones_Actualizacion_Perfiles_Transversales_y_Apertura_V4_1_0_Framework_Generico_V4_v0-2.md
 │   ├── 2026-05-04_Registro_Decisiones_Cierre_Sesion_Ruta_B_Obsidian_GitHub_Framework_Generico_V4_1_1_DA45_DA47_v0-4.md
 │   ├── 2026-05-04_Registro_Decisiones_Gobernanza_V4_1_0_Borrador_DA29_DA37_v0-3.md
 │   ├── 2026-05-28_Registro_Decision_Estructural_Cartapacios_PH_v3_0_0_v0-1.md
-│   └── 2026-06-02_Registro_Decisiones_PreFase2_Caleidoscopico_DA49_DA56_v0_1.md
+│   ├── 2026-06-02_Registro_Decisiones_PreFase2_Caleidoscopico_DA49_DA56_v0_1.md
+│   └── README.md
 ├── Segundo_Cerebro/
-│   ├── README.md
 │   ├── Home_Obsidian_Framework_Generico.md
 │   ├── Indice_Wiki_Humana_Obsidian.md
+│   ├── README.md
 │   ├── 2026-05-04_Instrucciones_Operacionalizacion_Modelo_C_Issues_Ligeros_Framework_Generico_V4_1_1_v0-1.md
 │   ├── 2026-05-04_Integracion_Obsidian_GitHub_Ruta_B_Hibrida_Framework_Generico_V4_1_1_v0-1.md
 │   ├── 2026-05-04_Modelo_Triple_Memoria_Operativa_Framework_Generico_V4_1_1_v0-1.md
 │   ├── Dashboards/
-│   │   ├── README.md
 │   │   ├── 2026-05-04_Dashboard_Segundo_Cerebro_Framework_Generico_V4_1_1_v0-1.md
-│   │   └── Dashboard_Framework_Generico_V4_1_1.md
+│   │   ├── Dashboard_Framework_Generico_V4_1_1.md
+│   │   └── README.md
 │   ├── Issues_Vivos/
-│   │   ├── README.md
-│   │   └── Issues_Vivos_Framework.md
+│   │   ├── Issues_Vivos_Framework.md
+│   │   └── README.md
 │   ├── Mapas_Navegacion/
-│   │   ├── README.md
-│   │   └── Mapa_Navegacion_Obsidian_GitHub.md
+│   │   ├── Mapa_Navegacion_Obsidian_GitHub.md
+│   │   └── README.md
 │   ├── Riesgos_Vivos/
-│   │   ├── README.md
-│   │   └── Riesgos_Vivos_Framework.md
+│   │   ├── Riesgos_Vivos_Framework.md
+│   │   └── README.md
 │   ├── Sesiones_Activas/
-│   │   ├── README.md
-│   │   └── Sesion_Activa_Framework.md
+│   │   ├── Sesion_Activa_Framework.md
+│   │   └── README.md
 │   └── Templates/
-│       ├── README.md
 │       ├── Template_Issue_Local.md
 │       ├── Template_Nota_Documento_Oficial.md
 │       ├── Template_Revision_Gobernanza.md
-│       └── Template_Sesion_Framework.md
+│       ├── Template_Sesion_Framework.md
+│       └── README.md
 └── WIKI_SYNC/
-    ├── README.md
-    └── 2026-05-04_WIKI_SYNC_Framework_Generico_V4_1_0_Borrador_v0-1.md
+    ├── 2026-05-04_WIKI_SYNC_Framework_Generico_V4_1_0_Borrador_v0-1.md
+    └── README.md
 ```
 
 ---
@@ -795,14 +801,14 @@
 ├── Guias_Caleidoscopio/
 │   └── README.md
 ├── Guias_Framework_Generico_V4_1_0/
-│   ├── README.md
-│   ├── README_Wiki_Prioritaria.md
 │   ├── Guia_Gates_CHECKS.md
 │   ├── Guia_Inicio_Rapido_V4_1_0.md
 │   ├── Guia_Modos_C1_C7.md
 │   ├── Guia_Niveles_N1_N4.md
 │   ├── Guia_Usuario_Framework_Generico_V4_1_0_Integrada_v1-0.md
-│   └── Home_Framework_Generico_V4_1_0.md
+│   ├── Home_Framework_Generico_V4_1_0.md
+│   ├── README.md
+│   └── README_Wiki_Prioritaria.md
 ├── Guias_Investigador_Transdisciplinario/
 │   └── README.md
 └── Guias_Programador_Humanista/
@@ -839,65 +845,110 @@
 ├── Aplicaciones_Retiradas/
 │   └── README.md
 ├── Ciclos_Completados/
-│   ├── README.md
 │   ├── nada.md
+│   ├── README.md
 │   └── 2026-05-04_Perfiles_Transversales_Caleidoscopio/
 │       ├── 2026-05-04_Matriz_Caleidoscopio_C1_C7_Ejemplos_Framework_Generico_V4_v0-1.md
 │       ├── 2026-05-04_Matriz_Comparativa_Perfiles_Transversales_Framework_Generico_V4_v0-1.md
 │       ├── 2026-05-04_Paquete_Consolidado_Perfiles_Transversales_Caleidoscopio_Framework_Generico_V4_v0-1.md
 │       └── 2026-05-04_Plantillas_Base_Agents_Skills_Workflows_Checks_WikiSync_Framework_Generico_V4_v0-1.md
 ├── Exportaciones_Finales/
-│   ├── README.md
 │   ├── nada.md
+│   ├── README.md
 │   ├── JSON/
-│   │   ├── README.md
-│   │   └── 2026-05-04_manifest_framework_v4_1_0_borrador_v0-1.json
+│   │   ├── 2026-05-04_manifest_framework_v4_1_0_borrador_v0-1.json
+│   │   └── README.md
 │   ├── MD/
-│   │   ├── README.md
-│   │   └── [28 archivos .md — exportaciones históricas 2026-05-04]
+│   │   ├── 2026-05-04_Aprobacion_Framework_Generico_V4_1_0_Estable_v1-0.md
+│   │   ├── 2026-05-04_Borrador_Framework_Generico_V4_1_0_Apertura_v0-1.md
+│   │   ├── 2026-05-04_CHECKS_Framework_Generico_V4_1_0_Borrador_v0-1.md
+│   │   ├── 2026-05-04_Changelog_Actualizacion_Perfiles_Transversales_y_Apertura_V4_1_0_Framework_Generico_V4_v0-2.md
+│   │   ├── 2026-05-04_Changelog_Gobernanza_V4_1_0_Borrador_DA29_DA37_v0-3.md
+│   │   ├── 2026-05-04_Compendio_Sesion_Perfiles_Transversales_Framework_Generico_V4_v0-1.md
+│   │   ├── 2026-05-04_Estado_Situacion_Framework_Generico_V4_1_0_Estable_Post_Aprobacion_v1-0.md
+│   │   ├── 2026-05-04_Gobernanza_Aprobacion_Framework_Generico_V4_1_0_Estable_DA38_DA43_v1-0.md
+│   │   ├── 2026-05-04_Indice_Maestro_Documentos_Framework_Generico_V4_1_0_Borrador_v0-1.md
+│   │   ├── 2026-05-04_Mapa_Macro_Meso_Micro_Framework_Generico_V4_1_0_Borrador_v0-1.md
+│   │   ├── 2026-05-04_Marco_Caleidoscopio_Framework_Generico_V4_v0-1.md
+│   │   ├── 2026-05-04_Matriz_Caleidoscopio_C1_C7_Ejemplos_Framework_Generico_V4_v0-1.md
+│   │   ├── 2026-05-04_Matriz_Comparativa_Perfiles_Transversales_Framework_Generico_V4_v0-1.md
+│   │   ├── 2026-05-04_Matriz_Gates_Framework_Generico_V4_1_0_Borrador_v0-1.md
+│   │   ├── 2026-05-04_Matriz_N1_N4_Framework_Generico_V4_1_0_Borrador_v0-1.md
+│   │   ├── 2026-05-04_Paquete_Consolidado_Perfiles_Transversales_Caleidoscopio_Framework_Generico_V4_v0-1.md
+│   │   ├── 2026-05-04_Perfil_Final_Programador_Humanista_Framework_Generico_V4_v0-2.md
+│   │   ├── 2026-05-04_Perfil_Investigador_Transdisciplinario_Framework_Generico_V4_v0-1.md
+│   │   ├── 2026-05-04_Plan_Archivo_Historico_Framework_Generico_V4_0_0_y_V4_1_0_Borrador_v0-1.md
+│   │   ├── 2026-05-04_Plantillas_Base_Agents_Skills_Workflows_Checks_WikiSync_Framework_Generico_V4_v0-1.md
+│   │   ├── 2026-05-04_Primer_Continuidad_Framework_Generico_V4_1_0_Borrador_v0-1.md
+│   │   ├── 2026-05-04_Primer_Continuidad_Framework_Generico_V4_1_0_Borrador_v0-2.md
+│   │   ├── 2026-05-04_Primer_Continuidad_Framework_Generico_V4_Perfiles_Transversales_v0-1.md
+│   │   ├── 2026-05-04_Protocolo_Paso_Borrador_a_Estable_Framework_Generico_V4_1_0_v0-1.md
+│   │   ├── 2026-05-04_README_Framework_Generico_V4_1_0_Borrador_v0-1.md
+│   │   ├── 2026-05-04_Registro_Decisiones_Actualizacion_Perfiles_Transversales_y_Apertura_V4_1_0_Framework_Generico_V4_v0-2.md
+│   │   ├── 2026-05-04_Registro_Decisiones_Gobernanza_V4_1_0_Borrador_DA29_DA37_v0-3.md
+│   │   ├── 2026-05-04_Release_Notes_Framework_Generico_V4_1_0_Estable_v1-0.md
+│   │   ├── 2026-05-04_Reporte_Cierre_Situacion_Actual_Framework_Generico_V4_para_Archivo_Historico_v1-0.md
+│   │   ├── 2026-05-04_Reporte_Evaluacion_Preparacion_Framework_Generico_V4_1_0_Estable_v0-1.md
+│   │   ├── 2026-05-04_WIKI_SYNC_Framework_Generico_V4_1_0_Borrador_v0-1.md
+│   │   └── README.md
 │   └── ZIP/
-│       ├── README.md
 │       ├── 2026-05-04_Wiki_Prioritaria_Framework_Generico_V4_1_0_v0-1.zip
-│       └── Segundo_Cerebro_Framework_Generico_V4_1_1_Obsidian_Import.zip
+│       ├── Segundo_Cerebro_Framework_Generico_V4_1_1_Obsidian_Import.zip
+│       └── README.md
 ├── Planes_Archivo/
-│   ├── README.md
-│   └── 2026-05-04_Plan_Archivo_Historico_Framework_Generico_V4_0_0_y_V4_1_0_Borrador_v0-1.md
+│   ├── 2026-05-04_Plan_Archivo_Historico_Framework_Generico_V4_0_0_y_V4_1_0_Borrador_v0-1.md
+│   └── README.md
 ├── Releases/
-│   ├── README.md
 │   ├── nada.md
+│   ├── README.md
 │   └── Framework_Generico_V4_1_0_Estable/
 │       └── 2026-05-04_Framework_Generico_V4_1_0_Estable_Release.zip
 ├── Sesiones_Cerradas/
 │   └── README.md
 ├── Versiones_Cerradas/
-│   ├── README.md
 │   ├── nada.md
+│   ├── README.md
 │   └── V4_0_0/
-│       ├── README.md
-│       └── 2026-05-04_Reporte_Cierre_Situacion_Actual_Framework_Generico_V4_para_Archivo_Historico_v1-0.md
+│       ├── 2026-05-04_Reporte_Cierre_Situacion_Actual_Framework_Generico_V4_para_Archivo_Historico_v1-0.md
+│       └── README.md
 └── Wiki_Archivada/
-    ├── README.md
-    └── nada.md
+    ├── nada.md
+    └── README.md
 ```
 
 ---
 
 ## Resumen Estadístico
 
-| Métrica | Valor |
-|---|---|
-| Cartapacios principales | 22 (00–21 + 99) |
-| Total de sub-carpetas | ~150 |
-| Total de archivos (sin .git) | ~310 |
-| Archivos nuevos — Paquete Caleidoscópico v0_1 (2026-06-04) | 10 |
-| Formatos presentes | .md, .json, .py, .zip, .html |
+| Módulo | Carpetas | Archivos con contenido |
+|--------|----------|------------------------|
+| Raíz | — | 5 archivos + 1 HTML |
+| 00_CONTROL_MAESTRO | 9 sub-carpetas | 28 archivos |
+| 01_FUNDAMENTO_FILOSOFICO | 6 sub-carpetas | 7 README |
+| 02_ARQUITECTURA_CONCEPTUAL | 5 sub-carpetas + 4 perfiles | 12 archivos |
+| 03_METODOLOGIA_Y_FLUJO_DE_TRABAJO | 7 sub-carpetas | 9 archivos |
+| 04_GOBERNANZA_ETICA_Y_RIESGOS | 7 sub-carpetas | 8 archivos |
+| 05_COMPETENCIAS_Y_PERFILES | 5 perfiles + 14 sub-unidades | 23 archivos |
+| 06_PASTILLAS_MODULARES | 6 sub-carpetas | 7 README |
+| 07_PLANTILLAS_Y_MODELOS | 8 sub-carpetas | 10 archivos |
+| 08_CURSOS_PROGRAMAS_Y_TRAYECTORIAS | 7 sub-carpetas | 8 README |
+| 09_IA_AGENTES_Y_COPILOTOS | 5+4 perfiles + 13 sub-unidades | 18 archivos |
+| 10_REPOSITORIOS_Y_FLUJO_TECNICO | 16 sub-carpetas | 22 archivos |
+| 11_MULTIMODALIDAD_Y_PUBLICACION | 7 sub-carpetas | 8 README |
+| 12_DISENO_INSTRUCCIONAL_UNIVERSAL | 6 sub-carpetas | 7 README |
+| 13_INVESTIGACION_Y_EVIDENCIA | 7 sub-carpetas | 8 README |
+| 14_COMUNIDAD_TRANSFERENCIA_Y_ESCALAMIENTO | 7 sub-carpetas | 8 README |
+| 15_EVALUACION_CALIDAD_Y_AUDITORIA | 10 sub-carpetas | 14 archivos |
+| 16_SEGURIDAD_PRIVACIDAD_Y_DATOS | 14 sub-carpetas | 15 README |
+| 17_INTERNACIONALIZACION_LOCALIZACION | 5 sub-carpetas | 6 README |
+| 18_DOCUMENTACION_ACTIVA | 8 secciones + múltiples sub-carpetas | 47 archivos |
+| 19_IMPLEMENTACION_Y_DESPLIEGUE | 14 sub-carpetas | 15 README |
+| 20_MANTENIMIENTO_Y_EVOLUCION | 12 sub-carpetas | 13 README |
+| 21_WIKI_DOCUMENTACION_HUMANA | 5 guías + 11 sub-guías | 18 archivos |
+| 99_ARCHIVO_HISTORICO | 8 secciones + sub-archivos | 45 archivos |
+| **TOTAL APROXIMADO** | **~190 carpetas** | **~380 archivos** |
 
 ---
 
-## Leyenda
-
-| Símbolo | Significado |
-|---|---|
-| `← NUEVO` | Archivo incorporado en sesión 2026-06-04 (Paquete Caleidoscópico PH-IT-AT v0_1) |
-| `README.md` | Archivo de gobernanza mínima del cartapacio |
-| `[N archivos ...]` | Grupo colapsado por volumen — ver directorio directamente |
+*Mapa generado el 2026-06-05. Para actualizar, ejecutar desde la raíz del repositorio:*  
+`find . -not -path '*/.git/*' -not -path '*/.DS_Store' | sort`
