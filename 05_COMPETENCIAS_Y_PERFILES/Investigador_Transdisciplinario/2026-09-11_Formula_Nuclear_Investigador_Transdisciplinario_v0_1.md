@@ -3,7 +3,7 @@
 
 **Código documental:** `2026-09-11_Formula_Nuclear_Investigador_Transdisciplinario_v0_1`  
 **Versión:** v0.1  
-**Estado:** Borrador rector para validación humana  
+**Estado:** Aprobado por humano  
 **Fecha:** 2026-09-11  
 **Framework maestro estable:** Framework Genérico V4.1.0  
 **Repositorio operativo vivo:** Framework Genérico V4.1.1  
@@ -11,7 +11,7 @@
 **Fase:** Fase 1 — Paquete rector del perfil  
 **Ruta canónica:** `05_COMPETENCIAS_Y_PERFILES/Investigador_Transdisciplinario/`  
 **Documentos base:** `2026-09-11_Alcance_Operativo_Investigador_Transdisciplinario_v0_1.md`; `2026-09-11_Mapa_Rector_Investigador_Transdisciplinario_v0_1.md`  
-**Revisión humana:** obligatoria
+**Revisión humana:** aprobada el 2026-09-11
 
 ---
 
@@ -262,6 +262,6 @@ Matriz de Competencias IT
 → Matriz de Evidencia y Métricas IT
 ```
 
+**Estado de aprobación humana:** aprobado el 2026-09-11.  
 **Deuda de referencias lógicas de sesión:** importante; consolidar al cierre de Bloque 2.  
-**Deuda crítica:** ninguna identificada.  
-**Revisión humana:** pendiente antes de declarar versión estable.
+**Deuda crítica:** ninguna identificada.
