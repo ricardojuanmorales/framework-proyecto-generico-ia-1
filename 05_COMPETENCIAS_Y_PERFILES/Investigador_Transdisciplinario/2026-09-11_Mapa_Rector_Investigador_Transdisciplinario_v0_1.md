@@ -3,7 +3,7 @@
 
 **Código documental:** `2026-09-11_Mapa_Rector_Investigador_Transdisciplinario_v0_1`  
 **Versión:** v0.1  
-**Estado:** Borrador rector para validación humana  
+**Estado:** Aprobado por humano  
 **Fecha:** 2026-09-11  
 **Framework maestro estable:** Framework Genérico V4.1.0  
 **Repositorio operativo vivo:** Framework Genérico V4.1.1  
@@ -12,7 +12,7 @@
 **Ruta canónica:** `05_COMPETENCIAS_Y_PERFILES/Investigador_Transdisciplinario/`  
 **Documento base:** `2026-09-11_Alcance_Operativo_Investigador_Transdisciplinario_v0_1.md`  
 **Clasificación:** perfil específico IT; transferencia reversible PH-IT-AT; integración con Base de Conocimiento Común  
-**Revisión humana:** obligatoria
+**Revisión humana:** aprobada el 2026-09-11
 
 ---
 
@@ -414,6 +414,6 @@ Agentes, sistemas multiagente y automatización robusta permanecen fuera del paq
 
 El Mapa Rector habilita la formulación de la **Fórmula Nuclear del Investigador Transdisciplinario v0.1**.
 
+**Estado de aprobación humana:** aprobado el 2026-09-11.  
 **Deuda de referencias lógicas de sesión:** importante; consolidar al cierre de Bloque 2.  
-**Deuda crítica:** ninguna identificada.  
-**Revisión humana:** pendiente antes de declarar versión estable.
+**Deuda crítica:** ninguna identificada.
