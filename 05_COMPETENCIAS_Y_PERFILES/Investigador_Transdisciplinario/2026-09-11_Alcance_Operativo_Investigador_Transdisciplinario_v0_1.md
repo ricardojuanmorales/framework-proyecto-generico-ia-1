@@ -3,7 +3,7 @@
 
 **Código documental:** `2026-09-11_Alcance_Operativo_Investigador_Transdisciplinario_v0_1`  
 **Versión:** v0.1  
-**Estado:** Borrador rector para validación humana  
+**Estado:** Aprobado por humano  
 **Fecha:** 2026-09-11  
 **Framework maestro estable:** Framework Genérico V4.1.0  
 **Repositorio operativo vivo:** Framework Genérico V4.1.1  
@@ -11,7 +11,7 @@
 **Fase:** Fase 1 — Paquete rector del perfil  
 **Ruta canónica:** `05_COMPETENCIAS_Y_PERFILES/Investigador_Transdisciplinario/`  
 **Clasificación:** perfil específico IT; transferencia reversible PH-IT-AT; integración con Base de Conocimiento Común; activación caleidoscópica latente  
-**Revisión humana:** obligatoria  
+**Revisión humana:** aprobada con cambios el 2026-09-11  
 **Seguridad:** longitudinal  
 **Automatización agéntica:** fuera de alcance en esta fase
 
@@ -282,11 +282,12 @@ IA
   síntesis y exploración.
 
 Investigador Transdisciplinario
-→ gobierna la relación entre los tres,
+→ gobierna epistemológicamente el uso de esta relación
+  dentro del proceso investigativo,
   valida resultados y documenta límites.
 ```
 
-La integración humano-máquina-IA es una competencia investigativa, no un añadido tecnológico.
+La integración humano-máquina-IA es una competencia investigativa, no un añadido tecnológico. El IT estudia esta relación triádica desde su óptica investigativa, observa sus efectos sobre preguntas, métodos, evidencia, interpretación y validez, y aporta sus hallazgos y criterios en simetría con PH y AT para fortalecer la integración caleidoscópica alrededor del problema común. No gobierna la relación humano-máquina-IA del ecosistema completo ni sustituye la gobernanza transversal de la Base Común.
 
 ---
 
@@ -314,7 +315,7 @@ La transferencia no exige producir documentos adicionales por inercia. Debe reut
 
 ## 11. Relación con el Caleidoscopio
 
-El Investigador Transdisciplinario no produce por sí solo el Caleidoscopio. Contribuye con problematización, método, evidencia, interpretación y validación a configuraciones donde PH y AT aportan función, implementación, experiencia, mediación y sentido alrededor de un problema común.
+El Investigador Transdisciplinario no produce por sí solo el Caleidoscopio. Contribuye con problematización, método, evidencia, interpretación y validación, y estudia desde su propia óptica las relaciones que se producen entre humanos, máquinas, IA y los perfiles transdisciplinarios cuando atienden un problema común. Sus aportes se integran en simetría con los de PH y AT, sin asumir jerarquía sobre los asuntos comunes del ecosistema.
 
 El Caleidoscopio se entiende como propiedad emergente de combinaciones trazables, no como suma mecánica de perfiles.
 
@@ -371,8 +372,8 @@ No se anticipan estos productos en Fase 1.
 
 ## 14. Estado y próximo movimiento
 
-Este documento establece la frontera operativa inicial del perfil y habilita la creación del **Mapa Rector del Investigador Transdisciplinario v0.1**.
+Este documento establece la frontera operativa inicial del perfil y habilita la validación del **Mapa Rector del Investigador Transdisciplinario v0.1**.
 
+**Estado de aprobación humana:** aprobado con cambios e integrado el 2026-09-11.  
 **Deuda de referencias lógicas de sesión:** importante; actualizar al cierre de Bloque 2 los registros e índices que correspondan.  
-**Deuda crítica:** ninguna identificada en este documento.  
-**Revisión humana:** pendiente antes de declarar versión estable.
+**Deuda crítica:** ninguna identificada en este documento.
