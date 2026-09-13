@@ -3,7 +3,7 @@
 
 **Código documental:** `2026-09-11_Matriz_Seguridad_Etica_Responsabilidad_Epistemologica_IT_v0_1`  
 **Versión:** v0.1  
-**Estado:** Borrador rector para validación humana  
+**Estado:** Aprobado por humano  
 **Fecha:** 2026-09-11  
 **Framework maestro estable:** Framework Genérico V4.1.0  
 **Repositorio operativo vivo:** Framework Genérico V4.1.1  
@@ -11,7 +11,7 @@
 **Fase:** Fase 1 — Operacionalización del perfil  
 **Ruta canónica:** `05_COMPETENCIAS_Y_PERFILES/Investigador_Transdisciplinario/`  
 **Documentos base:** Alcance Operativo IT v0.1; Mapa Rector IT v0.1; Fórmula Nuclear IT v0.1; Matriz de Competencias IT v0.1  
-**Revisión humana:** obligatoria
+**Revisión humana:** aprobada el 2026-09-12
 
 ---
 
@@ -243,10 +243,8 @@ La matriz puede considerarse estable si:
 
 ## 13. Estado y siguiente movimiento
 
-Esta matriz es **candidata para validación humana**.
+Esta matriz queda **aprobada por humano** y habilita la construcción de la **Matriz de Evidencia y Métricas IT v0.1**.
 
-Una vez aprobada, habilita la construcción de la **Matriz de Evidencia y Métricas IT v0.1**.
-
+**Estado de aprobación humana:** aprobado el 2026-09-12.  
 **Deuda de referencias lógicas de sesión:** registrar esta matriz en índices y referencias durante el cierre de operacionalización.  
-**Deuda crítica:** ninguna identificada.  
-**Revisión humana:** pendiente.
+**Deuda crítica:** ninguna identificada.
