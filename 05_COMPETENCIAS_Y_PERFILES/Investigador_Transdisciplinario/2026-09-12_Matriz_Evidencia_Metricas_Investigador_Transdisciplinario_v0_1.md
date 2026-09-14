@@ -3,7 +3,7 @@
 
 **Código documental:** `2026-09-12_Matriz_Evidencia_Metricas_Investigador_Transdisciplinario_v0_1`  
 **Versión:** v0.1  
-**Estado:** Borrador rector para validación humana  
+**Estado:** Aprobado por humano  
 **Fecha:** 2026-09-12  
 **Framework maestro estable:** Framework Genérico V4.1.0  
 **Repositorio operativo vivo:** Framework Genérico V4.1.1  
@@ -11,7 +11,7 @@
 **Fase:** Fase 1 — Operacionalización del perfil  
 **Ruta canónica:** `05_COMPETENCIAS_Y_PERFILES/Investigador_Transdisciplinario/`  
 **Documentos base:** Alcance Operativo IT v0.1; Mapa Rector IT v0.1; Fórmula Nuclear IT v0.1; Matriz de Competencias IT v0.1; Matriz de Seguridad, Ética y Responsabilidad Epistemológica IT v0.1  
-**Revisión humana:** obligatoria
+**Revisión humana:** aprobada el 2026-09-13
 
 ---
 
@@ -288,9 +288,9 @@ La matriz puede considerarse estable si:
 
 ## 16. Estado y siguiente movimiento
 
-Esta matriz es **candidata para validación humana**.
+Esta matriz fue **aprobada por humano el 2026-09-13**.
 
-Con su aprobación quedaría completado el núcleo de operacionalización previsto para el Bloque 3 del perfil IT:
+Con su aprobación queda completado el núcleo de operacionalización previsto para el Bloque 3 del perfil IT:
 
 ```text
 Matriz de Competencias IT
@@ -298,8 +298,8 @@ Matriz de Competencias IT
 + Matriz de Evidencia y Métricas IT
 ```
 
-El movimiento siguiente sería un bloque breve de integración documental: referencias lógicas, transferencia reversible, deuda acumulada y cierre de Fase 1 IT, sin crear documentos adicionales por inercia.
+El movimiento siguiente es la consolidación de la Gramática Arquitectónica Común PH-IT-AT, seguida por las Unidades Nucleares IT y el Bloque 4 robusto de integración y gobernanza.
 
 **Deuda de referencias lógicas de sesión:** pendiente de integración al cierre del Bloque 3.  
 **Deuda crítica:** ninguna identificada.  
-**Revisión humana:** pendiente.
+**Revisión humana:** aprobada el 2026-09-13.
