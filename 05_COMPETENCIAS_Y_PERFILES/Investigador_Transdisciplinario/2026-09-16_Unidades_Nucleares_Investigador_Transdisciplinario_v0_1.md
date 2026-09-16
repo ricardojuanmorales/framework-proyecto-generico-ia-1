@@ -3,7 +3,7 @@
 
 **Código documental:** `2026-09-16_Unidades_Nucleares_Investigador_Transdisciplinario_v0_1`  
 **Versión:** v0.1  
-**Estado:** Borrador rector para validación humana  
+**Estado:** Aprobado por humano  
 **Fecha:** 2026-09-16  
 **Framework maestro estable:** Framework Genérico V4.1.0  
 **Repositorio operativo vivo:** Framework Genérico V4.1.1  
@@ -12,7 +12,7 @@
 **Ruta canónica provisional:** `05_COMPETENCIAS_Y_PERFILES/Investigador_Transdisciplinario/`  
 **Ruta objetivo sujeta a migración aprobada:** `Perfil_Operativo_vX/Unidades_Nucleares/`  
 **Documentos base:** Alcance Operativo IT v0.1; Mapa Rector IT v0.1; Fórmula Nuclear IT v0.1; Matriz de Competencias IT v0.1; Matriz de Seguridad, Ética y Responsabilidad Epistemológica IT v0.1; Matriz de Evidencia y Métricas IT v0.1; Gramática Arquitectónica Común PH-IT-AT v0.1  
-**Revisión humana:** obligatoria
+**Revisión humana:** aprobada el 2026-09-16
 
 ---
 
@@ -251,10 +251,10 @@ El mapa nuclear puede considerarse estable si:
 
 ## 17. Estado y siguiente movimiento
 
-Este documento queda como **candidato para validación humana**.
+Este documento queda **aprobado por humano**.
 
-Su aprobación completaría la capa de **Actuación** prevista por la Gramática Arquitectónica Común y habilitaría el Bloque 4 robusto de integración, gobernanza, rutas canónicas, espejos lógicos, transferencia reversible y cierre de Fase 1 IT.
+Su aprobación completa la capa de **Actuación** prevista por la Gramática Arquitectónica Común y habilita el Bloque 4 robusto de integración, gobernanza, rutas canónicas, espejos lógicos, transferencia reversible y cierre de Fase 1 IT.
 
 **Deuda de referencias lógicas:** incorporar esta unidad al mapa de destino IT, Enlaces Espejo, Transferencia Simétrica, Tree/tabla/índices/changelog al cierre del bloque arquitectónico.  
 **Deuda crítica:** ninguna identificada.  
-**Revisión humana:** pendiente.
+**Revisión humana:** aprobada el 2026-09-16.
