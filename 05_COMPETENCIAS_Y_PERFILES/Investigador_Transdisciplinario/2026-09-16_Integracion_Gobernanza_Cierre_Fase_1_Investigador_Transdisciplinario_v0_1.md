@@ -3,7 +3,7 @@
 
 **Código documental:** `2026-09-16_Integracion_Gobernanza_Cierre_Fase_1_Investigador_Transdisciplinario_v0_1`  
 **Versión:** v0.1  
-**Estado:** Borrador rector para validación humana  
+**Estado:** Aprobado por humano  
 **Fecha:** 2026-09-16  
 **Framework maestro estable:** Framework Genérico V4.1.0  
 **Repositorio operativo vivo:** Framework Genérico V4.1.1  
@@ -11,7 +11,7 @@
 **Fase:** Fase 1 — Integración, gobernanza y cierre  
 **Ruta canónica provisional:** `05_COMPETENCIAS_Y_PERFILES/Investigador_Transdisciplinario/`  
 **Ruta objetivo sujeta a migración aprobada:** `Perfil_Operativo_vX/Gobernanza_Perfil/`  
-**Revisión humana:** obligatoria
+**Revisión humana:** aprobada el 2026-09-16
 
 ---
 
@@ -357,7 +357,7 @@ Toda migración debe ser reversible y verificable.
 - [x] metacognición y reapertura definidas
 
 ### Pendiente de cierre operativo
-- [ ] aprobación humana de este documento
+- [x] aprobación humana de este documento
 - [ ] mapa de migración reversible
 - [ ] migración física controlada
 - [ ] pago de deuda de referencias
@@ -367,7 +367,7 @@ Toda migración debe ser reversible y verificable.
 
 ## 16. Condición de cierre conceptual
 
-Con la aprobación de este documento, la Fase 1 IT puede considerarse **conceptualmente completa**.
+Con la aprobación de este documento, la Fase 1 IT queda **conceptualmente completa**.
 
 El cierre operativo requiere todavía ejecutar la migración controlada, actualizar referencias y verificar la arquitectura resultante.
 
@@ -380,9 +380,9 @@ cierre conceptual
 
 ## 17. Estado y siguiente movimiento
 
-Este documento queda como **candidato para validación humana**.
+Este documento queda **aprobado por humano**.
 
-Si se aprueba, el siguiente movimiento será exclusivamente operativo:
+El siguiente movimiento es exclusivamente operativo:
 
 ```text
 1. diseñar mapa reversible de migración;
@@ -394,6 +394,6 @@ Si se aprueba, el siguiente movimiento será exclusivamente operativo:
 7. cerrar Fase 1 IT.
 ```
 
-**Deuda de referencias lógicas:** debe registrarse antes de continuar con migración.  
+**Deuda de referencias lógicas:** registrada antes de migración y pendiente de pago operativo.  
 **Deuda crítica:** ninguna conceptual identificada; queda deuda operativa visible.  
-**Revisión humana:** pendiente.
+**Revisión humana:** aprobada el 2026-09-16.
