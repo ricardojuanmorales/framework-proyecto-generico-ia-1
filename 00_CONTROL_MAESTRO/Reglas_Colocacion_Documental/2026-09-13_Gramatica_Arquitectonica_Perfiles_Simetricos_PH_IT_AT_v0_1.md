@@ -2,14 +2,14 @@
 
 **Código documental:** `2026-09-13_Gramatica_Arquitectonica_Perfiles_Simetricos_PH_IT_AT_v0_1`  
 **Versión:** v0.1  
-**Estado:** Borrador rector para validación humana  
+**Estado:** Aprobado por humano  
 **Fecha:** 2026-09-13  
 **Framework maestro estable:** Framework Genérico V4.1.0  
 **Repositorio operativo vivo:** Framework Genérico V4.1.1  
 **Ámbito:** Programador Humanista, Investigador Transdisciplinario, Artista Transdisciplinario  
 **Ruta canónica:** `00_CONTROL_MAESTRO/Reglas_Colocacion_Documental/`  
 **Tipo:** regla transversal de arquitectura y colocación documental  
-**Revisión humana:** obligatoria
+**Revisión humana:** aprobada el 2026-09-16
 
 ---
 
@@ -372,7 +372,7 @@ Primero arquitectura. Después migración.
 
 ## 17. Estado y siguiente movimiento
 
-Esta gramática es **candidata para validación humana**.
+Esta gramática queda **aprobada por humano**.
 
 Su aprobación habilita:
 
@@ -386,4 +386,4 @@ Su aprobación habilita:
 
 **Deuda de referencias lógicas:** registrar esta gramática en Tree/tabla/índices/changelog al cierre del bloque arquitectónico.  
 **Deuda crítica:** ninguna identificada.  
-**Revisión humana:** pendiente.
+**Revisión humana:** aprobada el 2026-09-16.
