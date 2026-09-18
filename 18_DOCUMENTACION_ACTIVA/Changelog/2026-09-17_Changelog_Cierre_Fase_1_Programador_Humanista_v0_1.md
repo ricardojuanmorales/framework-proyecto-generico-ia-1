@@ -127,7 +127,29 @@ automatizaciones finales
 
 ---
 
-## 8. Próximo movimiento
+## 8. Verificación final
+
+Verificación ejecutada después de la consolidación:
+
+- fuentes activas v0.3 presentes en sus rutas objetivo;
+- Mapa de Consolidación Reversible presente en Gobernanza;
+- README raíz del perfil activado;
+- delta Tree de cierre presente;
+- Resumen Ejecutivo Humano presente en Wiki;
+- Matriz de Seguridad Longitudinal histórica preservada;
+- documentos v0.1/v0.2 preservados;
+- deuda de `Bases_Conocimiento/` preservada sin migración masiva;
+- no existen archivos exactos `AGENTS.md`, `CLAUDE.md` ni `SKILLS.md` en el repositorio;
+- Fase 2 no fue iniciada.
+
+```text
+resultado de verificación: conforme
+estado: Fase 1 PH revisada cerrada conceptual y operativamente
+```
+
+---
+
+## 9. Próximo movimiento
 
 ```text
 Fase 1 PH cerrada
