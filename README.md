@@ -41,15 +41,15 @@ GitHub funciona como fuente versionada del sistema y el repositorio puede abrirs
 |---|---|
 | 🧱 Framework maestro | **V4.1.0 estable** |
 | 🧰 Repositorio operativo | **V4.1.1 activo** |
-| 🧑‍💻 Programador Humanista | **Fase 1 cerrada** |
+| 🧑‍💻 Programador Humanista | **Fase 1 cerrada + robustecida por integración real** |
 | 🧪 Investigador Transdisciplinario | **Fase 1 cerrada** |
 | 🎨 Artista Transdisciplinario | **Fase 1 cerrada** |
 | 🔮 Caleidoscopio | **Propiedad emergente conceptualmente estable** |
 | 🧬 Gramática común PH-IT-AT | **Aprobada** |
-| 🧪 Próximo hito | **Prueba de integración con prototipo PH real** |
-| 🚧 Fase 2 | **No iniciada** |
+| 🧪 Próximo hito | **Preparación progresiva Pre-Fase 2** |
+| 🚧 Fase 2 | **No iniciada · Pre-Fase 2 preparado** |
 
-El proyecto está entrando en una nueva etapa:
+El proyecto completó su primera prueba de integración con un prototipo PH real y entra en estado **Pre-Fase 2 preparado**:
 
 ```text
 arquitectura
@@ -57,6 +57,7 @@ arquitectura
 → evidencia
 → tensión
 → aprendizaje
+→ reconciliación estructural
 → evolución
 ```
 
@@ -404,7 +405,7 @@ La arquitectura de los tres perfiles ya fue estabilizada en Fase 1.
 
 Ahora el Framework debe demostrar que puede sostener práctica real sin volverse rígido ni inflado.
 
-El siguiente experimento será un **prototipo PH real**, usado como prueba de estrés para observar:
+La primera prueba de estrés con un **prototipo PH real (AI StoryLab 1)** fue completada. Confirmó la arquitectura nuclear de PH y produjo refinamientos sobre métodos invocables, reversibilidad, documentación operacional y residencia semántica. El siguiente horizonte es preparar Fase 2 progresivamente a partir de evidencia real.
 
 ```text
 si la identidad explica la práctica
