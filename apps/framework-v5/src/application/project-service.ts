@@ -4,6 +4,7 @@ import {
   type Mode,
   type Profile,
   type ProjectPackage,
+  type SourceContext,
 } from "../domain/model";
 import { validateProjectInvariants } from "../domain/invariants";
 import type { ProjectRepository } from "../ports/project-repository";
@@ -16,18 +17,27 @@ export interface CreateProjectInput {
   context: string;
   purpose: string;
   activeProfiles: Profile[];
+  source?: Omit<SourceContext, "preservationRule">;
+  auditFocus?: string;
 }
+
+const nextStepByMode: Record<Mode, string> = {
+  START: "Revisar configuración inicial y definir primer bloque de trabajo.",
+  INTEGRATE: "Confirmar procedencia y seleccionar qué capa Framework añadir sin reorganizar el proyecto fuente.",
+  AUDIT: "Definir criterios de contraste y revisar evidencia sin modificar el proyecto fuente.",
+};
 
 export const createProject = (
   input: CreateProjectInput,
   now = new Date().toISOString(),
 ): FrameworkProject => {
+  const mode = input.mode ?? "START";
   const project: FrameworkProject = {
     schemaVersion: SCHEMA_VERSION,
     id: globalThis.crypto?.randomUUID?.() ?? `project-${Date.now()}`,
     name: input.name.trim(),
-    mode: input.mode ?? "START",
-    status: "active",
+    mode,
+    status: mode === "AUDIT" ? "review" : "active",
     frameworkVersion: "5.0.0-dev",
     createdAt: now,
     updatedAt: now,
@@ -43,11 +53,23 @@ export const createProject = (
       knowledgeInvoked: [],
       risks: [],
       gates: [],
-      nextStep: "Revisar configuración inicial y definir primer bloque de trabajo."
+      nextStep: nextStepByMode[mode],
+      ...(input.source
+        ? {
+            source: {
+              ...input.source,
+              description: input.source.description.trim(),
+              repositoryUrl: input.source.repositoryUrl?.trim() || undefined,
+              existingArtifacts: input.source.existingArtifacts.map((item) => item.trim()).filter(Boolean),
+              preservationRule: "preserve_source" as const,
+            },
+          }
+        : {}),
+      ...(input.auditFocus?.trim() ? { auditFocus: input.auditFocus.trim() } : {}),
     },
     portfolio: [],
     decisions: [],
-    transfers: []
+    transfers: [],
   };
 
   const issues = validateProjectInvariants(project);
