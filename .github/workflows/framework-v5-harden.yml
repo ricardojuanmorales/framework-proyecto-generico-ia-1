@@ -45,7 +45,7 @@ jobs:
       - name: Commit lockfile if changed
         working-directory: .
         run: |
-          if git diff --quiet -- apps/framework-v5/package-lock.json; then
+          if [ -z "$(git status --porcelain -- apps/framework-v5/package-lock.json)" ]; then
             echo "Lockfile unchanged."
           else
             git config user.name "github-actions[bot]"
