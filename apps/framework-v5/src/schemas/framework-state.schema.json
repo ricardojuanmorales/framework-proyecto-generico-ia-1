@@ -17,6 +17,18 @@
     "knowledgeInvoked": { "type": "array", "items": { "type": "string", "maxLength": 240 } },
     "risks": { "type": "array", "items": { "type": "string", "maxLength": 1000 } },
     "gates": { "type": "array", "items": { "type": "string", "maxLength": 240 } },
-    "nextStep": { "type": "string", "maxLength": 2000 }
+    "nextStep": { "type": "string", "maxLength": 2000 },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["description","existingArtifacts","preservationRule"],
+      "properties": {
+        "description": { "type": "string", "minLength": 1, "maxLength": 2000 },
+        "repositoryUrl": { "type": "string", "maxLength": 2000 },
+        "existingArtifacts": { "type": "array", "items": { "type": "string", "maxLength": 1000 } },
+        "preservationRule": { "const": "preserve_source" }
+      }
+    },
+    "auditFocus": { "type": "string", "maxLength": 2000 }
   }
 }
