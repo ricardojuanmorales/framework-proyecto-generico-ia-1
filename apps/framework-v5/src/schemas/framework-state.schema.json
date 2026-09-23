@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://framework-v5.local/schemas/framework-state/0.1.0",
+  "title": "Framework V5 State",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["problem","context","purpose","activeProfiles","latentProfiles","projectLevel","autonomyLevel","methodsInvoked","knowledgeInvoked","risks","gates","nextStep"],
+  "properties": {
+    "problem": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "context": { "type": "string", "maxLength": 4000 },
+    "purpose": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "activeProfiles": { "type": "array", "uniqueItems": true, "minItems": 1, "items": { "enum": ["PH","IT","AT"] } },
+    "latentProfiles": { "type": "array", "uniqueItems": true, "items": { "enum": ["PH","IT","AT"] } },
+    "projectLevel": { "enum": ["N1","N2","N3","N4"] },
+    "autonomyLevel": { "enum": ["N1","N2","N3","N4"] },
+    "methodsInvoked": { "type": "array", "items": { "type": "string", "maxLength": 240 } },
+    "knowledgeInvoked": { "type": "array", "items": { "type": "string", "maxLength": 240 } },
+    "risks": { "type": "array", "items": { "type": "string", "maxLength": 1000 } },
+    "gates": { "type": "array", "items": { "type": "string", "maxLength": 240 } },
+    "nextStep": { "type": "string", "maxLength": 2000 }
+  }
+}
