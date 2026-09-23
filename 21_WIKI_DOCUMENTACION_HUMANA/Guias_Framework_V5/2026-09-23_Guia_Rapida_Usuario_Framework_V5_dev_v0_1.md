@@ -51,12 +51,12 @@ La recomendación no es obligación.
 
 ## Portabilidad
 
-Actualmente existen dos representaciones:
+La aplicación exporta ahora:
 
-1. un archivo JSON de transporte para roundtrip;
-2. una materialización lógica multiarchivo con README, manifest, estado, portafolio, decisiones y transferencias.
+1. **Paquete ZIP portable** con README, manifest, estado, portafolio, decisiones, transferencias y schemas;
+2. **JSON técnico** como formato de compatibilidad y diagnóstico.
 
-El empaquetado físico final todavía está en construcción.
+La importación acepta ZIP o JSON y siempre pasa por validación y confirmación humana antes de persistir.
 
 ## Privacidad
 
