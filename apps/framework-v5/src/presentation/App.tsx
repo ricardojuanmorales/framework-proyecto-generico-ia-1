@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import type { FrameworkProject, Profile, ProjectPackage } from "../domain/model";
+import type { FrameworkProject, Mode, Profile, ProjectPackage } from "../domain/model";
 import type { ProjectRepository } from "../ports/project-repository";
 import { createProject, exportProject, importProject, stageImport } from "../application/project-service";
 
@@ -10,16 +10,25 @@ interface Props {
 
 export function App({ repository, persistenceMode }: Props) {
   const [project, setProject] = useState<FrameworkProject | null>(null);
-  const [status, setStatus] = useState("Listo para START.");
+  const [status, setStatus] = useState("Listo para activar.");
+  const [mode, setMode] = useState<Mode>("START");
   const [name, setName] = useState("");
   const [problem, setProblem] = useState("");
   const [purpose, setPurpose] = useState("");
   const [context, setContext] = useState("");
+  const [sourceDescription, setSourceDescription] = useState("");
+  const [sourceRepositoryUrl, setSourceRepositoryUrl] = useState("");
+  const [existingArtifacts, setExistingArtifacts] = useState("");
+  const [auditFocus, setAuditFocus] = useState("");
   const [profiles, setProfiles] = useState<Profile[]>(["PH"]);
 
+  const needsSource = mode === "INTEGRATE" || mode === "AUDIT";
   const canCreate = useMemo(
-    () => name.trim() && problem.trim() && purpose.trim() && profiles.length > 0,
-    [name, problem, purpose, profiles],
+    () =>
+      Boolean(name.trim() && problem.trim() && purpose.trim() && profiles.length > 0) &&
+      (!needsSource || Boolean(sourceDescription.trim())) &&
+      (mode !== "AUDIT" || Boolean(auditFocus.trim())),
+    [name, problem, purpose, profiles, needsSource, sourceDescription, mode, auditFocus],
   );
 
   const toggleProfile = (profile: Profile) => {
@@ -29,10 +38,27 @@ export function App({ repository, persistenceMode }: Props) {
   };
 
   const onCreate = async () => {
-    const next = createProject({ name, problem, purpose, context, activeProfiles: profiles });
+    const next = createProject({
+      name,
+      mode,
+      problem,
+      purpose,
+      context,
+      activeProfiles: profiles,
+      ...(needsSource
+        ? {
+            source: {
+              description: sourceDescription,
+              repositoryUrl: sourceRepositoryUrl,
+              existingArtifacts: existingArtifacts.split("\n"),
+            },
+          }
+        : {}),
+      ...(mode === "AUDIT" ? { auditFocus } : {}),
+    });
     await repository.save(next);
     setProject(next);
-    setStatus("Proyecto START creado y persistido.");
+    setStatus(`Proyecto ${mode} creado y persistido.`);
   };
 
   const onExport = () => {
@@ -65,18 +91,53 @@ export function App({ repository, persistenceMode }: Props) {
   return (
     <main className="shell">
       <header>
-        <p className="eyebrow">Framework Genérico V5 · vertical slice 0.1</p>
-        <h1>START local-first</h1>
-        <p>Crear, persistir, exportar e importar sin backend ni IA externa.</p>
+        <p className="eyebrow">Framework Genérico V5 · núcleo operacional 0.1</p>
+        <h1>{mode} local-first</h1>
+        <p>Activar, persistir, exportar e importar sin backend ni IA externa.</p>
         <p className="mode">Persistencia: <strong>{persistenceMode}</strong></p>
       </header>
 
-      <section aria-labelledby="start-title" className="card">
-        <h2 id="start-title">Crear proyecto</h2>
+      <section aria-labelledby="activate-title" className="card">
+        <h2 id="activate-title">Activar proyecto</h2>
+
+        <label>
+          Modo
+          <select value={mode} onChange={(e) => setMode(e.target.value as Mode)}>
+            <option value="START">START · proyecto nuevo</option>
+            <option value="INTEGRATE">INTEGRATE · proyecto existente</option>
+            <option value="AUDIT">AUDIT · contraste de proyecto maduro</option>
+          </select>
+        </label>
+
         <label>Nombre<input value={name} onChange={(e) => setName(e.target.value)} /></label>
         <label>Problema<textarea value={problem} onChange={(e) => setProblem(e.target.value)} /></label>
         <label>Contexto<textarea value={context} onChange={(e) => setContext(e.target.value)} /></label>
         <label>Propósito<textarea value={purpose} onChange={(e) => setPurpose(e.target.value)} /></label>
+
+        {needsSource ? (
+          <>
+            <label>
+              Procedencia del proyecto existente
+              <textarea value={sourceDescription} onChange={(e) => setSourceDescription(e.target.value)} />
+            </label>
+            <label>
+              Repositorio o referencia opcional
+              <input value={sourceRepositoryUrl} onChange={(e) => setSourceRepositoryUrl(e.target.value)} />
+            </label>
+            <label>
+              Artefactos existentes, uno por línea
+              <textarea value={existingArtifacts} onChange={(e) => setExistingArtifacts(e.target.value)} />
+            </label>
+          </>
+        ) : null}
+
+        {mode === "AUDIT" ? (
+          <label>
+            Foco de auditoría
+            <textarea value={auditFocus} onChange={(e) => setAuditFocus(e.target.value)} />
+          </label>
+        ) : null}
+
         <fieldset>
           <legend>Perfiles autorizados</legend>
           {(["PH","IT","AT"] as Profile[]).map((profile) => (
@@ -90,7 +151,8 @@ export function App({ repository, persistenceMode }: Props) {
             </label>
           ))}
         </fieldset>
-        <button disabled={!canCreate} onClick={onCreate}>Crear START</button>
+
+        <button disabled={!canCreate} onClick={onCreate}>Crear {mode}</button>
       </section>
 
       <section className="card" aria-live="polite">
@@ -99,10 +161,21 @@ export function App({ repository, persistenceMode }: Props) {
         {project ? (
           <dl>
             <dt>Proyecto</dt><dd>{project.name}</dd>
+            <dt>Modo</dt><dd>{project.mode}</dd>
+            <dt>Estado</dt><dd>{project.status}</dd>
             <dt>Problema</dt><dd>{project.state.problem}</dd>
             <dt>Propósito</dt><dd>{project.state.purpose}</dd>
             <dt>Nivel</dt><dd>{project.state.projectLevel}</dd>
             <dt>Perfiles</dt><dd>{project.state.activeProfiles.join(", ")}</dd>
+            {project.state.source ? (
+              <>
+                <dt>Procedencia</dt><dd>{project.state.source.description}</dd>
+                <dt>Preservación</dt><dd>{project.state.source.preservationRule}</dd>
+              </>
+            ) : null}
+            {project.state.auditFocus ? (
+              <><dt>Foco AUDIT</dt><dd>{project.state.auditFocus}</dd></>
+            ) : null}
             <dt>Siguiente paso</dt><dd>{project.state.nextStep}</dd>
           </dl>
         ) : <p>No hay proyecto activo.</p>}
