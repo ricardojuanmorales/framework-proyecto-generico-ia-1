@@ -1,11 +1,16 @@
 name: Framework V5 Harden
 
 on:
-  pull_request:
+  push:
+    branches:
+      - fase3-construccion-v5
     paths:
       - "apps/framework-v5/**"
       - ".github/workflows/framework-v5-harden.yml"
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   harden:
@@ -28,8 +33,8 @@ jobs:
       - name: Generate lockfile
         run: npm install --package-lock-only --ignore-scripts
 
-      - name: Install
-        run: npm install --ignore-scripts
+      - name: Install reproducibly
+        run: npm ci --ignore-scripts
 
       - name: Verify
         run: npm run verify
@@ -37,11 +42,18 @@ jobs:
       - name: Build static artifact
         run: npm run build
 
-      - name: Upload lockfile evidence
-        uses: actions/upload-artifact@v4
-        with:
-          name: framework-v5-package-lock
-          path: apps/framework-v5/package-lock.json
+      - name: Commit lockfile if changed
+        working-directory: .
+        run: |
+          if git diff --quiet -- apps/framework-v5/package-lock.json; then
+            echo "Lockfile unchanged."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add apps/framework-v5/package-lock.json
+            git commit -m "build: lock Framework V5 dependencies"
+            git push origin HEAD:fase3-construccion-v5
+          fi
 
       - name: Upload static build
         uses: actions/upload-artifact@v4
