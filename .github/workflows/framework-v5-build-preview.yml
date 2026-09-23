@@ -1,6 +1,12 @@
 name: Framework V5 Build Preview
 
 on:
+  push:
+    branches:
+      - fase3-construccion-v5
+    paths:
+      - "apps/framework-v5/**"
+      - ".github/workflows/framework-v5-build-preview.yml"
   workflow_dispatch:
 
 jobs:
