@@ -1,0 +1,33 @@
+{
+  "name": "@framework-generico/framework-v5",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": { "node": ">=22 <27" },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:schemas": "vitest run src/tests/schemas.contract.test.ts",
+    "test:roundtrip": "vitest run src/tests/roundtrip.test.ts",
+    "verify": "npm run typecheck && npm run build && npm run test"
+  },
+  "dependencies": {
+    "react": "19.2.7",
+    "react-dom": "19.2.7"
+  },
+  "devDependencies": {
+    "@types/node": "26.1.1",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.3",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "jsdom": "29.1.1",
+    "typescript": "7.0.2",
+    "vite": "8.1.4",
+    "vitest": "4.1.10"
+  }
+}
