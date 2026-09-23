@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: 24
       - run: npm install --global npm@11.19.0
-      - run: npm install --ignore-scripts
+      - run: npm ci --ignore-scripts
       - run: npm run verify
       - run: FRAMEWORK_V5_BASE_PATH=/framework-proyecto-generico-ia-1/v5/ npm run build
       - uses: actions/upload-artifact@v4
