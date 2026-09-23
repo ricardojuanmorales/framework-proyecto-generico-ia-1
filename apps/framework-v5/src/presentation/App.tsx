@@ -189,7 +189,8 @@ export function App({ repository, persistenceMode }: Props) {
   const onExportZip = () => {
     if (!project) return;
     const bytes = buildPortableZip(project);
-    downloadBlob(new Blob([bytes], { type: "application/zip" }), `${project.id}.framework-v5.zip`);
+    const zipBuffer = Uint8Array.from(bytes).buffer;
+    downloadBlob(new Blob([zipBuffer], { type: "application/zip" }), `${project.id}.framework-v5.zip`);
     setStatus("Paquete portable ZIP exportado.");
   };
 
