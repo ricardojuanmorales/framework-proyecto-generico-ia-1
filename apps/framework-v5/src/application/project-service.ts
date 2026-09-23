@@ -184,6 +184,62 @@ export const reopenProject = (
   return validateMutation(reopened);
 };
 
+export interface PortableFiles {
+  "README.md": string;
+  "manifest.json": string;
+  "framework-state.json": string;
+  "portfolio.json": string;
+  "decisions.json": string;
+  "transfers.json": string;
+}
+
+export const materializePortableFiles = (
+  project: FrameworkProject,
+): PortableFiles => {
+  const manifest = {
+    project_id: project.id,
+    project_name: project.name,
+    framework_version: project.frameworkVersion,
+    package_version: "0.1.0",
+    mode: project.mode,
+    created_at: project.createdAt,
+    updated_at: project.updatedAt,
+    schema_versions: {
+      project: project.schemaVersion,
+      framework_state: "0.1.0",
+      portfolio: "0.1.0",
+      decision: "0.1.0",
+      transfer: "0.1.0"
+    },
+    status: project.status,
+  };
+
+  const readme = [
+    `# ${project.name}`,
+    "",
+    `Modo: ${project.mode}`,
+    `Framework: ${project.frameworkVersion}`,
+    "",
+    "## Problema",
+    project.state.problem,
+    "",
+    "## Propósito",
+    project.state.purpose,
+    "",
+    "## Continuidad",
+    project.state.nextStep,
+  ].join("\n");
+
+  return {
+    "README.md": readme,
+    "manifest.json": JSON.stringify(manifest, null, 2),
+    "framework-state.json": JSON.stringify(project.state, null, 2),
+    "portfolio.json": JSON.stringify(project.portfolio, null, 2),
+    "decisions.json": JSON.stringify(project.decisions, null, 2),
+    "transfers.json": JSON.stringify(project.transfers, null, 2),
+  };
+};
+
 export const exportProject = (
   project: FrameworkProject,
   now = new Date().toISOString(),
