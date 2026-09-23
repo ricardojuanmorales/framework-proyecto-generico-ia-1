@@ -1,0 +1,33 @@
+name: Framework V5 Verify
+
+on:
+  push:
+    branches:
+      - fase3-construccion-v5
+  pull_request:
+    paths:
+      - "apps/framework-v5/**"
+      - ".github/workflows/framework-v5-verify.yml"
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [22, 24]
+    defaults:
+      run:
+        working-directory: apps/framework-v5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+          cache-dependency-path: apps/framework-v5/package-lock.json
+      - name: Install
+        run: npm install --ignore-scripts
+      - name: Verify
+        run: npm run verify
