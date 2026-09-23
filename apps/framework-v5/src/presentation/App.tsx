@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import type { FrameworkProject, MaturityLevel, Mode, Profile, ProjectPackage } from "../domain/model";
 import type { ProjectRepository } from "../ports/project-repository";
 import { recommendKnowledge } from "../application/knowledge-service";
+import { buildPortableZip, stagePortableZipImport } from "../application/portable-zip";
 import {
   addPortfolioEntry,
   createProject,
@@ -176,23 +177,37 @@ export function App({ repository, persistenceMode }: Props) {
     await persistProject(next, "Conocimiento invocado y registrado en portafolio.");
   };
 
-  const onExport = () => {
-    if (!project) return;
-    const pkg = exportProject(project);
-    const blob = new Blob([JSON.stringify(pkg, null, 2)], { type: "application/json" });
+  const downloadBlob = (blob: Blob, name: string) => {
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a");
     anchor.href = url;
-    anchor.download = `${project.id}.framework-v5.json`;
+    anchor.download = name;
     anchor.click();
     URL.revokeObjectURL(url);
-    setStatus("Paquete portable exportado.");
+  };
+
+  const onExportZip = () => {
+    if (!project) return;
+    const bytes = buildPortableZip(project);
+    downloadBlob(new Blob([bytes], { type: "application/zip" }), `${project.id}.framework-v5.zip`);
+    setStatus("Paquete portable ZIP exportado.");
+  };
+
+  const onExportJson = () => {
+    if (!project) return;
+    const pkg = exportProject(project);
+    downloadBlob(
+      new Blob([JSON.stringify(pkg, null, 2)], { type: "application/json" }),
+      `${project.id}.framework-v5.json`,
+    );
+    setStatus("JSON técnico exportado.");
   };
 
   const onImport = async (file: File) => {
     if (file.size > 2_000_000) throw new Error("IMPORT_FILE_TOO_LARGE");
-    const parsed: unknown = JSON.parse(await file.text());
-    const staged: ProjectPackage = stageImport(parsed);
+    const staged: ProjectPackage = file.name.toLowerCase().endsWith(".zip")
+      ? stagePortableZipImport(new Uint8Array(await file.arrayBuffer()))
+      : stageImport(JSON.parse(await file.text()));
     const accepted = globalThis.confirm("El paquete es válido. ¿Deseas importarlo y persistirlo?");
     if (!accepted) {
       setStatus("Importación cancelada por decisión humana.");
@@ -384,12 +399,15 @@ export function App({ repository, persistenceMode }: Props) {
           ) : null}
         </section>
 
-        <button disabled={!project} onClick={onExport}>Exportar paquete</button>
+        <div className="grid-two">
+          <button disabled={!project} onClick={onExportZip}>Exportar paquete ZIP</button>
+          <button disabled={!project} onClick={onExportJson}>Exportar JSON técnico</button>
+        </div>
         <label className="import">
           Importar paquete
           <input
             type="file"
-            accept="application/json,.json"
+            accept="application/zip,.zip,application/json,.json"
             onChange={async (e) => {
               const file = e.target.files?.[0];
               if (!file) return;
