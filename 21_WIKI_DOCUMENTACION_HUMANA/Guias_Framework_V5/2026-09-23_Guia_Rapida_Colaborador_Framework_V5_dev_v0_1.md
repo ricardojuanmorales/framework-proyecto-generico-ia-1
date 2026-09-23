@@ -29,7 +29,7 @@ Vitest
 
 ```bash
 cd apps/framework-v5
-npm install --ignore-scripts
+npm ci --ignore-scripts
 npm run dev
 npm run verify
 ```
