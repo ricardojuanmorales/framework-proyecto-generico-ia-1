@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Framework Genérico V4.1.0 — Plataforma Viva</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+<style>
+:root {
+  --ink:#0d1117;--ink2:#161c26;--ink3:#1e2635;--ink4:#252f40;
+  --border:#2a3545;--border2:#3a4a60;
+  --gold:#d4a853;--gold2:#f0c96a;--gold-dim:#4a3510;
+  --teal:#3fbcad;--teal-dim:#1a3d39;
+  --coral:#e06b5a;--coral-dim:#4a1f18;
+  --violet:#8b6fcb;--violet-dim:#2d2050;
+  --sage:#6bab7a;--sage-dim:#1e3d26;
+  --sky:#5b9bd5;--sky-dim:#1a2f4a;
+  --text:#c8d4e0;--text2:#7a8fa6;--text3:#4a5f75;
+  --white:#f0f4f8;--r:8px;--r2:12px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--ink);color:var(--text);font-family:'Crimson Pro',Georgia,serif;font-size:16px;line-height:1.6;min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:48px 48px;opacity:.15;pointer-events:none;z-index:0}
+.app{display:grid;grid-template-columns:256px 1fr;grid-template-rows:54px 1fr;min-height:100vh;position:relative;z-index:1}
+
+/* TOPBAR */
+.topbar{grid-column:1/-1;background:var(--ink2);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 22px;gap:16px}
+.logo{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--gold2);letter-spacing:.02em;display:flex;align-items:center;gap:9px}
+.ver-badge{font-family:'Space Mono',monospace;font-size:9px;background:var(--gold-dim);color:var(--gold2);padding:2px 7px;border-radius:4px}
+.topbar-div{flex:1}
+.topbar-meta{font-family:'Space Mono',monospace;font-size:9px;color:var(--text3);text-align:right;line-height:1.6}
+.dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 5px var(--teal);margin-right:4px}
+
+/* SIDEBAR */
+.sidebar{background:var(--ink2);border-right:1px solid var(--border);padding:16px 0;overflow-y:auto;position:sticky;top:54px;height:calc(100vh - 54px)}
+.s-label{font-family:'Space Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.12em;text-transform:uppercase;padding:10px 18px 4px}
+.nav-item{display:flex;align-items:center;gap:9px;padding:8px 18px;cursor:pointer;transition:background .15s,color .15s;font-family:'Crimson Pro',serif;font-size:14px;color:var(--text2);border-left:2px solid transparent;user-select:none}
+.nav-item:hover{background:var(--ink3);color:var(--text)}
+.nav-item.active{background:rgba(212,168,83,.08);color:var(--gold2);border-left-color:var(--gold)}
+.nav-icon{font-size:13px;min-width:16px;text-align:center}
+.nav-badge{margin-left:auto;font-family:'Space Mono',monospace;font-size:9px;background:var(--ink3);border:1px solid var(--border);padding:1px 5px;border-radius:8px;color:var(--text3)}
+.nav-item.active .nav-badge{background:var(--gold-dim);border-color:var(--gold-dim);color:var(--gold2)}
+.nav-item.new-tag::after{content:'nuevo';font-family:'Space Mono',monospace;font-size:8px;background:var(--teal-dim);color:var(--teal);padding:1px 5px;border-radius:4px;margin-left:auto}
+
+/* MAIN */
+.main{overflow-y:auto;padding:26px 30px;height:calc(100vh - 54px)}
+.page{display:none;animation:fi .22s ease}
+.page.active{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+
+/* PAGE HEADER */
+.ph{margin-bottom:24px}
+.pt{font-family:'Playfair Display',serif;font-size:26px;font-weight:600;color:var(--white);margin-bottom:3px}
+.pt em{color:var(--gold2);font-style:normal}
+.ps{font-size:14px;color:var(--text2)}
+
+/* CARDS */
+.card{background:var(--ink2);border:1px solid var(--border);border-radius:var(--r2);padding:18px}
+.card-label{font-family:'Space Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+
+/* BUTTONS */
+.btn{font-family:'Space Mono',monospace;font-size:10px;padding:8px 16px;border-radius:var(--r);cursor:pointer;transition:all .15s;letter-spacing:.04em}
+.btn-gold{background:var(--gold-dim);border:1px solid var(--gold);color:var(--gold2)}
+.btn-gold:hover{background:rgba(212,168,83,.2)}
+.btn-ghost{background:transparent;border:1px solid var(--border);color:var(--text2)}
+.btn-ghost:hover{border-color:var(--border2);color:var(--text)}
+.btn-teal{background:var(--teal-dim);border:1px solid var(--teal);color:var(--teal)}
+.btn-teal:hover{background:rgba(63,188,173,.2)}
+
+/* FORMS */
+.f-label{font-family:'Space Mono',monospace;font-size:9px;color:var(--text2);display:block;margin-bottom:5px;text-transform:uppercase;letter-spacing:.08em}
+.f-input,.f-select,.f-textarea{width:100%;background:var(--ink3);border:1px solid var(--border);border-radius:var(--r);color:var(--text);font-family:'Crimson Pro',serif;font-size:15px;padding:8px 11px;outline:none;transition:border-color .15s}
+.f-input:focus,.f-select:focus,.f-textarea:focus{border-color:var(--gold)}
+.f-select option{background:var(--ink2)}
+.f-textarea{resize:vertical;min-height:72px}
+.f-field{margin-bottom:14px}
+
+/* TAGS */
+.tag{font-family:'Space Mono',monospace;font-size:8px;padding:2px 6px;border-radius:4px;background:var(--ink3);color:var(--text3);border:1px solid var(--border)}
+
+/* MODAL */
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:100;align-items:center;justify-content:center}
+.mo.open{display:flex}
+.modal{background:var(--ink2);border:1px solid var(--border2);border-radius:16px;width:540px;max-width:95vw;max-height:82vh;overflow-y:auto;padding:26px;position:relative}
+.mc{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--text2);font-size:18px;cursor:pointer}
+
+/* ════════════════ ACTIVACIÓN ════════════════ */
+.intake-wizard{max-width:640px;margin:0 auto}
+.wizard-progress{display:flex;align-items:center;gap:0;margin-bottom:28px}
+.wp-step{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:9px;color:var(--text3);transition:all .2s;flex-shrink:0}
+.wp-step.done{background:var(--teal-dim);border-color:var(--teal);color:var(--teal)}
+.wp-step.active{background:var(--gold-dim);border-color:var(--gold);color:var(--gold2)}
+.wp-line{flex:1;height:1px;background:var(--border)}
+.wp-line.done{background:var(--teal)}
+
+.q-card{background:var(--ink2);border:1px solid var(--border);border-radius:var(--r2);padding:28px;margin-bottom:16px}
+.q-num{font-family:'Space Mono',monospace;font-size:9px;color:var(--text3);margin-bottom:10px}
+.q-text{font-family:'Playfair Display',serif;font-size:18px;color:var(--white);margin-bottom:18px;line-height:1.4}
+.q-hint{font-size:13px;color:var(--text3);margin-bottom:16px;font-style:italic}
+.q-input{width:100%;background:var(--ink3);border:1px solid var(--border);border-radius:var(--r);color:var(--text);font-family:'Crimson Pro',serif;font-size:15px;padding:10px 13px;outline:none;transition:border-color .15s;resize:vertical;min-height:64px}
+.q-input:focus{border-color:var(--gold)}
+.q-nav{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.q-count{font-family:'Space Mono',monospace;font-size:10px;color:var(--text3)}
+
+/* Resultado activación */
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+.result-card{background:var(--ink3);border:1px solid var(--border);border-radius:var(--r2);padding:16px}
+.result-label{font-family:'Space Mono',monospace;font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.result-val{font-family:'Playfair Display',serif;font-size:18px;color:var(--white)}
+.result-sub{font-size:12px;color:var(--text2);margin-top:3px}
+.risk-list{display:flex;flex-direction:column;gap:6px}
+.risk-item{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--text2)}
+.risk-dot{width:6px;height:6px;border-radius:50%;background:var(--coral);margin-top:6px;flex-shrink:0}
+.success-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sc-item{display:flex;align-items:center;gap:8px;font-size:13px;padding:7px 10px;background:var(--ink3);border-radius:var(--r);border:1px solid var(--border)}
+.sc-check{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0}
+.sc-check.ok{background:var(--sage-dim);border-color:var(--sage);color:var(--sage)}
+
+/* ════════════════ EXPLORADOR ════════════════ */
+.filter-row{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.fb{font-family:'Space Mono',monospace;font-size:9px;padding:4px 11px;border-radius:16px;border:1px solid var(--border);background:transparent;color:var(--text2);cursor:pointer;transition:all .15s}
+.fb:hover{border-color:var(--border2);color:var(--text)}
+.fb.active{background:var(--gold-dim);border-color:var(--gold);color:var(--gold2)}
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.cc{background:var(--ink2);border:1px solid var(--border);border-radius:var(--r2);padding:14px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.cc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--cc,var(--gold));opacity:.7}
+.cc:hover{border-color:var(--cc,var(--gold));transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.4)}
+.cc-num{font-family:'Space Mono',monospace;font-size:9px;color:var(--text3);margin-bottom:5px}
+.cc-name{font-family:'Playfair Display',serif;font-size:13px;font-weight:600;color:var(--white);margin-bottom:5px;line-height:1.3}
+.cc-desc{font-size:11px;color:var(--text2);line-height:1.4}
+.cc-foot{display:flex;align-items:center;justify-content:space-between;margin-top:9px}
+.est-badge{font-family:'Space Mono',monospace;font-size:8px;padding:2px 6px;border-radius:4px}
+.est-activo{background:rgba(63,188,173,.15);color:var(--teal)}
+.est-pendiente{background:rgba(212,168,83,.12);color:var(--gold)}
+.est-archivo{background:rgba(139,111,203,.15);color:var(--violet)}
+
+/* ════════════════ KANBAN ════════════════ */
+.kb{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:start}
+.kc{background:var(--ink2);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden}
+.kc-h{padding:10px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:7px}
+.kc-title{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.05em}
+.kc-n{margin-left:auto;font-family:'Space Mono',monospace;font-size:9px;background:var(--ink3);border:1px solid var(--border);padding:1px 6px;border-radius:8px;color:var(--text3)}
+.kc-dot{width:7px;height:7px;border-radius:50%}
+.kc-body{padding:10px;display:flex;flex-direction:column;gap:9px;min-height:100px}
+.kk{background:var(--ink3);border:1px solid var(--border);border-radius:var(--r);padding:11px 13px;cursor:pointer;transition:all .2s}
+.kk:hover{border-color:var(--border2);box-shadow:0 4px 10px rgba(0,0,0,.3)}
+.kk-title{font-family:'Crimson Pro',serif;font-size:14px;color:var(--white);margin-bottom:5px;line-height:1.3}
+.kk-meta{font-family:'Space Mono',monospace;font-size:9px;color:var(--text3)}
+.kk-badge{font-family:'Space Mono',monospace;font-size:8px;padding:2px 6px;border-radius:4px;display:inline-block;margin-top:6px}
+.add-btn{width:100%;padding:7px;background:transparent;border:1px dashed var(--border);border-radius:var(--r);color:var(--text3);font-family:'Space Mono',monospace;font-size:9px;cursor:pointer;transition:all .15s;margin-top:2px}
+.add-btn:hover{border-color:var(--gold);color:var(--gold);background:rgba(212,168,83,.04)}
+
+/* ════════════════ GENERADOR ════════════════ */
+.gen-layout{display:grid;grid-template-columns:1fr 1.3fr;gap:18px}
+.perfil-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+.pb{background:var(--ink3);border:1px solid var(--border);border-radius:var(--r);padding:11px;cursor:pointer;transition:all .2s;text-align:left}
+.pb:hover{border-color:var(--border2)}
+.pb.sel{border-color:var(--teal);background:rgba(63,188,173,.07)}
+.pb-name{font-family:'Crimson Pro',serif;font-size:13px;color:var(--white);margin-bottom:2px}
+.pb-id{font-family:'Space Mono',monospace;font-size:9px;color:var(--text3)}
+.tl-item{background:var(--ink3);border:1px solid var(--border);border-radius:var(--r);padding:11px 13px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .15s;margin-bottom:7px}
+.tl-item:hover{border-color:var(--border2)}
+.tl-icon{font-size:15px;min-width:22px;text-align:center}
+.tl-name{font-family:'Space Mono',monospace;font-size:10px;color:var(--text);flex:1}
+.tl-dl{background:transparent;border:1px solid var(--border);color:var(--text3);font-family:'Space Mono',monospace;font-size:8px;padding:3px 9px;border-radius:4px;cursor:pointer;transition:all .15s}
+.tl-dl:hover{border-color:var(--teal);color:var(--teal)}
+.preview-box{background:var(--ink3);border:1px solid var(--border);border-radius:var(--r2);padding:18px;font-family:'Space Mono',monospace;font-size:11px;color:var(--text2);line-height:1.8;min-height:340px;white-space:pre-wrap;overflow-y:auto}
+
+/* ════════════════ REVISOR V2 ════════════════ */
+.rev-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:18px}
+.phase-tabs{display:flex;gap:0;margin-bottom:16px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.pt-tab{flex:1;padding:8px;font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.06em;text-align:center;cursor:pointer;transition:all .15s;color:var(--text3);background:transparent;border:none;border-right:1px solid var(--border)}
+.pt-tab:last-child{border-right:none}
+.pt-tab:hover{background:var(--ink3);color:var(--text2)}
+.pt-tab.active{background:var(--gold-dim);color:var(--gold2)}
+.check-list{display:flex;flex-direction:column;gap:8px}
+.ci{background:var(--ink3);border:1px solid var(--border);border-radius:var(--r);padding:12px;display:flex;align-items:flex-start;gap:10px;transition:border-color .15s}
+.ci:hover{border-color:var(--border2)}
+.cs{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;cursor:pointer;transition:all .2s}
+.cs.ok{background:var(--sage-dim);border-color:var(--sage);color:var(--sage)}
+.cs.warn{background:var(--gold-dim);border-color:var(--gold);color:var(--gold)}
+.cs.fail{background:var(--coral-dim);border-color:var(--coral);color:var(--coral)}
+.cs.pend{background:var(--ink4);border-color:var(--border2);color:var(--text3)}
+.ci-name{font-family:'Crimson Pro',serif;font-size:14px;color:var(--white);margin-bottom:2px}
+.ci-ref{font-family:'Space Mono',monospace;font-size:9px;color:var(--text3);margin-top:3px}
+
+/* Gates panel */
+.gate-item{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--border)}
+.gate-item:last-child{border-bottom:none}
+.gate-id{font-family:'Space Mono',monospace;font-size:9px;color:var(--text3);min-width:28px;margin-top:2px}
+.gate-q{font-size:13px;color:var(--text)}
+.gate-status{width:16px;height:16px;border-radius:50%;border:1px solid var(--border2);flex-shrink:0;margin-top:2px;cursor:pointer;transition:all .2s}
+.gate-status.ok{background:var(--sage-dim);border-color:var(--sage)}
+.gate-status.pend{background:var(--ink4);border-color:var(--border2)}
+
+/* Score panel */
+.score-box{background:var(--ink3);border:1px solid var(--border);border-radius:var(--r2);padding:20px;margin-bottom:14px;text-align:center}
+.sc-ring{width:88px;height:88px;border-radius:50%;border:5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-direction:column;margin:0 auto 12px;transition:border-color .3s}
+.sc-num{font-family:'Playfair Display',serif;font-size:26px;color:var(--white);line-height:1}
+.sc-tot{font-family:'Space Mono',monospace;font-size:9px;color:var(--text3);margin-top:1px}
+.sc-lbl{font-family:'Space Mono',monospace;font-size:9px;color:var(--text2);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px}
+.veredicto{width:100%;padding:10px;border-radius:var(--r);font-family:'Crimson Pro',serif;font-size:13px;text-align:center;border:1px solid;margin-top:8px}
+.v-pass{background:rgba(107,171,122,.1);border-color:var(--sage);color:var(--sage)}
+.v-warn{background:rgba(212,168,83,.08);border-color:var(--gold);color:var(--gold)}
+.v-fail{background:rgba(224,107,90,.08);border-color:var(--coral);color:var(--coral)}
+.gap-item{padding:7px 0;border-bottom:1px solid var(--border);font-size:12px;color:var(--text2);display:flex;align-items:flex-start;gap:7px}
+.gap-item:last-child{border-bottom:none}
+.gd{width:5px;height:5px;border-radius:50%;margin-top:5px;flex-shrink:0}
+
+/* ════════════════ WIKI ════════════════ */
+.wiki-layout{display:grid;grid-template-columns:190px 1fr;gap:18px}
+.wn-item{padding:7px 11px;border-radius:var(--r);cursor:pointer;font-size:13px;color:var(--text2);transition:all .15s;border:1px solid transparent}
+.wn-item:hover{background:var(--ink3);color:var(--text)}
+.wn-item.active{background:rgba(212,168,83,.08);border-color:var(--gold-dim);color:var(--gold2)}
+.wc{background:var(--ink2);border:1px solid var(--border);border-radius:var(--r2);padding:26px 30px;font-family:'Crimson Pro',serif;font-size:16px;line-height:1.75;color:var(--text)}
+.wc h1{font-family:'Playfair Display',serif;font-size:24px;color:var(--white);margin-bottom:10px}
+.wc h2{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold2);margin:22px 0 8px}
+.wc h3{font-family:'Playfair Display',serif;font-size:15px;color:var(--text);margin:16px 0 7px}
+.wc p{margin-bottom:10px}
+.wc code{font-family:'Space Mono',monospace;font-size:11px;background:var(--ink3);padding:2px 6px;border-radius:4px;color:var(--teal)}
+.wc pre{background:var(--ink3);border:1px solid var(--border);border-radius:var(--r);padding:14px;overflow-x:auto;margin-bottom:14px}
+.wc pre code{background:none;padding:0;font-size:11px;color:var(--text2)}
+.wc ul,.wc ol{padding-left:18px;margin-bottom:10px}
+.wc li{margin-bottom:3px}
+.wc table{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:13px}
+.wc th{background:var(--ink3);color:var(--gold2);padding:7px 10px;text-align:left;font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase}
+.wc td{padding:7px 10px;border-bottom:1px solid var(--border)}
+.wc blockquote{border-left:3px solid var(--gold);padding-left:14px;color:var(--text2);font-style:italic;margin:14px 0}
+
+/* DASHBOARD */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.sc{background:var(--ink2);border:1px solid var(--border);border-radius:var(--r2);padding:16px 18px}
+.sv{font-family:'Playfair Display',serif;font-size:28px;color:var(--white)}
+.sl{font-family:'Space Mono',monospace;font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;margin-top:3px}
+.st{font-family:'Space Mono',monospace;font-size:9px;margin-top:7px}
+.tl{display:flex;flex-direction:column;gap:0}
+.tli{display:flex;gap:12px;padding:9px 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.tli:last-child{border-bottom:none}
+.td{width:7px;height:7px;border-radius:50%;margin-top:5px;flex-shrink:0}
+.tt{font-size:13px;color:var(--white);margin-bottom:1px}
+.tm{font-family:'Space Mono',monospace;font-size:9px;color:var(--text3)}
+
+@media(max-width:1100px){.kb{grid-template-columns:repeat(2,1fr)}.gen-layout,.rev-layout{grid-template-columns:1fr}.wiki-layout{grid-template-columns:1fr}}
+@media(max-width:780px){.app{grid-template-columns:1fr}.sidebar{display:none}.stats{grid-template-columns:repeat(2,1fr)}.kb{grid-template-columns:1fr}.result-grid,.success-grid{grid-template-columns:1fr}}
+
+/* ════ ACCESIBILIDAD — tamaños legibles ════ */
+body { font-size: 17px; }
+
+/* Sidebar */
+.s-label  { font-size: 11px; }
+.nav-item { font-size: 15px; padding: 10px 18px; }
+.nav-badge{ font-size: 10px; }
+
+/* Topbar */
+.logo     { font-size: 17px; }
+.ver-badge{ font-size: 10px; }
+.topbar-meta { font-size: 10px; }
+.tb-btn   { font-size: 11px; padding: 6px 13px; }
+
+/* Cabeceras de página */
+.pt { font-size: 28px; }
+.ps { font-size: 15px; }
+
+/* Labels y tags generales */
+.card-label { font-size: 11px; }
+.tag        { font-size: 10px; padding: 3px 8px; }
+
+/* Botones */
+.btn  { font-size: 12px; padding: 9px 18px; }
+.f-label { font-size: 11px; }
+.f-input, .f-select, .f-textarea { font-size: 15px; }
+
+/* Explorador */
+.fb       { font-size: 11px; padding: 5px 13px; }
+.cc-num   { font-size: 10px; }
+.cc-name  { font-size: 15px; }
+.cc-desc  { font-size: 13px; }
+.est-badge{ font-size: 10px; }
+
+/* Kanban */
+.kc-title { font-size: 11px; }
+.kc-n     { font-size: 10px; }
+.kk-title { font-size: 15px; }
+.kk-meta  { font-size: 10px; }
+.kk-badge { font-size: 10px; padding: 3px 8px; }
+.add-btn  { font-size: 11px; }
+
+/* Generador */
+.pb-name  { font-size: 14px; }
+.pb-id    { font-size: 10px; }
+.tl-name  { font-size: 11px; }
+.tl-dl    { font-size: 10px; }
+.preview-box { font-size: 12px; line-height: 1.9; }
+
+/* Revisor */
+.pt-tab   { font-size: 11px; }
+.ci-name  { font-size: 15px; }
+.ci-ref   { font-size: 10px; }
+.gate-q   { font-size: 14px; }
+.gate-id  { font-size: 10px; }
+.sc-num   { font-size: 28px; }
+.sc-tot   { font-size: 10px; }
+.sc-lbl   { font-size: 11px; }
+.veredicto{ font-size: 14px; }
+.gap-item { font-size: 13px; }
+
+/* Activación */
+.q-num    { font-size: 11px; }
+.q-text   { font-size: 19px; }
+.q-hint   { font-size: 14px; }
+.q-input  { font-size: 15px; }
+.q-count  { font-size: 11px; }
+.result-label { font-size: 11px; }
+.result-val   { font-size: 17px; }
+.result-sub   { font-size: 13px; }
+.risk-item    { font-size: 14px; }
+.sc-item span { font-size: 13px !important; }
+.wp-step { font-size: 10px; }
+
+/* Perfil */
+.cs-id   { font-size: 11px; }
+.cs-name { font-size: 11px; }
+.prog-label { font-size: 10px; }
+.snap-val   { font-size: 24px; }
+.snap-lbl   { font-size: 10px; }
+.io-zone-title { font-size: 16px; }
+.io-zone-sub   { font-size: 13px; }
+.hi-label { font-size: 14px; }
+.hi-time  { font-size: 10px; }
+.hi-dl    { font-size: 10px; }
+
+/* Wiki */
+.wn-item  { font-size: 15px; }
+.wc       { font-size: 17px; }
+.wc h1    { font-size: 26px; }
+.wc h2    { font-size: 20px; }
+.wc h3    { font-size: 16px; }
+.wc table { font-size: 14px; }
+.wc th    { font-size: 11px; }
+.wc code  { font-size: 13px; }
+.wc pre code { font-size: 13px; }
+
+/* Dashboard */
+.sv { font-size: 30px; }
+.sl { font-size: 10px; }
+.st { font-size: 11px; }
+.tt { font-size: 14px; }
+.tm { font-size: 10px; }
+
+/* Toast */
+.toast { font-size: 12px; }
+
+/* ════ PERFIL + IMPORT/EXPORT ════ */
+.topbar-actions{display:flex;gap:6px;align-items:center}
+.tb-btn{font-family:'Space Mono',monospace;font-size:9px;padding:5px 11px;border-radius:var(--r);cursor:pointer;transition:all .15s;letter-spacing:.04em;display:flex;align-items:center;gap:5px}
+.tb-export{background:var(--gold-dim);border:1px solid var(--gold);color:var(--gold2)}
+.tb-export:hover{background:rgba(212,168,83,.25)}
+.tb-import{background:transparent;border:1px solid var(--border2);color:var(--text2)}
+.tb-import:hover{border-color:var(--teal);color:var(--teal)}
+.tb-user{background:transparent;border:1px solid var(--border);color:var(--text2);border-radius:20px;padding:4px 12px}
+.tb-user:hover{border-color:var(--gold);color:var(--gold2)}
+
+/* Toast */
+.toast{position:fixed;bottom:24px;right:24px;background:var(--ink2);border:1px solid var(--border2);border-radius:var(--r2);padding:12px 18px;font-family:'Space Mono',monospace;font-size:11px;color:var(--text);z-index:999;transform:translateY(80px);opacity:0;transition:all .3s;display:flex;align-items:center;gap:10px;max-width:320px}
+.toast.show{transform:translateY(0);opacity:1}
+.toast-ok{border-left:3px solid var(--sage)}
+.toast-err{border-left:3px solid var(--coral)}
+.toast-info{border-left:3px solid var(--gold)}
+
+/* Perfil page */
+.profile-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:18px}
+.avatar-ring{width:72px;height:72px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:26px;color:var(--gold2);background:var(--gold-dim);margin-bottom:14px;flex-shrink:0}
+.profile-header{display:flex;align-items:center;gap:16px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.caleidoscopio-selector{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:6px}
+.cs-btn{background:var(--ink3);border:1px solid var(--border);border-radius:var(--r);padding:8px 6px;cursor:pointer;text-align:center;transition:all .15s}
+.cs-btn:hover{border-color:var(--border2)}
+.cs-btn.sel{border-color:var(--gold);background:var(--gold-dim)}
+.cs-id{font-family:'Space Mono',monospace;font-size:10px;color:var(--gold2);font-weight:700}
+.cs-name{font-size:10px;color:var(--text3);margin-top:2px}
+.progress-section{background:var(--ink3);border:1px solid var(--border);border-radius:var(--r2);padding:16px;margin-bottom:12px}
+.prog-bar-wrap{background:var(--ink4);border-radius:20px;height:6px;margin:8px 0 4px;overflow:hidden}
+.prog-bar{height:100%;border-radius:20px;transition:width .4s ease;background:var(--gold)}
+.prog-label{display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:9px;color:var(--text3)}
+.snapshot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+.snap-card{background:var(--ink4);border:1px solid var(--border);border-radius:var(--r);padding:12px;text-align:center}
+.snap-val{font-family:'Playfair Display',serif;font-size:22px;color:var(--white)}
+.snap-lbl{font-family:'Space Mono',monospace;font-size:8px;color:var(--text3);margin-top:2px}
+.io-zone{background:var(--ink3);border:2px dashed var(--border2);border-radius:var(--r2);padding:24px;text-align:center;transition:border-color .2s;cursor:pointer}
+.io-zone:hover,.io-zone.drag{border-color:var(--teal)}
+.io-zone-icon{font-size:28px;margin-bottom:8px}
+.io-zone-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--white);margin-bottom:4px}
+.io-zone-sub{font-size:12px;color:var(--text3)}
+.history-item{display:flex;align-items:center;gap:10px;padding:9px 12px;background:var(--ink3);border-radius:var(--r);border:1px solid var(--border);margin-bottom:7px;font-size:13px}
+.hi-icon{font-size:14px;min-width:20px}
+.hi-label{flex:1;color:var(--text)}
+.hi-time{font-family:'Space Mono',monospace;font-size:9px;color:var(--text3)}
+.hi-dl{background:transparent;border:1px solid var(--border);color:var(--text3);font-family:'Space Mono',monospace;font-size:8px;padding:3px 8px;border-radius:4px;cursor:pointer;transition:all .15s}
+.hi-dl:hover{border-color:var(--gold);color:var(--gold)}
+</style>
+</head>
+<body>
+<script>
+/* ═══════════════════════ DATA (desde JSON V4.1.0 Integral Autosostenido) ═══════════════════════ */
+const FW = {
+  version:"4.1.0", edition:"Integral Autosostenido", date:"2026-05-04",
+  status:"listo_para_implementacion",
+
+  principles:["juicio_humano","etica_y_cuidado","documentacion_activa","escala_proporcional","cierre_y_continuidad","accesibilidad","gobernanza","archivo_historico"],
+
+  intake_questions:[
+    "¿Qué problema, necesidad o deseo quieres atender?",
+    "¿Quiénes son las personas o comunidades afectadas?",
+    "¿Qué producto, resultado o cambio esperas lograr?",
+    "¿El proyecto requiere investigación, creación, programación, enseñanza, gestión o integración?",
+    "¿Usarás IA? ¿Para qué?",
+    "¿Hay datos sensibles, comunidades vulnerables, menores, imágenes, voces, historias personales o patrimonio cultural?",
+    "¿El resultado será privado, interno, académico, público o institucional?",
+    "¿Cuánto tiempo durará el proyecto?",
+    "¿Trabajará una persona, un equipo pequeño, una comunidad o una institución?",
+    "¿Qué evidencia demostrará que hubo avance?",
+    "¿Qué riesgos te preocupan?",
+    "¿Quién debe poder retomar el trabajo después?"
+  ],
+
+  classification_rules:[
+    {keywords:["construir","automatizar","programar","prototipar","repositorio","codigo","arquitectura","script"],need_type:"técnica",activate:"Programador Humanista",caleidoscopio:"C1",color:"var(--teal)"},
+    {keywords:["investigar","fuentes","evidencia","analizar","bibliografia","metodologia","publicacion"],need_type:"investigativa",activate:"Investigador Transdisciplinario",caleidoscopio:"C2",color:"var(--violet)"},
+    {keywords:["crear","obra","avatar","galeria","experiencia","multimodal","narrativa","curaduria"],need_type:"creativa",activate:"Artista Transdisciplinario",caleidoscopio:"C3",color:"var(--coral)"},
+    {keywords:["integrar","investigacion","programacion","creacion","comunidad","educacion","enseñar","trayectoria"],need_type:"integrada",activate:"Caleidoscopio",caleidoscopio:"C4",color:"var(--gold)"},
+    {keywords:["institucionalizar","escalar","capacitar","auditar","politica","gobernanza","programa"],need_type:"institucional",activate:"N4 / C7 Institucional",caleidoscopio:"C7",color:"var(--sky)"},
+    {keywords:["enseñar","curso","modulo","aprender","trayectoria","didactica","estudiante"],need_type:"pedagógica",activate:"C5 Pedagógico",caleidoscopio:"C5",color:"var(--sage)"},
+    {keywords:["comunidad","territorio","memoria","archivo","transferencia","colectivo"],need_type:"comunitaria",activate:"C6 Comunitario",caleidoscopio:"C6",color:"var(--teal)"}
+  ],
+
+  levels:{
+    N1:{name:"Mínimo controlado",use_when:["tarea breve","bajo riesgo","una persona","producto simple"],docs:["proposito","producto","cierre_breve"],avoid:["manifest","auditoria","wiki_extensa","automatizacion"]},
+    N2:{name:"Operativo",use_when:["varias fases","equipo pequeño","documentacion reusable","seguimiento"],docs:["brief","README","checklist","decisiones_basicas","cierre","primer"]},
+    N3:{name:"Avanzado",use_when:["integracion","IA sustantiva","riesgos","wiki","archivo","Caleidoscopio"],docs:["README","manifest","Gates","CHECKS","changelog","registro_decisiones","wiki_sync","archivo","primer"]},
+    N4:{name:"Institucional",use_when:["adopcion formal","politica","auditoria","capacitacion","mantenimiento"],docs:["gobernanza_formal","RACI","auditoria","plan_capacitacion","plan_mantenimiento","release_institucional"]}
+  },
+
+  profiles:{
+    programador_humanista:{label:"Programador Humanista",caleidoscopio:"C1",color:"var(--teal)",colorDim:"var(--teal-dim)",
+      activate_when:["codigo","arquitectura tecnica","repositorio","automatizacion","prototipo","pruebas","seguridad"],
+      evidence:["README tecnico","codigo","script","tests","release","decisiones tecnicas"],
+      risks:["automatizacion prematura","seguridad debil","dependencias no documentadas","datos expuestos"]},
+    investigador_transdisciplinario:{label:"Investigador Transdisciplinario",caleidoscopio:"C2",color:"var(--violet)",colorDim:"var(--violet-dim)",
+      activate_when:["pregunta de investigacion","fuentes","evidencia","metodologia","bibliografia","publicacion"],
+      evidence:["pregunta guia","matriz de fuentes","evidence ledger","sintesis","bibliografia","marco conceptual"],
+      risks:["fuentes debiles","sesgos","extraccion epistemica","IA sin verificacion"]},
+    artista_transdisciplinario:{label:"Artista Transdisciplinario",caleidoscopio:"C3",color:"var(--coral)",colorDim:"var(--coral-dim)",
+      activate_when:["obra","narrativa","avatar","galeria","curaduria","memoria","multimodalidad"],
+      evidence:["statement","boceto","prototipo","obra","ficha curatorial","licencia"],
+      risks:["apropiacion cultural","derechos de autor","representacion inadecuada","accesibilidad estetica debil"]}
+  },
+
+  kaleidoscope:{
+    C1:{name:"Técnico-investigativo",combination:["Programador Humanista","Investigador Transdisciplinario"],use:"apps de investigacion, dashboards, pipelines",color:"var(--teal)",colorDim:"var(--teal-dim)"},
+    C2:{name:"Investigativo-creativo",combination:["Investigador Transdisciplinario","Artista Transdisciplinario"],use:"investigacion-creacion, memoria, publicaciones multimodales",color:"var(--violet)",colorDim:"var(--violet-dim)"},
+    C3:{name:"Creativo-técnico",combination:["Artista Transdisciplinario","Programador Humanista"],use:"avatares, interfaces, galerias digitales",color:"var(--coral)",colorDim:"var(--coral-dim)"},
+    C4:{name:"Integral",combination:["Programador Humanista","Investigador Transdisciplinario","Artista Transdisciplinario"],use:"AVAT, REA multimodal, ecosistemas agenticos",color:"var(--gold)",colorDim:"var(--gold-dim)"},
+    C5:{name:"Pedagógico",combination:["perfiles segun necesidad"],use:"cursos, modulos, OVAT",color:"var(--sage)",colorDim:"var(--sage-dim)"},
+    C6:{name:"Comunitario",combination:["comunidad","perfiles segun necesidad"],use:"archivo vivo, memoria territorial",color:"var(--sky)",colorDim:"var(--sky-dim)"},
+    C7:{name:"Institucional",combination:["tres perfiles","gobernanza"],use:"laboratorios, programas, politicas, manuales",color:"var(--sky)",colorDim:"var(--sky-dim)"}
+  },
+
+  workflow:[
+    {phase:"activacion",label:"Activación",steps:["describir necesidad","identificar contexto","determinar nivel","activar perfil","definir producto","identificar riesgos"]},
+    {phase:"diseno",label:"Diseño",steps:["crear brief","definir alcance","seleccionar metodologia","definir evidencia","definir roles humanos e IA"]},
+    {phase:"produccion",label:"Producción",steps:["crear producto","documentar decisiones","registrar uso de IA","revisar accesibilidad","revisar etica","aplicar CHECKS"]},
+    {phase:"evaluacion",label:"Evaluación",steps:["aplicar Gates","revisar evidencia","validar humanamente","identificar riesgos","decidir siguiente estado"]},
+    {phase:"cierre",label:"Cierre",steps:["crear cierre","actualizar changelog","actualizar decisiones","actualizar primer","actualizar wiki si aplica","archivar si corresponde"]}
+  ],
+
+  gates:[
+    {id:"G1",name:"Propósito",question:"¿Está claro por qué existe el proyecto?"},
+    {id:"G2",name:"Ubicación",question:"¿Dónde vive el trabajo dentro del sistema?"},
+    {id:"G3",name:"Perfil / Caleidoscopio",question:"¿Se activó el lente correcto?"},
+    {id:"G4",name:"Metodología",question:"¿Hay ruta de trabajo?"},
+    {id:"G5",name:"Evidencia",question:"¿Qué demuestra el avance?"},
+    {id:"G6",name:"IA responsable",question:"¿Cómo se usó y revisó IA?"},
+    {id:"G7",name:"Ética y derechos",question:"¿Hay riesgos humanos, culturales o legales?"},
+    {id:"G8",name:"Accesibilidad",question:"¿Puede usarse por audiencias diversas?"},
+    {id:"G9",name:"Calidad",question:"¿Cumple criterios técnicos, investigativos o creativos?"},
+    {id:"G10",name:"Documentación",question:"¿Quedó documentado?"},
+    {id:"G11",name:"Wiki / transferencia",question:"¿Debe traducirse a guía humana?"},
+    {id:"G12",name:"Archivo",question:"¿Debe preservarse?"},
+    {id:"G13",name:"Continuidad",question:"¿Alguien puede retomarlo?"},
+    {id:"G14",name:"Estabilización",question:"¿Puede declararse versión estable?"}
+  ],
+
+  checks:{
+    inicio:["propósito claro","usuario/comunidad identificada","producto esperado","nivel seleccionado","perfil activado","riesgos iniciales","evidencia mínima","uso de IA","espacio de trabajo"],
+    produccion:["evidencia producida","decisiones documentadas","ética revisada","accesibilidad revisada","derechos revisados","IA validada","criterios de calidad","pendientes identificados"],
+    cierre:["producto con versión y estado","cierre/resumen","changelog si aplica","registro de decisiones si aplica","wiki si aplica","archivo si aplica","primer si aplica","próxima acción"]
+  },
+
+  success_criteria:["necesidad identificada","nivel N1-N4 justificado","perfil o Caleidoscopio activado","evidencia producida","riesgos revisados","uso de IA documentado","decisiones registradas","documentos ubicados","continuidad preparada"],
+
+  templates:{
+    brief:{name:"Brief del proyecto",icon:"📋",fields:["Nombre","Fecha","Responsable","Necesidad","Contexto","Personas afectadas","Nivel N1-N4","Perfil/Caleidoscopio","Producto esperado","Evidencia mínima","Riesgos","Uso de IA","Criterios de cierre","Próximo paso"]},
+    decision_record:{name:"Registro de decisión",icon:"⚖️",fields:["ID","Fecha","Decisión","Justificación","Tipo de cambio","Impacto","Riesgo","Documentos afectados","Versión afectada","Estado","Recomendación de continuidad"]},
+    session_closure:{name:"Cierre de sesión",icon:"🔒",fields:["Fecha","Objetivo","Nivel","Perfil/Caleidoscopio","Producto generado","Cartapacio destino","Decisiones","Riesgos","CHECKS aplicados","Documentos actualizados","Próxima acción"]},
+    continuity_primer:{name:"Primer de continuidad",icon:"🔑",fields:["Estado actual","Qué abrir primero","Decisiones vigentes","Riesgos pendientes","Próximo paso","Prompt de reactivación"]}
+  },
+
+  carpetas:[
+    {num:"00",name:"Control Maestro",desc:"Registro de versiones, decisiones, changelog y manifiesto del repositorio.",tags:["gobernanza","control"],perfil:"C7",estado:"activo",color:"var(--gold)"},
+    {num:"01",name:"Fundamento Filosófico",desc:"Principios epistemológicos, éticos y ontológicos del framework.",tags:["filosofía","fundamento"],perfil:"C2",estado:"activo",color:"var(--violet)"},
+    {num:"02",name:"Arquitectura Conceptual",desc:"Modelo teórico, mapas conceptuales y estructura del framework.",tags:["arquitectura","modelo"],perfil:"C1",estado:"activo",color:"var(--teal)"},
+    {num:"03",name:"Metodología y Flujo de Trabajo",desc:"Protocolos de trabajo, flujos N1–N4 y guías operativas.",tags:["metodología","flujo"],perfil:"C1",estado:"activo",color:"var(--teal)"},
+    {num:"04",name:"Gobernanza, Ética y Riesgos",desc:"Decisiones D-Axx, matriz de riesgos, CHECKS éticos y de accesibilidad.",tags:["ética","gobernanza"],perfil:"C7",estado:"activo",color:"var(--coral)"},
+    {num:"05",name:"Competencias y Perfiles",desc:"Definición de perfiles transversales y modos Caleidoscopio C1-C7.",tags:["perfiles","competencias"],perfil:"C4",estado:"activo",color:"var(--violet)"},
+    {num:"06",name:"Pastillas Modulares",desc:"Unidades de conocimiento autónomas y reutilizables.",tags:["modular","contenido"],perfil:"C5",estado:"activo",color:"var(--sage)"},
+    {num:"07",name:"Plantillas y Modelos",desc:"Brief, decision_record, session_closure, continuity_primer.",tags:["plantillas","modelos"],perfil:"C1",estado:"activo",color:"var(--gold)"},
+    {num:"08",name:"Cursos, Programas y Trayectorias",desc:"Diseño curricular, trayectorias de aprendizaje y programas multimodales.",tags:["educación","currículo"],perfil:"C5",estado:"activo",color:"var(--sage)"},
+    {num:"09",name:"IA, Agentes y Copilotos",desc:"Orquestador, Revisor, Generador. Prompts y workflows agenticos.",tags:["IA","agentes"],perfil:"C1",estado:"activo",color:"var(--teal)"},
+    {num:"10",name:"Repositorios y Flujo Técnico",desc:"Estructura GitHub, GitHub Actions, CI/CD y flujo de contribución.",tags:["técnico","github"],perfil:"C1",estado:"activo",color:"var(--gold)"},
+    {num:"11",name:"Multimodalidad y Publicación",desc:"Estrategias de publicación en múltiples formatos y canales.",tags:["publicación","multimodal"],perfil:"C3",estado:"pendiente",color:"var(--violet)"},
+    {num:"12",name:"Diseño Instruccional Universal",desc:"Principios DUA aplicados al framework para máxima accesibilidad.",tags:["DUA","accesibilidad"],perfil:"C5",estado:"pendiente",color:"var(--sage)"},
+    {num:"13",name:"Investigación y Evidencia",desc:"Bases de datos de evidencia, metodologías y citaciones.",tags:["investigación","evidencia"],perfil:"C2",estado:"pendiente",color:"var(--violet)"},
+    {num:"14",name:"Comunidad, Transferencia y Escalamiento",desc:"Estrategias para crecer la comunidad y escalar el framework.",tags:["comunidad","escalamiento"],perfil:"C6",estado:"pendiente",color:"var(--sky)"},
+    {num:"15",name:"Evaluación, Calidad y Auditoría",desc:"Rúbricas, criterios de calidad y protocolos de auditoría N4.",tags:["evaluación","auditoría"],perfil:"C7",estado:"pendiente",color:"var(--coral)"},
+    {num:"16",name:"Seguridad, Privacidad y Datos",desc:"Políticas de datos, privacidad y seguridad del ecosistema.",tags:["seguridad","privacidad"],perfil:"C7",estado:"pendiente",color:"var(--coral)"},
+    {num:"17",name:"Internacionalización y Localización",desc:"Adaptación del framework a contextos culturales e idiomáticos.",tags:["i18n","localización"],perfil:"C6",estado:"pendiente",color:"var(--sky)"},
+    {num:"18",name:"Documentación Activa",desc:"Changelog, estado de situación y documentación en tiempo real.",tags:["documentación","changelog"],perfil:"C1",estado:"activo",color:"var(--teal)"},
+    {num:"19",name:"Implementación y Despliegue",desc:"Guías de instalación, configuración y puesta en producción.",tags:["deploy","implementación"],perfil:"C1",estado:"pendiente",color:"var(--gold)"},
+    {num:"20",name:"Mantenimiento y Evolución",desc:"Protocolos para actualizar, deprecar y evolucionar el framework.",tags:["mantenimiento","evolución"],perfil:"C7",estado:"activo",color:"var(--teal)"},
+    {num:"21",name:"Wiki Documentación Humana",desc:"Páginas de wiki colaborativa para usuarios, colaboradores e instituciones.",tags:["wiki","colaboración"],perfil:"C6",estado:"activo",color:"var(--violet)"},
+    {num:"99",name:"Archivo Histórico",desc:"Release V4.1.0 preservado. Base histórica V4.0.0 archivada.",tags:["archivo","historia"],perfil:"C7",estado:"archivo",color:"var(--violet)"}
+  ],
+
+  proyectos:[
+    {id:1,titulo:"Trayectoria Programador Humanista v0.1",perfil:"C1",nivel:"N2",fecha:"2026-04-12",desc:"Diseño de trayectoria curricular para perfil PH con integración IA."},
+    {id:2,titulo:"Pastillas Modulares — Lote 01",perfil:"C5",nivel:"N1",fecha:"2026-04-20",desc:"Primeras 10 pastillas modulares sobre fundamento filosófico."},
+    {id:3,titulo:"Wiki Secundaria V4.1.2",perfil:"C6",nivel:"N3",fecha:"2026-05-01",desc:"Expansión de wiki con secciones de comunidad y transferencia."},
+    {id:4,titulo:"Piloto Artista Transdisciplinario",perfil:"C3",nivel:"N4",fecha:"2026-05-04",desc:"Primer piloto aplicado con equipo real de artistas."},
+    {id:5,titulo:"Integración GitHub Actions",perfil:"C1",nivel:"N2",fecha:"2026-04-28",desc:"Automatización del manifest y árbol documental."}
+  ],
+
+  wiki:{
+    activacion:{title:"Módulo de Activación",content:`# Módulo de Activación
+
+> El primer paso del framework no es producir — es *escuchar y clasificar*.
+
+## ¿Para qué sirve la activación?
+
+La activación es el proceso de intake del framework. Antes de abrir cualquier cartapacio o plantilla, el orquestador recorre 12 preguntas que permiten determinar automáticamente:
+
+- **Nivel N1-N4** — ¿cuánta estructura necesita este proyecto?
+- **Perfil o modo Caleidoscopio** — ¿qué lente de trabajo activar?
+- **Riesgos iniciales** — ¿qué puede salir mal?
+- **Documentos mínimos** — ¿qué documentar desde el inicio?
+
+## Las 12 preguntas
+
+Las preguntas cubren cinco dimensiones:
+
+**Qué y para quién** (preguntas 1-3): propósito, comunidades afectadas, producto esperado.
+
+**Cómo** (preguntas 4-5): tipo de trabajo requerido, uso de IA.
+
+**Riesgos** (pregunta 6): datos sensibles, comunidades vulnerables, patrimonio cultural.
+
+**Alcance** (preguntas 7-9): visibilidad del resultado, duración, tamaño del equipo.
+
+**Evidencia y continuidad** (preguntas 10-12): cómo demostrar avance, qué riesgos preocupan, quién retoma.
+
+## Reglas de clasificación
+
+Las respuestas se analizan por palabras clave. El sistema identifica qué tipo de necesidad predomina y activa el perfil correspondiente. Si aparecen múltiples tipos, activa un modo Caleidoscopio.
+`},
+    gates:{title:"Los 14 Gates",content:`# Los 14 Gates del Framework
+
+Los Gates son puntos de control que verifican si un proyecto está listo para avanzar. No son obstáculos — son espejos.
+
+## ¿Cuándo aplicar los Gates?
+
+Al final de cada fase de trabajo y antes de declarar una versión estable. El agente Revisor los ejecuta; el orquestador humano valida.
+
+## Los Gates por grupo
+
+### Fundamento (G1-G3)
+- **G1 Propósito** — ¿Por qué existe el proyecto?
+- **G2 Ubicación** — ¿Dónde vive dentro del sistema?
+- **G3 Perfil** — ¿Se activó el lente correcto?
+
+### Metodología (G4-G6)
+- **G4 Metodología** — ¿Hay ruta de trabajo?
+- **G5 Evidencia** — ¿Qué demuestra el avance?
+- **G6 IA responsable** — ¿Cómo se usó y revisó IA?
+
+### Ética y calidad (G7-G9)
+- **G7 Ética y derechos** — ¿Hay riesgos humanos, culturales o legales?
+- **G8 Accesibilidad** — ¿Puede usarse por audiencias diversas?
+- **G9 Calidad** — ¿Cumple criterios técnicos, investigativos o creativos?
+
+### Cierre y continuidad (G10-G14)
+- **G10 Documentación** — ¿Quedó documentado?
+- **G11 Wiki/transferencia** — ¿Debe traducirse a guía humana?
+- **G12 Archivo** — ¿Debe preservarse?
+- **G13 Continuidad** — ¿Alguien puede retomarlo?
+- **G14 Estabilización** — ¿Puede declararse versión estable?
+
+## Criterios de éxito globales
+
+Un proyecto completo cumple estos 9 criterios: necesidad identificada · nivel N1-N4 justificado · perfil o Caleidoscopio activado · evidencia producida · riesgos revisados · uso de IA documentado · decisiones registradas · documentos ubicados · continuidad preparada.
+`},
+    perfiles:{title:"Perfiles y Caleidoscopio",content:`# Perfiles Transversales y Caleidoscopio
+
+## Los tres perfiles base
+
+### Programador Humanista (C1)
+Activa cuando: código, arquitectura técnica, repositorio, automatización, prototipo.
+
+Evidencia: README técnico, código, script, tests, release, decisiones técnicas.
+
+Riesgos: automatización prematura, seguridad débil, dependencias no documentadas.
+
+### Investigador Transdisciplinario (C2)
+Activa cuando: pregunta de investigación, fuentes, evidencia, metodología, bibliografía.
+
+Evidencia: pregunta guía, matriz de fuentes, evidence ledger, síntesis, bibliografía.
+
+Riesgos: fuentes débiles, sesgos, extracción epistémica, IA sin verificación.
+
+### Artista Transdisciplinario (C3)
+Activa cuando: obra, narrativa, avatar, galería, curaduría, memoria, multimodalidad.
+
+Evidencia: statement, boceto, prototipo, obra, ficha curatorial, licencia.
+
+Riesgos: apropiación cultural, derechos de autor, representación inadecuada.
+
+## Los 7 modos Caleidoscopio
+
+| Modo | Nombre | Combinación | Uso |
+|------|--------|-------------|-----|
+| C1 | Técnico-investigativo | PH + IT | Apps de investigación, dashboards |
+| C2 | Investigativo-creativo | IT + AT | Investigación-creación, memoria |
+| C3 | Creativo-técnico | AT + PH | Avatares, interfaces, galerías |
+| C4 | Integral | PH + IT + AT | AVAT, REA multimodal |
+| C5 | Pedagógico | Según necesidad | Cursos, módulos, OVAT |
+| C6 | Comunitario | Comunidad + perfiles | Archivo vivo, memoria territorial |
+| C7 | Institucional | Tres perfiles + gobernanza | Laboratorios, programas, políticas |
+
+> El Caleidoscopio no suma perfiles — los transforma mutuamente bajo evidencia, ética, accesibilidad, documentación y transferencia.
+`},
+    plantillas:{title:"Plantillas del Framework",content:`# Plantillas del Framework V4.1.0
+
+Las cuatro plantillas base del framework. Cada una tiene campos definidos y se puede generar desde el módulo Generador.
+
+## Brief del proyecto
+
+La plantilla de inicio. Captura la necesidad, el contexto, las personas afectadas, el nivel, el perfil, el producto esperado, la evidencia mínima, los riesgos y el uso de IA.
+
+**Campos:** Nombre · Fecha · Responsable · Necesidad · Contexto · Personas afectadas · Nivel N1-N4 · Perfil/Caleidoscopio · Producto esperado · Evidencia mínima · Riesgos · Uso de IA · Criterios de cierre · Próximo paso
+
+## Registro de decisión (D-Axx)
+
+Para cada decisión relevante durante el ciclo de vida del proyecto.
+
+**Campos:** ID · Fecha · Decisión · Justificación · Tipo de cambio · Impacto · Riesgo · Documentos afectados · Versión afectada · Estado · Recomendación de continuidad
+
+## Cierre de sesión
+
+Al final de cada sesión de trabajo, especialmente en proyectos N2-N4.
+
+**Campos:** Fecha · Objetivo · Nivel · Perfil/Caleidoscopio · Producto generado · Cartapacio destino · Decisiones · Riesgos · CHECKS aplicados · Documentos actualizados · Próxima acción
+
+## Primer de continuidad
+
+Para que cualquier persona (o agente IA) pueda retomar el trabajo.
+
+**Campos:** Estado actual · Qué abrir primero · Decisiones vigentes · Riesgos pendientes · Próximo paso · Prompt de reactivación
+`}
+  }
+};
+
+/* Estado mutable */
+let checksState = {};
+let gatesState = {};
+let activePhase = 'inicio';
+let activePage = 'dashboard';
+let selectedPerfil = 'programador_humanista';
+let selectedTemplate = 'brief';
+let intakeAnswers = Array(12).fill('');
+let intakeStep = 0;
+let intakeResult = null;
+let filtroExplorador = 'todos';
+
+/* Inicializar estados */
+function initStates() {
+  Object.keys(FW.checks).forEach(phase => {
+    checksState[phase] = FW.checks[phase].map(() => 'pend');
+  });
+  gatesState = FW.gates.reduce((a,g) => ({...a,[g.id]:'pend'}), {});
+}
+initStates();
+</script>
+
+<div class="app">
+  <header class="topbar">
+    <div class="logo">◈ Framework Genérico <span class="ver-badge">V4.1.0 · Integral</span></div>
+    <div class="topbar-div"></div>
+    <div class="topbar-actions">
+      <button class="tb-btn tb-import" onclick="triggerImport()" title="Importar perfil desde JSON">↑ Importar</button>
+      <button class="tb-btn tb-export" onclick="exportProfile()" title="Exportar perfil a JSON">↓ Exportar</button>
+      <button class="tb-btn tb-user" onclick="nav('perfil',document.querySelector('[data-page=perfil]'))" id="tb-user-btn">◉ Mi perfil</button>
+    </div>
+    <div class="topbar-meta"><span class="dot"></span>N3 Avanzado<br/>V4.1.0-Integral</div>
+    <input type="file" id="import-file" accept=".json" style="display:none" onchange="handleImport(event)"/>
+  </header>
+
+  <nav class="sidebar">
+    <div class="s-label">Principal</div>
+    <div class="nav-item active" data-page="dashboard" onclick="nav('dashboard',this)"><span class="nav-icon">◉</span>Dashboard</div>
+    <div class="nav-item new-tag" data-page="activacion" onclick="nav('activacion',this)"><span class="nav-icon" style="color:var(--gold)">◆</span>Activación</div>
+    <div class="nav-item" data-page="explorador" onclick="nav('explorador',this)"><span class="nav-icon">◫</span>Explorador<span class="nav-badge">23</span></div>
+    <div class="nav-item" data-page="proyectos" onclick="nav('proyectos',this)"><span class="nav-icon">◧</span>Proyectos<span class="nav-badge">5</span></div>
+    <div class="nav-item" data-page="generador" onclick="nav('generador',this)"><span class="nav-icon">◈</span>Generador</div>
+    <div class="nav-item" data-page="revisor" onclick="nav('revisor',this)"><span class="nav-icon">◎</span>Revisor<span class="nav-badge">14</span></div>
+    <div class="nav-item" data-page="wiki" onclick="nav('wiki',this)"><span class="nav-icon">◪</span>Wiki</div>
+    <div class="nav-item" data-page="perfil" onclick="nav('perfil',this)"><span class="nav-icon" style="color:var(--gold)">◉</span>Mi perfil</div>
+
+    <div class="s-label" style="margin-top:8px">Caleidoscopio</div>
+    <div class="nav-item" onclick="navPerfil('C1')"><span class="nav-icon" style="color:var(--teal)">●</span>C1 Técnico</div>
+    <div class="nav-item" onclick="navPerfil('C2')"><span class="nav-icon" style="color:var(--violet)">●</span>C2 Investigativo</div>
+    <div class="nav-item" onclick="navPerfil('C3')"><span class="nav-icon" style="color:var(--coral)">●</span>C3 Creativo</div>
+    <div class="nav-item" onclick="navPerfil('C4')"><span class="nav-icon" style="color:var(--gold)">●</span>C4 Integral</div>
+    <div class="nav-item" onclick="navPerfil('C5')"><span class="nav-icon" style="color:var(--sage)">●</span>C5 Pedagógico</div>
+    <div class="nav-item" onclick="navPerfil('C6')"><span class="nav-icon" style="color:var(--sky)">●</span>C6 Comunitario</div>
+    <div class="nav-item" onclick="navPerfil('C7')"><span class="nav-icon" style="color:var(--sky)">●</span>C7 Institucional</div>
+
+    <div class="s-label" style="margin-top:8px">Versiones</div>
+    <div class="nav-item"><span class="nav-icon" style="color:var(--gold)">◆</span>V4.1.0 <span class="nav-badge" style="color:var(--teal);border-color:var(--teal-dim)">activa</span></div>
+    <div class="nav-item"><span class="nav-icon" style="color:var(--text3)">◇</span>V4.0.0 histórica</div>
+  </nav>
+
+  <main class="main">
+
+    <!-- ═══ DASHBOARD ═══ -->
+    <div class="page active" id="page-dashboard">
+      <div class="ph"><div class="pt">Bienvenida al <em>Framework</em></div><div class="ps">V4.1.0 Integral Autosostenido · Estado: listo para implementación</div></div>
+      <div class="stats">
+        <div class="sc"><div class="sv">23</div><div class="sl">Cartapacios</div><div class="st" style="color:var(--teal)">↑ 11 activos</div></div>
+        <div class="sc"><div class="sv">14</div><div class="sl">Gates</div><div class="st" style="color:var(--gold)">→ 3 fases</div></div>
+        <div class="sc"><div class="sv">12</div><div class="sl">Preguntas intake</div><div class="st" style="color:var(--violet)">◆ clasificación auto</div></div>
+        <div class="sc"><div class="sv">4</div><div class="sl">Plantillas base</div><div class="st" style="color:var(--sage)">brief · decisión · cierre · primer</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-bottom:16px">
+        <div class="card">
+          <div class="card-label">Flujo de trabajo — 5 fases</div>
+          <div style="display:flex;gap:0;margin-top:12px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden">
+            <div id="js-wf"></div>
+          </div>
+          <div style="margin-top:14px">
+            <div class="card-label">Principios activos</div>
+            <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:6px">
+              <script>document.write(FW.principles.map(p=>`<span class="tag">${p.replace(/_/g,' ')}</span>`).join(''))</script>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-label">Criterios de éxito globales</div>
+          <div style="display:flex;flex-direction:column;gap:5px;margin-top:10px">
+            <script>document.write(FW.success_criteria.map(s=>`<div style="display:flex;align-items:center;gap:8px;font-size:13px;padding:5px 8px;background:var(--ink3);border-radius:var(--r)"><span style="color:var(--text3)">○</span><span style="color:var(--text2)">${s}</span></div>`).join(''))</script>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">Stack de implementación por fase</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px">
+          <div style="text-align:center;padding:13px;background:var(--ink3);border-radius:var(--r);border:1px solid var(--border)"><div style="font-size:20px;margin-bottom:7px">🗂️</div><div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--teal)">AHORA</div><div style="font-size:12px;color:var(--white);margin-top:3px">HTML + JSON</div><div style="font-size:10px;color:var(--text3)">GitHub Pages</div></div>
+          <div style="text-align:center;padding:13px;background:var(--ink3);border-radius:var(--r);border:1px solid var(--border)"><div style="font-size:20px;margin-bottom:7px">🧠</div><div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--gold)">FASE 2</div><div style="font-size:12px;color:var(--white);margin-top:3px">Obsidian Sync</div><div style="font-size:10px;color:var(--text3)">obsidian-git</div></div>
+          <div style="text-align:center;padding:13px;background:var(--ink3);border-radius:var(--r);border:1px solid var(--border)"><div style="font-size:20px;margin-bottom:7px">🗄️</div><div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--violet)">FASE 3</div><div style="font-size:12px;color:var(--white);margin-top:3px">Supabase</div><div style="font-size:10px;color:var(--text3)">Auth + Realtime</div></div>
+          <div style="text-align:center;padding:13px;background:var(--ink3);border-radius:var(--r);border:1px solid var(--border)"><div style="font-size:20px;margin-bottom:7px">🤖</div><div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--coral)">FASE 4</div><div style="font-size:12px;color:var(--white);margin-top:3px">IA en Render</div><div style="font-size:10px;color:var(--text3)">Ollama · Mistral</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ ACTIVACIÓN ═══ -->
+    <div class="page" id="page-activacion">
+      <div class="ph"><div class="pt">Módulo de <em>Activación</em></div><div class="ps">12 preguntas · clasificación automática · nivel + perfil + riesgos</div></div>
+      <div class="intake-wizard" id="intake-wizard"></div>
+    </div>
+
+    <!-- ═══ EXPLORADOR ═══ -->
+    <div class="page" id="page-explorador">
+      <div class="ph"><div class="pt">Explorador del <em>Framework</em></div><div class="ps">23 cartapacios · haz clic para ver detalles</div></div>
+      <div class="filter-row" id="filter-row">
+        <button class="fb active" onclick="filterExp('todos',this)">Todos (23)</button>
+        <button class="fb" onclick="filterExp('activo',this)">Activos (11)</button>
+        <button class="fb" onclick="filterExp('pendiente',this)">Pendientes (10)</button>
+        <button class="fb" onclick="filterExp('archivo',this)">Archivo (1)</button>
+        <button class="fb" onclick="filterExp('C1',this)">C1</button>
+        <button class="fb" onclick="filterExp('C2',this)">C2</button>
+        <button class="fb" onclick="filterExp('C5',this)">C5</button>
+        <button class="fb" onclick="filterExp('C7',this)">C7</button>
+      </div>
+      <div class="cg" id="carpetas-grid"></div>
+    </div>
+
+    <!-- ═══ PROYECTOS ═══ -->
+    <div class="page" id="page-proyectos">
+      <div class="ph" style="display:flex;align-items:flex-start;justify-content:space-between">
+        <div><div class="pt">Tablero de <em>Proyectos</em></div><div class="ps">Kanban por nivel N1 → N4</div></div>
+        <button class="btn btn-gold" onclick="openNewProject()" style="margin-top:4px">+ Nuevo proyecto</button>
+      </div>
+      <div class="kb" id="kanban-board"></div>
+    </div>
+
+    <!-- ═══ GENERADOR ═══ -->
+    <div class="page" id="page-generador">
+      <div class="ph"><div class="pt">Generador de <em>Plantillas</em></div><div class="ps">Cuatro plantillas base del framework · descarga en MD</div></div>
+      <div class="gen-layout">
+        <div>
+          <div class="card-label">1. Perfil de trabajo</div>
+          <div class="perfil-grid" id="perfil-grid" style="margin-bottom:14px"></div>
+          <div class="f-field"><label class="f-label">Nombre del proyecto</label><input class="f-input" id="gen-proj" placeholder="Ej: Investigación Multimodal v0.1"/></div>
+          <div class="f-field"><label class="f-label">Responsable</label><input class="f-input" id="gen-resp" placeholder="Nombre o equipo"/></div>
+          <div class="card-label" style="margin-top:6px;margin-bottom:10px">2. Plantilla</div>
+          <div id="template-list"></div>
+          <button class="btn btn-gold" style="width:100%;margin-top:12px" onclick="genPackage()">⬇ Generar paquete completo</button>
+        </div>
+        <div>
+          <div class="card-label" style="margin-bottom:8px">Vista previa</div>
+          <div class="preview-box" id="preview-box">Selecciona un perfil y haz clic en una plantilla para ver la vista previa...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ REVISOR V2 ═══ -->
+    <div class="page" id="page-revisor">
+      <div class="ph"><div class="pt">Panel del <em>Revisor</em></div><div class="ps">14 Gates · 3 fases de CHECKS · criterios de éxito</div></div>
+      <div style="display:flex;gap:12px;align-items:center;margin-bottom:16px;flex-wrap:wrap">
+        <div class="card-label">Proyecto:</div>
+        <select class="f-select" id="rev-proj" style="width:auto;padding:6px 10px;font-size:13px">
+          <script>document.write(FW.proyectos.map(p=>`<option value="${p.id}">${p.titulo}</option>`).join(''))</script>
+        </select>
+        <div class="card-label" style="margin-left:8px">Fase de revisión:</div>
+        <select class="f-select" id="rev-nivel" onchange="renderRevisor()" style="width:auto;padding:6px 10px;font-size:13px">
+          <option value="N1">N1 — Mínimo</option>
+          <option value="N2">N2 — Operativo</option>
+          <option value="N3" selected>N3 — Avanzado</option>
+          <option value="N4">N4 — Institucional</option>
+        </select>
+      </div>
+      <div class="rev-layout">
+        <div>
+          <div class="phase-tabs">
+            <button class="pt-tab active" onclick="setPhase('inicio',this)">Inicio (9)</button>
+            <button class="pt-tab" onclick="setPhase('produccion',this)">Producción (8)</button>
+            <button class="pt-tab" onclick="setPhase('cierre',this)">Cierre (8)</button>
+            <button class="pt-tab" onclick="setPhase('gates',this)">Gates (14)</button>
+          </div>
+          <div class="check-list" id="check-list"></div>
+        </div>
+        <div>
+          <div class="score-box">
+            <div class="sc-lbl">Puntuación Gate</div>
+            <div class="sc-ring" id="score-ring">
+              <div class="sc-num" id="score-num">—</div>
+              <div class="sc-tot" id="score-tot"></div>
+            </div>
+            <div class="veredicto" id="veredicto">Evaluando...</div>
+          </div>
+          <div class="card">
+            <div class="card-label">Criterios de éxito globales</div>
+            <div id="success-check" style="margin-top:8px"></div>
+          </div>
+          <div class="card" style="margin-top:12px">
+            <div class="card-label">Gaps identificados</div>
+            <div id="gap-list" style="margin-top:8px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ WIKI ═══ -->
+    <div class="page" id="page-wiki">
+      <div class="ph"><div class="pt"><em>Wiki</em> del Framework</div><div class="ps">Documentación viva · V4.1.0 Integral</div></div>
+      <div class="wiki-layout">
+        <div>
+          <div class="card-label" style="margin-bottom:8px">Páginas</div>
+          <div id="wiki-nav">
+            <div class="wn-item active" onclick="showWiki('activacion',this)">◆ Activación</div>
+            <div class="wn-item" onclick="showWiki('gates',this)">◎ Los 14 Gates</div>
+            <div class="wn-item" onclick="showWiki('perfiles',this)">◉ Perfiles</div>
+            <div class="wn-item" onclick="showWiki('plantillas',this)">◫ Plantillas</div>
+          </div>
+        </div>
+        <div class="wc" id="wiki-content"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ═══ PÁGINA PERFIL ═══ -->
+  <div class="page" id="page-perfil" style="display:none">
+    <div class="ph"><div class="pt">Mi <em>Perfil</em></div><div class="ps">Configuración personal · importar y exportar progreso en JSON</div></div>
+    <div class="profile-layout">
+      <div>
+        <div class="profile-header">
+          <div class="avatar-ring" id="avatar-ring">?</div>
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--white)" id="profile-display-name">Sin nombre</div>
+            <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--text3)" id="profile-display-role">Rol no definido</div>
+            <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--gold);margin-top:3px" id="profile-display-c">—</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:14px">
+          <div class="card-label">Datos del perfil</div>
+          <div class="f-field" style="margin-top:10px"><label class="f-label">Nombre</label><input class="f-input" id="p-name" placeholder="Tu nombre o alias" oninput="updateProfileDisplay()"/></div>
+          <div class="f-field"><label class="f-label">Rol / función en el proyecto</label><input class="f-input" id="p-role" placeholder="Ej: Investigadora, Artista, Programador" oninput="updateProfileDisplay()"/></div>
+          <div class="f-field"><label class="f-label">Institución u organización</label><input class="f-input" id="p-inst" placeholder="Opcional"/></div>
+          <div class="f-field"><label class="f-label">Notas personales</label><textarea class="f-textarea" id="p-notes" placeholder="Contexto, intenciones, recordatorios..."></textarea></div>
+
+          <div class="card-label" style="margin-top:4px;margin-bottom:8px">Modo Caleidoscopio principal</div>
+          <div class="caleidoscopio-selector" id="c-selector"></div>
+          <div class="caleidoscopio-selector" id="c-selector2" style="grid-template-columns:repeat(3,1fr)"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="progress-section">
+          <div class="card-label">Progreso de sesión</div>
+          <div class="snapshot-grid" id="snapshot-grid"></div>
+          <div style="margin-top:14px">
+            <div class="prog-label"><span>Intake de activación</span><span id="prog-intake-val">0%</span></div>
+            <div class="prog-bar-wrap"><div class="prog-bar" id="prog-intake" style="width:0%;background:var(--gold)"></div></div>
+            <div class="prog-label" style="margin-top:8px"><span>CHECKS completados</span><span id="prog-checks-val">0%</span></div>
+            <div class="prog-bar-wrap"><div class="prog-bar" id="prog-checks" style="width:0%;background:var(--teal)"></div></div>
+            <div class="prog-label" style="margin-top:8px"><span>Gates aprobados</span><span id="prog-gates-val">0%</span></div>
+            <div class="prog-bar-wrap"><div class="prog-bar" id="prog-gates" style="width:0%;background:var(--violet)"></div></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:14px">
+          <div class="card-label" style="margin-bottom:10px">Exportar perfil + progreso</div>
+          <p style="font-size:13px;color:var(--text2);margin-bottom:12px">Descarga un archivo JSON con tu perfil, respuestas del intake, proyectos, estado de CHECKS y Gates. Puedes reimportarlo en cualquier sesión futura.</p>
+          <div style="background:var(--ink3);border:1px solid var(--border);border-radius:var(--r);padding:10px 13px;font-family:'Space Mono',monospace;font-size:10px;color:var(--text3);margin-bottom:12px" id="export-preview-mini"></div>
+          <button class="btn btn-gold" style="width:100%" onclick="exportProfile()">↓ Exportar perfil.json</button>
+        </div>
+
+        <div class="card">
+          <div class="card-label" style="margin-bottom:10px">Importar perfil guardado</div>
+          <div class="io-zone" onclick="triggerImport()" id="drop-zone"
+            ondragover="event.preventDefault();this.classList.add('drag')"
+            ondragleave="this.classList.remove('drag')"
+            ondrop="handleDrop(event)">
+            <div class="io-zone-icon">📂</div>
+            <div class="io-zone-title">Arrastra tu perfil.json aquí</div>
+            <div class="io-zone-sub">o haz clic para seleccionar el archivo</div>
+          </div>
+          <div style="margin-top:12px">
+            <div class="card-label" style="margin-bottom:6px">Historial de exportaciones</div>
+            <div id="export-history"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- Toast de notificaciones -->
+<div class="toast" id="toast"></div>
+</div>
+
+<!-- Modal carpeta -->
+<div class="mo" id="mo-carpeta" onclick="closeModal('mo-carpeta',event)">
+  <div class="modal"><button class="mc" onclick="document.getElementById('mo-carpeta').classList.remove('open')">✕</button><div id="mo-carpeta-body"></div></div>
+</div>
+<!-- Modal nuevo proyecto -->
+<div class="mo" id="mo-proj" onclick="closeModal('mo-proj',event)">
+  <div class="modal">
+    <button class="mc" onclick="document.getElementById('mo-proj').classList.remove('open')">✕</button>
+    <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--white);margin-bottom:4px">Nuevo Proyecto</div>
+    <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--text3);margin-bottom:18px">Registrar en el tablero</div>
+    <div class="f-field"><label class="f-label">Título</label><input class="f-input" id="np-t" placeholder="Nombre del proyecto"/></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div class="f-field"><label class="f-label">Perfil</label><select class="f-select" id="np-p"><option value="C1">C1 Técnico</option><option value="C2">C2 Investigativo</option><option value="C3">C3 Creativo</option><option value="C4">C4 Integral</option><option value="C5">C5 Pedagógico</option><option value="C6">C6 Comunitario</option><option value="C7">C7 Institucional</option></select></div>
+      <div class="f-field"><label class="f-label">Nivel</label><select class="f-select" id="np-n"><option>N1</option><option>N2</option><option>N3</option><option>N4</option></select></div>
+    </div>
+    <div class="f-field"><label class="f-label">Descripción</label><textarea class="f-textarea" id="np-d" placeholder="Breve descripción..."></textarea></div>
+    <div style="display:flex;gap:8px;justify-content:flex-end"><button class="btn btn-ghost" onclick="document.getElementById('mo-proj').classList.remove('open')">Cancelar</button><button class="btn btn-gold" onclick="createProject()">Crear</button></div>
+  </div>
+</div>
+
+<script>
+/* ═══ NAV ═══ */
+function nav(id, el) {
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  if(el) el.classList.add('active');
+  activePage = id;
+  if(id==='activacion') renderIntake();
+  if(id==='explorador') renderCarpetas();
+  if(id==='proyectos') renderKanban();
+  if(id==='generador') renderGenerador();
+  if(id==='revisor') renderRevisor();
+  if(id==='wiki') showWiki('activacion');
+  if(id==='perfil') { renderPerfilPage(); updateProgressBars(); }
+}
+function navPerfil(c) {
+  nav('explorador', document.querySelector('[data-page="explorador"]'));
+  setTimeout(()=>{ filtroExplorador=c; renderCarpetas(); document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active')); },60);
+}
+
+/* ═══ DASHBOARD workflow ═══ */
+(function(){
+  const cont = document.getElementById('js-wf');
+  if(!cont) return;
+  cont.style.cssText='display:flex;flex:1';
+  const colors=['var(--gold)','var(--teal)','var(--violet)','var(--coral)','var(--sage)'];
+  cont.innerHTML = FW.workflow.map((w,i)=>`<div style="flex:1;padding:9px 8px;text-align:center;background:${i===0?'rgba(212,168,83,.1)':'transparent'};border-right:${i<4?'1px solid var(--border)':'none'};cursor:default"><div style="font-family:'Space Mono',monospace;font-size:8px;color:${colors[i]};text-transform:uppercase;margin-bottom:4px">${i+1}</div><div style="font-size:12px;color:var(--white)">${w.label}</div><div style="font-family:'Space Mono',monospace;font-size:8px;color:var(--text3);margin-top:3px">${w.steps.length} pasos</div></div>`).join('');
+})();
+
+/* ═══ ACTIVACIÓN ═══ */
+function renderIntake() {
+  const w = document.getElementById('intake-wizard');
+  if(intakeResult) { renderIntakeResult(w); return; }
+
+  const total = FW.intake_questions.length;
+  const progress = Array.from({length:total}, (_,i) => {
+    const done = i < intakeStep;
+    const active = i === intakeStep;
+    return `<div class="wp-step ${done?'done':active?'active':''}">${done?'✓':i+1}</div>${i<total-1?`<div class="wp-line ${done?'done':''}"></div>`:''}`;
+  }).join('');
+
+  w.innerHTML = `
+    <div class="wizard-progress">${progress}</div>
+    <div class="q-card">
+      <div class="q-num">Pregunta ${intakeStep+1} de ${total}</div>
+      <div class="q-text">${FW.intake_questions[intakeStep]}</div>
+      <textarea class="q-input" id="q-ans" placeholder="Escribe tu respuesta aquí..." rows="3">${intakeAnswers[intakeStep]||''}</textarea>
+    </div>
+    <div class="q-nav">
+      <div style="display:flex;gap:8px">
+        ${intakeStep>0?`<button class="btn btn-ghost" onclick="intakePrev()">← Anterior</button>`:''}
+        <button class="btn btn-ghost" onclick="intakeSkip()">Omitir</button>
+      </div>
+      <div class="q-count">${intakeStep+1} / ${total}</div>
+      <button class="btn btn-gold" onclick="intakeNext()">${intakeStep<total-1?'Siguiente →':'Clasificar ◆'}</button>
+    </div>`;
+
+  document.getElementById('q-ans').addEventListener('keydown', e => {
+    if(e.key==='Enter' && !e.shiftKey) { e.preventDefault(); intakeNext(); }
+  });
+}
+
+function saveAnswer() {
+  const el = document.getElementById('q-ans');
+  if(el) intakeAnswers[intakeStep] = el.value;
+}
+function intakeNext() { saveAnswer(); if(intakeStep<FW.intake_questions.length-1){intakeStep++;renderIntake();}else{classifyIntake();} }
+function intakePrev() { saveAnswer(); intakeStep=Math.max(0,intakeStep-1); renderIntake(); }
+function intakeSkip() { intakeStep=Math.min(FW.intake_questions.length-1,intakeStep+1); renderIntake(); }
+
+function classifyIntake() {
+  const all = intakeAnswers.join(' ').toLowerCase();
+  const scores = FW.classification_rules.map(r => ({
+    rule:r, score: r.keywords.filter(k=>all.includes(k)).length
+  })).filter(x=>x.score>0).sort((a,b)=>b.score-a.score);
+
+  const top = scores[0]?.rule || FW.classification_rules[3]; // default Caleidoscopio
+  const hasRisk = intakeAnswers[5] && intakeAnswers[5].trim().length>3;
+
+  // Nivel heurístico
+  const teamAnswer = intakeAnswers[8]?.toLowerCase()||'';
+  const durAnswer = intakeAnswers[7]?.toLowerCase()||'';
+  let nivel = 'N2';
+  if(teamAnswer.includes('institución')||teamAnswer.includes('institucional')) nivel='N4';
+  else if(teamAnswer.includes('comunidad')||scores.some(s=>s.rule.need_type==='integrada'&&s.score>2)) nivel='N3';
+  else if(teamAnswer.includes('una persona')||durAnswer.includes('día')||durAnswer.includes('hora')) nivel='N1';
+
+  const profileRisks = [];
+  if(all.includes('ia')||all.includes('inteligencia artificial')) profileRisks.push('IA sin verificación humana');
+  if(hasRisk) profileRisks.push('datos sensibles o comunidades vulnerables mencionadas');
+  if(all.includes('menores')) profileRisks.push('menores involucrados — requiere protocolo ético específico');
+  if(all.includes('patrimonio')||all.includes('cultural')) profileRisks.push('patrimonio cultural — revisar derechos y representación');
+  const generalRisks = top.caleidoscopio==='C1'?["automatización prematura","datos expuestos"]:
+    top.caleidoscopio==='C2'?["fuentes débiles","extracción epistémica"]:
+    top.caleidoscopio==='C3'?["derechos de autor","apropiación cultural"]:
+    ["documentación insuficiente","falta de continuidad"];
+
+  intakeResult = { top, nivel, profileRisks, generalRisks: generalRisks.filter(r=>!profileRisks.includes(r)), scores };
+  renderIntakeResult(document.getElementById('intake-wizard'));
+}
+
+function renderIntakeResult(w) {
+  const r = intakeResult;
+  const nivelData = FW.levels[r.nivel];
+  const allRisks = [...r.profileRisks, ...r.generalRisks];
+  const docs = nivelData.docs;
+
+  w.innerHTML = `
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+      <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--white)">◆ Resultado de activación</div>
+      <button class="btn btn-ghost" onclick="resetIntake()">↺ Reiniciar</button>
+    </div>
+    <div class="result-grid">
+      <div class="result-card" style="border-color:${r.top.color};border-left:3px solid ${r.top.color}">
+        <div class="result-label">Perfil / Caleidoscopio</div>
+        <div class="result-val" style="font-size:16px;color:var(--white)">${r.top.activate}</div>
+        <div class="result-sub">${r.top.caleidoscopio} · ${r.top.need_type}</div>
+      </div>
+      <div class="result-card" style="border-color:var(--gold)">
+        <div class="result-label">Nivel recomendado</div>
+        <div class="result-val">${r.nivel}</div>
+        <div class="result-sub">${nivelData.name}</div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px">
+      <div class="card">
+        <div class="card-label">Documentos mínimos</div>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px">${docs.map(d=>`<span class="tag" style="color:var(--teal);border-color:var(--teal-dim)">${d}</span>`).join('')}</div>
+        ${nivelData.avoid?`<div class="card-label" style="margin-top:10px">Evitar por ahora</div><div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:6px">${nivelData.avoid.map(d=>`<span class="tag">${d}</span>`).join('')}</div>`:''}
+      </div>
+      <div class="card">
+        <div class="card-label">Riesgos identificados</div>
+        <div class="risk-list" style="margin-top:8px">
+          ${allRisks.length?allRisks.map(risk=>`<div class="risk-item"><div class="risk-dot"></div><span>${risk}</span></div>`).join(''):'<div style="color:var(--sage);font-size:13px">Sin riesgos críticos detectados</div>'}
+        </div>
+      </div>
+    </div>
+    <div class="card" style="margin-bottom:14px">
+      <div class="card-label">Cuándo activar este perfil</div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px">
+        ${(r.top.keywords||[]).map(k=>`<span class="tag">${k}</span>`).join('')}
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn btn-gold" onclick="nav('generador',document.querySelector('[data-page=generador]'))">→ Ir al Generador de plantillas</button>
+      <button class="btn btn-teal" onclick="nav('revisor',document.querySelector('[data-page=revisor]'))">→ Ir al Revisor</button>
+      <button class="btn btn-ghost" onclick="nav('explorador',document.querySelector('[data-page=explorador]'))">→ Explorar cartapacios</button>
+    </div>`;
+}
+
+function resetIntake() {
+  intakeAnswers = Array(12).fill('');
+  intakeStep = 0;
+  intakeResult = null;
+  renderIntake();
+}
+
+/* ═══ EXPLORADOR ═══ */
+function renderCarpetas() {
+  const g = document.getElementById('carpetas-grid');
+  const items = FW.carpetas.filter(c=>{
+    if(filtroExplorador==='todos') return true;
+    if(['activo','pendiente','archivo'].includes(filtroExplorador)) return c.estado===filtroExplorador;
+    return c.perfil===filtroExplorador;
+  });
+  g.innerHTML = items.map(c=>`
+    <div class="cc" style="--cc:${c.color}" onclick="openCarpeta('${c.num}')">
+      <div class="cc-num">${String(c.num).padStart(2,'0')}_</div>
+      <div class="cc-name">${c.name}</div>
+      <div class="cc-desc">${c.desc}</div>
+      <div class="cc-foot">
+        <span class="est-badge est-${c.estado}">${c.estado.toUpperCase()}</span>
+        <span class="tag" style="color:${c.color};border-color:${c.color};background:transparent;font-size:8px">${c.perfil}</span>
+      </div>
+    </div>`).join('');
+}
+
+function filterExp(f, btn) {
+  filtroExplorador = f;
+  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCarpetas();
+}
+
+function openCarpeta(num) {
+  const c = FW.carpetas.find(x=>x.num===num);
+  if(!c) return;
+  document.getElementById('mo-carpeta-body').innerHTML = `
+    <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--text3);margin-bottom:6px">${String(c.num).padStart(2,'0')}_${c.name.toUpperCase().replace(/ /g,'_')}/</div>
+    <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--white);margin-bottom:6px">${c.name}</div>
+    <div style="font-size:14px;color:var(--text2);margin-bottom:12px">${c.desc}</div>
+    <span class="est-badge est-${c.estado}">${c.estado.toUpperCase()}</span>
+    <div class="card-label" style="margin-top:14px">Perfil Caleidoscopio</div>
+    <div style="font-size:14px;color:${c.color};margin-bottom:10px">${c.perfil} — ${FW.kaleidoscope[c.perfil]?.name||c.perfil}</div>
+    <div class="card-label">Etiquetas</div>
+    <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:5px">${c.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>`;
+  document.getElementById('mo-carpeta').classList.add('open');
+}
+
+/* ═══ KANBAN ═══ */
+const KCOLS=[{n:'N1',label:'Mínimo',c:'var(--teal)'},{n:'N2',label:'Operativo',c:'var(--gold)'},{n:'N3',label:'Avanzado',c:'var(--violet)'},{n:'N4',label:'Institucional',c:'var(--coral)'}];
+
+function renderKanban() {
+  const b = document.getElementById('kanban-board');
+  b.innerHTML = KCOLS.map(col=>{
+    const cards = FW.proyectos.filter(p=>p.nivel===col.n);
+    const ck = FW.kaleidoscope;
+    return `<div class="kc">
+      <div class="kc-h"><div class="kc-dot" style="background:${col.c}"></div><div class="kc-title">${col.n} · ${col.label}</div><div class="kc-n">${cards.length}</div></div>
+      <div class="kc-body">
+        ${cards.map(p=>`<div class="kk"><div class="kk-title">${p.titulo}</div><div class="kk-meta">📅 ${p.fecha}</div><span class="kk-badge" style="background:${ck[p.perfil]?.colorDim||'var(--ink4)'};color:${ck[p.perfil]?.color||'var(--text2)'}">${p.perfil}</span></div>`).join('')}
+        <button class="add-btn" onclick="openNP('${col.n}')">+ Añadir</button>
+      </div></div>`;
+  }).join('');
+}
+function openNewProject(){ document.getElementById('mo-proj').classList.add('open'); }
+function openNP(n){ document.getElementById('np-n').value=n; openNewProject(); }
+function createProject(){
+  const t=document.getElementById('np-t').value.trim(); if(!t) return;
+  FW.proyectos.push({id:Date.now(),titulo:t,perfil:document.getElementById('np-p').value,nivel:document.getElementById('np-n').value,fecha:new Date().toISOString().split('T')[0],desc:document.getElementById('np-d').value});
+  document.getElementById('mo-proj').classList.remove('open');
+  document.getElementById('np-t').value=''; document.getElementById('np-d').value='';
+  renderKanban();
+}
+
+/* ═══ GENERADOR ═══ */
+const PROF_KEYS = Object.keys(FW.profiles);
+const TMPL_KEYS = Object.keys(FW.templates);
+
+function renderGenerador() {
+  const pg = document.getElementById('perfil-grid');
+  pg.innerHTML = PROF_KEYS.map(k=>`<div class="pb ${k===selectedPerfil?'sel':''}" onclick="selectPerfil('${k}')"><div class="pb-name">${FW.profiles[k].label}</div><div class="pb-id">${FW.profiles[k].caleidoscopio}</div></div>`).join('');
+  renderTemplateList();
+}
+
+function selectPerfil(k) {
+  selectedPerfil=k;
+  document.querySelectorAll('.pb').forEach(b=>b.classList.remove('sel'));
+  event.currentTarget.classList.add('sel');
+  document.getElementById('preview-box').textContent='Haz clic en una plantilla para ver la vista previa...';
+}
+
+function renderTemplateList() {
+  document.getElementById('template-list').innerHTML = TMPL_KEYS.map(k=>
+    `<div class="tl-item" onclick="previewTemplate('${k}')">
+      <span class="tl-icon">${FW.templates[k].icon}</span>
+      <div class="tl-name">${FW.templates[k].name}</div>
+      <button class="tl-dl" onclick="dlTemplate(event,'${k}')">↓ MD</button>
+    </div>`).join('');
+}
+
+function buildMD(tk) {
+  const t = FW.templates[tk];
+  const p = FW.profiles[selectedPerfil];
+  const proj = document.getElementById('gen-proj')?.value || 'Mi Proyecto';
+  const resp = document.getElementById('gen-resp')?.value || '—';
+  const date = new Date().toISOString().split('T')[0];
+  const fields = t.fields.map(f => `**${f}:** `).join('\n');
+  return `# ${t.icon} ${t.name}\n\n**Archivo:** \`${tk}.md\`\n**Fecha:** ${date}\n**Versión:** V4.1.0-Integral\n**Proyecto:** ${proj}\n**Responsable:** ${resp}\n**Perfil activo:** ${p.label} (${p.caleidoscopio})\n\n---\n\n${fields}\n\n---\n\n## Notas de uso\n\nActivar cuando: ${p.activate_when.join(' · ')}\n\nEvidencia mínima esperada: ${p.evidence.join(' · ')}\n\nRiesgos a revisar: ${p.risks.join(' · ')}\n\n---\n*Generado por Framework Genérico V4.1.0-Integral · ${date}*\n`;
+}
+
+function previewTemplate(k) {
+  selectedTemplate=k;
+  document.getElementById('preview-box').textContent = buildMD(k);
+}
+function dlTemplate(e,k) {
+  e.stopPropagation();
+  const blob=new Blob([buildMD(k)],{type:'text/markdown'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=k+'.md'; a.click();
+}
+function genPackage() {
+  TMPL_KEYS.forEach((k,i)=>setTimeout(()=>dlTemplate({stopPropagation:()=>{}},k),i*350));
+}
+
+/* ═══ REVISOR V2 ═══ */
+function setPhase(p, btn) {
+  activePhase=p;
+  document.querySelectorAll('.pt-tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  renderChecks();
+}
+
+function renderRevisor() {
+  renderChecks();
+  renderScore();
+  renderSuccessCriteria();
+}
+
+function renderChecks() {
+  const cl = document.getElementById('check-list');
+  if(activePhase==='gates') {
+    cl.innerHTML = FW.gates.map(g=>`
+      <div class="gate-item">
+        <div class="gate-id">${g.id}</div>
+        <div style="flex:1"><div style="font-size:13px;font-weight:500;color:var(--white);margin-bottom:1px">${g.name}</div><div class="gate-q">${g.question}</div></div>
+        <div class="gate-status ${gatesState[g.id]}" onclick="toggleGate('${g.id}')"></div>
+      </div>`).join('');
+  } else {
+    const phase = activePhase;
+    cl.innerHTML = (FW.checks[phase]||[]).map((c,i)=>
+      `<div class="ci">
+        <div class="cs ${checksState[phase][i]}" onclick="toggleCheck('${phase}',${i})">${checksState[phase][i]==='ok'?'✓':checksState[phase][i]==='warn'?'!':checksState[phase][i]==='fail'?'✗':'·'}</div>
+        <div><div class="ci-name">${c}</div><div class="ci-ref">${phase} · check ${i+1}</div></div>
+      </div>`).join('');
+  }
+  renderScore();
+}
+
+function toggleCheck(phase, i) {
+  const cycle=['pend','ok','warn','fail'];
+  checksState[phase][i] = cycle[(cycle.indexOf(checksState[phase][i])+1)%cycle.length];
+  renderChecks();
+}
+function toggleGate(id) {
+  gatesState[id] = gatesState[id]==='pend'?'ok':'pend';
+  renderChecks();
+}
+
+function renderScore() {
+  const allChecks = Object.values(checksState).flat();
+  const gatesDone = Object.values(gatesState).filter(s=>s==='ok').length;
+  const totalGates = FW.gates.length;
+  const oks = allChecks.filter(s=>s==='ok').length;
+  const warns = allChecks.filter(s=>s==='warn').length;
+  const fails = allChecks.filter(s=>s==='fail').length;
+  const total = allChecks.length + totalGates;
+  const score = oks + gatesDone;
+
+  const ring = document.getElementById('score-ring');
+  const pct = score/total;
+  const color = pct>=.8?'var(--sage)':pct>=.5?'var(--gold)':'var(--coral)';
+  ring.style.borderColor = color;
+  document.getElementById('score-num').textContent = score;
+  document.getElementById('score-tot').textContent = `/ ${total} total`;
+
+  const ver = document.getElementById('veredicto');
+  if(fails===0&&warns<=1&&gatesDone>=10){ver.className='veredicto v-pass';ver.textContent='✓ Gate aprobado — puede avanzar de nivel';}
+  else if(fails<=1){ver.className='veredicto v-warn';ver.textContent='⚠ Condicional — resolver advertencias primero';}
+  else{ver.className='veredicto v-fail';ver.textContent=`✗ Bloqueado — ${fails} checks críticos pendientes`;}
+
+  const gaps = document.getElementById('gap-list');
+  const problemas = [];
+  Object.entries(checksState).forEach(([ph,states])=>{ states.forEach((s,i)=>{ if(s!=='ok'&&s!=='pend') problemas.push({label:FW.checks[ph][i],color:s==='warn'?'var(--gold)':'var(--coral)'}); }); });
+  const gapsG = FW.gates.filter(g=>gatesState[g.id]==='pend').slice(0,4).map(g=>({label:`${g.id}: ${g.name}`,color:'var(--text3)'}));
+  const all = [...problemas,...gapsG];
+  gaps.innerHTML = all.length?all.map(x=>`<div class="gap-item"><div class="gd" style="background:${x.color}"></div><span>${x.label}</span></div>`).join(''):'<div style="color:var(--sage);font-size:13px;padding:4px 0">✓ Sin gaps críticos identificados</div>';
+}
+
+function renderSuccessCriteria() {
+  const allChecksOk = Object.values(checksState).flat().filter(s=>s==='ok').length;
+  const container = document.getElementById('success-check');
+  container.innerHTML = FW.success_criteria.map((s,i)=>{
+    const done = i<Math.floor(allChecksOk/3);
+    return `<div class="sc-item"><div class="sc-check ${done?'ok':''}">${done?'✓':''}</div><span style="font-size:12px;color:${done?'var(--text)':'var(--text3)'}">${s}</span></div>`;
+  }).join('');
+}
+
+/* ═══ WIKI ═══ */
+function showWiki(key, btn) {
+  const page = FW.wiki[key]; if(!page) return;
+  document.getElementById('wiki-content').innerHTML = marked.parse(page.content);
+  document.querySelectorAll('.wn-item').forEach(n=>n.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  else { const keys=['activacion','gates','perfiles','plantillas']; const idx=keys.indexOf(key); const items=document.querySelectorAll('.wn-item'); if(items[idx]) items[idx].classList.add('active'); }
+}
+
+/* ═══ MODAL ═══ */
+function closeModal(id, e) { if(!e||e.target===document.getElementById(id)) document.getElementById(id).classList.remove('open'); }
+
+/* ═══ PERFIL ═══ */
+const PROFILE_SCHEMA = { schema:'fw_user_profile', schema_version:'1.0', framework_version:'4.1.0-Integral' };
+
+let userProfile = { name:'', role:'', institucion:'', caleidoscopio:'C1', notes:'' };
+let exportHistory = [];
+
+const C_ROWS = [['C1','C2','C3','C4'],['C5','C6','C7']];
+
+function renderPerfilPage() {
+  // Populate inputs from state
+  document.getElementById('p-name').value = userProfile.name;
+  document.getElementById('p-role').value = userProfile.role;
+  document.getElementById('p-inst').value = userProfile.institucion;
+  document.getElementById('p-notes').value = userProfile.notes;
+
+  // Caleidoscopio selector rows
+  const ck = FW.kaleidoscope;
+  document.getElementById('c-selector').innerHTML = C_ROWS[0].map(c=>`
+    <div class="cs-btn ${userProfile.caleidoscopio===c?'sel':''}" onclick="selectCaleidoscopio('${c}')">
+      <div class="cs-id">${c}</div>
+      <div class="cs-name">${ck[c]?.name||c}</div>
+    </div>`).join('');
+  document.getElementById('c-selector2').innerHTML = C_ROWS[1].map(c=>`
+    <div class="cs-btn ${userProfile.caleidoscopio===c?'sel':''}" onclick="selectCaleidoscopio('${c}')">
+      <div class="cs-id">${c}</div>
+      <div class="cs-name">${ck[c]?.name||c}</div>
+    </div>`).join('');
+
+  updateProfileDisplay();
+  updateProgressBars();
+  renderExportPreview();
+  renderExportHistory();
+}
+
+function selectCaleidoscopio(c) {
+  userProfile.caleidoscopio = c;
+  document.querySelectorAll('.cs-btn').forEach(b=>b.classList.remove('sel'));
+  event.currentTarget.classList.add('sel');
+  updateProfileDisplay();
+}
+
+function updateProfileDisplay() {
+  userProfile.name = document.getElementById('p-name').value;
+  userProfile.role = document.getElementById('p-role').value;
+  userProfile.institucion = document.getElementById('p-inst').value;
+  userProfile.notes = document.getElementById('p-notes').value;
+
+  const n = userProfile.name || 'Sin nombre';
+  const initials = n.split(' ').map(w=>w[0]||'').slice(0,2).join('').toUpperCase() || '?';
+  document.getElementById('avatar-ring').textContent = initials;
+  document.getElementById('profile-display-name').textContent = n;
+  document.getElementById('profile-display-role').textContent = userProfile.role || 'Rol no definido';
+  const ck = FW.kaleidoscope[userProfile.caleidoscopio];
+  document.getElementById('profile-display-c').textContent = `${userProfile.caleidoscopio} — ${ck?.name||''}`;
+  document.getElementById('tb-user-btn').textContent = `◉ ${userProfile.name || 'Mi perfil'}`;
+  renderExportPreview();
+}
+
+function updateProgressBars() {
+  // Intake progress
+  const answered = intakeAnswers.filter(a=>a.trim()).length;
+  const intakePct = intakeResult ? 100 : Math.round(answered/FW.intake_questions.length*100);
+  setBar('prog-intake', intakePct);
+
+  // Checks progress
+  const allChecks = Object.values(checksState).flat();
+  const checksDone = allChecks.filter(s=>s==='ok').length;
+  const checksPct = Math.round(checksDone/allChecks.length*100);
+  setBar('prog-checks', checksPct, 'var(--teal)');
+
+  // Gates progress
+  const gatesDone = Object.values(gatesState).filter(s=>s==='ok').length;
+  const gatesPct = Math.round(gatesDone/FW.gates.length*100);
+  setBar('prog-gates', gatesPct, 'var(--violet)');
+
+  // Snapshot cards
+  document.getElementById('snapshot-grid').innerHTML = [
+    {val: intakeResult ? '✓' : `${answered}/12`, lbl:'Intake', c:'var(--gold)'},
+    {val: `${checksDone}/${allChecks.length}`, lbl:'Checks OK', c:'var(--teal)'},
+    {val: `${gatesDone}/14`, lbl:'Gates OK', c:'var(--violet)'},
+  ].map(x=>`<div class="snap-card"><div class="snap-val" style="color:${x.c}">${x.val}</div><div class="snap-lbl">${x.lbl}</div></div>`).join('');
+}
+
+function setBar(id, pct, color='var(--gold)') {
+  const bar = document.getElementById(id);
+  const val = document.getElementById(id+'-val');
+  if(bar) { bar.style.width=pct+'%'; bar.style.background=color; }
+  if(val) val.textContent = pct+'%';
+}
+
+function renderExportPreview() {
+  const snap = buildSnapshot();
+  const el = document.getElementById('export-preview-mini');
+  if(!el) return;
+  el.innerHTML = `<span style="color:var(--gold2)">schema</span>: fw_user_profile<br/><span style="color:var(--teal)">usuario</span>: ${snap.user.name||'—'} · ${snap.user.caleidoscopio}<br/><span style="color:var(--violet)">proyectos</span>: ${snap.progress.proyectos.length} · <span style="color:var(--sage)">checks_ok</span>: ${snap.snapshot.checks_ok} · <span style="color:var(--teal)">gates_ok</span>: ${snap.snapshot.gates_ok}`;
+}
+
+function renderExportHistory() {
+  const el = document.getElementById('export-history');
+  if(!el) return;
+  if(!exportHistory.length) { el.innerHTML='<div style="font-size:12px;color:var(--text3);padding:6px 0">Sin exportaciones previas en esta sesión.</div>'; return; }
+  el.innerHTML = exportHistory.map(h=>`
+    <div class="history-item">
+      <span class="hi-icon">📄</span>
+      <span class="hi-label">${h.filename}</span>
+      <span class="hi-time">${h.time}</span>
+      <button class="hi-dl" onclick="redownload(${h.idx})">↓</button>
+    </div>`).join('');
+}
+
+/* ═══ IMPORT / EXPORT ═══ */
+function buildSnapshot() {
+  const allChecks = Object.values(checksState).flat();
+  return {
+    ...PROFILE_SCHEMA,
+    exported_at: new Date().toISOString(),
+    user: { ...userProfile },
+    progress: {
+      intake: { completed: !!intakeResult, answers: intakeAnswers, result: intakeResult, step: intakeStep },
+      checks: checksState,
+      gates: gatesState,
+      active_phase: activePhase,
+      selected_perfil: selectedPerfil,
+      proyectos: FW.proyectos
+    },
+    snapshot: {
+      checks_ok: allChecks.filter(s=>s==='ok').length,
+      checks_total: allChecks.length,
+      gates_ok: Object.values(gatesState).filter(s=>s==='ok').length,
+      gates_total: FW.gates.length,
+      success_criteria_met: Math.floor(allChecks.filter(s=>s==='ok').length/3),
+      intake_answered: intakeAnswers.filter(a=>a.trim()).length
+    }
+  };
+}
+
+let exportCache = [];
+
+function exportProfile() {
+  const data = buildSnapshot();
+  const json = JSON.stringify(data, null, 2);
+  const blob = new Blob([json], {type:'application/json'});
+  const ts = new Date().toISOString().slice(0,16).replace('T','_').replace(':','-');
+  const filename = `fw_perfil_${(userProfile.name||'usuario').replace(/\s+/g,'_').toLowerCase()}_${ts}.json`;
+
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href=url; a.download=filename; a.click();
+
+  exportCache.push({filename, json});
+  exportHistory.unshift({filename, time: new Date().toLocaleTimeString('es'), idx: exportCache.length-1});
+  if(exportHistory.length>5) exportHistory.pop();
+
+  renderExportHistory();
+  toast('↓ Perfil exportado correctamente', 'ok');
+}
+
+function redownload(idx) {
+  const entry = exportCache[idx]; if(!entry) return;
+  const blob = new Blob([entry.json],{type:'application/json'});
+  const a = document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=entry.filename; a.click();
+  toast('↓ Descargando versión guardada', 'info');
+}
+
+function triggerImport() { document.getElementById('import-file').click(); }
+
+function handleImport(e) {
+  const file = e.target.files[0]; if(!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => applyImport(ev.target.result, file.name);
+  reader.readAsText(file);
+  e.target.value = '';
+}
+
+function handleDrop(e) {
+  e.preventDefault();
+  document.getElementById('drop-zone').classList.remove('drag');
+  const file = e.dataTransfer.files[0];
+  if(!file || !file.name.endsWith('.json')) { toast('El archivo debe ser .json', 'err'); return; }
+  const reader = new FileReader();
+  reader.onload = ev => applyImport(ev.target.result, file.name);
+  reader.readAsText(file);
+}
+
+function applyImport(text, filename) {
+  let data;
+  try { data = JSON.parse(text); } catch { toast('El archivo no es JSON válido', 'err'); return; }
+
+  if(data.schema !== 'fw_user_profile') {
+    toast('Archivo no reconocido — schema incorrecto', 'err'); return;
+  }
+
+  // Restaurar perfil de usuario
+  if(data.user) {
+    userProfile = {...userProfile, ...data.user};
+    document.getElementById('p-name').value = userProfile.name || '';
+    document.getElementById('p-role').value = userProfile.role || '';
+    document.getElementById('p-inst').value = userProfile.institucion || '';
+    document.getElementById('p-notes').value = userProfile.notes || '';
+  }
+
+  // Restaurar progreso
+  if(data.progress) {
+    const p = data.progress;
+    if(p.intake) {
+      intakeAnswers = p.intake.answers || Array(12).fill('');
+      intakeResult = p.intake.result || null;
+      intakeStep = p.intake.step || 0;
+    }
+    if(p.checks) {
+      Object.keys(p.checks).forEach(ph => { if(checksState[ph]) checksState[ph]=p.checks[ph]; });
+    }
+    if(p.gates) {
+      Object.keys(p.gates).forEach(g => { if(gatesState[g]!==undefined) gatesState[g]=p.gates[g]; });
+    }
+    if(p.active_phase) activePhase = p.active_phase;
+    if(p.selected_perfil) selectedPerfil = p.selected_perfil;
+    if(p.proyectos && p.proyectos.length) FW.proyectos = p.proyectos;
+  }
+
+  // Re-render todo
+  updateProfileDisplay();
+  updateProgressBars();
+  renderExportPreview();
+  renderExportHistory();
+  renderKanban();
+  renderRevisor();
+  renderGenerador();
+
+  toast(`↑ Perfil importado desde ${filename}`, 'ok');
+}
+
+/* ═══ TOAST ═══ */
+let toastTimer;
+function toast(msg, type='info') {
+  const el = document.getElementById('toast');
+  const icons = {ok:'✓', err:'✗', info:'◆'};
+  el.innerHTML = `<span>${icons[type]||'◆'}</span><span>${msg}</span>`;
+  el.className = `toast toast-${type} show`;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>el.classList.remove('show'), 3200);
+}
+
+/* ═══ INIT ═══ */
+renderCarpetas();
+showWiki('activacion');
+renderRevisor();
+renderGenerador();
+setTimeout(renderKanban, 50);
+setTimeout(renderPerfilPage, 80);
+</script>
+</body>
+</html>
