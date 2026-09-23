@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import type { FrameworkProject, MaturityLevel, Mode, Profile, ProjectPackage } from "../domain/model";
 import type { ProjectRepository } from "../ports/project-repository";
+import { recommendKnowledge } from "../application/knowledge-service";
 import {
   addPortfolioEntry,
   createProject,
@@ -39,6 +40,8 @@ export function App({ repository, persistenceMode }: Props) {
   const [transferDestination, setTransferDestination] = useState("PH");
   const [transferObject, setTransferObject] = useState("");
   const [reopenReason, setReopenReason] = useState("");
+  const [knowledgeNeed, setKnowledgeNeed] = useState("");
+  const [knowledgeResults, setKnowledgeResults] = useState<ReturnType<typeof recommendKnowledge>>([]);
 
   const needsSource = mode === "INTEGRATE" || mode === "AUDIT";
   const canCreate = useMemo(
@@ -141,6 +144,38 @@ export function App({ repository, persistenceMode }: Props) {
     setReopenReason("");
   };
 
+  const onKnowledgeSearch = () => {
+    const activeProfiles = project?.state.activeProfiles ?? profiles;
+    const level = project?.state.projectLevel ?? "N1";
+    setKnowledgeResults(
+      recommendKnowledge({
+        need: knowledgeNeed,
+        profiles: activeProfiles,
+        level,
+      }),
+    );
+    setStatus("Base Federada consultada localmente.");
+  };
+
+  const onInvokeKnowledge = async (item: ReturnType<typeof recommendKnowledge>[number]) => {
+    if (!project) return;
+    const next = addPortfolioEntry(
+      {
+        ...project,
+        state: {
+          ...project.state,
+          knowledgeInvoked: Array.from(new Set([...project.state.knowledgeInvoked, item.id])),
+        },
+      },
+      {
+        type: "invocation",
+        title: item.title,
+        summary: `${item.purpose} · Fuente: ${item.canonicalSource}`,
+      },
+    );
+    await persistProject(next, "Conocimiento invocado y registrado en portafolio.");
+  };
+
   const onExport = () => {
     if (!project) return;
     const pkg = exportProject(project);
@@ -176,6 +211,18 @@ export function App({ repository, persistenceMode }: Props) {
         <p>Activar, persistir, exportar e importar sin backend ni IA externa.</p>
         <p className="mode">Persistencia: <strong>{persistenceMode}</strong></p>
       </header>
+
+      <section aria-labelledby="learn-title" className="card">
+        <h2 id="learn-title">Aprender</h2>
+        <p><strong>Problema al centro.</strong> PH, IT y AT son lentes situadas; el Caleidoscopio es una emergencia posible, no un cuarto perfil.</p>
+        <div className="grid-two">
+          <article><h3>PH</h3><p>Construcción e integración tecnológica situada.</p></article>
+          <article><h3>IT</h3><p>Responsabilidad epistemológica sobre método, evidencia y validez.</p></article>
+          <article><h3>AT</h3><p>Percepción, imaginación, mediación y transformación artística situada.</p></article>
+          <article><h3>N1–N4</h3><p>Madurez operacional situada, no puntuación ni jerarquía.</p></article>
+        </div>
+        <p>La IA puede explicar, contrastar y sugerir. La decisión material sigue siendo humana.</p>
+      </section>
 
       <section aria-labelledby="activate-title" className="card">
         <h2 id="activate-title">Activar proyecto</h2>
@@ -311,6 +358,31 @@ export function App({ repository, persistenceMode }: Props) {
             </p>
           </section>
         ) : null}
+
+        <section className="live-state" aria-labelledby="knowledge-title">
+          <h3 id="knowledge-title">Invocar conocimiento</h3>
+          <p>Describe qué necesitas. La búsqueda ocurre localmente sobre un índice federado mínimo.</p>
+          <label>
+            Necesidad
+            <textarea value={knowledgeNeed} onChange={(e) => setKnowledgeNeed(e.target.value)} />
+          </label>
+          <button disabled={!knowledgeNeed.trim()} onClick={onKnowledgeSearch}>Buscar orientación</button>
+          {knowledgeResults.length > 0 ? (
+            <div className="knowledge-results">
+              {knowledgeResults.map((item) => (
+                <article key={item.id} className="knowledge-item">
+                  <h4>{item.title}</h4>
+                  <p>{item.purpose}</p>
+                  <p><strong>Fuente:</strong> {item.canonicalSource}</p>
+                  <p><strong>Evidencia esperada:</strong> {item.evidenceHint}</p>
+                  {project ? (
+                    <button onClick={() => void onInvokeKnowledge(item)}>Invocar y registrar</button>
+                  ) : null}
+                </article>
+              ))}
+            </div>
+          ) : null}
+        </section>
 
         <button disabled={!project} onClick={onExport}>Exportar paquete</button>
         <label className="import">
