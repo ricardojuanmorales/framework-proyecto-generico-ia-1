@@ -1,10 +1,14 @@
 import {
   SCHEMA_VERSION,
   type FrameworkProject,
+  type HumanDecision,
+  type MaturityLevel,
   type Mode,
+  type PortfolioEntry,
   type Profile,
   type ProjectPackage,
   type SourceContext,
+  type Transfer,
 } from "../domain/model";
 import { validateProjectInvariants } from "../domain/invariants";
 import type { ProjectRepository } from "../ports/project-repository";
@@ -76,6 +80,108 @@ export const createProject = (
   if (issues.length > 0) throw new Error(issues.map((i) => i.message).join(" "));
   if (!validateProject(project)) throw new Error("PROJECT_SCHEMA_INVALID");
   return project;
+};
+
+const validateMutation = (project: FrameworkProject): FrameworkProject => {
+  const issues = validateProjectInvariants(project);
+  if (issues.length > 0) throw new Error(issues.map((i) => i.message).join(" "));
+  if (!validateProject(project)) throw new Error("PROJECT_SCHEMA_INVALID");
+  return project;
+};
+
+export const addPortfolioEntry = (
+  project: FrameworkProject,
+  entry: Omit<PortfolioEntry, "id" | "createdAt">,
+  now = new Date().toISOString(),
+): FrameworkProject =>
+  validateMutation({
+    ...project,
+    updatedAt: now,
+    portfolio: [
+      ...project.portfolio,
+      {
+        ...entry,
+        id: globalThis.crypto?.randomUUID?.() ?? `portfolio-${Date.now()}`,
+        createdAt: now,
+      },
+    ],
+  });
+
+export const recordDecision = (
+  project: FrameworkProject,
+  decision: Omit<HumanDecision, "id" | "authority" | "createdAt">,
+  now = new Date().toISOString(),
+): FrameworkProject =>
+  validateMutation({
+    ...project,
+    updatedAt: now,
+    decisions: [
+      ...project.decisions,
+      {
+        ...decision,
+        id: globalThis.crypto?.randomUUID?.() ?? `decision-${Date.now()}`,
+        authority: "human",
+        createdAt: now,
+      },
+    ],
+  });
+
+export const recordTransfer = (
+  project: FrameworkProject,
+  transfer: Omit<Transfer, "id">,
+  now = new Date().toISOString(),
+): FrameworkProject =>
+  validateMutation({
+    ...project,
+    updatedAt: now,
+    transfers: [
+      ...project.transfers,
+      {
+        ...transfer,
+        id: globalThis.crypto?.randomUUID?.() ?? `transfer-${Date.now()}`,
+      },
+    ],
+  });
+
+export const updateMaturity = (
+  project: FrameworkProject,
+  projectLevel: MaturityLevel,
+  autonomyLevel: MaturityLevel,
+  now = new Date().toISOString(),
+): FrameworkProject =>
+  validateMutation({
+    ...project,
+    updatedAt: now,
+    state: {
+      ...project.state,
+      projectLevel,
+      autonomyLevel,
+    },
+  });
+
+export const reopenProject = (
+  project: FrameworkProject,
+  reason: string,
+  now = new Date().toISOString(),
+): FrameworkProject => {
+  const reopened = addPortfolioEntry(
+    {
+      ...project,
+      status: "reopened",
+      updatedAt: now,
+      state: {
+        ...project.state,
+        nextStep: "Revisar la razón de reapertura y redefinir el siguiente bloque de trabajo.",
+      },
+    },
+    {
+      type: "milestone",
+      title: "Proyecto reabierto",
+      summary: reason.trim(),
+    },
+    now,
+  );
+  return validateMutation(reopened);
 };
 
 export const exportProject = (
