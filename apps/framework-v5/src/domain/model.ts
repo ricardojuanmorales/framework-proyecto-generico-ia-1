@@ -3,6 +3,13 @@ export type Mode = "START" | "INTEGRATE" | "AUDIT";
 export type Profile = "PH" | "IT" | "AT";
 export type MaturityLevel = "N1" | "N2" | "N3" | "N4";
 
+export interface SourceContext {
+  description: string;
+  repositoryUrl?: string;
+  existingArtifacts: string[];
+  preservationRule: "preserve_source";
+}
+
 export interface FrameworkState {
   problem: string;
   context: string;
@@ -16,6 +23,8 @@ export interface FrameworkState {
   risks: string[];
   gates: string[];
   nextStep: string;
+  source?: SourceContext;
+  auditFocus?: string;
 }
 
 export interface PortfolioEntry {
