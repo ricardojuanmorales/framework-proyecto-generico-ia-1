@@ -2,7 +2,7 @@
 
 **Fecha:** 2026-09-23  
 **Rama:** `fase3-construccion-v5`  
-**Estado:** construido · verificación CI pendiente
+**Estado:** estabilizado · CI verde
 
 ## Implementado
 
@@ -20,8 +20,22 @@
 - confirmación humana;
 - roundtrip;
 - pruebas contractuales;
-- pruebas de roundtrip;
 - workflow CI Node 22/24.
+
+## Evidencia
+
+GitHub Actions:
+
+```text
+Framework V5 Verify
+run #9
+conclusion: success
+```
+
+La verificación pasó después de corregir:
+
+- declaración de tipos Vite para import CSS;
+- normalización de npm entre Node 22 y Node 24.
 
 ## Decisión provisional de transporte
 
@@ -36,24 +50,16 @@ contrato semántico primero
 
 No modifica el Modelo Portable aprobado.
 
-## Evidencia pendiente
-
-La sesión no pudo ejecutar npm localmente porque el entorno de ejecución no resolvió github.com.
-
-La verificación se delega explícitamente a GitHub Actions.
-
 ## Deuda inmediata
 
-- lockfile;
-- resultado verde de CI;
+- lockfile reproducible;
 - auditorías architecture/secrets/privacy/accessibility;
 - decisión de empaquetado final.
 
-## Próximo movimiento
+## Siguiente movimiento
 
 ```text
-CI verde
-→ estabilizar slice START
-→ ampliar contratos técnicos
+START estable
 → INTEGRATE / AUDIT
+→ roundtrip de los tres modos
 ```
