@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://framework-v5.local/schemas/portfolio-entry/0.1.0",
+  "title": "Framework V5 Portfolio Entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id","type","title","summary","createdAt"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "type": { "enum": ["artifact","evidence","reflection","invocation","milestone"] },
+    "title": { "type": "string", "minLength": 1, "maxLength": 240 },
+    "summary": { "type": "string", "maxLength": 6000 },
+    "createdAt": { "type": "string", "format": "date-time" }
+  }
+}
