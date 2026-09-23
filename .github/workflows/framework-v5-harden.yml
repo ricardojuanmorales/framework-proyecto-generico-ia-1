@@ -1,0 +1,50 @@
+name: Framework V5 Harden
+
+on:
+  pull_request:
+    paths:
+      - "apps/framework-v5/**"
+      - ".github/workflows/framework-v5-harden.yml"
+  workflow_dispatch:
+
+jobs:
+  harden:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/framework-v5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Normalize npm
+        run: npm install --global npm@11.19.0
+
+      - name: Generate lockfile
+        run: npm install --package-lock-only --ignore-scripts
+
+      - name: Install
+        run: npm install --ignore-scripts
+
+      - name: Verify
+        run: npm run verify
+
+      - name: Build static artifact
+        run: npm run build
+
+      - name: Upload lockfile evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: framework-v5-package-lock
+          path: apps/framework-v5/package-lock.json
+
+      - name: Upload static build
+        uses: actions/upload-artifact@v4
+        with:
+          name: framework-v5-static-build
+          path: apps/framework-v5/dist
