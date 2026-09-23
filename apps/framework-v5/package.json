@@ -3,7 +3,9 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "engines": { "node": ">=22 <27" },
+  "engines": {
+    "node": ">=22 <27"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -12,7 +14,12 @@
     "test": "vitest run",
     "test:schemas": "vitest run src/tests/schemas.contract.test.ts",
     "test:roundtrip": "vitest run src/tests/roundtrip.test.ts",
-    "verify": "npm run typecheck && npm run build && npm run test"
+    "verify": "npm run typecheck && npm run build && npm run test && npm run audit",
+    "audit:architecture": "node tools/audit-architecture.mjs",
+    "audit:secrets": "node tools/audit-secrets.mjs",
+    "audit:privacy": "node tools/audit-privacy.mjs",
+    "audit:accessibility": "node tools/audit-accessibility.mjs",
+    "audit": "npm run audit:architecture && npm run audit:secrets && npm run audit:privacy && npm run audit:accessibility"
   },
   "dependencies": {
     "react": "19.2.7",
