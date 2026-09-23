@@ -16,7 +16,7 @@
 - [x] import con staging
 - [x] roundtrip
 - [x] materialización multiarchivo lógica
-- [ ] packaging físico final
+- [x] packaging físico ZIP
 
 ## G3 · Roundtrip
 - [x] START
@@ -29,8 +29,8 @@
 - [x] guía rápida colaborador
 - [x] npm run verify
 - [x] CI Node 22/24
-- [ ] package-lock comprometido
-- [ ] instalación reproducible con npm ci
+- [x] package-lock comprometido
+- [x] instalación reproducible con npm ci
 
 ## G5 · Trazabilidad
 - [x] schemas versionados
@@ -48,12 +48,12 @@
 - [x] auditoría básica de privacidad
 - [x] baseline automática de accesibilidad
 - [ ] revisión manual de accesibilidad
-- [ ] revisión manual de seguridad de import/export
+- [x] revisión manual de fuente de seguridad import/export
 
 ## G7 · Historia
 - [x] V4 preservada en legacy
 - [x] V5 separada técnicamente
-- [ ] ruta pública legacy verificada en build final
+- [ ] ruta pública legacy verificada en despliegue final
 
 ## G8 · Honestidad
 - [x] fuera de alcance declarado
