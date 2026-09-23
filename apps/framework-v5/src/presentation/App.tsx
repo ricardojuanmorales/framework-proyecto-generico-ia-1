@@ -1,7 +1,17 @@
 import { useMemo, useState } from "react";
-import type { FrameworkProject, Mode, Profile, ProjectPackage } from "../domain/model";
+import type { FrameworkProject, MaturityLevel, Mode, Profile, ProjectPackage } from "../domain/model";
 import type { ProjectRepository } from "../ports/project-repository";
-import { createProject, exportProject, importProject, stageImport } from "../application/project-service";
+import {
+  addPortfolioEntry,
+  createProject,
+  exportProject,
+  importProject,
+  recordDecision,
+  recordTransfer,
+  reopenProject,
+  stageImport,
+  updateMaturity,
+} from "../application/project-service";
 
 interface Props {
   repository: ProjectRepository;
@@ -21,6 +31,14 @@ export function App({ repository, persistenceMode }: Props) {
   const [existingArtifacts, setExistingArtifacts] = useState("");
   const [auditFocus, setAuditFocus] = useState("");
   const [profiles, setProfiles] = useState<Profile[]>(["PH"]);
+  const [evidenceTitle, setEvidenceTitle] = useState("");
+  const [evidenceSummary, setEvidenceSummary] = useState("");
+  const [decisionText, setDecisionText] = useState("");
+  const [decisionReason, setDecisionReason] = useState("");
+  const [transferOrigin, setTransferOrigin] = useState("IT");
+  const [transferDestination, setTransferDestination] = useState("PH");
+  const [transferObject, setTransferObject] = useState("");
+  const [reopenReason, setReopenReason] = useState("");
 
   const needsSource = mode === "INTEGRATE" || mode === "AUDIT";
   const canCreate = useMemo(
@@ -59,6 +77,68 @@ export function App({ repository, persistenceMode }: Props) {
     await repository.save(next);
     setProject(next);
     setStatus(`Proyecto ${mode} creado y persistido.`);
+  };
+
+  const persistProject = async (next: FrameworkProject, message: string) => {
+    await repository.save(next);
+    setProject(next);
+    setStatus(message);
+  };
+
+  const onAddEvidence = async () => {
+    if (!project || !evidenceTitle.trim()) return;
+    const next = addPortfolioEntry(project, {
+      type: "evidence",
+      title: evidenceTitle,
+      summary: evidenceSummary,
+    });
+    await persistProject(next, "Evidencia registrada.");
+    setEvidenceTitle("");
+    setEvidenceSummary("");
+  };
+
+  const onDecision = async () => {
+    if (!project || !decisionText.trim()) return;
+    const next = recordDecision(project, {
+      question: "Decisión material del proyecto",
+      decision: decisionText,
+      reason: decisionReason,
+      reversible: "yes",
+    });
+    await persistProject(next, "Decisión humana registrada.");
+    setDecisionText("");
+    setDecisionReason("");
+  };
+
+  const onTransfer = async () => {
+    if (!project || !transferObject.trim()) return;
+    const next = recordTransfer(project, {
+      origin: transferOrigin,
+      destination: transferDestination,
+      object: transferObject,
+      purpose: "Transferencia situada registrada desde la aplicación V5.",
+      limits: [],
+      state: "accepted",
+    });
+    await persistProject(next, "Transferencia registrada.");
+    setTransferObject("");
+  };
+
+  const onMaturity = async (field: "project" | "autonomy", level: MaturityLevel) => {
+    if (!project) return;
+    const next = updateMaturity(
+      project,
+      field === "project" ? level : project.state.projectLevel,
+      field === "autonomy" ? level : project.state.autonomyLevel,
+    );
+    await persistProject(next, "Madurez operacional actualizada.");
+  };
+
+  const onReopen = async () => {
+    if (!project || !reopenReason.trim()) return;
+    const next = reopenProject(project, reopenReason);
+    await persistProject(next, "Proyecto reabierto de forma trazable.");
+    setReopenReason("");
   };
 
   const onExport = () => {
@@ -179,6 +259,59 @@ export function App({ repository, persistenceMode }: Props) {
             <dt>Siguiente paso</dt><dd>{project.state.nextStep}</dd>
           </dl>
         ) : <p>No hay proyecto activo.</p>}
+        {project ? (
+          <section className="live-state" aria-labelledby="live-state-title">
+            <h3 id="live-state-title">Estado vivo</h3>
+
+            <div className="grid-two">
+              <label>
+                Nivel del proyecto
+                <select
+                  value={project.state.projectLevel}
+                  onChange={(e) => void onMaturity("project", e.target.value as MaturityLevel)}
+                >
+                  {(["N1","N2","N3","N4"] as MaturityLevel[]).map((level) => (
+                    <option key={level} value={level}>{level}</option>
+                  ))}
+                </select>
+              </label>
+              <label>
+                Autonomía
+                <select
+                  value={project.state.autonomyLevel}
+                  onChange={(e) => void onMaturity("autonomy", e.target.value as MaturityLevel)}
+                >
+                  {(["N1","N2","N3","N4"] as MaturityLevel[]).map((level) => (
+                    <option key={level} value={level}>{level}</option>
+                  ))}
+                </select>
+              </label>
+            </div>
+
+            <label>Título de evidencia<input value={evidenceTitle} onChange={(e) => setEvidenceTitle(e.target.value)} /></label>
+            <label>Resumen de evidencia<textarea value={evidenceSummary} onChange={(e) => setEvidenceSummary(e.target.value)} /></label>
+            <button disabled={!evidenceTitle.trim()} onClick={() => void onAddEvidence()}>Registrar evidencia</button>
+
+            <label>Decisión humana<input value={decisionText} onChange={(e) => setDecisionText(e.target.value)} /></label>
+            <label>Razón<textarea value={decisionReason} onChange={(e) => setDecisionReason(e.target.value)} /></label>
+            <button disabled={!decisionText.trim()} onClick={() => void onDecision()}>Registrar decisión</button>
+
+            <div className="grid-two">
+              <label>Origen<input value={transferOrigin} onChange={(e) => setTransferOrigin(e.target.value)} /></label>
+              <label>Destino<input value={transferDestination} onChange={(e) => setTransferDestination(e.target.value)} /></label>
+            </div>
+            <label>Objeto transferido<input value={transferObject} onChange={(e) => setTransferObject(e.target.value)} /></label>
+            <button disabled={!transferObject.trim()} onClick={() => void onTransfer()}>Registrar transferencia</button>
+
+            <label>Razón de reapertura<input value={reopenReason} onChange={(e) => setReopenReason(e.target.value)} /></label>
+            <button disabled={!reopenReason.trim()} onClick={() => void onReopen()}>Reabrir proyecto</button>
+
+            <p>
+              Portafolio: <strong>{project.portfolio.length}</strong> · Decisiones: <strong>{project.decisions.length}</strong> · Transferencias: <strong>{project.transfers.length}</strong>
+            </p>
+          </section>
+        ) : null}
+
         <button disabled={!project} onClick={onExport}>Exportar paquete</button>
         <label className="import">
           Importar paquete
