@@ -19,7 +19,8 @@
     "audit:secrets": "node tools/audit-secrets.mjs",
     "audit:privacy": "node tools/audit-privacy.mjs",
     "audit:accessibility": "node tools/audit-accessibility.mjs",
-    "audit": "npm run audit:architecture && npm run audit:secrets && npm run audit:privacy && npm run audit:accessibility"
+    "audit": "npm run audit:architecture && npm run audit:secrets && npm run audit:privacy && npm run audit:accessibility && npm run audit:dependencies",
+    "audit:dependencies": "npm audit --omit=dev --audit-level=moderate"
   },
   "dependencies": {
     "react": "19.2.7",
