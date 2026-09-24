@@ -1,5 +1,5 @@
-# 🌐 Framework Genérico V4.1.1
-## Repositorio operativo para proyectos humano-máquina-IA
+# 🌐 Framework Genérico V5 · Release Candidate
+## Ecosistema operativo evolutivo humano-máquina-IA
 
 > **Un espacio de trabajo para abordar problemas complejos con juicio humano, inteligencia artificial, tecnología, investigación, creación, ética, trazabilidad y continuidad.**
 
@@ -39,26 +39,26 @@ GitHub funciona como fuente versionada del sistema y el repositorio puede abrirs
 
 | Área | Estado |
 |---|---|
-| 🧱 Framework maestro | **V4.1.0 estable** |
-| 🧰 Repositorio operativo | **V4.1.1 activo** |
+| 🧱 Framework maestro | **V5 RC autorizado con reservas** |
+| 🧰 Repositorio operativo | **Fase 3 construida · H3-B cerrado** |
 | 🧑‍💻 Programador Humanista | **Fase 1 cerrada + robustecida por integración real** |
 | 🧪 Investigador Transdisciplinario | **Fase 1 cerrada** |
 | 🎨 Artista Transdisciplinario | **Fase 1 cerrada** |
 | 🔮 Caleidoscopio | **Propiedad emergente conceptualmente estable** |
 | 🧬 Gramática común PH-IT-AT | **Aprobada** |
-| 🧪 Próximo hito | **Preparación progresiva Pre-Fase 2** |
-| 🚧 Fase 2 | **No iniciada · Pre-Fase 2 preparado** |
+| 🧪 Próximo hito | **Consolidar y publicar v5.0.0-rc.1** |
+| 🚧 Release | **H3-B PASS WITH RESERVATIONS** |
 
-El proyecto completó su primera prueba de integración con un prototipo PH real y entra en estado **Pre-Fase 2 preparado**:
+El proyecto ha completado Fase 1, Fase 2 y la construcción/auditoría interna principal de Fase 3. Entra ahora en modo de release candidate:
 
 ```text
-arquitectura
-→ práctica
-→ evidencia
-→ tensión
-→ aprendizaje
-→ reconciliación estructural
-→ evolución
+canon
+→ app operativa
+→ auditoría H3-B
+→ release candidate
+→ estabilización
+→ H3-C
+→ v5.0.0
 ```
 
 ---
