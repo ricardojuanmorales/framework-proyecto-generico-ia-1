@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { FrameworkProject, MaturityLevel, Mode, Profile, ProjectPackage } from "../domain/model";
 import type { ProjectRepository } from "../ports/project-repository";
 import { recommendKnowledge } from "../application/knowledge-service";
+import { FEDERATED_INDEX } from "../knowledge/federated-index";
 import { buildPortableZip, stagePortableZipImport } from "../application/portable-zip";
 import {
   addPortfolioEntry,
