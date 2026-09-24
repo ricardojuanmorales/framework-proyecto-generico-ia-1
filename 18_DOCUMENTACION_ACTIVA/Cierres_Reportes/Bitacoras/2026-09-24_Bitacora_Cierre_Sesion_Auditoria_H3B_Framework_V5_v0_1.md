@@ -206,3 +206,22 @@ demostrar invocación humana usable
 ```
 
 El producto queda más coherente con sus contratos, pero la auditoría permanece abierta y gobernada por evidencia humana.
+
+## Adenda de continuidad · cierre de Bloque D
+
+**Fecha:** 2026-09-24
+
+D2 fue revalidado humanamente como PASS después de implementar el ciclo visible y reversible de conocimiento activo.
+
+```text
+A PASS
+B PASS
+C PASS
+C6 PASS
+D PASS
+E PENDING
+F PENDING
+H3-B NOT AUTHORIZED
+```
+
+Próximo punto exacto: Bloque E · Portabilidad / Seguridad.
