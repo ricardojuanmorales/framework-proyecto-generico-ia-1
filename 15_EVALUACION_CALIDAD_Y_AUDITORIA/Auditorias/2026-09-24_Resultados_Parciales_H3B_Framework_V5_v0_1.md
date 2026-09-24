@@ -50,3 +50,25 @@ B3 PASS
 
 BLOQUE B: PASS
 ```
+
+## Bloque C · Estado vivo
+
+| ID | Resultado | Observación |
+|---|---|---|
+| C1 | PASS | Evidencia registrada, visible y persistente. |
+| C2 | PASS | Decisión humana registrada con razón y sin atribución indebida a IA. |
+| C3 | PASS | N1–N4 se comprenden como madurez operacional, no como puntuación. |
+| C4 | PASS | Transferencia registra origen, destino y objeto con claridad. |
+| C5 | PASS | Reapertura cambia estado, conserva historia y registra hito. |
+
+## Cierre Bloque C
+
+```text
+C1 PASS
+C2 PASS
+C3 PASS
+C4 PASS
+C5 PASS
+
+BLOQUE C: PASS
+```
