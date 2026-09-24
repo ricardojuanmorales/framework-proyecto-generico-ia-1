@@ -104,3 +104,31 @@ C6 · PORTAFOLIO
 ```
 
 Debe confirmar que los registros creados pueden volver a verse y gestionarse sin edición destructiva.
+
+## Revalidación C6 · PORTAFOLIO
+
+**Resultado:** PASS
+
+Se confirmó:
+
+- restauración del proyecto;
+- visualización de entradas;
+- visualización de decisiones;
+- visualización de transferencias;
+- correcciones trazables;
+- revisión de decisiones sin borrado histórico;
+- actualización de estado de transferencias;
+- persistencia tras recarga.
+
+### Observación menor detectada
+
+Durante la recuperación, el estado persistido conservaba correctamente PH/IT/AT como perfiles activos, pero los checkboxes del formulario no reflejaban IT y AT.
+
+**Clasificación:** inconsistencia de UI, no pérdida de datos.
+
+**Corrección aplicada:** sincronizar el formulario completo con el proyecto restaurado, incluyendo modo, nombre, problema, contexto, propósito, perfiles, procedencia, artefactos y foco de auditoría.
+
+```text
+C6 PASS
+H3B-PORT-001: CLOSED
+```
