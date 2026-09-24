@@ -307,3 +307,28 @@ E PASS
 F PASS WITH RESERVATIONS
 H3-B PENDING HUMAN FINAL DECISION
 ```
+
+## Adenda final · cierre H3-B
+
+**Fecha:** 2026-09-24
+
+Decisión humana final:
+
+```text
+H3-B PASS WITH RESERVATIONS
+```
+
+Reserva vigente:
+
+```text
+external accessibility review pending
+→ antes del release V5 final
+```
+
+Siguiente gate autorizado:
+
+```text
+v5.0.0-rc.1 CON RESERVAS
+```
+
+H3-B queda formalmente cerrado.
