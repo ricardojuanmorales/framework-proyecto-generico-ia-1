@@ -167,3 +167,23 @@ Nueva acción:
 La aplicación no contiene una sección de producto denominada **Accesibilidad**. Existe un baseline técnico automatizado (landmarks, labels, fieldset/legend, aria-live, headings, focus visible y responsive), pero no una superficie de controles o preferencias de accesibilidad.
 
 El contrato de release exige accesibilidad básica verificada, no una sección específica. Si se considera necesaria una superficie visible de accesibilidad, debe tratarse como decisión de producto explícita antes de RC.
+
+## Punto de pausa de sesión
+
+**Fecha:** 2026-09-24
+
+```text
+A PASS
+B PASS
+C PASS
+C6 PASS
+D1 PASS
+D2 BLOCK
+E PENDING
+F PENDING
+H3-B NOT AUTHORIZED
+```
+
+La siguiente acción humana es revalidar D2 sobre la segunda corrección implementada. No repetir bloques cerrados salvo regresión.
+
+Decisión de producto pendiente: determinar si Accesibilidad permanece como propiedad transversal verificable o incorpora además una superficie visible de preferencias/ayuda antes de RC.
