@@ -30,4 +30,8 @@ describe("packaging ZIP portable", () => {
   it("rechaza ZIP sin manifest", () => {
     expect(() => stagePortableZipImport(new Uint8Array([80,75,5,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]))).toThrow();
   });
+
+  it("rechaza bytes que no son ZIP válido", () => {
+    expect(() => stagePortableZipImport(new Uint8Array([1,2,3,4,5]))).toThrow();
+  });
 });
