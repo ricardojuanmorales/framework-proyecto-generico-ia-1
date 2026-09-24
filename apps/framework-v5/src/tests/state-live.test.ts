@@ -12,6 +12,7 @@ import {
   supersedeDecision,
   updateTransferState,
   invokeKnowledgeItem,
+  removeKnowledgeItem,
 } from "../application/project-service";
 
 describe("estado vivo del proyecto", () => {
@@ -154,5 +155,26 @@ describe("estado vivo del proyecto", () => {
     expect(invoked.state.knowledgeInvoked).toContain("method-sdd");
     expect(invoked.portfolio.at(-1)?.type).toBe("invocation");
     expect(invoked.portfolio.at(-1)?.title).toContain("SDD");
+  });
+  it("retira conocimiento activo sin borrar la historia de invocación", () => {
+    let project = createProject({
+      name: "Proyecto",
+      problem: "Problema",
+      context: "",
+      purpose: "Propósito",
+      activeProfiles: ["PH"],
+    });
+    const item = {
+      id: "method-sdd",
+      title: "Spec-Driven Development (SDD)",
+      purpose: "Desarrollar con especificación y verificación.",
+      canonicalSource: "00_CONTROL_MAESTRO/Spec_Driven_Development/",
+    };
+    project = invokeKnowledgeItem(project, item);
+    const originalInvocationCount = project.portfolio.filter((e) => e.type === "invocation").length;
+    const removed = removeKnowledgeItem(project, item);
+    expect(removed.state.knowledgeInvoked).not.toContain("method-sdd");
+    expect(removed.portfolio.filter((e) => e.type === "invocation")).toHaveLength(originalInvocationCount);
+    expect(removed.portfolio.at(-1)?.title).toContain("Conocimiento retirado");
   });
 });
