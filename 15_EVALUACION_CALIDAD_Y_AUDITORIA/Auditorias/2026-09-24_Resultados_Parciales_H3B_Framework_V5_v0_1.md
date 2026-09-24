@@ -72,3 +72,35 @@ C5 PASS
 
 BLOQUE C: PASS
 ```
+
+## Hallazgo transversal H3B-PORT-001 · PORTAFOLIO
+
+**Resultado inicial:** BLOCK
+
+### Hallazgo
+
+La aplicación permitía crear evidencia, decisiones y transferencias, pero no ofrecía una superficie humana para volver a consultarlas, revisarlas o continuar su ciclo de vida. Solo mostraba contadores.
+
+Esto contradice el contrato de PORTAFOLIO de V5.
+
+### Corrección implementada
+
+- restauración automática del último proyecto local;
+- zona PORTAFOLIO real;
+- resumen de estado, madurez, perfiles y siguiente paso;
+- navegación por entradas, decisiones y transferencias;
+- detalle de cada registro;
+- corrección de entradas mediante nueva entrada trazable;
+- revisión/supersesión de decisiones sin borrar historia;
+- actualización explícita de estado de transferencias;
+- pruebas unitarias de preservación histórica.
+
+### Regla de revalidación
+
+Se añade una prueba transversal:
+
+```text
+C6 · PORTAFOLIO
+```
+
+Debe confirmar que los registros creados pueden volver a verse y gestionarse sin edición destructiva.
