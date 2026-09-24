@@ -228,16 +228,79 @@ export function App({ repository, persistenceMode }: Props) {
         <p className="mode">Persistencia: <strong>{persistenceMode}</strong></p>
       </header>
 
-      <section aria-labelledby="learn-title" className="card">
+      <section aria-labelledby="learn-title" className="card learn-zone">
         <h2 id="learn-title">Aprender</h2>
-        <p><strong>Problema al centro.</strong> PH, IT y AT son lentes situadas; el Caleidoscopio es una emergencia posible, no un cuarto perfil.</p>
-        <div className="grid-two">
-          <article><h3>PH</h3><p>Construcción e integración tecnológica situada.</p></article>
-          <article><h3>IT</h3><p>Responsabilidad epistemológica sobre método, evidencia y validez.</p></article>
-          <article><h3>AT</h3><p>Percepción, imaginación, mediación y transformación artística situada.</p></article>
-          <article><h3>N1–N4</h3><p>Madurez operacional situada, no puntuación ni jerarquía.</p></article>
+        <p className="lead"><strong>Empieza por el problema, no por las herramientas.</strong> El Framework ayuda a decidir qué lentes, conocimientos y niveles de apoyo necesitas para actuar con trazabilidad sin inflar el proceso.</p>
+
+        <div className="learn-path" aria-label="Ruta breve de aprendizaje">
+          <span>1 · Problema</span>
+          <span>2 · Lentes</span>
+          <span>3 · Madurez</span>
+          <span>4 · Evidencia</span>
+          <span>5 · Decisión humana</span>
         </div>
-        <p>La IA puede explicar, contrastar y sugerir. La decisión material sigue siendo humana.</p>
+
+        <details open>
+          <summary><strong>1. ¿Qué problema resuelve el Framework?</strong></summary>
+          <p>Ayuda a personas, equipos, máquinas e IA a trabajar sobre problemas complejos de forma situada, trazable y evolutiva. No obliga a usar todos los perfiles ni toda la documentación.</p>
+          <p><strong>Pregunta guía:</strong> ¿Qué necesito comprender, construir o transformar para avanzar responsablemente?</p>
+        </details>
+
+        <details>
+          <summary><strong>2. ¿Qué son PH, IT y AT?</strong></summary>
+          <div className="grid-two">
+            <article>
+              <h3>PH · Programador Humanista</h3>
+              <p>Se ocupa de construir e integrar tecnología de manera situada, responsable y comprensible.</p>
+              <p><strong>Actívalo cuando:</strong> hay que diseñar, implementar, integrar o gobernar una solución tecnológica.</p>
+            </article>
+            <article>
+              <h3>IT · Investigador Transdisciplinario</h3>
+              <p>Cuida método, evidencia, validez, límites del conocimiento y coherencia epistemológica.</p>
+              <p><strong>Actívalo cuando:</strong> necesitas investigar, contrastar afirmaciones, diseñar evidencia o evaluar qué puede sostenerse.</p>
+            </article>
+            <article>
+              <h3>AT · Artista Transdisciplinario</h3>
+              <p>Aporta percepción, imaginación, mediación, experiencia y transformación sensible del problema.</p>
+              <p><strong>Actívalo cuando:</strong> la experiencia, la representación, la mediación cultural o nuevas formas de percibir son materiales para la solución.</p>
+            </article>
+          </div>
+          <p><strong>Importante:</strong> consultar conocimiento de un perfil no significa activarlo automáticamente. La activación debe responder al problema real.</p>
+        </details>
+
+        <details>
+          <summary><strong>3. ¿Qué es el Caleidoscopio?</strong></summary>
+          <p>No es un cuarto perfil. Es una propiedad emergente que puede aparecer cuando dos o más lentes activas producen una relación nueva, trazable y útil que ninguna generaría por sí sola.</p>
+          <p><strong>Pregunta guía:</strong> ¿la combinación está produciendo algo nuevo o solo estamos acumulando perspectivas?</p>
+        </details>
+
+        <details>
+          <summary><strong>4. ¿Qué significan N1–N4?</strong></summary>
+          <div className="grid-two">
+            <article><h3>N1 · Exploración guiada</h3><p>Se entiende el problema y se prueba con acompañamiento cercano.</p></article>
+            <article><h3>N2 · Producción asistida</h3><p>Ya existe producción útil con evidencia y apoyo estructurado.</p></article>
+            <article><h3>N3 · Integración avanzada</h3><p>Las capacidades se coordinan con mayor autonomía, trazabilidad y transferencia.</p></article>
+            <article><h3>N4 · Ecosistema gobernado</h3><p>La operación es sostenible, revisable y gobernada. No significa “más IA” ni “más documentos”.</p></article>
+          </div>
+          <p><strong>No son puntuaciones.</strong> El nivel describe una condición operacional situada del proyecto y su autonomía.</p>
+        </details>
+
+        <details>
+          <summary><strong>5. ¿Qué papel tienen humano, máquina e IA?</strong></summary>
+          <p><strong>Framework propone.</strong> La IA puede explicar, comparar, resumir, detectar tensiones y sugerir opciones. La máquina ejecuta y produce evidencia verificable. <strong>La persona decide y autoriza lo material.</strong></p>
+          <p>La IA no es juez final, no modifica el canon por sí sola y no debe activar cambios irreversibles sin revisión humana.</p>
+        </details>
+
+        <details>
+          <summary><strong>6. ¿Cómo empiezo?</strong></summary>
+          <p>Elige el modo que corresponda:</p>
+          <ul>
+            <li><strong>START:</strong> comienzas un proyecto nuevo.</li>
+            <li><strong>INTEGRATE:</strong> incorporas el Framework a un proyecto existente sin colonizar su estructura.</li>
+            <li><strong>AUDIT:</strong> contrastas un proyecto maduro sin asumir que debe reorganizarse.</li>
+          </ul>
+          <p>Después registra solo lo necesario: decisiones, evidencia, transferencias, nivel de madurez e invocaciones de conocimiento.</p>
+        </details>
       </section>
 
       <section aria-labelledby="activate-title" className="card">
