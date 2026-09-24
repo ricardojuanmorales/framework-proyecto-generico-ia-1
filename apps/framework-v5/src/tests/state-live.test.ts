@@ -11,6 +11,7 @@ import {
   correctPortfolioEntry,
   supersedeDecision,
   updateTransferState,
+  invokeKnowledgeItem,
 } from "../application/project-service";
 
 describe("estado vivo del proyecto", () => {
@@ -135,5 +136,23 @@ describe("estado vivo del proyecto", () => {
     const updated = updateTransferState(project, id, "completed");
     expect(updated.transfers).toHaveLength(1);
     expect(updated.transfers[0]!.state).toBe("completed");
+  });
+  it("registra invocación de conocimiento en estado y portafolio", () => {
+    const project = createProject({
+      name: "Proyecto",
+      problem: "Problema",
+      context: "",
+      purpose: "Propósito",
+      activeProfiles: ["PH"],
+    });
+    const invoked = invokeKnowledgeItem(project, {
+      id: "method-sdd",
+      title: "Spec-Driven Development (SDD)",
+      purpose: "Desarrollar con especificación y verificación.",
+      canonicalSource: "00_CONTROL_MAESTRO/Spec_Driven_Development/",
+    });
+    expect(invoked.state.knowledgeInvoked).toContain("method-sdd");
+    expect(invoked.portfolio.at(-1)?.type).toBe("invocation");
+    expect(invoked.portfolio.at(-1)?.title).toContain("SDD");
   });
 });
