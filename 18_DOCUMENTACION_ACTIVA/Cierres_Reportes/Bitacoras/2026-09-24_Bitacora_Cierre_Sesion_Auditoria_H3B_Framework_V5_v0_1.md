@@ -253,3 +253,17 @@ H3-B NOT AUTHORIZED
 ```
 
 Próximo punto exacto: Bloque F · Accesibilidad / UX, incluyendo decisión explícita sobre si accesibilidad permanece como propiedad transversal verificable o incorpora una superficie visible adicional.
+
+## Adenda de continuidad · estado parcial Bloque F
+
+**Fecha:** 2026-09-24
+
+```text
+F1 PASS
+F2 PASS
+F3 NOT TESTED
+```
+
+Reserva explícita: external accessibility review pending.
+
+Pendiente una decisión humana de producto sobre accesibilidad transversal vs superficie visible específica antes de cerrar F/H3-B.
