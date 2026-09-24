@@ -32,3 +32,21 @@ A4 PASS
 BLOQUE A: PASS
 ```
 
+
+## Bloque B · Activación operacional
+
+| ID | Resultado | Observación |
+|---|---|---|
+| B1 | PASS | START se completa correctamente y el estado resultante es comprensible. |
+| B2 | PASS | INTEGRATE exige procedencia y preserva el proyecto existente sin imponer reorganización. |
+| B3 | PASS | AUDIT exige foco, conserva procedencia y se presenta como revisión, no modificación automática. |
+
+## Cierre Bloque B
+
+```text
+B1 PASS
+B2 PASS
+B3 PASS
+
+BLOQUE B: PASS
+```
