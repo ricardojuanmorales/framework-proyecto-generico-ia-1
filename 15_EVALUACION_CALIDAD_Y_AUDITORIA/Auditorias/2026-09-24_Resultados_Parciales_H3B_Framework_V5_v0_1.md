@@ -238,3 +238,15 @@ BLOQUE E: PASS
 ```
 
 Siguiente bloque: F · Accesibilidad / UX.
+
+## Bloque F · Accesibilidad / UX
+
+| ID | Resultado | Observación |
+|---|---|---|
+| F1 | PASS | Navegación por teclado y foco visible funcionan en el recorrido humano principal. |
+| F2 | PASS | Lectura, contraste, densidad, controles y comportamiento en viewport estrecho resultan utilizables sin fricción material. |
+| F3 | NOT TESTED | No se realizó validación con lector de pantalla. Revisión externa de accesibilidad pendiente. |
+
+### Decisión de producto pendiente
+
+Debe decidirse humanamente si Accesibilidad permanece como propiedad transversal verificable del producto o si se añade además una superficie visible específica de ayuda/preferencias antes de RC.
