@@ -9,6 +9,7 @@ import {
   createProject,
   exportProject,
   importProject,
+  invokeKnowledgeItem,
   recordDecision,
   recordTransfer,
   reopenProject,
@@ -210,22 +211,16 @@ export function App({ repository, persistenceMode }: Props) {
   };
 
   const onInvokeKnowledge = async (item: ReturnType<typeof recommendKnowledge>[number]) => {
-    if (!project) return;
-    const next = addPortfolioEntry(
-      {
-        ...project,
-        state: {
-          ...project.state,
-          knowledgeInvoked: Array.from(new Set([...project.state.knowledgeInvoked, item.id])),
-        },
-      },
-      {
-        type: "invocation",
-        title: item.title,
-        summary: `${item.purpose} · Fuente: ${item.canonicalSource}`,
-      },
-    );
-    await persistProject(next, "Conocimiento invocado y registrado en portafolio.");
+    if (!project) {
+      setStatus("No hay proyecto activo para registrar la invocación.");
+      return;
+    }
+    try {
+      const next = invokeKnowledgeItem(project, item);
+      await persistProject(next, `Conocimiento invocado: ${item.title}. Registrado en portafolio.`);
+    } catch {
+      setStatus("No se pudo registrar la invocación. Revisa el proyecto activo e inténtalo de nuevo.");
+    }
   };
 
   const downloadBlob = (blob: Blob, name: string) => {
@@ -599,9 +594,14 @@ export function App({ repository, persistenceMode }: Props) {
                   <p>{item.purpose}</p>
                   <p><strong>Fuente:</strong> {item.canonicalSource}</p>
                   <p><strong>Evidencia esperada:</strong> {item.evidenceHint}</p>
-                  {project ? (
-                    <button onClick={() => void onInvokeKnowledge(item)}>Invocar y registrar</button>
-                  ) : null}
+                  <button
+                    disabled={!project}
+                    title={project ? "Registrar esta invocación en el proyecto activo" : "Activa o restaura un proyecto para registrar la invocación"}
+                    onClick={() => void onInvokeKnowledge(item)}
+                  >
+                    Invocar y registrar
+                  </button>
+                  {!project ? <p className="hint">Necesitas un proyecto activo para registrar la invocación.</p> : null}
                 </article>
               ))}
             </div>
