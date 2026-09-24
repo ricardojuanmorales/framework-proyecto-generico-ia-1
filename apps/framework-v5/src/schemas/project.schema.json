@@ -11,7 +11,7 @@
     "name": { "type": "string", "minLength": 1, "maxLength": 160 },
     "mode": { "enum": ["START","INTEGRATE","AUDIT"] },
     "status": { "enum": ["active","review","closed","reopened"] },
-    "frameworkVersion": { "const": "5.0.0-dev" },
+    "frameworkVersion": { "const": "5.0.0-rc.1" },
     "createdAt": { "type": "string", "format": "date-time" },
     "updatedAt": { "type": "string", "format": "date-time" },
     "state": { "$ref": "https://framework-v5.local/schemas/framework-state/0.1.0" },
