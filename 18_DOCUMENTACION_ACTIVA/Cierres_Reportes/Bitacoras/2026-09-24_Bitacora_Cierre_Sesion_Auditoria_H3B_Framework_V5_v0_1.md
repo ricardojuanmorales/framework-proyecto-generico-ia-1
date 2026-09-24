@@ -267,3 +267,43 @@ F3 NOT TESTED
 Reserva explícita: external accessibility review pending.
 
 Pendiente una decisión humana de producto sobre accesibilidad transversal vs superficie visible específica antes de cerrar F/H3-B.
+
+## Adenda de continuidad · cierre Bloque F
+
+**Fecha:** 2026-09-24
+
+Decisión humana aprobada:
+
+```text
+Accesibilidad = propiedad transversal verificable
+sin nueva superficie específica en este RC
+```
+
+Resultado:
+
+```text
+F1 PASS
+F2 PASS
+F3 NOT TESTED
+BLOQUE F PASS WITH RESERVATIONS
+```
+
+Reserva pendiente:
+
+```text
+external accessibility review pending
+→ resolver antes del release V5 final
+```
+
+Estado siguiente:
+
+```text
+A PASS
+B PASS
+C PASS
+C6 PASS
+D PASS
+E PASS
+F PASS WITH RESERVATIONS
+H3-B PENDING HUMAN FINAL DECISION
+```
