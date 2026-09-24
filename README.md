@@ -401,40 +401,34 @@ problema
 
 ## 🧪 Momento actual del proyecto
 
-La arquitectura de los tres perfiles ya fue estabilizada en Fase 1.
-
-Ahora el Framework debe demostrar que puede sostener práctica real sin volverse rígido ni inflado.
-
-La primera prueba de estrés con un **prototipo PH real (AI StoryLab 1)** fue completada. Confirmó la arquitectura nuclear de PH y produjo refinamientos sobre métodos invocables, reversibilidad, documentación operacional y residencia semántica. El siguiente horizonte es preparar Fase 2 progresivamente a partir de evidencia real.
+Framework V5 completó la construcción de Fase 3 y la auditoría interna H3-B.
 
 ```text
-si la identidad explica la práctica
-si las competencias y UN funcionan
-si la seguridad aparece longitudinalmente
-si los gates detectan deuda real
-si IT o AT se activan cuando el problema los necesita
-si emerge conocimiento nuevo
+Fase 1 → perfiles y canon
+Fase 2 → operacionalización V5
+Fase 3 → app + integración + verificación
+H3-B → PASS WITH RESERVATIONS
+RC → v5.0.0-rc.1
 ```
 
-No se busca confirmar el Framework por obligación.
+La aplicación V5 es local-first, portable y trazable. Integra START, INTEGRATE, AUDIT, PORTAFOLIO, Base Federada, Conocimientos activos, exportación/importación segura y verificación reproducible.
 
-Se busca aprender de la práctica.
+El trabajo entra ahora en modo de estabilización: observar uso real, corregir solo regresiones materiales y cerrar la reserva de accesibilidad antes de H3-C.
 
 ---
 
 ## 🔒 Bloqueos actuales
 
-Hasta completar esta prueba:
+No existen BLOCK abiertos para el RC.
+
+Reserva vigente:
 
 ```text
-Fase 2 no se inicia
-no se fuerzan nuevos agentes o multiagentes finales
-no se crean workflows finales por anticipación
-no se fuerza simetría numérica entre perfiles
-no se convierte Caleidoscopio en cuarto perfil
+external accessibility review pending
+→ validar con lector de pantalla antes de v5.0.0 estable
 ```
 
-La arquitectura aprobada puede reabrirse si la evidencia real lo justifica.
+Durante RC se congela el alcance funcional salvo necesidad material demostrada.
 
 ---
 
@@ -464,18 +458,15 @@ Si quieres entrar más a fondo, puedes seguir una de estas puertas:
 ## 📌 Estado resumido
 
 ```text
-Framework maestro: V4.1.0 estable
-Repositorio: V4.1.1 activo
+Framework V5: v5.0.0-rc.1
+Repositorio: integrado en main
+App: operativa y publicada bajo /v5/
+V4: preservado en raíz y /v4/
 
-PH Fase 1: cerrada
-IT Fase 1: cerrada
-AT Fase 1: cerrada
-
+PH / IT / AT: integrados
 Caleidoscopio: propiedad emergente
-Fase 2: no iniciada
-
-Próximo hito:
-prueba de integración con prototipo PH real
+H3-B: PASS WITH RESERVATIONS
+Próximo gate: H3-C
 ```
 
 ---
