@@ -194,6 +194,26 @@ export const updateTransferState = (
   });
 };
 
+export const invokeKnowledgeItem = (
+  project: FrameworkProject,
+  item: { id: string; title: string; purpose: string; canonicalSource: string },
+  now = new Date().toISOString(),
+): FrameworkProject => {
+  const withInvocation: FrameworkProject = {
+    ...project,
+    updatedAt: now,
+    state: {
+      ...project.state,
+      knowledgeInvoked: Array.from(new Set([...project.state.knowledgeInvoked, item.id])),
+    },
+  };
+  return addPortfolioEntry(withInvocation, {
+    type: "invocation",
+    title: item.title,
+    summary: `${item.purpose} · Fuente: ${item.canonicalSource}`,
+  }, now);
+};
+
 export const updateMaturity = (
   project: FrameworkProject,
   projectLevel: MaturityLevel,
