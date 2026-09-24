@@ -143,6 +143,57 @@ export const recordTransfer = (
     ],
   });
 
+
+export const correctPortfolioEntry = (
+  project: FrameworkProject,
+  originalId: string,
+  correction: string,
+  now = new Date().toISOString(),
+): FrameworkProject => {
+  const original = project.portfolio.find((entry) => entry.id === originalId);
+  if (!original) throw new Error("PORTFOLIO_ENTRY_NOT_FOUND");
+  return addPortfolioEntry(project, {
+    type: "reflection",
+    title: `Corrección · ${original.title}`,
+    summary: `Corrige entrada ${original.id}: ${correction.trim()}`,
+  }, now);
+};
+
+export const supersedeDecision = (
+  project: FrameworkProject,
+  originalId: string,
+  decision: string,
+  reason: string,
+  now = new Date().toISOString(),
+): FrameworkProject => {
+  const original = project.decisions.find((item) => item.id === originalId);
+  if (!original) throw new Error("DECISION_NOT_FOUND");
+  return recordDecision(project, {
+    question: `Revisión de decisión ${original.id}: ${original.question}`,
+    decision: decision.trim(),
+    reason: `Supersede decisión previa. ${reason.trim()}`,
+    reversible: "yes",
+  }, now);
+};
+
+export const updateTransferState = (
+  project: FrameworkProject,
+  transferId: string,
+  state: Transfer["state"],
+  now = new Date().toISOString(),
+): FrameworkProject => {
+  if (!project.transfers.some((item) => item.id === transferId)) {
+    throw new Error("TRANSFER_NOT_FOUND");
+  }
+  return validateMutation({
+    ...project,
+    updatedAt: now,
+    transfers: project.transfers.map((item) =>
+      item.id === transferId ? { ...item, state } : item,
+    ),
+  });
+};
+
 export const updateMaturity = (
   project: FrameworkProject,
   projectLevel: MaturityLevel,
