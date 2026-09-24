@@ -149,3 +149,21 @@ H3B-PORT-001: CLOSED
 - se añade prueba de invocación a `knowledgeInvoked` y portafolio.
 
 **Revalidación requerida:** solo D2.
+
+### Revalidación D2 · segundo bloqueo
+
+D2 permanece **BLOCK** tras la primera corrección.
+
+Nueva acción:
+
+- la invocación deja de depender exclusivamente del estado React;
+- si no existe `project` en memoria, recupera `repository.latest()`;
+- el botón permanece accionable;
+- la interfaz muestra explícitamente el proyecto destino;
+- los errores técnicos se exponen en el estado para diagnóstico humano.
+
+### Observación de accesibilidad
+
+La aplicación no contiene una sección de producto denominada **Accesibilidad**. Existe un baseline técnico automatizado (landmarks, labels, fieldset/legend, aria-live, headings, focus visible y responsive), pero no una superficie de controles o preferencias de accesibilidad.
+
+El contrato de release exige accesibilidad básica verificada, no una sección específica. Si se considera necesaria una superficie visible de accesibilidad, debe tratarse como decisión de producto explícita antes de RC.
