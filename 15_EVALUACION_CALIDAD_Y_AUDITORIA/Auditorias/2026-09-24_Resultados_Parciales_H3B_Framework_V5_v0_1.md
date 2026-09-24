@@ -215,3 +215,26 @@ El siguiente bloque de auditoría es:
 ```text
 E · Portabilidad / Seguridad
 ```
+
+## Bloque E · Portabilidad / Seguridad
+
+| ID | Resultado | Observación |
+|---|---|---|
+| E1 | PASS | ZIP exportado, legible fuera de la aplicación y con archivos/estado esperados. |
+| E2 | PASS | Roundtrip ZIP preserva significado y exige confirmación humana antes de persistir. |
+| E3 | PASS | JSON y ZIP inválidos son rechazados con mensaje visible, sin modificar el proyecto activo y manteniendo la app operativa. |
+
+### Hallazgo y corrección E3
+
+E3 fue inicialmente BLOCK porque el usuario podía seleccionar un archivo inválido pero no recibía feedback observable. Se añadió estado inline de validación/rechazo junto al selector, manejo robusto del input asíncrono y prueba específica de ZIP inválido.
+
+## Cierre Bloque E
+
+```text
+E1 PASS
+E2 PASS
+E3 PASS
+BLOQUE E: PASS
+```
+
+Siguiente bloque: F · Accesibilidad / UX.
