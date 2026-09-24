@@ -47,6 +47,8 @@ export function App({ repository, persistenceMode }: Props) {
   const [reopenReason, setReopenReason] = useState("");
   const [knowledgeNeed, setKnowledgeNeed] = useState("");
   const [knowledgeResults, setKnowledgeResults] = useState<ReturnType<typeof recommendKnowledge>>([]);
+  const [lastInvokedKnowledgeId, setLastInvokedKnowledgeId] = useState<string | null>(null);
+  const [lastInvocationProjectName, setLastInvocationProjectName] = useState<string | null>(null);
   const [portfolioFilter, setPortfolioFilter] = useState<"all" | "portfolio" | "decisions" | "transfers">("all");
   const [correctionText, setCorrectionText] = useState("");
   const [decisionRevision, setDecisionRevision] = useState("");
@@ -220,6 +222,8 @@ export function App({ repository, persistenceMode }: Props) {
       const next = invokeKnowledgeItem(target, item);
       await repository.save(next);
       setProject(next);
+      setLastInvokedKnowledgeId(item.id);
+      setLastInvocationProjectName(next.name);
       setStatus(`Conocimiento invocado: ${item.title}. Registrado en ${next.name}.`);
     } catch (error) {
       const message = error instanceof Error ? error.message : "ERROR_DESCONOCIDO";
@@ -606,8 +610,13 @@ export function App({ repository, persistenceMode }: Props) {
                     title="Registrar esta invocación en el proyecto activo o en el último proyecto local persistido"
                     onClick={() => void onInvokeKnowledge(item)}
                   >
-                    Invocar y registrar
+                    {lastInvokedKnowledgeId === item.id ? "Invocado ✓" : "Invocar y registrar"}
                   </button>
+                  {lastInvokedKnowledgeId === item.id ? (
+                    <p className="invocation-success" role="status" aria-live="polite">
+                      ✓ Registrado en <strong>{lastInvocationProjectName}</strong> y añadido al PORTAFOLIO.
+                    </p>
+                  ) : null}
                 </article>
               ))}
             </div>
