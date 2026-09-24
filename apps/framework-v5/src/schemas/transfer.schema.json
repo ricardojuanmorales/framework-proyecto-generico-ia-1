@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://framework-v5.local/schemas/transfer/0.1.0",
+  "title": "Framework V5 Transfer",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id","origin","destination","object","purpose","limits","state"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "origin": { "type": "string", "minLength": 1, "maxLength": 240 },
+    "destination": { "type": "string", "minLength": 1, "maxLength": 240 },
+    "object": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "purpose": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "limits": { "type": "array", "items": { "type": "string", "maxLength": 1000 } },
+    "state": { "enum": ["proposed","accepted","completed","reopened"] }
+  }
+}

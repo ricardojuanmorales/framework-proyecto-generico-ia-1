@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://framework-v5.local/schemas/decision/0.1.0",
+  "title": "Framework V5 Human Decision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id","question","decision","reason","authority","reversible","createdAt"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "question": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "decision": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "reason": { "type": "string", "maxLength": 4000 },
+    "authority": { "const": "human" },
+    "reversible": { "enum": ["yes","no","partial"] },
+    "createdAt": { "type": "string", "format": "date-time" }
+  }
+}

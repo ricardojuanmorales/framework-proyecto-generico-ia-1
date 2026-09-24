@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://framework-v5.local/schemas/project/0.1.0",
+  "title": "Framework V5 Project",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion","id","name","mode","status","frameworkVersion","createdAt","updatedAt","state","portfolio","decisions","transfers"],
+  "properties": {
+    "schemaVersion": { "const": "0.1.0" },
+    "id": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "name": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "mode": { "enum": ["START","INTEGRATE","AUDIT"] },
+    "status": { "enum": ["active","review","closed","reopened"] },
+    "frameworkVersion": { "const": "5.0.0-rc.1" },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "updatedAt": { "type": "string", "format": "date-time" },
+    "state": { "$ref": "https://framework-v5.local/schemas/framework-state/0.1.0" },
+    "portfolio": { "type": "array", "items": { "$ref": "https://framework-v5.local/schemas/portfolio-entry/0.1.0" } },
+    "decisions": { "type": "array", "items": { "$ref": "https://framework-v5.local/schemas/decision/0.1.0" } },
+    "transfers": { "type": "array", "items": { "$ref": "https://framework-v5.local/schemas/transfer/0.1.0" } }
+  }
+}

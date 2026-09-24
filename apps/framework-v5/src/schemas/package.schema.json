@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://framework-v5.local/schemas/package/0.1.0",
+  "title": "Framework V5 Portable Project Package",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["packageType","packageVersion","exportedAt","project"],
+  "properties": {
+    "packageType": { "const": "framework_project" },
+    "packageVersion": { "const": "0.1.0" },
+    "exportedAt": { "type": "string", "format": "date-time" },
+    "project": { "$ref": "https://framework-v5.local/schemas/project/0.1.0" }
+  }
+}

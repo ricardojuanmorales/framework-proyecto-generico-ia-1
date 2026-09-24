@@ -1,0 +1,30 @@
+name: Framework V5 Build Preview
+
+on:
+  push:
+    branches:
+      - fase3-construccion-v5
+    paths:
+      - "apps/framework-v5/**"
+      - ".github/workflows/framework-v5-build-preview.yml"
+  workflow_dispatch:
+
+jobs:
+  build-preview:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/framework-v5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install --global npm@11.19.0
+      - run: npm ci --ignore-scripts
+      - run: npm run verify
+      - run: FRAMEWORK_V5_BASE_PATH=/framework-proyecto-generico-ia-1/v5/ npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: framework-v5-pages-preview
+          path: apps/framework-v5/dist
