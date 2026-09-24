@@ -250,3 +250,42 @@ Siguiente bloque: F · Accesibilidad / UX.
 ### Decisión de producto pendiente
 
 Debe decidirse humanamente si Accesibilidad permanece como propiedad transversal verificable del producto o si se añade además una superficie visible específica de ayuda/preferencias antes de RC.
+
+## Decisión humana de producto · Accesibilidad
+
+Se aprueba mantener Accesibilidad como **propiedad transversal verificable** del MVP V5, sin añadir una superficie específica de preferencias/ayuda en este RC.
+
+La validación con lector de pantalla queda como reserva explícita antes del release V5 final.
+
+## Cierre Bloque F
+
+```text
+F1 PASS
+F2 PASS
+F3 NOT TESTED
+
+BLOQUE F: PASS WITH RESERVATIONS
+```
+
+### Reserva
+
+```text
+external accessibility review pending
+→ validar con lector de pantalla antes del release V5 final
+```
+
+Esta reserva no se clasifica como BLOCK para RC porque F1 y F2 fueron validados humanamente y existe baseline técnico automatizado, pero debe permanecer trazada hasta su resolución.
+
+## Estado previo al dictamen global H3-B
+
+```text
+A PASS
+B PASS
+C PASS
+C6 PASS
+D PASS
+E PASS
+F PASS WITH RESERVATIONS
+
+H3-B: PENDING HUMAN FINAL DECISION
+```
