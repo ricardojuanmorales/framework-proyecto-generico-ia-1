@@ -1,0 +1,57 @@
+name: Framework V5 Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "apps/framework-v5/**"
+      - "index.html"
+      - "legacy/v4/**"
+      - ".github/workflows/framework-v5-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: framework-v5-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/framework-v5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install --global npm@11.19.0
+      - run: npm ci --ignore-scripts
+      - run: npm run verify
+      - run: FRAMEWORK_V5_BASE_PATH=/framework-proyecto-generico-ia-1/v5/ npm run build
+      - name: Assemble Pages site
+        run: |
+          mkdir -p ../../_site/v5 ../../_site/v4
+          cp ../../index.html ../../_site/index.html
+          cp -R dist/. ../../_site/v5/
+          cp ../../legacy/v4/index.html ../../_site/v4/index.html
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
