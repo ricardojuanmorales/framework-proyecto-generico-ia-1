@@ -29,6 +29,7 @@ interface Props {
 export function App({ repository, persistenceMode }: Props) {
   const [project, setProject] = useState<FrameworkProject | null>(null);
   const [status, setStatus] = useState("Listo para activar.");
+  const [importStatus, setImportStatus] = useState("Ningún paquete seleccionado.");
   const [mode, setMode] = useState<Mode>("START");
   const [name, setName] = useState("");
   const [problem, setProblem] = useState("");
@@ -282,17 +283,21 @@ export function App({ repository, persistenceMode }: Props) {
 
   const onImport = async (file: File) => {
     if (file.size > 2_000_000) throw new Error("IMPORT_FILE_TOO_LARGE");
+    setImportStatus(`Validando ${file.name}…`);
     const staged: ProjectPackage = file.name.toLowerCase().endsWith(".zip")
       ? stagePortableZipImport(new Uint8Array(await file.arrayBuffer()))
       : stageImport(JSON.parse(await file.text()));
+    setImportStatus(`${file.name} es válido. Esperando confirmación humana.`);
     const accepted = globalThis.confirm("El paquete es válido. ¿Deseas importarlo y persistirlo?");
     if (!accepted) {
       setStatus("Importación cancelada por decisión humana.");
+      setImportStatus(`Importación cancelada: ${file.name} no fue persistido.`);
       return;
     }
     const imported = await importProject(repository, staged);
     setProject(imported);
     setStatus("Paquete validado e importado.");
+    setImportStatus(`Importación completada: ${file.name}.`);
   };
 
   return (
@@ -685,20 +690,30 @@ export function App({ repository, persistenceMode }: Props) {
           <button disabled={!project} onClick={onExportZip}>Exportar paquete ZIP</button>
           <button disabled={!project} onClick={onExportJson}>Exportar JSON técnico</button>
         </div>
-        <label className="import">
-          Importar paquete
-          <input
-            type="file"
-            accept="application/zip,.zip,application/json,.json"
-            onChange={async (e) => {
-              const file = e.target.files?.[0];
-              if (!file) return;
-              try { await onImport(file); }
-              catch { setStatus("Importación rechazada: paquete inválido o no confiable."); }
-              e.currentTarget.value = "";
-            }}
-          />
-        </label>
+        <div className="import-zone">
+          <label className="import">
+            Importar paquete
+            <input
+              type="file"
+              accept="application/zip,.zip,application/json,.json"
+              onChange={async (e) => {
+                const input = e.currentTarget;
+                const file = input.files?.[0];
+                if (!file) return;
+                try {
+                  await onImport(file);
+                } catch (error) {
+                  const detail = error instanceof Error ? error.message : "ERROR_DESCONOCIDO";
+                  setStatus("Importación rechazada: paquete inválido o no confiable.");
+                  setImportStatus(`Rechazado: ${file.name}. No se modificó el proyecto activo. (${detail})`);
+                } finally {
+                  input.value = "";
+                }
+              }}
+            />
+          </label>
+          <p className="import-feedback" role="status" aria-live="polite">{importStatus}</p>
+        </div>
       </section>
     </main>
   );
