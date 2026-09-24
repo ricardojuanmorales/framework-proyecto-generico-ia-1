@@ -289,3 +289,26 @@ F PASS WITH RESERVATIONS
 
 H3-B: PENDING HUMAN FINAL DECISION
 ```
+
+## Dictamen humano final H3-B
+
+**Fecha:** 2026-09-24
+
+```text
+H3-B PASS WITH RESERVATIONS
+```
+
+Reserva aceptada:
+
+```text
+external accessibility review pending
+→ validar con lector de pantalla antes del release V5 final
+```
+
+Resultado operacional:
+
+```text
+AUTORIZAR v5.0.0-rc.1 CON RESERVAS
+```
+
+**Estado H3-B:** CLOSED.
