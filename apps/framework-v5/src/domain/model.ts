@@ -61,7 +61,7 @@ export interface FrameworkProject {
   name: string;
   mode: Mode;
   status: "active" | "review" | "closed" | "reopened";
-  frameworkVersion: "5.0.0-dev";
+  frameworkVersion: "5.0.0-rc.1";
   createdAt: string;
   updatedAt: string;
   state: FrameworkState;
