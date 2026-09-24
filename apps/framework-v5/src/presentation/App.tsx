@@ -57,6 +57,16 @@ export function App({ repository, persistenceMode }: Props) {
     void repository.latest().then((latest) => {
       if (latest) {
         setProject(latest);
+        setMode(latest.mode);
+        setName(latest.name);
+        setProblem(latest.state.problem);
+        setContext(latest.state.context);
+        setPurpose(latest.state.purpose);
+        setProfiles(latest.state.activeProfiles);
+        setSourceDescription(latest.state.source?.description ?? "");
+        setSourceRepositoryUrl(latest.state.source?.repositoryUrl ?? "");
+        setExistingArtifacts(latest.state.source?.existingArtifacts.join("\n") ?? "");
+        setAuditFocus(latest.state.auditFocus ?? "");
         setStatus("Proyecto local restaurado.");
       }
     });
