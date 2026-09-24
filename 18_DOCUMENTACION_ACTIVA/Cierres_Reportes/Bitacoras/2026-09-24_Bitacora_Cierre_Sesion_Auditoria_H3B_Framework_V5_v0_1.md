@@ -225,3 +225,31 @@ H3-B NOT AUTHORIZED
 ```
 
 Próximo punto exacto: Bloque E · Portabilidad / Seguridad.
+
+## Adenda de continuidad · cierre de Bloque E
+
+**Fecha:** 2026-09-24
+
+Revalidación humana completada:
+
+```text
+E1 PASS
+E2 PASS
+E3 PASS
+BLOQUE E PASS
+```
+
+Estado H3-B:
+
+```text
+A PASS
+B PASS
+C PASS
+C6 PASS
+D PASS
+E PASS
+F PENDING
+H3-B NOT AUTHORIZED
+```
+
+Próximo punto exacto: Bloque F · Accesibilidad / UX, incluyendo decisión explícita sobre si accesibilidad permanece como propiedad transversal verificable o incorpora una superficie visible adicional.
