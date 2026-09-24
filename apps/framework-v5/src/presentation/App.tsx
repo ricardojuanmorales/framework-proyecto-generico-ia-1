@@ -12,6 +12,7 @@ import {
   invokeKnowledgeItem,
   recordDecision,
   recordTransfer,
+  removeKnowledgeItem,
   reopenProject,
   supersedeDecision,
   stageImport,
@@ -228,6 +229,26 @@ export function App({ repository, persistenceMode }: Props) {
     } catch (error) {
       const message = error instanceof Error ? error.message : "ERROR_DESCONOCIDO";
       setStatus(`No se pudo registrar la invocación: ${message}`);
+    }
+  };
+
+  const onRemoveKnowledge = async (knowledgeId: string) => {
+    if (!project) return;
+    const item = FEDERATED_INDEX.find((candidate) => candidate.id === knowledgeId);
+    if (!item) {
+      setStatus("No se encontró el conocimiento activo en la Base Federada.");
+      return;
+    }
+    try {
+      const next = removeKnowledgeItem(project, item);
+      await persistProject(next, `Conocimiento retirado: ${item.title}. La historia permanece en PORTAFOLIO.`);
+      if (lastInvokedKnowledgeId === item.id) {
+        setLastInvokedKnowledgeId(null);
+        setLastInvocationProjectName(null);
+      }
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "ERROR_DESCONOCIDO";
+      setStatus(`No se pudo retirar el conocimiento: ${message}`);
     }
   };
 
@@ -583,6 +604,42 @@ export function App({ repository, persistenceMode }: Props) {
                 ))}
               </div>
             ) : null}
+          </section>
+        ) : null}
+
+        {project ? (
+          <section className="knowledge-active" aria-labelledby="knowledge-active-title">
+            <h3 id="knowledge-active-title">Conocimientos activos</h3>
+            <p>Conocimiento actualmente invocado para este proyecto. Retirarlo no borra su historia en PORTAFOLIO.</p>
+            {project.state.knowledgeInvoked.length === 0 ? (
+              <p>No hay conocimientos activos.</p>
+            ) : (
+              <div className="knowledge-results">
+                {project.state.knowledgeInvoked.map((knowledgeId) => {
+                  const item = FEDERATED_INDEX.find((candidate) => candidate.id === knowledgeId);
+                  return (
+                    <article key={knowledgeId} className="knowledge-item">
+                      <h4>{item?.title ?? knowledgeId}</h4>
+                      {item ? (
+                        <>
+                          <p>{item.purpose}</p>
+                          <p><strong>Fuente:</strong> {item.canonicalSource}</p>
+                        </>
+                      ) : (
+                        <p>Conocimiento activo preservado aunque su ficha ya no esté disponible en el índice actual.</p>
+                      )}
+                      <button
+                        type="button"
+                        onClick={() => void onRemoveKnowledge(knowledgeId)}
+                        disabled={!item}
+                      >
+                        Retirar del proyecto
+                      </button>
+                    </article>
+                  );
+                })}
+              </div>
+            )}
           </section>
         ) : null}
 
