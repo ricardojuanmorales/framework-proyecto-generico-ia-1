@@ -1,18 +1,21 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { FrameworkProject, MaturityLevel, Mode, Profile, ProjectPackage } from "../domain/model";
 import type { ProjectRepository } from "../ports/project-repository";
 import { recommendKnowledge } from "../application/knowledge-service";
 import { buildPortableZip, stagePortableZipImport } from "../application/portable-zip";
 import {
   addPortfolioEntry,
+  correctPortfolioEntry,
   createProject,
   exportProject,
   importProject,
   recordDecision,
   recordTransfer,
   reopenProject,
+  supersedeDecision,
   stageImport,
   updateMaturity,
+  updateTransferState,
 } from "../application/project-service";
 
 interface Props {
@@ -43,6 +46,21 @@ export function App({ repository, persistenceMode }: Props) {
   const [reopenReason, setReopenReason] = useState("");
   const [knowledgeNeed, setKnowledgeNeed] = useState("");
   const [knowledgeResults, setKnowledgeResults] = useState<ReturnType<typeof recommendKnowledge>>([]);
+  const [portfolioFilter, setPortfolioFilter] = useState<"all" | "portfolio" | "decisions" | "transfers">("all");
+  const [correctionText, setCorrectionText] = useState("");
+  const [decisionRevision, setDecisionRevision] = useState("");
+  const [decisionRevisionReason, setDecisionRevisionReason] = useState("");
+  const [selectedPortfolioId, setSelectedPortfolioId] = useState<string | null>(null);
+  const [selectedDecisionId, setSelectedDecisionId] = useState<string | null>(null);
+
+  useEffect(() => {
+    void repository.latest().then((latest) => {
+      if (latest) {
+        setProject(latest);
+        setStatus("Proyecto local restaurado.");
+      }
+    });
+  }, [repository]);
 
   const needsSource = mode === "INTEGRATE" || mode === "AUDIT";
   const canCreate = useMemo(
@@ -126,6 +144,29 @@ export function App({ repository, persistenceMode }: Props) {
     });
     await persistProject(next, "Transferencia registrada.");
     setTransferObject("");
+  };
+
+  const onCorrectPortfolioEntry = async () => {
+    if (!project || !selectedPortfolioId || !correctionText.trim()) return;
+    const next = correctPortfolioEntry(project, selectedPortfolioId, correctionText);
+    await persistProject(next, "Corrección trazable registrada en portafolio.");
+    setCorrectionText("");
+    setSelectedPortfolioId(null);
+  };
+
+  const onSupersedeDecision = async () => {
+    if (!project || !selectedDecisionId || !decisionRevision.trim()) return;
+    const next = supersedeDecision(project, selectedDecisionId, decisionRevision, decisionRevisionReason);
+    await persistProject(next, "Nueva decisión registrada sin borrar la anterior.");
+    setDecisionRevision("");
+    setDecisionRevisionReason("");
+    setSelectedDecisionId(null);
+  };
+
+  const onTransferState = async (id: string, state: "proposed" | "accepted" | "completed" | "reopened") => {
+    if (!project) return;
+    const next = updateTransferState(project, id, state);
+    await persistProject(next, "Estado de transferencia actualizado.");
   };
 
   const onMaturity = async (field: "project" | "autonomy", level: MaturityLevel) => {
@@ -435,6 +476,100 @@ export function App({ repository, persistenceMode }: Props) {
             <p>
               Portafolio: <strong>{project.portfolio.length}</strong> · Decisiones: <strong>{project.decisions.length}</strong> · Transferencias: <strong>{project.transfers.length}</strong>
             </p>
+          </section>
+        ) : null}
+
+        {project ? (
+          <section className="portfolio-zone" aria-labelledby="portfolio-title">
+            <div className="portfolio-header">
+              <div>
+                <h3 id="portfolio-title">Portafolio</h3>
+                <p>Memoria viva del proyecto: revisar, corregir y continuar sin borrar historia.</p>
+              </div>
+              <div className="portfolio-tabs" aria-label="Filtros de portafolio">
+                {(["all","portfolio","decisions","transfers"] as const).map((filter) => (
+                  <button
+                    key={filter}
+                    className={portfolioFilter === filter ? "active" : ""}
+                    onClick={() => setPortfolioFilter(filter)}
+                  >
+                    {filter === "all" ? "Todo" : filter === "portfolio" ? "Entradas" : filter === "decisions" ? "Decisiones" : "Transferencias"}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="portfolio-summary grid-two">
+              <article><strong>Estado</strong><p>{project.status}</p></article>
+              <article><strong>Madurez</strong><p>{project.state.projectLevel} · autonomía {project.state.autonomyLevel}</p></article>
+              <article><strong>Perfiles activos</strong><p>{project.state.activeProfiles.join(", ")}</p></article>
+              <article><strong>Siguiente paso</strong><p>{project.state.nextStep}</p></article>
+            </div>
+
+            {(portfolioFilter === "all" || portfolioFilter === "portfolio") ? (
+              <div className="portfolio-list">
+                <h4>Entradas</h4>
+                {project.portfolio.length === 0 ? <p>Sin entradas todavía.</p> : project.portfolio.map((entry) => (
+                  <article key={entry.id} className="record-card">
+                    <div className="record-meta"><span>{entry.type}</span><time>{new Date(entry.createdAt).toLocaleString()}</time></div>
+                    <h5>{entry.title}</h5>
+                    <p>{entry.summary}</p>
+                    <button onClick={() => setSelectedPortfolioId(entry.id)}>Registrar corrección</button>
+                    {selectedPortfolioId === entry.id ? (
+                      <div className="record-action">
+                        <label>Corrección o aclaración<textarea value={correctionText} onChange={(e) => setCorrectionText(e.target.value)} /></label>
+                        <button disabled={!correctionText.trim()} onClick={() => void onCorrectPortfolioEntry()}>Guardar como nueva entrada trazable</button>
+                      </div>
+                    ) : null}
+                  </article>
+                ))}
+              </div>
+            ) : null}
+
+            {(portfolioFilter === "all" || portfolioFilter === "decisions") ? (
+              <div className="portfolio-list">
+                <h4>Decisiones humanas</h4>
+                {project.decisions.length === 0 ? <p>Sin decisiones todavía.</p> : project.decisions.map((decision) => (
+                  <article key={decision.id} className="record-card">
+                    <div className="record-meta"><span>{decision.authority}</span><time>{new Date(decision.createdAt).toLocaleString()}</time></div>
+                    <h5>{decision.question}</h5>
+                    <p><strong>Decisión:</strong> {decision.decision}</p>
+                    <p><strong>Razón:</strong> {decision.reason}</p>
+                    <p><strong>Reversible:</strong> {decision.reversible}</p>
+                    <button onClick={() => setSelectedDecisionId(decision.id)}>Revisar / superseder</button>
+                    {selectedDecisionId === decision.id ? (
+                      <div className="record-action">
+                        <label>Nueva decisión<input value={decisionRevision} onChange={(e) => setDecisionRevision(e.target.value)} /></label>
+                        <label>Razón de la revisión<textarea value={decisionRevisionReason} onChange={(e) => setDecisionRevisionReason(e.target.value)} /></label>
+                        <button disabled={!decisionRevision.trim()} onClick={() => void onSupersedeDecision()}>Registrar nueva decisión</button>
+                      </div>
+                    ) : null}
+                  </article>
+                ))}
+              </div>
+            ) : null}
+
+            {(portfolioFilter === "all" || portfolioFilter === "transfers") ? (
+              <div className="portfolio-list">
+                <h4>Transferencias</h4>
+                {project.transfers.length === 0 ? <p>Sin transferencias todavía.</p> : project.transfers.map((transfer) => (
+                  <article key={transfer.id} className="record-card">
+                    <h5>{transfer.origin} → {transfer.destination}</h5>
+                    <p><strong>Objeto:</strong> {transfer.object}</p>
+                    <p><strong>Propósito:</strong> {transfer.purpose}</p>
+                    <label>
+                      Estado
+                      <select value={transfer.state} onChange={(e) => void onTransferState(transfer.id, e.target.value as "proposed" | "accepted" | "completed" | "reopened")}>
+                        <option value="proposed">proposed</option>
+                        <option value="accepted">accepted</option>
+                        <option value="completed">completed</option>
+                        <option value="reopened">reopened</option>
+                      </select>
+                    </label>
+                  </article>
+                ))}
+              </div>
+            ) : null}
           </section>
         ) : null}
 
