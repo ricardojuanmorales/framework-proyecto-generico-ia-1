@@ -132,3 +132,20 @@ Durante la recuperación, el estado persistido conservaba correctamente PH/IT/AT
 C6 PASS
 H3B-PORT-001: CLOSED
 ```
+
+## Bloque D · Base Federada e invocación
+
+| ID | Resultado | Observación |
+|---|---|---|
+| D1 | PASS | La búsqueda contextual devuelve pocos resultados relevantes, incluyendo SDD con propósito, fuente y evidencia esperada. |
+| D2 | BLOCK | El botón «Invocar y registrar» aparece pero no ejecuta de forma observable la acción esperada. |
+
+### Acción correctiva D2
+
+- se encapsula la invocación en el servicio de aplicación;
+- la mutación valida estado + portafolio;
+- el botón declara explícitamente cuándo no puede usarse;
+- la interfaz muestra resultado o error de la acción;
+- se añade prueba de invocación a `knowledgeInvoked` y portafolio.
+
+**Revalidación requerida:** solo D2.
