@@ -8,6 +8,9 @@ import {
   reopenProject,
   stageImport,
   updateMaturity,
+  correctPortfolioEntry,
+  supersedeDecision,
+  updateTransferState,
 } from "../application/project-service";
 
 describe("estado vivo del proyecto", () => {
@@ -69,5 +72,68 @@ describe("estado vivo del proyecto", () => {
     expect(reopened.status).toBe("reopened");
     expect(reopened.portfolio.at(-1)?.type).toBe("milestone");
     expect(reopened.portfolio.at(-1)?.summary).toContain("Nueva evidencia");
+  });
+  it("corrige portafolio sin borrar entrada original", () => {
+    let project = createProject({
+      name: "Proyecto",
+      problem: "Problema",
+      context: "",
+      purpose: "Propósito",
+      activeProfiles: ["PH"],
+    });
+    project = addPortfolioEntry(project, {
+      type: "evidence",
+      title: "Evidencia",
+      summary: "Versión inicial",
+    });
+    const originalId = project.portfolio[0]!.id;
+    const corrected = correctPortfolioEntry(project, originalId, "Aclaración posterior");
+    expect(corrected.portfolio).toHaveLength(2);
+    expect(corrected.portfolio[0]!.summary).toBe("Versión inicial");
+    expect(corrected.portfolio[1]!.summary).toContain(originalId);
+  });
+
+  it("supersede una decisión sin borrar la anterior", () => {
+    let project = createProject({
+      name: "Proyecto",
+      problem: "Problema",
+      context: "",
+      purpose: "Propósito",
+      activeProfiles: ["PH"],
+    });
+    project = recordDecision(project, {
+      question: "¿A?",
+      decision: "A",
+      reason: "Primera razón",
+      reversible: "yes",
+    });
+    const firstId = project.decisions[0]!.id;
+    const revised = supersedeDecision(project, firstId, "B", "Nueva evidencia");
+    expect(revised.decisions).toHaveLength(2);
+    expect(revised.decisions[0]!.decision).toBe("A");
+    expect(revised.decisions[1]!.decision).toBe("B");
+    expect(revised.decisions[1]!.question).toContain(firstId);
+  });
+
+  it("actualiza el estado de transferencia preservando el registro", () => {
+    let project = createProject({
+      name: "Proyecto",
+      problem: "Problema",
+      context: "",
+      purpose: "Propósito",
+      activeProfiles: ["PH","IT"],
+    });
+    project = recordTransfer(project, {
+      origin: "IT",
+      destination: "PH",
+      object: "Criterio",
+      purpose: "Transferir",
+      limits: [],
+      state: "accepted",
+    });
+    const id = project.transfers[0]!.id;
+    const updated = updateTransferState(project, id, "completed");
+    expect(updated.transfers).toHaveLength(1);
+    expect(updated.transfers[0]!.state).toBe("completed");
   });
 });
