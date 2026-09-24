@@ -187,3 +187,31 @@ H3-B NOT AUTHORIZED
 La siguiente acción humana es revalidar D2 sobre la segunda corrección implementada. No repetir bloques cerrados salvo regresión.
 
 Decisión de producto pendiente: determinar si Accesibilidad permanece como propiedad transversal verificable o incorpora además una superficie visible de preferencias/ayuda antes de RC.
+
+## Revalidación D2 · resultado final
+
+**Resultado humano:** PASS
+
+Se confirmó el ciclo completo:
+
+- invocación de SDD;
+- confirmación visible en interfaz;
+- aparición en Conocimientos activos;
+- registro histórico en PORTAFOLIO;
+- retiro reversible del conjunto activo;
+- preservación de la historia de invocación y retiro;
+- persistencia tras recarga.
+
+## Cierre Bloque D
+
+```text
+D1 PASS
+D2 PASS
+BLOQUE D: PASS
+```
+
+El siguiente bloque de auditoría es:
+
+```text
+E · Portabilidad / Seguridad
+```
