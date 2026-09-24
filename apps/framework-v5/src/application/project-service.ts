@@ -214,6 +214,29 @@ export const invokeKnowledgeItem = (
   }, now);
 };
 
+export const removeKnowledgeItem = (
+  project: FrameworkProject,
+  item: { id: string; title: string; canonicalSource: string },
+  now = new Date().toISOString(),
+): FrameworkProject => {
+  if (!project.state.knowledgeInvoked.includes(item.id)) {
+    throw new Error("KNOWLEDGE_NOT_ACTIVE");
+  }
+  const withoutKnowledge: FrameworkProject = {
+    ...project,
+    updatedAt: now,
+    state: {
+      ...project.state,
+      knowledgeInvoked: project.state.knowledgeInvoked.filter((id) => id !== item.id),
+    },
+  };
+  return addPortfolioEntry(withoutKnowledge, {
+    type: "reflection",
+    title: `Conocimiento retirado · ${item.title}`,
+    summary: `Se retiró del conjunto activo ${item.title}. Fuente: ${item.canonicalSource}. La invocación histórica se conserva.`,
+  }, now);
+};
+
 export const updateMaturity = (
   project: FrameworkProject,
   projectLevel: MaturityLevel,
