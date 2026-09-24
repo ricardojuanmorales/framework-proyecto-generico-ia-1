@@ -211,15 +211,19 @@ export function App({ repository, persistenceMode }: Props) {
   };
 
   const onInvokeKnowledge = async (item: ReturnType<typeof recommendKnowledge>[number]) => {
-    if (!project) {
-      setStatus("No hay proyecto activo para registrar la invocación.");
-      return;
-    }
     try {
-      const next = invokeKnowledgeItem(project, item);
-      await persistProject(next, `Conocimiento invocado: ${item.title}. Registrado en portafolio.`);
-    } catch {
-      setStatus("No se pudo registrar la invocación. Revisa el proyecto activo e inténtalo de nuevo.");
+      const target = project ?? await repository.latest();
+      if (!target) {
+        setStatus("No hay proyecto activo o persistido para registrar la invocación.");
+        return;
+      }
+      const next = invokeKnowledgeItem(target, item);
+      await repository.save(next);
+      setProject(next);
+      setStatus(`Conocimiento invocado: ${item.title}. Registrado en ${next.name}.`);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "ERROR_DESCONOCIDO";
+      setStatus(`No se pudo registrar la invocación: ${message}`);
     }
   };
 
@@ -594,14 +598,16 @@ export function App({ repository, persistenceMode }: Props) {
                   <p>{item.purpose}</p>
                   <p><strong>Fuente:</strong> {item.canonicalSource}</p>
                   <p><strong>Evidencia esperada:</strong> {item.evidenceHint}</p>
+                  <p className="hint">
+                    Destino: <strong>{project?.name ?? "último proyecto local persistido"}</strong>
+                  </p>
                   <button
-                    disabled={!project}
-                    title={project ? "Registrar esta invocación en el proyecto activo" : "Activa o restaura un proyecto para registrar la invocación"}
+                    type="button"
+                    title="Registrar esta invocación en el proyecto activo o en el último proyecto local persistido"
                     onClick={() => void onInvokeKnowledge(item)}
                   >
                     Invocar y registrar
                   </button>
-                  {!project ? <p className="hint">Necesitas un proyecto activo para registrar la invocación.</p> : null}
                 </article>
               ))}
             </div>
