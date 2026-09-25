@@ -3,6 +3,25 @@
 
 > **Un espacio de trabajo para abordar problemas complejos con juicio humano, inteligencia artificial, tecnología, investigación, creación, ética, trazabilidad y continuidad.**
 
+## 🚀 v5.0.0 ya está disponible
+
+- 🌐 **Aplicación web V5:** https://ricardojuanmorales.github.io/framework-proyecto-generico-ia-1/v5/
+- 📦 **Release estable:** https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1/releases/tag/v5.0.0
+- 🏛️ **Framework V4 histórico:** https://ricardojuanmorales.github.io/framework-proyecto-generico-ia-1/v4/
+- 📚 **Repositorio canónico:** https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1
+
+```text
+framework_version: 5.0.0
+release_status: STABLE
+architecture: LOCAL_FIRST
+backend_required: false
+cloud_required: false
+account_required: false
+telemetry_default: false
+external_AI_required: false
+```
+
+
 ---
 
 ## 🧭 En una mirada
@@ -40,7 +59,7 @@ GitHub funciona como fuente versionada del sistema y el repositorio puede abrirs
 | Área | Estado |
 |---|---|
 | 🧱 Framework maestro | **V5.0.0 estable** |
-| 🧰 Repositorio operativo | **Fase 3 construida · H3-B cerrado** |
+| 🧰 Repositorio operativo | **V5.0.0 estable · H3-C cerrado** |
 | 🧑‍💻 Programador Humanista | **Fase 1 cerrada + robustecida por integración real** |
 | 🧪 Investigador Transdisciplinario | **Fase 1 cerrada** |
 | 🎨 Artista Transdisciplinario | **Fase 1 cerrada** |
@@ -49,7 +68,7 @@ GitHub funciona como fuente versionada del sistema y el repositorio puede abrirs
 | 🧪 Próximo hito | **Primera revisión evolutiva post-V5.0.0** |
 | ✅ Release | **H3-C APROBADO · V5.0.0 estable** |
 
-El proyecto ha completado Fase 1, Fase 2 y la construcción/auditoría interna principal de Fase 3. Entra ahora en modo de release candidate:
+El proyecto ha completado Fase 1, Fase 2 y Fase 3, incluyendo auditoría, release candidate y gate final H3-C. Opera ahora como versión estable:
 
 ```text
 canon
