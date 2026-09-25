@@ -1,4 +1,4 @@
-# 🌐 Framework Genérico V5 · Release Candidate
+# 🌐 Framework Genérico V5.0.0
 ## Ecosistema operativo evolutivo humano-máquina-IA
 
 > **Un espacio de trabajo para abordar problemas complejos con juicio humano, inteligencia artificial, tecnología, investigación, creación, ética, trazabilidad y continuidad.**
@@ -39,15 +39,15 @@ GitHub funciona como fuente versionada del sistema y el repositorio puede abrirs
 
 | Área | Estado |
 |---|---|
-| 🧱 Framework maestro | **V5 RC autorizado con reservas** |
+| 🧱 Framework maestro | **V5.0.0 estable** |
 | 🧰 Repositorio operativo | **Fase 3 construida · H3-B cerrado** |
 | 🧑‍💻 Programador Humanista | **Fase 1 cerrada + robustecida por integración real** |
 | 🧪 Investigador Transdisciplinario | **Fase 1 cerrada** |
 | 🎨 Artista Transdisciplinario | **Fase 1 cerrada** |
 | 🔮 Caleidoscopio | **Propiedad emergente conceptualmente estable** |
 | 🧬 Gramática común PH-IT-AT | **Aprobada** |
-| 🧪 Próximo hito | **Consolidar y publicar v5.0.0-rc.1** |
-| 🚧 Release | **H3-B PASS WITH RESERVATIONS** |
+| 🧪 Próximo hito | **Primera revisión evolutiva post-V5.0.0** |
+| ✅ Release | **H3-C APROBADO · V5.0.0 estable** |
 
 El proyecto ha completado Fase 1, Fase 2 y la construcción/auditoría interna principal de Fase 3. Entra ahora en modo de release candidate:
 
@@ -58,7 +58,7 @@ canon
 → release candidate
 → estabilización
 → H3-C
-→ v5.0.0
+→ v5.0.0 estable
 ```
 
 ---
@@ -408,27 +408,28 @@ Fase 1 → perfiles y canon
 Fase 2 → operacionalización V5
 Fase 3 → app + integración + verificación
 H3-B → PASS WITH RESERVATIONS
-RC → v5.0.0-rc.1
+H3-C → APROBADO
+Release → v5.0.0
 ```
 
 La aplicación V5 es local-first, portable y trazable. Integra START, INTEGRATE, AUDIT, PORTAFOLIO, Base Federada, Conocimientos activos, exportación/importación segura y verificación reproducible.
 
-El trabajo entra ahora en modo de estabilización: observar uso real, corregir solo regresiones materiales y cerrar la reserva de accesibilidad antes de H3-C.
+El trabajo entra ahora en modo de evolución estable: observar uso real, corregir regresiones materiales y realizar la validación con lector de pantalla en la primera revisión post-V5.0.0.
 
 ---
 
 ## 🔒 Bloqueos actuales
 
-No existen BLOCK abiertos para el RC.
+No existen BLOCK abiertos para V5.0.0 estable.
 
 Reserva vigente:
 
 ```text
 external accessibility review pending
-→ validar con lector de pantalla antes de v5.0.0 estable
+→ validar con lector de pantalla en la primera revisión post-v5.0.0
 ```
 
-Durante RC se congela el alcance funcional salvo necesidad material demostrada.
+Durante la primera etapa estable se preserva el alcance funcional salvo necesidad material demostrada.
 
 ---
 
@@ -458,7 +459,7 @@ Si quieres entrar más a fondo, puedes seguir una de estas puertas:
 ## 📌 Estado resumido
 
 ```text
-Framework V5: v5.0.0-rc.1
+Framework V5: v5.0.0 estable
 Repositorio: integrado en main
 App: operativa y publicada bajo /v5/
 V4: preservado en raíz y /v4/
@@ -466,7 +467,8 @@ V4: preservado en raíz y /v4/
 PH / IT / AT: integrados
 Caleidoscopio: propiedad emergente
 H3-B: PASS WITH RESERVATIONS
-Próximo gate: H3-C
+H3-C: APROBADO
+Próximo hito: primera revisión post-v5.0.0
 ```
 
 ---
