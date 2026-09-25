@@ -48,3 +48,23 @@ usar
 ```
 
 No se reabre la arquitectura base salvo evidencia real que lo justifique.
+
+
+## Cierre post-release
+
+La publicación oficial quedó completada posteriormente mediante GitHub Release reproducible.
+
+```text
+Tag: v5.0.0
+Release commit: d36a8bd22b0da03b60d320ceccfd00eea466cd5c
+Artifact: framework-generico-v5.0.0_d36a8bd22b0d.zip
+SHA-256: 088eee122ea3351447cdcf18845e1e5b5b1b76b43c5c7debdc5f497c536b5946
+```
+
+Documentos de continuidad:
+
+- `18_DOCUMENTACION_ACTIVA/Cierres_Reportes/Bitacoras/2026-09-25_Bitacora_Robusta_Cierre_V5_0_0_PostRelease_v1_0.md`
+- `18_DOCUMENTACION_ACTIVA/Changelog/2026-09-25_Changelog_Consolidado_Framework_V5_0_0_v1_0.md`
+- `18_DOCUMENTACION_ACTIVA/Primers_Continuidad/2026-09-25_Primer_Continuidad_PostV5_0_0_v1_0.md`
+
+El proyecto entra formalmente en régimen de mantenimiento y evolución basada en evidencia.
