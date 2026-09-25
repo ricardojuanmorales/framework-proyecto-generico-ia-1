@@ -1,7 +1,7 @@
 {
   "name": "@framework-generico/framework-v5",
   "private": true,
-  "version": "5.0.0-rc.1",
+  "version": "5.0.0",
   "type": "module",
   "engines": {
     "node": ">=22 <27"
