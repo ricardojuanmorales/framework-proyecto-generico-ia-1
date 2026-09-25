@@ -1,0 +1,54 @@
+name: Publish Framework V5.0.0 Release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".release/v5.0.0"
+      - ".github/workflows/framework-v5-release.yml"
+      - "18_DOCUMENTACION_ACTIVA/Cierres_Reportes/2026-09-24_GitHub_Release_Framework_V5_0_0.md"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact release commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify Framework V5
+        working-directory: apps/framework-v5
+        run: |
+          npm install --global npm@11.19.0
+          npm ci --ignore-scripts
+          npm run verify
+
+      - name: Build exact source archive
+        id: package
+        run: |
+          SHORT_SHA="$(git rev-parse --short=12 HEAD)"
+          ZIP="framework-generico-v5.0.0_${SHORT_SHA}.zip"
+          SHA="${ZIP}.sha256"
+          git archive --format=zip --output="${ZIP}" HEAD
+          sha256sum "${ZIP}" > "${SHA}"
+          echo "zip=${ZIP}" >> "$GITHUB_OUTPUT"
+          echo "sha=${SHA}" >> "$GITHUB_OUTPUT"
+          echo "short_sha=${SHORT_SHA}" >> "$GITHUB_OUTPUT"
+
+      - name: Create or update GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="v5.0.0"
+          NOTES="18_DOCUMENTACION_ACTIVA/Cierres_Reportes/2026-09-24_GitHub_Release_Framework_V5_0_0.md"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release edit "$TAG" --title "Framework Genérico V5.0.0" --notes-file "$NOTES"
+          else
+            gh release create "$TAG" --target "$GITHUB_SHA" --title "Framework Genérico V5.0.0" --notes-file "$NOTES"
+          fi
+          gh release upload "$TAG" "${{ steps.package.outputs.zip }}" "${{ steps.package.outputs.sha }}" --clobber
