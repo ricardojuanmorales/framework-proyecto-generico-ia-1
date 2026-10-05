@@ -6,6 +6,8 @@ import frameworkStateSchema from "../schemas/framework-state.schema.json";
 import portfolioSchema from "../schemas/portfolio.schema.json";
 import decisionSchema from "../schemas/decision.schema.json";
 import transferSchema from "../schemas/transfer.schema.json";
+import knowledgeInvocationSchema from "../schemas/knowledge-invocation.schema.json";
+import caleidoscopeEventSchema from "../schemas/caleidoscope-event.schema.json";
 
 const encode = (value: string): Uint8Array => strToU8(value);
 const decode = (value: Uint8Array | undefined, name: string): string => {
@@ -22,11 +24,15 @@ export const buildPortableZip = (project: FrameworkProject): Uint8Array => {
     "portfolio.json": encode(files["portfolio.json"]),
     "decisions.json": encode(files["decisions.json"]),
     "transfers.json": encode(files["transfers.json"]),
+    "knowledge-invocations.json": encode(files["knowledge-invocations.json"]),
+    "caleidoscope-events.json": encode(files["caleidoscope-events.json"]),
     "schemas/project.schema.json": encode(JSON.stringify(projectSchema, null, 2)),
     "schemas/framework-state.schema.json": encode(JSON.stringify(frameworkStateSchema, null, 2)),
     "schemas/portfolio.schema.json": encode(JSON.stringify(portfolioSchema, null, 2)),
     "schemas/decision.schema.json": encode(JSON.stringify(decisionSchema, null, 2)),
     "schemas/transfer.schema.json": encode(JSON.stringify(transferSchema, null, 2)),
+    "schemas/knowledge-invocation.schema.json": encode(JSON.stringify(knowledgeInvocationSchema, null, 2)),
+    "schemas/caleidoscope-event.schema.json": encode(JSON.stringify(caleidoscopeEventSchema, null, 2)),
   };
 
   return zipSync(archive, { level: 6 });
@@ -51,6 +57,12 @@ export const stagePortableZipImport = (bytes: Uint8Array): ProjectPackage => {
   const portfolio = JSON.parse(decode(files["portfolio.json"], "portfolio.json"));
   const decisions = JSON.parse(decode(files["decisions.json"], "decisions.json"));
   const transfers = JSON.parse(decode(files["transfers.json"], "transfers.json"));
+  const knowledgeInvocations = files["knowledge-invocations.json"]
+    ? JSON.parse(decode(files["knowledge-invocations.json"], "knowledge-invocations.json"))
+    : [];
+  const caleidoscopeEvents = files["caleidoscope-events.json"]
+    ? JSON.parse(decode(files["caleidoscope-events.json"], "caleidoscope-events.json"))
+    : [];
 
   const project: FrameworkProject = {
     schemaVersion: manifest.schema_versions.project,
@@ -65,6 +77,8 @@ export const stagePortableZipImport = (bytes: Uint8Array): ProjectPackage => {
     portfolio,
     decisions,
     transfers,
+    knowledgeInvocations,
+    caleidoscopeEvents,
   };
 
   return stageImport({
