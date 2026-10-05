@@ -3,7 +3,7 @@ import type { MaturityLevel, Profile } from "../domain/model";
 export interface KnowledgeItem {
   id: string;
   title: string;
-  type: "method" | "protocol" | "guide" | "criterion" | "template" | "taxonomy" | "gate" | "schema" | "example";
+  type: "method" | "protocol" | "guide" | "criterion" | "template" | "taxonomy" | "gate" | "schema" | "example" | "bibliographic_source" | "framework_canon" | "case" | "dataset" | "artifact" | "community_contribution";
   purpose: string;
   canonicalSource: string;
   owner: "COMMON" | Profile;
@@ -12,6 +12,9 @@ export interface KnowledgeItem {
   keywords: string[];
   risks: string[];
   evidenceHint: string;
+  citation?: string;
+  maturityStatus?: "proposed" | "reviewed" | "validated" | "reference" | "superseded";
+  verificationStatus?: "pending_primary_source" | "verified_primary_source" | "not_applicable" | "verification_failed";
 }
 
 export const FEDERATED_INDEX: KnowledgeItem[] = [
