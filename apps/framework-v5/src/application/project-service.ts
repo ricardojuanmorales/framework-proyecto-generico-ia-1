@@ -2,6 +2,8 @@ import {
   SCHEMA_VERSION,
   type FrameworkProject,
   type HumanDecision,
+  type KnowledgeInvocation,
+  type CaleidoscopeEvent,
   type MaturityLevel,
   type Mode,
   type PortfolioEntry,
@@ -74,6 +76,8 @@ export const createProject = (
     portfolio: [],
     decisions: [],
     transfers: [],
+    knowledgeInvocations: [],
+    caleidoscopeEvents: [],
   };
 
   const issues = validateProjectInvariants(project);
@@ -237,6 +241,54 @@ export const removeKnowledgeItem = (
   }, now);
 };
 
+export const recordKnowledgeInvocation = (
+  project: FrameworkProject,
+  invocation: Omit<KnowledgeInvocation, "id" | "createdAt">,
+  now = new Date().toISOString(),
+): FrameworkProject => {
+  const record: KnowledgeInvocation = {
+    ...invocation,
+    profiles: Array.from(new Set(invocation.profiles)),
+    knowledgeIds: Array.from(new Set(invocation.knowledgeIds)),
+    id: globalThis.crypto?.randomUUID?.() ?? `knowledge-invocation-${Date.now()}`,
+    createdAt: now,
+  };
+  const withInvocation: FrameworkProject = {
+    ...project,
+    updatedAt: now,
+    knowledgeInvocations: [...(project.knowledgeInvocations ?? []), record],
+  };
+  return addPortfolioEntry(withInvocation, {
+    type: "invocation",
+    title: "Invocación trazable de conocimiento",
+    summary: `${record.need} · Perfiles: ${record.profiles.join(", ")} · Conocimiento: ${record.knowledgeIds.join(", ")} · Propósito: ${record.purpose}`,
+  }, now);
+};
+
+export const recordCaleidoscopeEvent = (
+  project: FrameworkProject,
+  event: Omit<CaleidoscopeEvent, "id" | "createdAt">,
+  now = new Date().toISOString(),
+): FrameworkProject => {
+  const record: CaleidoscopeEvent = {
+    ...event,
+    lenses: Array.from(new Set(event.lenses)),
+    knowledgeIds: Array.from(new Set(event.knowledgeIds)),
+    id: globalThis.crypto?.randomUUID?.() ?? `caleidoscope-${Date.now()}`,
+    createdAt: now,
+  };
+  const withEvent: FrameworkProject = {
+    ...project,
+    updatedAt: now,
+    caleidoscopeEvents: [...(project.caleidoscopeEvents ?? []), record],
+  };
+  return addPortfolioEntry(withEvent, {
+    type: "reflection",
+    title: `Caleidoscopio · ${record.status}`,
+    summary: `Situación: ${record.situation} · Contraste: ${record.contrast} · Emergencia: ${record.emergence}`,
+  }, now);
+};
+
 export const updateMaturity = (
   project: FrameworkProject,
   projectLevel: MaturityLevel,
@@ -285,6 +337,8 @@ export interface PortableFiles {
   "portfolio.json": string;
   "decisions.json": string;
   "transfers.json": string;
+  "knowledge-invocations.json": string;
+  "caleidoscope-events.json": string;
 }
 
 export const materializePortableFiles = (
@@ -303,7 +357,9 @@ export const materializePortableFiles = (
       framework_state: "0.1.0",
       portfolio: "0.1.0",
       decision: "0.1.0",
-      transfer: "0.1.0"
+      transfer: "0.1.0",
+      knowledge_invocation: "0.1.0",
+      caleidoscope_event: "0.1.0"
     },
     status: project.status,
   };
@@ -331,6 +387,8 @@ export const materializePortableFiles = (
     "portfolio.json": JSON.stringify(project.portfolio, null, 2),
     "decisions.json": JSON.stringify(project.decisions, null, 2),
     "transfers.json": JSON.stringify(project.transfers, null, 2),
+    "knowledge-invocations.json": JSON.stringify(project.knowledgeInvocations ?? [], null, 2),
+    "caleidoscope-events.json": JSON.stringify(project.caleidoscopeEvents ?? [], null, 2),
   };
 };
 
