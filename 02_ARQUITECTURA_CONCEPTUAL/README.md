@@ -1,9 +1,20 @@
 # 02_ARQUITECTURA_CONCEPTUAL
 
-**Estado:** cartapacio del Framework Genérico V4.1.1 Repositorio Modelo.
+**Estado:** activo · Framework Genérico V5.0.0.
 
-Este cartapacio forma parte de la estructura operativa del Framework. Si todavía no contiene documentos sustantivos, se conserva con `nada.md` para que GitHub mantenga la carpeta visible.
+Este cartapacio contiene arquitectura conceptual, perfiles transversales, mapas y Caleidoscopio.
 
-## Uso
+## Referencia activa de integración
 
-Agregar aquí documentos relacionados con: arquitectura conceptual, perfiles transversales, mapas y Caleidoscopio.
+- `Arquitecturas_Referencia/2026-10-05_Arquitectura_Integracion_Pedagogia_Conocimiento_Comunidad_Caleidoscopio_V5_v1_0.md`
+
+## Principio
+
+```text
+PERFIL = lente
+FRAMEWORK = espacio operativo
+PROBLEMA = centro
+Caleidoscopio = posible emergencia
+```
+
+Los documentos históricos V4.x se preservan como linaje y no sustituyen las referencias canónicas V5.
