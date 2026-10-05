@@ -14,7 +14,7 @@
 | P4 | Gobernanza comunitaria operativa mínima | PAGADA |
 | P5 | Instrumento ligero de verificación caleidoscópica | PAGADA |
 | P6 | Superficies mínimas en aplicación | PAGADA EN CANDIDATO |
-| P7 | Pruebas y verificación integrada | PENDIENTE DE CI |
+| P7 | Pruebas y verificación integrada | PAGADA · CI VERDE NODE 22/24 |
 | P8 | Gate humano para uso real | PENDIENTE |
 
 ## Alcance exacto de P2
@@ -34,13 +34,19 @@ El repositorio histórico contiene además fichas anotadas BA-001–BA-060. Su c
 - indicadores de madurez comunitaria;
 - necesidad o no de métricas cuantitativas.
 
-## Gate técnico pendiente
+## Verificación técnica completada
+
+GitHub Actions `Framework V5 Verify` completó satisfactoriamente `npm run verify` en **Node 22 y Node 24** sobre el candidato integrado.
 
 ```text
-pull request
-→ CI npm run verify (Node 22 y 24)
-→ revisión de fallos
-→ corrección si procede
-→ gate humano
-→ uso real controlado
+typecheck ✓
+build ✓
+tests ✓
+audits ✓
+Node 22 ✓
+Node 24 ✓
 ```
+
+## Gate restante
+
+Solo permanece P8: decisión humana de integrar el candidato a `main` y declarar el Framework preparado para uso real controlado.
