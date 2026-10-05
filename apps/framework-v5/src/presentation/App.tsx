@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { FrameworkProject, MaturityLevel, Mode, Profile, ProjectPackage } from "../domain/model";
 import type { ProjectRepository } from "../ports/project-repository";
 import { recommendKnowledge } from "../application/knowledge-service";
-import { FEDERATED_INDEX } from "../knowledge/federated-index";
+import { ALL_KNOWLEDGE_INDEX } from "../knowledge/common-knowledge";
 import { buildPortableZip, stagePortableZipImport } from "../application/portable-zip";
 import {
   addPortfolioEntry,
@@ -13,6 +13,8 @@ import {
   invokeKnowledgeItem,
   recordDecision,
   recordTransfer,
+  recordKnowledgeInvocation,
+  recordCaleidoscopeEvent,
   removeKnowledgeItem,
   reopenProject,
   supersedeDecision,
@@ -58,6 +60,8 @@ export function App({ repository, persistenceMode }: Props) {
   const [decisionRevisionReason, setDecisionRevisionReason] = useState("");
   const [selectedPortfolioId, setSelectedPortfolioId] = useState<string | null>(null);
   const [selectedDecisionId, setSelectedDecisionId] = useState<string | null>(null);
+  const [caleidoscopeContrast, setCaleidoscopeContrast] = useState("");
+  const [caleidoscopeEmergence, setCaleidoscopeEmergence] = useState("");
 
   useEffect(() => {
     void repository.latest().then((latest) => {
@@ -222,12 +226,20 @@ export function App({ repository, persistenceMode }: Props) {
         setStatus("No hay proyecto activo o persistido para registrar la invocación.");
         return;
       }
-      const next = invokeKnowledgeItem(target, item);
+      const activated = invokeKnowledgeItem(target, item);
+      const next = recordKnowledgeInvocation(activated, {
+        profiles: activated.state.activeProfiles,
+        knowledgeIds: [item.id],
+        need: knowledgeNeed.trim() || "Invocación desde Base de Conocimiento común",
+        purpose: item.purpose,
+        interpretation: "",
+        consequence: "Conocimiento activado para el trabajo presente; la interpretación situada puede añadirse mediante reflexión posterior.",
+      });
       await repository.save(next);
       setProject(next);
       setLastInvokedKnowledgeId(item.id);
       setLastInvocationProjectName(next.name);
-      setStatus(`Conocimiento invocado: ${item.title}. Registrado en ${next.name}.`);
+      setStatus(`Conocimiento invocado: ${item.title}. Registrado con trazabilidad en ${next.name}.`);
     } catch (error) {
       const message = error instanceof Error ? error.message : "ERROR_DESCONOCIDO";
       setStatus(`No se pudo registrar la invocación: ${message}`);
@@ -236,7 +248,7 @@ export function App({ repository, persistenceMode }: Props) {
 
   const onRemoveKnowledge = async (knowledgeId: string) => {
     if (!project) return;
-    const item = FEDERATED_INDEX.find((candidate) => candidate.id === knowledgeId);
+    const item = ALL_KNOWLEDGE_INDEX.find((candidate) => candidate.id === knowledgeId);
     if (!item) {
       setStatus("No se encontró el conocimiento activo en la Base Federada.");
       return;
@@ -251,6 +263,33 @@ export function App({ repository, persistenceMode }: Props) {
     } catch (error) {
       const message = error instanceof Error ? error.message : "ERROR_DESCONOCIDO";
       setStatus(`No se pudo retirar el conocimiento: ${message}`);
+    }
+  };
+
+  const onRecordCaleidoscopeCandidate = async () => {
+    if (!project || project.state.activeProfiles.length < 2) return;
+    if (!caleidoscopeContrast.trim() || !caleidoscopeEmergence.trim()) return;
+    try {
+      const next = recordCaleidoscopeEvent(project, {
+        status: "candidate",
+        situation: project.state.problem,
+        lenses: project.state.activeProfiles,
+        knowledgeIds: project.state.knowledgeInvoked,
+        contrast: caleidoscopeContrast.trim(),
+        emergence: caleidoscopeEmergence.trim(),
+        mediation: {
+          human: "Define propósito, interpreta, juzga y conserva autoridad material.",
+          machine: "Persiste estado, artefactos y evidencia verificable.",
+          ai: "Puede analizar, contrastar, sintetizar y proponer alternativas sin autoridad final.",
+        },
+        traceability: "Candidato registrado desde el estado vivo del proyecto; revisar PORTAFOLIO, invocaciones y decisiones para su validación.",
+      });
+      await persistProject(next, "Candidato caleidoscópico registrado para revisión humana.");
+      setCaleidoscopeContrast("");
+      setCaleidoscopeEmergence("");
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "ERROR_DESCONOCIDO";
+      setStatus(`No se pudo registrar el candidato caleidoscópico: ${message}`);
     }
   };
 
@@ -622,7 +661,7 @@ export function App({ repository, persistenceMode }: Props) {
             ) : (
               <div className="knowledge-results">
                 {project.state.knowledgeInvoked.map((knowledgeId) => {
-                  const item = FEDERATED_INDEX.find((candidate) => candidate.id === knowledgeId);
+                  const item = ALL_KNOWLEDGE_INDEX.find((candidate) => candidate.id === knowledgeId);
                   return (
                     <article key={knowledgeId} className="knowledge-item">
                       <h4>{item?.title ?? knowledgeId}</h4>
@@ -649,6 +688,29 @@ export function App({ repository, persistenceMode }: Props) {
           </section>
         ) : null}
 
+        {project ? (
+          <details className="live-state">
+            <summary><strong>Registrar posible emergencia caleidoscópica</strong></summary>
+            <p>Úsalo solo cuando dos o más lentes hayan producido una relación nueva. No convierte la colaboración en Caleidoscopio automáticamente.</p>
+            {project.state.activeProfiles.length < 2 ? (
+              <p>Se requieren al menos dos lentes activas para registrar un candidato.</p>
+            ) : (
+              <>
+                <p><strong>Lentes:</strong> {project.state.activeProfiles.join(", ")}</p>
+                <label>Contraste entre perspectivas<textarea value={caleidoscopeContrast} onChange={(e) => setCaleidoscopeContrast(e.target.value)} /></label>
+                <label>¿Qué emergió que no estaba contenido de forma equivalente en una sola lente?<textarea value={caleidoscopeEmergence} onChange={(e) => setCaleidoscopeEmergence(e.target.value)} /></label>
+                <button
+                  disabled={!caleidoscopeContrast.trim() || !caleidoscopeEmergence.trim()}
+                  onClick={() => void onRecordCaleidoscopeCandidate()}
+                >
+                  Registrar candidato
+                </button>
+                <p className="hint">Candidatos registrados: <strong>{project.caleidoscopeEvents?.length ?? 0}</strong></p>
+              </>
+            )}
+          </details>
+        ) : null}
+
         <section className="live-state" aria-labelledby="knowledge-title">
           <h3 id="knowledge-title">Invocar conocimiento</h3>
           <p>Describe qué necesitas. La búsqueda ocurre localmente sobre un índice federado mínimo.</p>
@@ -663,7 +725,9 @@ export function App({ repository, persistenceMode }: Props) {
                 <article key={item.id} className="knowledge-item">
                   <h4>{item.title}</h4>
                   <p>{item.purpose}</p>
+                  {item.citation ? <p><strong>Referencia:</strong> {item.citation}</p> : null}
                   <p><strong>Fuente:</strong> {item.canonicalSource}</p>
+                  {item.verificationStatus ? <p><strong>Verificación:</strong> {item.verificationStatus}</p> : null}
                   <p><strong>Evidencia esperada:</strong> {item.evidenceHint}</p>
                   <p className="hint">
                     Destino: <strong>{project?.name ?? "último proyecto local persistido"}</strong>
