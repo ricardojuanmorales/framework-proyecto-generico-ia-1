@@ -1,0 +1,1464 @@
+[
+  {
+    "id": "biblio-ba-050",
+    "type": "bibliographic_source",
+    "title": "The hidden AI race: Environmental costs of artificial intelligence",
+    "citation": "Agarwal, S., & Chakraborti, M. (2025). The hidden AI race: Environmental costs of artificial intelligence. ACM Press.",
+    "authorsText": "Agarwal, S., & Chakraborti, M.",
+    "yearText": "2025",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-050",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-034",
+    "type": "bibliographic_source",
+    "title": "Framework for information literacy for higher education",
+    "citation": "Association of College and Research Libraries. (2016). Framework for information literacy for higher education. ACRL.",
+    "authorsText": "Association of College and Research Libraries.",
+    "yearText": "2016",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-034",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-049",
+    "type": "bibliographic_source",
+    "title": "Toward green AI: A methodological survey of the scientific literature",
+    "citation": "Barbierato, E., & Gatti, A. (2024). Toward green AI: A methodological survey of the scientific literature. IEEE Access, 12, 23989–24015.",
+    "authorsText": "Barbierato, E., & Gatti, A.",
+    "yearText": "2024",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-049",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-040",
+    "type": "bibliographic_source",
+    "title": "Virtual worlds and well-being: Current research and future directions",
+    "citation": "Barreda Ángeles, M., Amendola, S., Da Silva, C., Somià, T., Boucher, P., Schade, S., Meier, A., Mansfield, K., Gunschera, L., Orben, A., Turner, G., Griffiths, M., Hartmann, T., Freeman, G., Gui, X., Kou, Y., Baumgartner, S., Vuorre, M., Ohme, J., Hine, E., López Richart, J., & Belmoussi, O. (2025). Virtual worlds and well-being: Current research and future directions. Publications Office of the European Union.",
+    "authorsText": "Barreda Ángeles, M., Amendola, S., Da Silva, C., Somià, T., Boucher, P., Schade, S., Meier, A., Mansfield, K., Gunschera, L., Orben, A., Turner, G., Griffiths, M., Hartmann, T., Freeman, G., Gui, X., Kou, Y., Baumgartner, S., Vuorre, M., Ohme, J., Hine, E., López Richart, J., & Belmoussi, O.",
+    "yearText": "2025",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-040",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-057",
+    "type": "bibliographic_source",
+    "title": "On the dangers of stochastic parrots: Can language models be too big? Proceedings of the ACM Conference on Fairness, Accountability, and Transparency",
+    "citation": "Bender, E., Gebru, T., McMillan-Major, A., & Mitchell, M. (2021). On the dangers of stochastic parrots: Can language models be too big? Proceedings of the ACM Conference on Fairness, Accountability, and Transparency.",
+    "authorsText": "Bender, E., Gebru, T., McMillan-Major, A., & Mitchell, M.",
+    "yearText": "2021",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-057",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-058",
+    "type": "bibliographic_source",
+    "title": "Algorithmic colonization of Africa",
+    "citation": "Birhane, A. (2021). Algorithmic colonization of Africa. SCRIPTed, 18(2), 389–409.",
+    "authorsText": "Birhane, A.",
+    "yearText": "2021",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-058",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-030",
+    "type": "bibliographic_source",
+    "title": "Artificial intelligence in education: A review",
+    "citation": "Chen, L., Chen, P., & Lin, Z. (2020). Artificial intelligence in education: A review. Computers & Education.",
+    "authorsText": "Chen, L., Chen, P., & Lin, Z.",
+    "yearText": "2020",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-030",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-046",
+    "type": "bibliographic_source",
+    "title": "Atlas of AI: Power, politics, and the planetary costs of artificial intelligence",
+    "citation": "Crawford, K. (2021). Atlas of AI: Power, politics, and the planetary costs of artificial intelligence. Yale University Press.",
+    "authorsText": "Crawford, K.",
+    "yearText": "2021",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-046",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-051",
+    "type": "bibliographic_source",
+    "title": "The global landscape of environmental AI regulation",
+    "citation": "Ebert, K., Gamazaychikov, B., Hacker, P., & Luccioni, S. (2026). The global landscape of environmental AI regulation. ACM Conference on Fairness, Accountability, and Transparency.",
+    "authorsText": "Ebert, K., Gamazaychikov, B., Hacker, P., & Luccioni, S.",
+    "yearText": "2026",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-051",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-043",
+    "type": "bibliographic_source",
+    "title": "Ethics guidelines for trustworthy artificial intelligence",
+    "citation": "European Commission. (2019). Ethics guidelines for trustworthy artificial intelligence. European Commission.",
+    "authorsText": "European Commission.",
+    "yearText": "2019",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-043",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-031",
+    "type": "bibliographic_source",
+    "title": "Key competences for lifelong learning",
+    "citation": "European Commission. (2018). Key competences for lifelong learning. Publications Office of the European Union.",
+    "authorsText": "European Commission.",
+    "yearText": "2018",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-031",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-039",
+    "type": "bibliographic_source",
+    "title": "DIGCOMP: A framework for developing digital competence in Europe",
+    "citation": "Ferrari, A. (2013). DIGCOMP: A framework for developing digital competence in Europe. European Commission.",
+    "authorsText": "Ferrari, A.",
+    "yearText": "2013",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-039",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-044",
+    "type": "bibliographic_source",
+    "title": "The ethics of artificial intelligence: Principles, challenges, and opportunities",
+    "citation": "Floridi, L. (2019). The ethics of artificial intelligence: Principles, challenges, and opportunities. Oxford University Press.",
+    "authorsText": "Floridi, L.",
+    "yearText": "2019",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-044",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-045",
+    "type": "bibliographic_source",
+    "title": "AI4People—An ethical framework for a good AI society",
+    "citation": "Floridi, L., Cowls, J., Beltrametti, M., Chatila, R., Chazerand, P., Dignum, V., Luetge, C., Madelin, R., Pagallo, U., Rossi, F., Schafer, B., Valcke, P., & Vayena, E. (2018). AI4People—An ethical framework for a good AI society. Minds and Machines.",
+    "authorsText": "Floridi, L., Cowls, J., Beltrametti, M., Chatila, R., Chazerand, P., Dignum, V., Luetge, C., Madelin, R., Pagallo, U., Rossi, F., Schafer, B., Valcke, P., & Vayena, E.",
+    "yearText": "2018",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-045",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-017",
+    "type": "bibliographic_source",
+    "title": "Generative AI and the future of education",
+    "citation": "Giannini, S. (2023). Generative AI and the future of education. UNESCO.",
+    "authorsText": "Giannini, S.",
+    "yearText": "2023",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-017",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-027",
+    "type": "bibliographic_source",
+    "title": "Artificial intelligence in education",
+    "citation": "Holmes, W., Bialik, M., & Fadel, C. (2019). Artificial intelligence in education. Center for Curriculum Redesign.",
+    "authorsText": "Holmes, W., Bialik, M., & Fadel, C.",
+    "yearText": "2019",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-027",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-029",
+    "type": "bibliographic_source",
+    "title": "ChatGPT for education: Opportunities and challenges",
+    "citation": "Kasneci, E., et al. (2023). ChatGPT for education: Opportunities and challenges. Learning and Individual Differences.",
+    "authorsText": "Kasneci, E., et al.",
+    "yearText": "2023",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-029",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-052",
+    "type": "bibliographic_source",
+    "title": "Opportunities and risks of using AI technologies in transdisciplinary research",
+    "citation": "Keil, F., & Stein, M. (2025). Opportunities and risks of using AI technologies in transdisciplinary research. Institute for Social-Ecological Research.",
+    "authorsText": "Keil, F., & Stein, M.",
+    "yearText": "2025",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-052",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-033",
+    "type": "bibliographic_source",
+    "title": "DigComp into action",
+    "citation": "Kluzer, S., & Pujol Priego, L. (2018). DigComp into action. Publications Office of the European Union.",
+    "authorsText": "Kluzer, S., & Pujol Priego, L.",
+    "yearText": "2018",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-033",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-025",
+    "type": "bibliographic_source",
+    "title": "AI literacy education framework",
+    "citation": "Lee, I., et al. (2021). AI literacy education framework. Computers & Education.",
+    "authorsText": "Lee, I., et al.",
+    "yearText": "2021",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-025",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-024",
+    "type": "bibliographic_source",
+    "title": "What is AI literacy? CHI Conference on Human Factors in Computing Systems",
+    "citation": "Long, D., & Magerko, B. (2020). What is AI literacy? CHI Conference on Human Factors in Computing Systems.",
+    "authorsText": "Long, D., & Magerko, B.",
+    "yearText": "2020",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-024",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-054",
+    "type": "bibliographic_source",
+    "title": "Energy consumption of artificial intelligence models",
+    "citation": "Luccioni, A. S., et al. (2023). Energy consumption of artificial intelligence models.",
+    "authorsText": "Luccioni, A. S., et al.",
+    "yearText": "2023",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-054",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-035",
+    "type": "bibliographic_source",
+    "title": "Marco de referencia de la competencia digital docente",
+    "citation": "Ministerio de Educación y Formación Profesional. (2022). Marco de referencia de la competencia digital docente. Gobierno de España.",
+    "authorsText": "Ministerio de Educación y Formación Profesional.",
+    "yearText": "2022",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-035",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-060",
+    "type": "bibliographic_source",
+    "title": "Principles alone cannot guarantee ethical AI",
+    "citation": "Mittelstadt, B. (2019). Principles alone cannot guarantee ethical AI. Nature Machine Intelligence.",
+    "authorsText": "Mittelstadt, B.",
+    "yearText": "2019",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-060",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-002",
+    "type": "bibliographic_source",
+    "title": "Introducción al pensamiento complejo",
+    "citation": "Morin, E. (1990). Introducción al pensamiento complejo. Gedisa.",
+    "authorsText": "Morin, E.",
+    "yearText": "1990",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-002",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-007",
+    "type": "bibliographic_source",
+    "title": "La mente bien ordenada",
+    "citation": "Morin, E. (1999). La mente bien ordenada. Seuil.",
+    "authorsText": "Morin, E.",
+    "yearText": "1999",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-007",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-003-a",
+    "type": "bibliographic_source",
+    "title": "Los siete saberes necesarios para la educación del futuro",
+    "citation": "Morin, E. (1999). Los siete saberes necesarios para la educación del futuro. UNESCO.",
+    "authorsText": "Morin, E.",
+    "yearText": "1999",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-003",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": [
+      "duplicate_source_id"
+    ]
+  },
+  {
+    "id": "biblio-ba-004",
+    "type": "bibliographic_source",
+    "title": "¿Hacia dónde va el mundo? Paidós",
+    "citation": "Morin, E. (2011). ¿Hacia dónde va el mundo? Paidós.",
+    "authorsText": "Morin, E.",
+    "yearText": "2011",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-004",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-008",
+    "type": "bibliographic_source",
+    "title": "El método (Vols",
+    "citation": "Morin, E. (1977–2004). El método (Vols. 1–6). Seuil.",
+    "authorsText": "Morin, E.",
+    "yearText": "1977–2004",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-008",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-001",
+    "type": "bibliographic_source",
+    "title": "La transdisciplinariedad: Manifiesto",
+    "citation": "Nicolescu, B. (1996). La transdisciplinariedad: Manifiesto. Éditions du Rocher.",
+    "authorsText": "Nicolescu, B.",
+    "yearText": "1996",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-001",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-006",
+    "type": "bibliographic_source",
+    "title": "Manifesto of transdisciplinarity",
+    "citation": "Nicolescu, B. (2002). Manifesto of transdisciplinarity. SUNY Press.",
+    "authorsText": "Nicolescu, B.",
+    "yearText": "2002",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-006",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-009",
+    "type": "bibliographic_source",
+    "title": "La lógica del tercero incluido",
+    "citation": "Nicolescu, B. (2010). La lógica del tercero incluido. CIRET.",
+    "authorsText": "Nicolescu, B.",
+    "yearText": "2010",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-009",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-042",
+    "type": "bibliographic_source",
+    "title": "Scoping the OECD AI principles",
+    "citation": "OECD. (2019). Scoping the OECD AI principles. OECD Publishing.",
+    "authorsText": "OECD.",
+    "yearText": "2019",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-042",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-048",
+    "type": "bibliographic_source",
+    "title": "A geology of media",
+    "citation": "Parikka, J. (2015). A geology of media. University of Minnesota Press.",
+    "authorsText": "Parikka, J.",
+    "yearText": "2015",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-048",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-026",
+    "type": "bibliographic_source",
+    "title": "Affective computing",
+    "citation": "Picard, R. (1997). Affective computing. MIT Press.",
+    "authorsText": "Picard, R.",
+    "yearText": "1997",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-026",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-036",
+    "type": "bibliographic_source",
+    "title": "Marco conceptual para la evaluación de las competencias",
+    "citation": "Roegiers, X. (2016). Marco conceptual para la evaluación de las competencias. UNESCO.",
+    "authorsText": "Roegiers, X.",
+    "yearText": "2016",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-036",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-056",
+    "type": "bibliographic_source",
+    "title": "Green AI",
+    "citation": "Schwartz, R., Dodge, J., Smith, N., & Etzioni, O. (2020). Green AI. Communications of the ACM.",
+    "authorsText": "Schwartz, R., Dodge, J., Smith, N., & Etzioni, O.",
+    "yearText": "2020",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-056",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-055",
+    "type": "bibliographic_source",
+    "title": "Energy and policy considerations for deep learning",
+    "citation": "Strubell, E., Ganesh, A., & McCallum, A. (2019). Energy and policy considerations for deep learning. ACL Conference.",
+    "authorsText": "Strubell, E., Ganesh, A., & McCallum, A.",
+    "yearText": "2019",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-055",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-053",
+    "type": "bibliographic_source",
+    "title": "The impact of artificial intelligence on human society and bioethics",
+    "citation": "Tai, M. C. (2020). The impact of artificial intelligence on human society and bioethics. Tzu Chi Medical Journal, 32(4), 339–343.",
+    "authorsText": "Tai, M. C.",
+    "yearText": "2020",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-053",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-003-b",
+    "type": "bibliographic_source",
+    "title": "Los siete saberes necesarios para la educación del futuro",
+    "citation": "UNESCO. (1999). Los siete saberes necesarios para la educación del futuro. UNESCO.",
+    "authorsText": "UNESCO.",
+    "yearText": "1999",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-003",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": [
+      "duplicate_source_id"
+    ]
+  },
+  {
+    "id": "biblio-ba-019",
+    "type": "bibliographic_source",
+    "title": "AI and education: Protecting the rights of learners",
+    "citation": "UNESCO. (2021). AI and education: Protecting the rights of learners. UNESCO.",
+    "authorsText": "UNESCO.",
+    "yearText": "2021",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-019",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-020",
+    "type": "bibliographic_source",
+    "title": "AI and education: Guidance for policy-makers",
+    "citation": "UNESCO. (2021). AI and education: Guidance for policy-makers. UNESCO.",
+    "authorsText": "UNESCO.",
+    "yearText": "2021",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-020",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-041",
+    "type": "bibliographic_source",
+    "title": "Recommendation on the ethics of artificial intelligence",
+    "citation": "UNESCO. (2022). Recommendation on the ethics of artificial intelligence. UNESCO.",
+    "authorsText": "UNESCO.",
+    "yearText": "2022",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-041",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-016",
+    "type": "bibliographic_source",
+    "title": "Education in a digital world",
+    "citation": "UNESCO. (2023). Education in a digital world. UNESCO.",
+    "authorsText": "UNESCO.",
+    "yearText": "2023",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-016",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-018",
+    "type": "bibliographic_source",
+    "title": "Guidance for generative AI in education and research",
+    "citation": "UNESCO. (2023). Guidance for generative AI in education and research. UNESCO.",
+    "authorsText": "UNESCO.",
+    "yearText": "2023",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-018",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-038",
+    "type": "bibliographic_source",
+    "title": "AI competency framework for students",
+    "citation": "UNESCO. (2024). AI competency framework for students. UNESCO.",
+    "authorsText": "UNESCO.",
+    "yearText": "2024",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-038",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-037",
+    "type": "bibliographic_source",
+    "title": "AI competency framework for teachers",
+    "citation": "UNESCO. (2024). AI competency framework for teachers. UNESCO.",
+    "authorsText": "UNESCO.",
+    "yearText": "2024",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-037",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-005",
+    "type": "bibliographic_source",
+    "title": "Hacia una docencia transdisciplinaria",
+    "citation": "Vélez Cardona, W. (2014). Hacia una docencia transdisciplinaria. Universidad de Puerto Rico.",
+    "authorsText": "Vélez Cardona, W.",
+    "yearText": "2014",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-005",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-010",
+    "type": "bibliographic_source",
+    "title": "Los estudios generales en las universidades latinoamericanas",
+    "citation": "Vélez Cardona, W., & Sánchez Zambrana, L. (2015). Los estudios generales en las universidades latinoamericanas. Universidad de Puerto Rico.",
+    "authorsText": "Vélez Cardona, W., & Sánchez Zambrana, L.",
+    "yearText": "2015",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-010",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-059",
+    "type": "bibliographic_source",
+    "title": "The role of AI in achieving the Sustainable Development Goals",
+    "citation": "Vinuesa, R., et al. (2020). The role of AI in achieving the Sustainable Development Goals. Nature Communications.",
+    "authorsText": "Vinuesa, R., et al.",
+    "yearText": "2020",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-059",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-032",
+    "type": "bibliographic_source",
+    "title": "DigComp 2.2: Digital competence framework for citizens",
+    "citation": "Vuorikari, R., Kluzer, S., & Punie, Y. (2022). DigComp 2.2: Digital competence framework for citizens. Publications Office of the European Union.",
+    "authorsText": "Vuorikari, R., Kluzer, S., & Punie, Y.",
+    "yearText": "2022",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-032",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-028",
+    "type": "bibliographic_source",
+    "title": "Systematic review of AI applications in higher education",
+    "citation": "Zawacki-Richter, O., Marín, V., Bond, M., & Gouverneur, F. (2019). Systematic review of AI applications in higher education. International Journal of Educational Technology in Higher Education.",
+    "authorsText": "Zawacki-Richter, O., Marín, V., Bond, M., & Gouverneur, F.",
+    "yearText": "2019",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-028",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-023",
+    "type": "bibliographic_source",
+    "title": "Artificial intelligence literacy in K–12 education",
+    "citation": "Zhai, X., et al. (2021). Artificial intelligence literacy in K–12 education. Computers & Education: Artificial Intelligence.",
+    "authorsText": "Zhai, X., et al.",
+    "yearText": "2021",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-023",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  },
+  {
+    "id": "biblio-ba-047",
+    "type": "bibliographic_source",
+    "title": "The age of surveillance capitalism",
+    "citation": "Zuboff, S. (2019). The age of surveillance capitalism. PublicAffairs.",
+    "authorsText": "Zuboff, S.",
+    "yearText": "2019",
+    "owner": "COMMON",
+    "profiles": [
+      "PH",
+      "IT",
+      "AT"
+    ],
+    "maturityStatus": "proposed",
+    "verificationStatus": "pending_primary_source",
+    "sourceRecordId": "BA-047",
+    "provenance": {
+      "sourceTitle": "Repositorio Institucional de Bibliografía Anotada para Pensamiento Transdisciplinario, Educación y Ética de la Inteligencia Artificial V1_1",
+      "migrationDate": "2026-10-05",
+      "migrationMethod": "controlled_text_extraction"
+    },
+    "domains": [],
+    "keywords": [],
+    "annotations": [],
+    "relations": [],
+    "migrationIssues": []
+  }
+]
