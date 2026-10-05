@@ -1,8 +1,14 @@
 import { describe, expect, it } from "vitest";
 import { recommendKnowledge } from "../application/knowledge-service";
 import { COMMON_KNOWLEDGE_INDEX } from "../knowledge/common-knowledge";
+import seed from "../knowledge/common-knowledge.seed.json";
+import { validateCommonKnowledgeItem } from "../schemas/runtime-validators";
 
 describe("Base de Conocimiento común", () => {
+  it("valida estructuralmente todo el corpus migrado", () => {
+    expect(seed.every((item) => validateCommonKnowledgeItem(item))).toBe(true);
+  });
+
   it("migra 54 registros preservando el conflicto BA-003", () => {
     expect(COMMON_KNOWLEDGE_INDEX).toHaveLength(54);
     const duplicate = COMMON_KNOWLEDGE_INDEX.filter((item) =>
