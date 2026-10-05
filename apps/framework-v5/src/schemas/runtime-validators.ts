@@ -5,11 +5,23 @@ import stateSchema from "./framework-state.schema.json";
 import portfolioSchema from "./portfolio.schema.json";
 import decisionSchema from "./decision.schema.json";
 import transferSchema from "./transfer.schema.json";
+import knowledgeInvocationSchema from "./knowledge-invocation.schema.json";
+import caleidoscopeEventSchema from "./caleidoscope-event.schema.json";
+import commonKnowledgeItemSchema from "./common-knowledge-item.schema.json";
 import packageSchema from "./package.schema.json";
 
 const ajv = new Ajv2020({ allErrors: true, strict: true, validateFormats: true });
 addFormats(ajv);
-for (const schema of [stateSchema, portfolioSchema, decisionSchema, transferSchema, projectSchema]) {
+for (const schema of [
+  stateSchema,
+  portfolioSchema,
+  decisionSchema,
+  transferSchema,
+  knowledgeInvocationSchema,
+  caleidoscopeEventSchema,
+  commonKnowledgeItemSchema,
+  projectSchema,
+]) {
   ajv.addSchema(schema);
 }
 
