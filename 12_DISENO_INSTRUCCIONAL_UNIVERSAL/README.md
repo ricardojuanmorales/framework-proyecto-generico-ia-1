@@ -1,9 +1,11 @@
 # 12_DISENO_INSTRUCCIONAL_UNIVERSAL
 
-**Estado:** cartapacio del Framework Genérico V4.1.1 Repositorio Modelo.
+**Estado:** activo · Framework Genérico V5.0.0.
 
-Este cartapacio forma parte de la estructura operativa del Framework. Si todavía no contiene documentos sustantivos, se conserva con `nada.md` para que GitHub mantenga la carpeta visible.
+Este cartapacio conserva diseño instruccional, accesibilidad, DUA y gobernanza pedagógica.
 
-## Uso
+## Marco Pedagógico canónico
 
-Agregar aquí documentos relacionados con: DUA, POUR, diseño instruccional y accesibilidad educativa.
+- `2026-10-05_Marco_Pedagogico_Canonico_Framework_V5_v1_1.md`
+
+El Marco Pedagógico V5 es una **capa transversal de gobernanza pedagógica** del ecosistema. No queda limitado a APRENDER ni a la aplicación.
