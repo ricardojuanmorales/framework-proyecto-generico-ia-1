@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://framework-v5.local/schemas/knowledge-invocation/0.1.0",
+  "title": "Framework V5 Knowledge Invocation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id","profiles","knowledgeIds","need","purpose","interpretation","consequence","createdAt"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "profiles": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["PH","IT","AT"] } },
+    "knowledgeIds": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "maxLength": 200 } },
+    "need": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "purpose": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "interpretation": { "type": "string", "maxLength": 8000 },
+    "consequence": { "type": "string", "maxLength": 8000 },
+    "createdAt": { "type": "string", "format": "date-time" }
+  }
+}
