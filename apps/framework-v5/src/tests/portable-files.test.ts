@@ -20,9 +20,13 @@ describe("materialización portable", () => {
       "portfolio.json",
       "decisions.json",
       "transfers.json",
+      "knowledge-invocations.json",
+      "caleidoscope-events.json",
     ]);
 
     expect(JSON.parse(files["manifest.json"]).project_id).toBe(project.id);
+    expect(JSON.parse(files["knowledge-invocations.json"])).toEqual([]);
+    expect(JSON.parse(files["caleidoscope-events.json"])).toEqual([]);
     expect(files["README.md"]).toContain("Proyecto portable");
   });
 });

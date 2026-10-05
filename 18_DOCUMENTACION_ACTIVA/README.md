@@ -1,9 +1,11 @@
 # 18_DOCUMENTACION_ACTIVA
 
-**Estado:** cartapacio del Framework Genérico V4.1.1 Repositorio Modelo.
+**Estado:** activo · Framework Genérico V5.0.0.
 
-Este cartapacio forma parte de la estructura operativa del Framework. Si todavía no contiene documentos sustantivos, se conserva con `nada.md` para que GitHub mantenga la carpeta visible.
+Este cartapacio conserva changelog, decisiones, bitácoras, primers y cierres operativos.
 
-## Uso
+## Decisión activa de integración
 
-Agregar aquí documentos relacionados con: changelog, decisiones, bitácoras, primers y cierres.
+- `Registro_Decisiones/2026-10-05_Decisiones_Integracion_A_G_Framework_V5_v1_0.md`
+
+Regla: toda decisión material debe conservar procedencia, estado, autoridad humana y relación con la evolución del Framework.

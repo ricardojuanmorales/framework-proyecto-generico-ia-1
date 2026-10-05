@@ -55,6 +55,34 @@ export interface Transfer {
   state: "proposed" | "accepted" | "completed" | "reopened";
 }
 
+export interface KnowledgeInvocation {
+  id: string;
+  profiles: Profile[];
+  knowledgeIds: string[];
+  need: string;
+  purpose: string;
+  interpretation: string;
+  consequence: string;
+  createdAt: string;
+}
+
+export interface CaleidoscopeEvent {
+  id: string;
+  status: "candidate" | "recognized" | "validated" | "transferred";
+  situation: string;
+  lenses: Profile[];
+  knowledgeIds: string[];
+  contrast: string;
+  emergence: string;
+  mediation: {
+    human: string;
+    machine: string;
+    ai: string;
+  };
+  traceability: string;
+  createdAt: string;
+}
+
 export interface FrameworkProject {
   schemaVersion: typeof SCHEMA_VERSION;
   id: string;
@@ -68,6 +96,12 @@ export interface FrameworkProject {
   portfolio: PortfolioEntry[];
   decisions: HumanDecision[];
   transfers: Transfer[];
+  /**
+   * Additive V5 operational fields.
+   * Optional to preserve import compatibility with earlier 0.1.0 packages.
+   */
+  knowledgeInvocations?: KnowledgeInvocation[];
+  caleidoscopeEvents?: CaleidoscopeEvent[];
 }
 
 export interface ProjectPackage {

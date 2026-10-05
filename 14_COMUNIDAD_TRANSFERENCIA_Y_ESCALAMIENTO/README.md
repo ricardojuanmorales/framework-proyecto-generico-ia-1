@@ -1,9 +1,11 @@
 # 14_COMUNIDAD_TRANSFERENCIA_Y_ESCALAMIENTO
 
-**Estado:** cartapacio del Framework Genérico V4.1.1 Repositorio Modelo.
+**Estado:** activo · Framework Genérico V5.0.0.
 
-Este cartapacio forma parte de la estructura operativa del Framework. Si todavía no contiene documentos sustantivos, se conserva con `nada.md` para que GitHub mantenga la carpeta visible.
+Este cartapacio gobierna comunidad, transferencia, escalamiento, adopción y sostenibilidad comunitaria.
 
-## Uso
+## Referencia activa
 
-Agregar aquí documentos relacionados con: transferencia, comunidad, escalamiento y adopción.
+- `Comunidad/2026-10-05_Protocolo_Gobernanza_Comunidad_Conocimiento_V5_v1_0.md`
+
+La comunidad es una dimensión constitutiva del ecosistema. Puede aprender, contribuir y ayudar a evolucionar, sin adquirir autoridad canónica automática.

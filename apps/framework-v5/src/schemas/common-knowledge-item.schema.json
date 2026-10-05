@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://framework-v5.local/schemas/common-knowledge-item/0.1.0",
+  "title": "Framework V5 Common Knowledge Item",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id","type","title","owner","profiles","maturityStatus","verificationStatus","provenance","domains","keywords","annotations","relations","migrationIssues"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "type": { "enum": ["bibliographic_source","framework_canon","method","protocol","guide","criterion","template","taxonomy","gate","schema","example","case","dataset","artifact","community_contribution"] },
+    "title": { "type": "string", "minLength": 1, "maxLength": 1000 },
+    "citation": { "type": "string", "maxLength": 8000 },
+    "authorsText": { "type": "string", "maxLength": 4000 },
+    "yearText": { "type": "string", "maxLength": 40 },
+    "owner": { "enum": ["COMMON","PH","IT","AT"] },
+    "profiles": { "type": "array", "uniqueItems": true, "items": { "enum": ["PH","IT","AT"] } },
+    "maturityStatus": { "enum": ["proposed","reviewed","validated","reference","superseded"] },
+    "verificationStatus": { "enum": ["pending_primary_source","verified_primary_source","not_applicable","verification_failed"] },
+    "sourceRecordId": { "type": "string", "maxLength": 200 },
+    "canonicalSource": { "type": "string", "maxLength": 4000 },
+    "purpose": { "type": "string", "maxLength": 6000 },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceTitle","migrationDate","migrationMethod"],
+      "properties": {
+        "sourceTitle": { "type": "string", "minLength": 1, "maxLength": 1000 },
+        "sourceLocation": { "type": "string", "maxLength": 4000 },
+        "incorporatedBy": { "type": "string", "maxLength": 500 },
+        "migrationDate": { "type": "string", "format": "date" },
+        "migrationMethod": { "type": "string", "minLength": 1, "maxLength": 500 }
+      }
+    },
+    "domains": { "type": "array", "uniqueItems": true, "items": { "type": "string", "maxLength": 240 } },
+    "keywords": { "type": "array", "uniqueItems": true, "items": { "type": "string", "maxLength": 240 } },
+    "annotations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["text","kind"],
+        "properties": {
+          "kind": { "enum": ["critical","summary","profile_reading","community","migration_note"] },
+          "text": { "type": "string", "maxLength": 12000 },
+          "profile": { "enum": ["PH","IT","AT"] },
+          "author": { "type": "string", "maxLength": 500 },
+          "createdAt": { "type": "string", "format": "date-time" }
+        }
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type","targetId"],
+        "properties": {
+          "type": { "enum": ["supports","contrasts","extends","supersedes","derived_from","used_in","related_to"] },
+          "targetId": { "type": "string", "minLength": 1, "maxLength": 200 },
+          "note": { "type": "string", "maxLength": 2000 }
+        }
+      }
+    },
+    "migrationIssues": { "type": "array", "items": { "type": "string", "maxLength": 500 } }
+  }
+}

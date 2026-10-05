@@ -17,6 +17,8 @@
     "state": { "$ref": "https://framework-v5.local/schemas/framework-state/0.1.0" },
     "portfolio": { "type": "array", "items": { "$ref": "https://framework-v5.local/schemas/portfolio-entry/0.1.0" } },
     "decisions": { "type": "array", "items": { "$ref": "https://framework-v5.local/schemas/decision/0.1.0" } },
-    "transfers": { "type": "array", "items": { "$ref": "https://framework-v5.local/schemas/transfer/0.1.0" } }
+    "transfers": { "type": "array", "items": { "$ref": "https://framework-v5.local/schemas/transfer/0.1.0" } },
+    "knowledgeInvocations": { "type": "array", "items": { "$ref": "https://framework-v5.local/schemas/knowledge-invocation/0.1.0" } },
+    "caleidoscopeEvents": { "type": "array", "items": { "$ref": "https://framework-v5.local/schemas/caleidoscope-event/0.1.0" } }
   }
 }

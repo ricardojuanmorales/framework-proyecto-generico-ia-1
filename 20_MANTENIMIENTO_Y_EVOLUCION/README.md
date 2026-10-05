@@ -30,12 +30,19 @@ Debe incluir:
 
 ## Principio
 
-No reabrir la arquitectura base ni ampliar alcance por anticipación.
+No reabrir la arquitectura base ni ampliar alcance por anticipación **salvo deuda estructural material identificada y autorizada mediante gate humano**.
+
+La integración pedagógica, de conocimiento común, comunidad y verificación caleidoscópica aprobada el 2026-10-05 constituye una intervención autorizada de pago de deuda, no una ampliación especulativa de alcance.
 
 ```text
-evidencia
+deuda/evidencia
 → necesidad
+→ autorización humana
 → cambio proporcional
 → verificación
-→ decisión humana
+→ memoria
 ```
+
+Referencia activa:
+
+- `20_MANTENIMIENTO_Y_EVOLUCION/Deuda_Tecnica/2026-10-05_Plan_Pago_Deuda_Operatividad_Framework_V5_v1_0.md`

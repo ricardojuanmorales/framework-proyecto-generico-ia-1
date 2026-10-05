@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://framework-v5.local/schemas/caleidoscope-event/0.1.0",
+  "title": "Framework V5 Caleidoscope Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id","status","situation","lenses","knowledgeIds","contrast","emergence","mediation","traceability","createdAt"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "status": { "enum": ["candidate","recognized","validated","transferred"] },
+    "situation": { "type": "string", "minLength": 1, "maxLength": 6000 },
+    "lenses": { "type": "array", "minItems": 2, "uniqueItems": true, "items": { "enum": ["PH","IT","AT"] } },
+    "knowledgeIds": { "type": "array", "uniqueItems": true, "items": { "type": "string", "maxLength": 200 } },
+    "contrast": { "type": "string", "minLength": 1, "maxLength": 8000 },
+    "emergence": { "type": "string", "minLength": 1, "maxLength": 8000 },
+    "mediation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["human","machine","ai"],
+      "properties": {
+        "human": { "type": "string", "maxLength": 4000 },
+        "machine": { "type": "string", "maxLength": 4000 },
+        "ai": { "type": "string", "maxLength": 4000 }
+      }
+    },
+    "traceability": { "type": "string", "minLength": 1, "maxLength": 8000 },
+    "createdAt": { "type": "string", "format": "date-time" }
+  }
+}

@@ -5,6 +5,8 @@ import {
   exportProject,
   recordDecision,
   recordTransfer,
+  recordKnowledgeInvocation,
+  recordCaleidoscopeEvent,
   reopenProject,
   stageImport,
   updateMaturity,
@@ -156,6 +158,50 @@ describe("estado vivo del proyecto", () => {
     expect(invoked.portfolio.at(-1)?.type).toBe("invocation");
     expect(invoked.portfolio.at(-1)?.title).toContain("SDD");
   });
+  it("registra contrato técnico de invocación con perfiles, propósito e interpretación", () => {
+    const project = createProject({
+      name: "Proyecto",
+      problem: "Problema",
+      context: "",
+      purpose: "Propósito",
+      activeProfiles: ["PH","IT"],
+    });
+    const next = recordKnowledgeInvocation(project, {
+      profiles: ["IT","PH"],
+      knowledgeIds: ["biblio-ba-034"],
+      need: "Contrastar alfabetización informacional",
+      purpose: "Usar una fuente común desde lentes distintas.",
+      interpretation: "IT atiende autoridad y evidencia; PH atiende diseño de mediación.",
+      consequence: "La fuente queda disponible para decisión posterior.",
+    }, "2026-10-05T14:00:00.000Z");
+    expect(next.knowledgeInvocations).toHaveLength(1);
+    expect(next.knowledgeInvocations?.[0]?.profiles).toEqual(["IT","PH"]);
+    expect(next.knowledgeInvocations?.[0]?.knowledgeIds).toContain("biblio-ba-034");
+  });
+
+  it("registra candidato caleidoscópico sin declararlo automáticamente validado", () => {
+    const project = createProject({
+      name: "Proyecto",
+      problem: "Problema",
+      context: "",
+      purpose: "Propósito",
+      activeProfiles: ["IT","AT"],
+    });
+    const next = recordCaleidoscopeEvent(project, {
+      status: "candidate",
+      situation: "Problema situado",
+      lenses: ["IT","AT"],
+      knowledgeIds: [],
+      contrast: "IT contrasta evidencia; AT reconfigura la representación.",
+      emergence: "Aparece una pregunta nueva no contenida en una sola lente.",
+      mediation: { human: "decide", machine: "registra", ai: "contrasta" },
+      traceability: "PORTAFOLIO + decisiones + evidencia",
+    }, "2026-10-05T14:05:00.000Z");
+    expect(next.caleidoscopeEvents).toHaveLength(1);
+    expect(next.caleidoscopeEvents?.[0]?.status).toBe("candidate");
+    expect(next.portfolio.at(-1)?.title).toContain("Caleidoscopio");
+  });
+
   it("retira conocimiento activo sin borrar la historia de invocación", () => {
     let project = createProject({
       name: "Proyecto",
