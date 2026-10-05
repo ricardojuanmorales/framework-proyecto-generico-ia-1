@@ -253,16 +253,11 @@ export const recordKnowledgeInvocation = (
     id: globalThis.crypto?.randomUUID?.() ?? `knowledge-invocation-${Date.now()}`,
     createdAt: now,
   };
-  const withInvocation: FrameworkProject = {
+  return validateMutation({
     ...project,
     updatedAt: now,
     knowledgeInvocations: [...(project.knowledgeInvocations ?? []), record],
-  };
-  return addPortfolioEntry(withInvocation, {
-    type: "invocation",
-    title: "Invocación trazable de conocimiento",
-    summary: `${record.need} · Perfiles: ${record.profiles.join(", ")} · Conocimiento: ${record.knowledgeIds.join(", ")} · Propósito: ${record.purpose}`,
-  }, now);
+  });
 };
 
 export const recordCaleidoscopeEvent = (
