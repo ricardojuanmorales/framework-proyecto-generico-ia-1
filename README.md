@@ -1,18 +1,17 @@
-# 🌐 Framework Genérico V5.0.0
-## Ecosistema operativo evolutivo humano-máquina-IA
+# 🌐 Framework Genérico V5.1.0
+## Ecosistema sociotécnico-transdisciplinario evolutivo humano · máquina · IA
 
-> **Un espacio de trabajo para abordar problemas complejos con juicio humano, inteligencia artificial, tecnología, investigación, creación, ética, trazabilidad y continuidad.**
+> Un espacio operativo para abordar problemas complejos con juicio humano, investigación, creación, tecnología, pedagogía, comunidad, memoria, IA y transferencia reversible.
 
-## 🚀 v5.0.0 ya está disponible
+## 🚀 Accesos
 
-- 🌐 **Aplicación web V5:** https://ricardojuanmorales.github.io/framework-proyecto-generico-ia-1/v5/
-- 📦 **Release estable:** https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1/releases/tag/v5.0.0
-- 🏛️ **Framework V4 histórico:** https://ricardojuanmorales.github.io/framework-proyecto-generico-ia-1/v4/
-- 📚 **Repositorio canónico:** https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1
+- 🌐 **Aplicación V5:** https://ricardojuanmorales.github.io/framework-proyecto-generico-ia-1/v5/
+- 📦 **Releases estables:** https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1/releases
+- 🏛️ **V4 histórica:** https://ricardojuanmorales.github.io/framework-proyecto-generico-ia-1/v4/
+- 📚 **Repositorio maestro:** https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1
 
 ```text
-framework_version: 5.0.0
-release_status: STABLE
+framework: 5.1.0
 architecture: LOCAL_FIRST
 backend_required: false
 cloud_required: false
@@ -21,14 +20,7 @@ telemetry_default: false
 external_AI_required: false
 ```
 
-
----
-
-## 🧭 En una mirada
-
-El **Framework Genérico** ayuda a pasar de una necesidad o problema real a una práctica documentada, evaluable, transferible y capaz de evolucionar.
-
-Su principio rector es simple:
+## 🧭 Qué es
 
 ```text
 PERFIL = lente
@@ -36,461 +28,251 @@ FRAMEWORK = espacio operativo
 PROBLEMA = centro
 ```
 
-El Framework no obliga a usar todas sus capacidades. Se activa de forma proporcional al problema, al riesgo y al nivel de madurez necesario.
-
-Está pensado para personas y equipos que trabajan entre:
+El Framework no es la aplicación ni el repositorio. Es el sistema completo que articula:
 
 ```text
-tecnología
-investigación
-creación
-educación
-comunidad
-instituciones
-inteligencia artificial
+problema real
++ personas/comunidad
++ PH · IT · AT
++ conocimiento común
++ humano · máquina · IA
++ Marco Pedagógico
++ evidencia y memoria
++ gobernanza
++ transferencia
 ```
 
-GitHub funciona como fuente versionada del sistema y el repositorio puede abrirse también como bóveda de Obsidian para navegación humana y continuidad entre sesiones.
+El **Caleidoscopio** puede emerger de relaciones situadas, significativas y trazables entre estos elementos. No es un cuarto perfil ni una suma automática.
 
----
+## 🧩 Cómo se relacionan las piezas
 
-## 🏛️ Estado actual
-
-| Área | Estado |
+| Pieza | Función |
 |---|---|
-| 🧱 Framework maestro | **V5.0.0 estable** |
-| 🧰 Repositorio operativo | **V5.0.0 estable · H3-C cerrado** |
-| 🧑‍💻 Programador Humanista | **Fase 1 cerrada + robustecida por integración real** |
-| 🧪 Investigador Transdisciplinario | **Fase 1 cerrada** |
-| 🎨 Artista Transdisciplinario | **Fase 1 cerrada** |
-| 🔮 Caleidoscopio | **Propiedad emergente conceptualmente estable** |
-| 🧬 Gramática común PH-IT-AT | **Aprobada** |
-| 🧪 Próximo hito | **Primera revisión evolutiva post-V5.0.0** |
-| ✅ Release | **H3-C APROBADO · V5.0.0 estable** |
-
-El proyecto ha completado Fase 1, Fase 2 y Fase 3, incluyendo auditoría, release candidate y gate final H3-C. Opera ahora como versión estable:
+| **Framework** | sistema completo, principios, arquitectura y gobernanza |
+| **Repositorio maestro** | fuente canónica y memoria evolutiva del Framework |
+| **00–21 + 99** | gramática común para organizar proyectos y facilitar transferencia |
+| **Paquete autosostenido** | incorpora el Framework de forma portable a un proyecto |
+| **Repositorio del proyecto** | fuente versionada de verdad de esa implementación |
+| **App** | superficie operativa de referencia para START, INTEGRATE y AUDIT |
+| **Release** | fotografía reproducible de una versión estable |
+| **Transferencia reversible** | devuelve aprendizaje situado al Framework bajo contraste y gate humano |
 
 ```text
-canon
-→ app operativa
-→ auditoría H3-B
-→ release candidate
-→ estabilización
-→ H3-C
-→ v5.0.0 estable
+Framework maestro
+→ paquete autosostenido
+→ proyecto real
+↔ app
+→ práctica + evidencia
+→ aprendizaje candidato
+→ transferencia simétrica reversible
+→ posible evolución del Framework
 ```
 
----
+## 🗂️ 00–21 + 99
 
-## ✨ ¿Qué hace diferente a este Framework?
+La macroestructura es una **gramática común**, no una obligación de crear carpetas vacías.
 
-No es solamente una estructura de carpetas.  
-No es solamente una biblioteca de prompts.  
-No es solamente una metodología única.  
-No es solamente un sistema de IA.
+> **La estructura lógica es estable; su materialización en cada proyecto es proporcional a necesidad real.**
 
-Es una **arquitectura operativa viva** para trabajar con problemas complejos sin perder:
+Un proyecto activa solo las áreas que necesita y mantiene sus especializaciones locales ancladas a funciones comunes. Esto reduce entropía documental y mantiene posible la transferencia entre proyectos.
+
+## 🧰 Paquete autosostenido
+
+El núcleo Integral Autosostenido V5.1.0 vive en:
+
+`00_CONTROL_MAESTRO/Referecias_Base/2026-10-06_Framework_Generico_V5_1_0_Integral_Autosostenido_v1_0.md`
+
+Su función es permitir:
 
 ```text
-propósito
-responsabilidad
-evidencia
-trazabilidad
-seguridad
-memoria
-capacidad de reapertura
+entender
+→ activar
+→ usar
+→ documentar
+→ continuar
+→ verificar
+→ transferir
 ```
 
-Las preguntas importantes siguen siendo humanas:
+sin dependencia permanente de la app, del repositorio maestro o del autor original.
+
+## 🖥️ Aplicación
+
+La app es la **superficie operativa de referencia** para todos los usuarios.
+
+### START
+Crear un proyecto y su estado Framework desde cero.
+
+### INTEGRATE
+Incorporar Framework a un proyecto existente sin reorganizarlo por fuerza.
+
+### AUDIT
+Contrastar un proyecto maduro mediante estado, evidencia e historia relevante.
+
+La app facilita:
+
+- activación;
+- estado vivo;
+- PORTAFOLIO;
+- decisiones humanas;
+- invocación de conocimiento;
+- transferencias;
+- candidatos caleidoscópicos;
+- exportación/importación portable.
+
+La app **no sustituye** Git, editores, LMS, herramientas de investigación o creación.
+
+> El proyecto debe poder salir de la aplicación sin salir del Framework.
+
+## 🧩 PH · IT · AT
+
+- **PH · Programador Humanista:** construcción tecnológica humanista situada.
+- **IT · Investigador Transdisciplinario:** pregunta, método, evidencia, interpretación y responsabilidad epistemológica.
+- **AT · Artista Transdisciplinario:** percepción situada, imaginación crítica, configuración sensible-simbólica-material, interpretación y transformación responsable.
+
+Los tres acceden a una **Base de Conocimiento común** desde preguntas y responsabilidades diferentes.
+
+## 📚 Base de Conocimiento común
 
 ```text
-¿Cuál es el problema real?
-¿Quiénes se ven afectados?
-¿Qué lente hace falta?
-¿Qué evidencia necesitamos?
-¿Qué riesgos no son compensables?
-¿Qué debe mantenerse revisable?
-¿Qué aprendimos?
+fuente/evidencia
+!= interpretación
+!= decisión
+!= canon
 ```
 
----
+- **Base de Conocimiento común:** patrimonio epistemológico compartido.
+- **Base Federada:** mecanismo de acceso y recuperación.
+- **Conocimientos activos:** conocimiento invocado en el trabajo presente.
+- **PORTAFOLIO:** historia de uso, decisiones, cambios y reaperturas.
 
-## 🧩 Tres lentes transdisciplinarias
+## 🎓 Marco Pedagógico
 
-Los perfiles no son cargos laborales. Son **lentes operativas** que se activan según el problema.
+El Marco Pedagógico V5 v1.1 es una **capa transversal de gobernanza pedagógica**.
 
-### 🧑‍💻 Programador Humanista
+Seis principios:
+
+1. situación antes que abstracción;
+2. participación antes que consumo;
+3. mediación proporcional para capacidad colectiva creciente, con autonomía y responsabilidad humanas preservadas;
+4. reflexión trazable sobre la acción;
+5. memoria compartida para aprendizaje colectivo;
+6. transferencia y evolución como prueba de aprendizaje.
 
 ```text
-PH = construcción tecnológica humanista situada
+SITUAR
+→ PARTICIPAR
+→ MEDIAR
+→ PRODUCIR
+→ REFLEXIONAR
+→ RECORDAR
+→ TRANSFERIR
+→ EVOLUCIONAR
+↺
 ```
-
-Se activa cuando el problema requiere diseñar, construir, integrar, verificar, asegurar, documentar o mantener tecnología con responsabilidad humana.
-
-Su especialidad incluye la construcción segura y, cuando corresponde:
-
-```text
-Security by Design
-SSDLC / SSDF
-DevSecOps
-OWASP
-codificación segura
-seguridad H-M-IA
-```
-
-La educación conserva su papel como dominio histórico y piloto prioritario, pero no limita la identidad del perfil.
-
-### 🧪 Investigador Transdisciplinario
-
-Se activa cuando el problema requiere producir o evaluar conocimiento con responsabilidad epistemológica.
-
-Trabaja con:
-
-```text
-preguntas
-método
-evidencia
-análisis
-interpretación
-validación
-incertidumbre
-trazabilidad
-```
-
-No se subordina a la tecnología ni convierte toda práctica en investigación.
-
-### 🎨 Artista Transdisciplinario
-
-Se activa cuando el problema requiere percepción situada, imaginación crítica, configuración sensible-simbólica-material, interpretación o transformación artística.
-
-Su núcleo puede resumirse así:
-
-```text
-percepción situada
-+ imaginación crítica
-+ configuración sensible-simbólica-material
-+ interpretación
-+ transformación responsable
-```
-
-No se reduce a estética, comunicación o ilustración de lo que otros ya resolvieron.
-
----
-
-## 🔮 Caleidoscopio
-
-El **Caleidoscopio** no es un cuarto perfil.
-
-Es una **propiedad emergente** que puede aparecer cuando dos o más lentes se recombinan de manera significativa y trazable alrededor de un problema.
-
-```text
-PH + IT + AT
-!= Caleidoscopio automático
-```
-
-Puede existir trabajo con:
-
-```text
-PH
-IT
-AT
-PH + IT
-PH + AT
-IT + AT
-PH + IT + AT
-```
-
-La configuración depende del problema.
-
-La pregunta clave no es:
-
-> ¿Cómo activamos todos los perfiles?
-
-Sino:
-
-> **¿Qué necesita realmente este problema y qué emerge de la interacción?**
-
----
 
 ## 🧠 Humano · máquina · IA
 
-El Framework busca una integración explícita entre tres formas de participación:
-
 ```text
-Humano
-→ propósito, contexto, juicio, aceptación de riesgo y decisión final
-
-Máquina
-→ ejecución, persistencia, código, pruebas, logs y evidencia material
-
-IA
-→ análisis, síntesis, contraste, exploración y asistencia
+Humano    → propósito, interpretación, juicio y responsabilidad
+Máquina   → ejecución, persistencia, pruebas y evidencia
+IA        → análisis, síntesis, contraste y alternativas
+Framework → estructura, memoria y gobernanza
 ```
 
-Regla de trabajo:
+La asignación concreta puede variar por contexto. La autoridad material y ética permanece atribuible a humanos.
 
-```text
-IA propone y contrasta
-máquina ejecuta y evidencia
-humano valida y gobierna
-```
+## 📏 N1–N4
 
----
-
-## 📏 Madurez N1-N4
-
-No todo proyecto necesita la misma profundidad.
-
-| Nivel | Lectura práctica |
+| Nivel | Lectura |
 |---|---|
-| 🟢 **N1** | Exploración guiada |
-| 🔵 **N2** | Producción asistida |
-| 🟣 **N3** | Integración avanzada |
-| 🏛️ **N4** | Ecosistema gobernado |
+| N1 | exploración guiada |
+| N2 | producción asistida |
+| N3 | integración avanzada |
+| N4 | ecosistema gobernado |
 
-La madurez no depende del número de herramientas ni de un promedio universal.
+No son puntuaciones ni obligación de usar más herramientas.
 
-Se observa mediante:
+## 🔮 Caleidoscopio
+
+Una emergencia candidata exige, como mínimo:
 
 ```text
-evidencia
-gates
-proporcionalidad
-no compensabilidad
-juicio humano
+situación real
++ pluralidad de lentes
++ contraste real
++ emergencia nueva
++ trazabilidad
 ```
 
----
-
-## 🚦 Gates y reapertura
-
-Los Gates ayudan a decidir si un trabajo puede avanzar responsablemente.
-
-Preguntan, por ejemplo:
-
 ```text
-¿el problema está suficientemente situado?
-¿la lente elegida es pertinente?
-¿existe evidencia suficiente?
-¿los riesgos críticos están gobernados?
-¿otra persona puede continuar el trabajo?
+PH + IT + AT != Caleidoscopio automático
 ```
 
-Una decisión puede:
+## 🔁 Transferencia simétrica reversible
+
+Los proyectos no devuelven su contenido completo al Framework.
+
+Pueden retornar:
+
+- patrones;
+- métodos;
+- criterios;
+- hallazgos;
+- problemas recurrentes;
+- mejoras de contracts/schemas;
+- casos y contraejemplos;
+- aprendizajes pedagógicos.
 
 ```text
-avanzar
-avanzar con deuda
-bloquearse
-reabrirse
+experiencia situada
+→ aprendizaje candidato
+→ contraste
+→ gate humano
+→ posible integración
 ```
 
-La reapertura no es un fallo. Es parte natural del trabajo con problemas complejos.
+## 🚀 Cómo empezar
 
----
-
-## 🗂️ Cómo está organizado el repositorio
-
-El repositorio se distribuye en grandes áreas funcionales:
+No necesitas leer todo el repositorio.
 
 ```text
-00_CONTROL_MAESTRO/                 control, reglas, índices y versiones
-01_FUNDAMENTO_FILOSOFICO/           principios y fundamentos
-02_ARQUITECTURA_CONCEPTUAL/         arquitectura del sistema
-03_METODOLOGIA_Y_FLUJO_DE_TRABAJO/  métodos y secuencias
-04_GOBERNANZA_ETICA_Y_RIESGOS/      decisiones, ética y riesgos
-05_COMPETENCIAS_Y_PERFILES/         PH, IT, AT y sus arquitecturas
-09_IA_AGENTES_Y_COPILOTOS/          IA y capacidades relacionadas
-10_REPOSITORIOS_Y_FLUJO_TECNICO/    código, Git y flujo técnico
-13_INVESTIGACION_Y_EVIDENCIA/       investigación y evidencia
-15_EVALUACION_CALIDAD_Y_AUDITORIA/  evaluación y gates
-16_SEGURIDAD_PRIVACIDAD_Y_DATOS/    seguridad, privacidad y datos
-18_DOCUMENTACION_ACTIVA/            decisiones, changelog y continuidad
-19_IMPLEMENTACION_Y_DESPLIEGUE/     implementación
-20_MANTENIMIENTO_Y_EVOLUCION/       mantenimiento y evolución
-21_WIKI_DOCUMENTACION_HUMANA/       documentación para personas
-99_ARCHIVO_HISTORICO/               memoria histórica
-```
-
-El árbol completo conserva más áreas especializadas. Esta vista muestra solo las rutas más útiles para orientarse al comenzar.
-
----
-
-## 🧬 Gramática común de los perfiles
-
-PH, IT y AT comparten seis funciones cognitivas:
-
-```text
-IDENTIDAD
-CAPACIDAD
-ACTUACIÓN
-CONOCIMIENTO
-RELACIÓN
-GOBERNANZA
-```
-
-Esto no significa que deban tener el mismo contenido, número de competencias o número de documentos.
-
-```text
-simetría
-= funciones equivalentes
-+ trazabilidad equivalente
-+ gobernanza comparable
-```
-
-La diferencia entre perfiles se preserva deliberadamente.
-
----
-
-## 🔗 Documentación y memoria
-
-El Framework usa una regla sencilla:
-
-```text
-una fuente canónica
-+ múltiples referencias lógicas
-```
-
-Esto permite mantener:
-
-```text
-documentos activos
-antecedentes históricos
-deuda documental
-enlaces espejo
-changelog
-cierres de sesión
-prompts de continuidad
-```
-
-sin borrar la historia para aparentar limpieza.
-
----
-
-## 🧠 GitHub + Obsidian
-
-Modelo recomendado:
-
-```text
-GitHub = fuente oficial versionada
-Obsidian = navegación humana y segundo cerebro
-ChatGPT = apoyo de sesión, análisis y síntesis
-Issues = seguimiento ligero cuando haga falta
-```
-
-Para navegar el segundo cerebro, comenzar en:
-
-```text
-18_DOCUMENTACION_ACTIVA/07_Segundo_Cerebro/
-```
-
----
-
-## 🚀 Cómo empezar un proyecto
-
-No hace falta dominar todo el Framework.
-
-Comienza con cinco preguntas:
-
-```text
-1. ¿Cuál es el problema o necesidad real?
-2. ¿Qué resultado esperamos?
-3. ¿Qué lente o lentes necesitamos?
+1. ¿Cuál es el problema real?
+2. ¿Qué propósito tenemos?
+3. ¿Qué lente o lentes hacen falta?
 4. ¿Qué evidencia demostraría avance?
-5. ¿Qué riesgo o decisión requiere atención humana?
+5. ¿Qué decisión requiere autoridad humana?
 ```
 
-Después activa solo lo necesario.
-
-Ruta mínima:
+Después elige:
 
 ```text
-problema
-→ propósito
-→ lente
-→ nivel N1-N4
-→ práctica
-→ evidencia
-→ gate
-→ documentación
-→ continuidad
+START | INTEGRATE | AUDIT
 ```
 
----
+y activa solo lo necesario.
 
-## 🧪 Momento actual del proyecto
+## 📖 Documentación humana
 
-Framework V5 completó la construcción de Fase 3 y la auditoría interna H3-B.
+- Guía rápida V5: `21_WIKI_DOCUMENTACION_HUMANA/Guias_Framework_V5/2026-09-23_Guia_Rapida_Usuario_Framework_V5_dev_v0_1.md`
+- Onboarding usuario/colaborador: `21_WIKI_DOCUMENTACION_HUMANA/Guias_Framework_Generico_V4_1_0/2026-09-22_Onboarding_Dual_Usuario_Colaborador_Framework_V5_v0_1.md`
+- Marco Pedagógico: `12_DISENO_INSTRUCCIONAL_UNIVERSAL/2026-10-05_Marco_Pedagogico_Canonico_Framework_V5_v1_1.md`
+- Arquitectura de distribución: `02_ARQUITECTURA_CONCEPTUAL/Arquitecturas_Referencia/2026-10-06_Arquitectura_Distribucion_Framework_Repositorio_Paquete_App_Transferencia_V5_1_0.md`
+
+## 🏛️ Estado
 
 ```text
-Fase 1 → perfiles y canon
-Fase 2 → operacionalización V5
-Fase 3 → app + integración + verificación
-H3-B → PASS WITH RESERVATIONS
-H3-C → APROBADO
-Release → v5.0.0
+Framework: 5.1.0
+App: 5.1.0
+Schema de proyecto: 0.1.0
+Paquete portable de proyecto: 0.1.0
+Arquitectura: local-first
+V4: preservada
+V5.0.0: preservada como release histórica
 ```
 
-La aplicación V5 es local-first, portable y trazable. Integra START, INTEGRATE, AUDIT, PORTAFOLIO, Base Federada, Conocimientos activos, exportación/importación segura y verificación reproducible.
-
-El trabajo entra ahora en modo de evolución estable: observar uso real, corregir regresiones materiales y realizar la validación con lector de pantalla en la primera revisión post-V5.0.0.
+La deuda abierta se limita a validaciones que requieren evidencia o herramientas externas: lector de pantalla, verificación primaria completa del corpus bibliográfico, validación pedagógica empírica, comunidad de práctica efectiva, transferencia de aprendizaje y emergencia caleidoscópica real.
 
 ---
 
-## 🔒 Bloqueos actuales
-
-No existen BLOCK abiertos para V5.0.0 estable.
-
-Reserva vigente:
-
-```text
-external accessibility review pending
-→ validar con lector de pantalla en la primera revisión post-v5.0.0
-```
-
-Durante la primera etapa estable se preserva el alcance funcional salvo necesidad material demostrada.
-
----
-
-## 🧭 ¿Dónde profundizar?
-
-Si quieres entrar más a fondo, puedes seguir una de estas puertas:
-
-| Interés | Ruta sugerida |
-|---|---|
-| Entender el Framework | `00_CONTROL_MAESTRO/` + `01_FUNDAMENTO_FILOSOFICO/` |
-| Ver la arquitectura PH-IT-AT | `05_COMPETENCIAS_Y_PERFILES/` |
-| Trabajar metodología | `03_METODOLOGIA_Y_FLUJO_DE_TRABAJO/` |
-| Revisar investigación y evidencia | `13_INVESTIGACION_Y_EVIDENCIA/` |
-| Revisar seguridad | `16_SEGURIDAD_PRIVACIDAD_Y_DATOS/` + perfil PH |
-| Revisar evaluación | `15_EVALUACION_CALIDAD_Y_AUDITORIA/` |
-| Entender el estado humano del proyecto | `21_WIKI_DOCUMENTACION_HUMANA/` |
-| Seguir decisiones y cierres | `18_DOCUMENTACION_ACTIVA/` |
-
----
-
-## 🌱 Idea rectora
-
-> **El Framework no busca activar todo. Busca activar lo necesario, con suficiente profundidad, para que una persona o equipo pueda comprender, actuar, evaluar, aprender y continuar.**
-
----
-
-## 📌 Estado resumido
-
-```text
-Framework V5: v5.0.0 estable
-Repositorio: integrado en main
-App: operativa y publicada bajo /v5/
-V4: preservado en raíz y /v4/
-
-PH / IT / AT: integrados
-Caleidoscopio: propiedad emergente
-H3-B: PASS WITH RESERVATIONS
-H3-C: APROBADO
-Próximo hito: primera revisión post-v5.0.0
-```
-
----
-
-**Este README es una puerta de entrada.**  
-El Framework completo está en el repositorio, pero no necesitas leerlo todo para comenzar.
+**Este README es la puerta humana principal.** El repositorio conserva la profundidad; la app facilita la operación; el paquete autosostenido permite incorporar y continuar; la transferencia reversible mantiene vivo el aprendizaje del ecosistema.
