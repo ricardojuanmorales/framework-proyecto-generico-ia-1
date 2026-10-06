@@ -1,48 +1,46 @@
 # 20_MANTENIMIENTO_Y_EVOLUCION
 
-**Estado:** activo · Framework Genérico V5.0.0 estable.
+**Estado:** activo · Framework Genérico V5.1.0.
 
-Este cartapacio gobierna mantenimiento, revisiones evolutivas, deuda post-release y versiones futuras.
+Este cartapacio gobierna mantenimiento, deuda, compatibilidad, revisiones evolutivas y futuras versiones.
 
 ## Régimen actual
 
 ```text
-V5.0.0 estable
+V5.1.0
 → uso real
 → observación
+→ evidencia
 → hallazgos materiales
-→ correcciones proporcionales
-→ revisión evolutiva
-→ V5.x cuando la evidencia lo justifique
+→ cambios proporcionales
+→ nueva verificación
 ```
 
-## Prioridad inmediata
+V5.1.0 cierra la sincronización entre arquitectura, Marco Pedagógico, Base de Conocimiento, aplicación, documentación humana, paquete autosostenido y transferencia reversible.
 
-Primera revisión evolutiva post-V5.0.0.
+## Deuda abierta legítima
 
-Debe incluir:
-
-- validación con lector de pantalla;
-- evidencia de uso real;
-- regresiones o tensiones materiales;
-- deuda técnica/pedagógica/documental relevante;
-- decisión humana sobre el siguiente incremento de versión.
+- lector de pantalla;
+- verificación primaria completa del corpus;
+- validación pedagógica empírica;
+- comunidad de práctica efectiva;
+- transferencia de aprendizaje;
+- emergencias caleidoscópicas reales;
+- métricas futuras solo si la evidencia las justifica.
 
 ## Principio
 
-No reabrir la arquitectura base ni ampliar alcance por anticipación **salvo deuda estructural material identificada y autorizada mediante gate humano**.
-
-La integración pedagógica, de conocimiento común, comunidad y verificación caleidoscópica aprobada el 2026-10-05 constituye una intervención autorizada de pago de deuda, no una ampliación especulativa de alcance.
-
 ```text
-deuda/evidencia
-→ necesidad
-→ autorización humana
-→ cambio proporcional
-→ verificación
-→ memoria
+no ampliar por anticipación
+→ usar
+→ observar
+→ registrar
+→ contrastar
+→ gate humano
+→ evolucionar
 ```
 
-Referencia activa:
+Referencias activas:
 
-- `20_MANTENIMIENTO_Y_EVOLUCION/Deuda_Tecnica/2026-10-05_Plan_Pago_Deuda_Operatividad_Framework_V5_v1_0.md`
+- `Deuda_Tecnica/2026-10-05_Estado_Pago_Deuda_Pre_Uso_Real_V5_v1_0.md`
+- `Deuda_Tecnica/2026-10-05_Plan_Pago_Deuda_Operatividad_Framework_V5_v1_0.md`

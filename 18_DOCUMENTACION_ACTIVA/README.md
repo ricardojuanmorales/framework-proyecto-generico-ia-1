@@ -1,6 +1,6 @@
 # 18_DOCUMENTACION_ACTIVA
 
-**Estado:** activo · Framework Genérico V5.0.0.
+**Estado:** activo · Framework Genérico V5.1.0.
 
 Este cartapacio conserva changelog, decisiones, bitácoras, primers y cierres operativos.
 

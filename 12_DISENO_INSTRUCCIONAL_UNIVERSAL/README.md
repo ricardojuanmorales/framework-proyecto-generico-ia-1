@@ -1,6 +1,6 @@
 # 12_DISENO_INSTRUCCIONAL_UNIVERSAL
 
-**Estado:** activo · Framework Genérico V5.0.0.
+**Estado:** activo · Framework Genérico V5.1.0.
 
 Este cartapacio conserva diseño instruccional, accesibilidad, DUA y gobernanza pedagógica.
 
