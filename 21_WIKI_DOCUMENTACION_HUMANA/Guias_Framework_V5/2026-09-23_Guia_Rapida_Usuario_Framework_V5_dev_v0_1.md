@@ -1,68 +1,125 @@
-# Guía rápida de usuario · Framework V5 dev
+# Guía rápida de usuario · Framework V5.1
 
-**Estado:** Fase 3 · producto en construcción
+**Estado:** ACTIVA · Framework V5.1.0
 
-## Qué puedes hacer hoy
+## En una frase
 
-La aplicación V5 permite:
+La aplicación es la superficie operativa de referencia para usar el Framework, pero tu proyecto puede continuar fuera de ella.
 
-```text
-APRENDER
-→ ACTIVAR
-→ REGISTRAR
-→ INVOCAR
-→ EXPORTAR
-→ IMPORTAR
-```
-
-## Modos
+## Elige una puerta
 
 ### START
 Proyecto nuevo.
 
 ### INTEGRATE
-Añade una capa Framework a un proyecto existente sin reorganizarlo por fuerza.
+Proyecto existente al que quieres incorporar Framework sin reorganizarlo por fuerza.
 
 ### AUDIT
-Contrasta un proyecto maduro y preserva su procedencia.
+Proyecto existente que quieres contrastar mediante estado, evidencia e historia relevante.
 
-## Estado vivo
+## Flujo mínimo
 
-Puedes registrar:
+```text
+problema
+→ propósito
+→ perfiles
+→ nivel
+→ evidencia
+→ decisión humana
+→ memoria
+→ transferencia
+```
 
-- evidencia;
-- decisiones humanas;
-- transferencias;
-- N1–N4;
-- reaperturas;
-- invocaciones de conocimiento.
+## Qué hace la app
 
-## Base Federada
+- crea/restaura estado Framework;
+- mantiene PORTAFOLIO;
+- registra decisiones;
+- invoca Base de Conocimiento común;
+- mantiene Conocimientos activos;
+- registra transferencias;
+- permite registrar candidatos caleidoscópicos;
+- exporta/importa ZIP y JSON portables.
 
-Describe una necesidad en lenguaje natural.
+## Qué no hace
 
-La aplicación devuelve pocos resultados con:
+No reemplaza:
 
-- propósito;
-- fuente canónica;
-- evidencia esperada.
+- el repositorio del proyecto;
+- Git;
+- editores;
+- LMS;
+- herramientas científicas;
+- herramientas artísticas.
 
-La recomendación no es obligación.
+## Dónde vive la verdad
+
+```text
+Repositorio maestro   = verdad versionada del Framework
+Repositorio proyecto  = verdad versionada de tu implementación
+App                   = superficie operativa
+Paquete portable      = estado transportable
+```
+
+## 00–21 + 99
+
+Es la gramática común de organización. No tienes que crear todos los cartapacios.
+
+Activa solo los espacios que una función real requiera.
+
+## Marco Pedagógico
+
+La app y el trabajo deben favorecer:
+
+1. situación antes que abstracción;
+2. participación antes que consumo;
+3. mediación proporcional;
+4. reflexión trazable;
+5. memoria compartida;
+6. transferencia y evolución.
+
+## Base de Conocimiento
+
+Describe qué necesitas comprender. La app recupera entradas pertinentes.
+
+```text
+fuente
+→ interpretación situada
+→ posible decisión
+```
+
+La recomendación nunca sustituye juicio humano.
 
 ## Portabilidad
 
-La aplicación exporta ahora:
+```text
+App
+→ Exportar ZIP/JSON
+→ continuar fuera
+→ reimportar si hace falta
+```
 
-1. **Paquete ZIP portable** con README, manifest, estado, portafolio, decisiones, transferencias y schemas;
-2. **JSON técnico** como formato de compatibilidad y diagnóstico.
+Principio:
 
-La importación acepta ZIP o JSON y siempre pasa por validación y confirmación humana antes de persistir.
+> salir de la aplicación sin salir del Framework.
+
+## Transferencia reversible
+
+Si tu proyecto produce aprendizaje transportable:
+
+```text
+aprendizaje candidato
+→ procedencia/evidencia
+→ contraste
+→ revisión humana
+→ posible retorno al Framework
+```
 
 ## Privacidad
 
-El MVP es local-first:
+V5.1 continúa local-first:
 
-- sin cuenta;
+- sin cuenta obligatoria;
 - sin backend obligatorio;
 - sin IA externa obligatoria;
 - sin telemetría por defecto.
