@@ -41,7 +41,7 @@ export const buildPortableZip = (project: FrameworkProject): Uint8Array => {
 interface PortableManifest {
   project_id: string;
   project_name: string;
-  framework_version: "5.0.0";
+  framework_version: "5.0.0" | "5.1.0";
   package_version: "0.1.0";
   mode: FrameworkProject["mode"];
   created_at: string;
