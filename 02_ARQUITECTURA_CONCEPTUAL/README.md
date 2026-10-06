@@ -1,6 +1,6 @@
 # 02_ARQUITECTURA_CONCEPTUAL
 
-**Estado:** activo · Framework Genérico V5.0.0.
+**Estado:** activo · Framework Genérico V5.1.0.
 
 Este cartapacio contiene arquitectura conceptual, perfiles transversales, mapas y Caleidoscopio.
 
