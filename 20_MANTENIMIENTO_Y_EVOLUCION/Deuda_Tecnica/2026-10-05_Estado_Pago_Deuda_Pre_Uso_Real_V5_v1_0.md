@@ -1,52 +1,55 @@
-# Estado de pago de deuda pre-uso real · 2026-10-05
+# Estado de pago de deuda pre-uso real · actualizado 2026-10-06
 
-**Estado:** cierre técnico candidato  
-**Objetivo:** distinguir deuda pagada de deuda legítimamente pendiente.
+**Estado:** CERRADO para deuda pagable pre-uso real.
 
-## Deuda pagada en esta integración
+## P0–P8
 
 | Prioridad | Deuda | Estado |
 |---|---|---|
-| P0 | Canon A-G, Marco Pedagógico y registro de decisiones | PAGADA |
-| P1 | Schema canónico de Base de Conocimiento común | PAGADA |
-| P2 | Migración estructural inicial del repositorio bibliográfico | PAGADA EN ESTRUCTURA |
-| P3 | Contrato técnico de invocación PH·IT·AT | PAGADA |
-| P4 | Gobernanza comunitaria operativa mínima | PAGADA |
-| P5 | Instrumento ligero de verificación caleidoscópica | PAGADA |
-| P6 | Superficies mínimas en aplicación | PAGADA EN CANDIDATO |
-| P7 | Pruebas y verificación integrada | PAGADA · CI VERDE NODE 22/24 |
-| P8 | Gate humano para uso real | PENDIENTE |
+| P0 | Canon A-G, Marco Pedagógico y decisiones | PAGADA |
+| P1 | Schema de Base de Conocimiento común | PAGADA |
+| P2 | Migración estructural inicial del corpus | PAGADA EN ESTRUCTURA |
+| P3 | Invocación PH·IT·AT | PAGADA |
+| P4 | Gobernanza comunitaria mínima | PAGADA |
+| P5 | Verificación caleidoscópica ligera | PAGADA |
+| P6 | Superficies mínimas de aplicación | PAGADA |
+| P7 | Verificación integrada | PAGADA · CI VERDE |
+| P8 | Gate humano de uso real | PAGADA · PR #8 INTEGRADO |
 
-## Alcance exacto de P2
+## Sincronización V5.1.0
 
-Se migraron **54 registros bibliográficos** del listado institucional a un corpus común validable por schema, preservando procedencia y el conflicto histórico de identificador `BA-003`.
+El cierre posterior incorpora deuda documental detectada tras P8:
 
-La migración no corrige silenciosamente la fuente ni eleva registros a estado validado.
+- arquitectura Framework ↔ repositorios ↔ paquete ↔ app;
+- 00–21 + 99 como gramática común de materialización proporcional;
+- núcleo autosostenido V5.1.0;
+- README humano;
+- guías de usuario/colaborador;
+- sincronización de versión y release.
 
-El repositorio histórico contiene además fichas anotadas BA-001–BA-060. Su contenido permanece preservado en la fuente institucional; su enriquecimiento estructurado puede incorporarse progresivamente sin bloquear la operación de la Base común. La **verificación contra fuentes primarias** permanece separada y requerida antes de elevar entradas a `validated` o `reference`.
+## Corpus bibliográfico
 
-## Deuda que permanece abierta por requerir realidad
+Se mantienen 54 registros migrados estructuralmente. El conflicto histórico BA-003 sigue preservado hasta reconciliación basada en fuente primaria.
 
+## Deuda legítima abierta
+
+Solo permanece deuda que requiere realidad o validación externa:
+
+- validación con lector de pantalla;
+- verificación primaria completa del corpus bibliográfico;
 - comunidad de práctica efectiva;
 - validación pedagógica empírica;
 - casos reales de emergencia caleidoscópica;
 - transferencia de aprendizaje entre contextos;
 - indicadores de madurez comunitaria;
-- necesidad o no de métricas cuantitativas.
+- decisión futura sobre métricas cuantitativas.
 
-## Verificación técnica completada
-
-GitHub Actions `Framework V5 Verify` completó satisfactoriamente `npm run verify` en **Node 22 y Node 24** sobre el candidato integrado.
+## Principio
 
 ```text
-typecheck ✓
-build ✓
-tests ✓
-audits ✓
-Node 22 ✓
-Node 24 ✓
+no diseñar para pagar deuda empírica
+→ usar
+→ observar
+→ producir evidencia
+→ revisar
 ```
-
-## Gate restante
-
-Solo permanece P8: decisión humana de integrar el candidato a `main` y declarar el Framework preparado para uso real controlado.
