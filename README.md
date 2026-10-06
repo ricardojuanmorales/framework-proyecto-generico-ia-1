@@ -254,8 +254,8 @@ y activa solo lo necesario.
 
 ## 📖 Documentación humana
 
-- Guía rápida V5: `21_WIKI_DOCUMENTACION_HUMANA/Guias_Framework_V5/2026-09-23_Guia_Rapida_Usuario_Framework_V5_dev_v0_1.md`
-- Onboarding usuario/colaborador: `21_WIKI_DOCUMENTACION_HUMANA/Guias_Framework_Generico_V4_1_0/2026-09-22_Onboarding_Dual_Usuario_Colaborador_Framework_V5_v0_1.md`
+- Guía rápida V5: `21_WIKI_DOCUMENTACION_HUMANA/Guias_Framework_V5/2026-10-06_Guia_Rapida_Usuario_Framework_V5_1_v1_0.md`
+- Onboarding usuario/colaborador: `21_WIKI_DOCUMENTACION_HUMANA/Guias_Framework_V5/2026-10-06_Onboarding_Dual_Usuario_Colaborador_Framework_V5_1_v1_0.md`
 - Marco Pedagógico: `12_DISENO_INSTRUCCIONAL_UNIVERSAL/2026-10-05_Marco_Pedagogico_Canonico_Framework_V5_v1_1.md`
 - Arquitectura de distribución: `02_ARQUITECTURA_CONCEPTUAL/Arquitecturas_Referencia/2026-10-06_Arquitectura_Distribucion_Framework_Repositorio_Paquete_App_Transferencia_V5_1_0.md`
 
