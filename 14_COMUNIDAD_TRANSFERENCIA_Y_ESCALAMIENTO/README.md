@@ -1,6 +1,6 @@
 # 14_COMUNIDAD_TRANSFERENCIA_Y_ESCALAMIENTO
 
-**Estado:** activo · Framework Genérico V5.0.0.
+**Estado:** activo · Framework Genérico V5.1.0.
 
 Este cartapacio gobierna comunidad, transferencia, escalamiento, adopción y sostenibilidad comunitaria.
 
