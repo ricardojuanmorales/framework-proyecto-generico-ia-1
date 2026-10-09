@@ -110,7 +110,18 @@ Estos niveles no constituyen fases lineales. Pueden relacionarse recursivamente 
 
 En el fundamento del Framework existe un **repositorio curado de fuentes de información fundacionales para Educación General**, organizado alrededor de **cuatro grandes áreas**.
 
-Las denominaciones oficiales de esas cuatro áreas deben conservarse según el repositorio canónico correspondiente. Este documento reconoce su función estructural, pero no introduce nombres no verificados.
+Las cuatro áreas fundacionales y su corpus quedan definidos en la referencia primaria canónica:
+
+`01_FUNDAMENTO_FILOSOFICO/Marcos_Referencia/2026-10-08_Repositorio_Epistemologico_Fundacional_Framework_Canon_v1_0.md`
+
+Esta referencia establece como organización vigente:
+
+1. Complejidad, pensamiento complejo y transdisciplinariedad.
+2. Educación y tecnologías emergentes.
+3. Competencias del siglo XXI y alfabetizaciones.
+4. Uso ético y responsable de la inteligencia artificial.
+
+La Arquitectura Conceptual Integrada no sustituye ese corpus: lo reconoce como sustrato epistemológico del Marco Teórico Longitudinal.
 
 El repositorio fundacional no es una bibliografía decorativa, un archivo pasivo ni un simple listado de lecturas. Constituye el sustrato desde el cual el Framework puede discutir, contextualizar y revisar preguntas sobre conocimiento, humanidad, cultura, ciencia, arte, tecnología, ética, ciudadanía, formación, complejidad y relaciones entre humanos, máquinas e inteligencia artificial.
 
