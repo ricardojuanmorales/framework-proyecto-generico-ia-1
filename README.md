@@ -1,14 +1,19 @@
 # 🌐 Framework Genérico V5.1.0
-## Ecosistema sociotécnico-transdisciplinario evolutivo humano · máquina · IA
+## Un ecosistema para pensar, crear, investigar y actuar con humanos · máquinas · IA
 
-> Un espacio operativo para abordar problemas complejos con juicio humano, investigación, creación, tecnología, pedagogía, comunidad, memoria, IA y transferencia reversible.
+> Los problemas complejos rara vez caben en una sola disciplina, una sola herramienta o una sola cabeza. Este Framework crea un espacio donde distintas formas de conocer y actuar pueden encontrarse, contrastarse, dejar memoria y evolucionar sin perder responsabilidad humana.
 
-## 🚀 Accesos
+Bienvenido. Si llegaste aquí por curiosidad, por investigación, por docencia, por tecnología, por creación artística o porque tienes un problema que no sabe respetar fronteras disciplinares, estás en el lugar correcto. 🧭
+
+Este repositorio no intenta darte una receta universal. Te ofrece una **arquitectura evolutiva** para trabajar con complejidad de forma trazable, humana y transferible.
+
+## 🚪 Entradas rápidas
 
 - 🌐 **Aplicación V5:** https://ricardojuanmorales.github.io/framework-proyecto-generico-ia-1/v5/
 - 📦 **Releases estables:** https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1/releases
-- 🏛️ **V4 histórica:** https://ricardojuanmorales.github.io/framework-proyecto-generico-ia-1/v4/
 - 📚 **Repositorio maestro:** https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1
+- 🏛️ **V4 histórica:** https://ricardojuanmorales.github.io/framework-proyecto-generico-ia-1/v4/
+- 🧬 **Arquitectura conceptual integrada:** `02_ARQUITECTURA_CONCEPTUAL/Arquitecturas_Referencia/2026-10-08_Arquitectura_Conceptual_Integrada_Framework_Canon_v1_0.md`
 
 ```text
 framework: 5.1.0
@@ -20,144 +25,74 @@ telemetry_default: false
 external_AI_required: false
 ```
 
-## 🧭 Qué es
+## 🧭 La idea en tres líneas
 
 ```text
 PERFIL = lente
-FRAMEWORK = espacio operativo
+FRAMEWORK = espacio operativo y evolutivo
 PROBLEMA = centro
 ```
 
-El Framework no es la aplicación ni el repositorio. Es el sistema completo que articula:
+El Framework es un **sistema sociotécnico-transdisciplinario evolutivo**. Organiza relaciones entre problemas reales, personas, conocimientos, prácticas, máquinas, inteligencia artificial, memoria, gobernanza y transferencia.
 
-```text
-problema real
-+ personas/comunidad
-+ PH · IT · AT
-+ conocimiento común
-+ humano · máquina · IA
-+ Marco Pedagógico
-+ evidencia y memoria
-+ gobernanza
-+ transferencia
-```
+No es solo una app. No es solo un repositorio. No es una metodología lineal. Es el sistema completo que permite que esas piezas trabajen juntas sin confundirse unas con otras.
 
-El **Caleidoscopio** puede emerger de relaciones situadas, significativas y trazables entre estos elementos. No es un cuarto perfil ni una suma automática.
+## 🌱 ¿Para qué sirve?
 
-## 🧩 Cómo se relacionan las piezas
+Puede ayudar a una persona, equipo o comunidad a:
 
-| Pieza | Función |
-|---|---|
-| **Framework** | sistema completo, principios, arquitectura y gobernanza |
-| **Repositorio maestro** | fuente canónica y memoria evolutiva del Framework |
-| **00–21 + 99** | gramática común para organizar proyectos y facilitar transferencia |
-| **Paquete autosostenido** | incorpora el Framework de forma portable a un proyecto |
-| **Repositorio del proyecto** | fuente versionada de verdad de esa implementación |
-| **App** | superficie operativa de referencia para START, INTEGRATE y AUDIT |
-| **Release** | fotografía reproducible de una versión estable |
-| **Transferencia reversible** | devuelve aprendizaje situado al Framework bajo contraste y gate humano |
+- formular mejor un problema complejo;
+- combinar conocimiento común y especializado sin borrarlos;
+- decidir cuándo una IA ayuda y cuándo sustituye demasiado;
+- conservar decisiones, evidencia, dudas y aprendizajes;
+- relacionar investigación, tecnología, arte y formación;
+- crear proyectos trazables y transferibles;
+- aprender de implementaciones reales sin convertir cada experiencia en dogma;
+- y construir, con el tiempo, una **comunidad de práctica** capaz de aprender de sí misma.
 
-```text
-Framework maestro
-→ paquete autosostenido
-→ proyecto real
-↔ app
-→ práctica + evidencia
-→ aprendizaje candidato
-→ transferencia simétrica reversible
-→ posible evolución del Framework
-```
+El Framework no promete automáticamente una comunidad de práctica. Crea condiciones para que pueda emerger mediante participación sostenida, memoria compartida, contraste, colaboración y evolución colectiva.
 
-## 🗂️ 00–21 + 99
+> **comunidad disponible ≠ comunidad de práctica consolidada**
 
-La macroestructura es una **gramática común**, no una obligación de crear carpetas vacías.
+## 🧬 El ADN conceptual
 
-> **La estructura lógica es estable; su materialización en cada proyecto es proporcional a necesidad real.**
+La referencia principal es:
 
-Un proyecto activa solo las áreas que necesita y mantiene sus especializaciones locales ancladas a funciones comunes. Esto reduce entropía documental y mantiene posible la transferencia entre proyectos.
+`02_ARQUITECTURA_CONCEPTUAL/Arquitecturas_Referencia/2026-10-08_Arquitectura_Conceptual_Integrada_Framework_Canon_v1_0.md`
 
-## 🧰 Paquete autosostenido
+Allí se fija la arquitectura conceptual vigente, incluida una idea central:
 
-El núcleo Integral Autosostenido V5.1.0 vive en:
+> **Canon no significa eternidad. Significa referencia vigente, explícita, trazable y revisable.**
 
-`00_CONTROL_MAESTRO/Referecias_Base/2026-10-06_Framework_Generico_V5_1_0_Integral_Autosostenido_v1_0.md`
+La verdad del Framework no se trata como una piedra tallada. Es una verdad **versionada, contrastable y evolutiva**. Lo que hoy se considera canónico puede revisarse mañana si nueva evidencia, práctica o reflexión lo exige, pero el sistema debe conservar la memoria de cómo y por qué cambió.
 
-Su función es permitir:
+## 🧠 El Marco Teórico Longitudinal
 
-```text
-entender
-→ activar
-→ usar
-→ documentar
-→ continuar
-→ verificar
-→ transferir
-```
+Debajo de las prácticas y herramientas existe una capa más profunda: el **Marco Teórico Longitudinal**.
 
-sin dependencia permanente de la app, del repositorio maestro o del autor original.
+Surge de un repositorio curado de fuentes fundacionales de Educación General organizado en cuatro grandes áreas. Su función no es decorar el Framework con teoría, sino mantener abiertas y trazables las grandes preguntas humanas:
 
-## 🖥️ Aplicación
+- ¿qué significa conocer?;
+- ¿qué podemos delegar?;
+- ¿qué responsabilidad no debe disolverse?;
+- ¿qué cuenta como evidencia?;
+- ¿cómo cambia la autoridad cuando interviene IA?;
+- ¿cómo protegemos agencia, pluralidad y capacidad de revisión?
 
-La app es la **superficie operativa de referencia** para todos los usuarios.
+El Marco Teórico Longitudinal alimenta el patrimonio común, dialoga con los conocimientos especializados de los perfiles y con la base federada de conocimiento, y proporciona el fondo desde el cual se revisan los principios del sistema.
 
-### START
-Crear un proyecto y su estado Framework desde cero.
+## 🎓 Del marco profundo a la práctica
 
-### INTEGRATE
-Incorporar Framework a un proyecto existente sin reorganizarlo por fuerza.
+El **Marco Pedagógico** es una traducción operacional vigente de ese fundamento longitudinal.
 
-### AUDIT
-Contrastar un proyecto maduro mediante estado, evidencia e historia relevante.
-
-La app facilita:
-
-- activación;
-- estado vivo;
-- PORTAFOLIO;
-- decisiones humanas;
-- invocación de conocimiento;
-- transferencias;
-- candidatos caleidoscópicos;
-- exportación/importación portable.
-
-La app **no sustituye** Git, editores, LMS, herramientas de investigación o creación.
-
-> El proyecto debe poder salir de la aplicación sin salir del Framework.
-
-## 🧩 PH · IT · AT
-
-- **PH · Programador Humanista:** construcción tecnológica humanista situada.
-- **IT · Investigador Transdisciplinario:** pregunta, método, evidencia, interpretación y responsabilidad epistemológica.
-- **AT · Artista Transdisciplinario:** percepción situada, imaginación crítica, configuración sensible-simbólica-material, interpretación y transformación responsable.
-
-Los tres acceden a una **Base de Conocimiento común** desde preguntas y responsabilidades diferentes.
-
-## 📚 Base de Conocimiento común
-
-```text
-fuente/evidencia
-!= interpretación
-!= decisión
-!= canon
-```
-
-- **Base de Conocimiento común:** patrimonio epistemológico compartido.
-- **Base Federada:** mecanismo de acceso y recuperación.
-- **Conocimientos activos:** conocimiento invocado en el trabajo presente.
-- **PORTAFOLIO:** historia de uso, decisiones, cambios y reaperturas.
-
-## 🎓 Marco Pedagógico
-
-El Marco Pedagógico V5 v1.1 es una **capa transversal de gobernanza pedagógica**.
-
-Seis principios:
+Sus seis principios actuales son:
 
 1. situación antes que abstracción;
 2. participación antes que consumo;
-3. mediación proporcional para capacidad colectiva creciente, con autonomía y responsabilidad humanas preservadas;
+3. mediación proporcional;
 4. reflexión trazable sobre la acción;
-5. memoria compartida para aprendizaje colectivo;
-6. transferencia y evolución como prueba de aprendizaje.
+5. memoria compartida;
+6. transferencia y evolución.
 
 ```text
 SITUAR
@@ -171,77 +106,249 @@ SITUAR
 ↺
 ```
 
-## 🧠 Humano · máquina · IA
+Los seis principios no agotan el Marco Teórico Longitudinal. Son su implementación pedagógica vigente y pueden evolucionar.
 
-```text
-Humano    → propósito, interpretación, juicio y responsabilidad
-Máquina   → ejecución, persistencia, pruebas y evidencia
-IA        → análisis, síntesis, contraste y alternativas
-Framework → estructura, memoria y gobernanza
-```
+## 🔭 Tres lentes, no tres profesiones
 
-La asignación concreta puede variar por contexto. La autoridad material y ética permanece atribuible a humanos.
+### PH · Programador Humanista
+Convierte intención humana en mediación tecnológica comprensible, sostenible y responsable.
 
-## 📏 N1–N4
+Preguntas típicas:
+- ¿podemos construirlo?;
+- ¿cómo debe funcionar?;
+- ¿qué decisiones técnicas tienen consecuencias humanas?;
+- ¿cómo evitamos que la tecnología opaque el propósito?
 
-| Nivel | Lectura |
-|---|---|
-| N1 | exploración guiada |
-| N2 | producción asistida |
-| N3 | integración avanzada |
-| N4 | ecosistema gobernado |
+### IT · Investigador Transdisciplinario
+Interroga preguntas, métodos, evidencia, incertidumbre, procedencia, contraste y validez.
 
-No son puntuaciones ni obligación de usar más herramientas.
+Preguntas típicas:
+- ¿qué sabemos?;
+- ¿cómo lo sabemos?;
+- ¿qué no sabemos?;
+- ¿qué afirmación necesita más contraste?
 
-## 🔮 Caleidoscopio
+### AT · Artista Transdisciplinario
+Aporta percepción, imaginación, materialidad, simbolización, representación y experiencia.
 
-Una emergencia candidata exige, como mínimo:
+Preguntas típicas:
+- ¿qué todavía no estamos viendo?;
+- ¿cómo cambia el problema si lo representamos de otra manera?;
+- ¿qué dimensión sensible, simbólica o material permanece oculta?
 
-```text
-situación real
-+ pluralidad de lentes
-+ contraste real
-+ emergencia nueva
-+ trazabilidad
-```
+Una persona puede activar más de una lente. Un equipo puede distribuirlas. No siempre se necesitan las tres.
 
 ```text
 PH + IT + AT != Caleidoscopio automático
 ```
 
+El valor está en el **contraste real** entre perspectivas suficientemente distintas.
+
+## 🔮 El Caleidoscopio de la Complejidad
+
+El Caleidoscopio no es un cuarto perfil. Es una **posible propiedad emergente**.
+
+Puede reconocerse cuando existen, como mínimo:
+
+```text
+situación real
++ pluralidad
++ contraste efectivo
++ emergencia de algo nuevo
++ trazabilidad
+```
+
+Estados propuestos:
+
+```text
+Candidato → Reconocido → Validado → Transferido
+```
+
+Novedad no significa verdad. Validez local no significa universalidad. Transferencia no significa canonización automática.
+
+## 🗂️ 00–21 + 99: el cuerpo del Framework
+
+La macroestructura **00–21 + 99** no es solamente una colección de carpetas ni una gramática documental.
+
+Es el **cuerpo estructural, operativo y memorial del Framework**.
+
+Cada cartapacio conserva un segmento de la realidad del proceso. Solo unidos permiten reconstruir relaciones entre conocimiento, decisiones, evidencia, prácticas, artefactos, gobernanza, memoria y evolución.
+
+> **Cada segmento preserva una dimensión del proceso; su articulación constituye el cuerpo evolutivo del Framework.**
+
+La estructura lógica es estable, pero cada proyecto activa solo lo que necesita. No hay premio por llenar carpetas vacías. Hay valor en conservar estructura suficiente para entender qué ocurrió, por qué ocurrió y qué puede transferirse.
+
+## 📚 Una ecología del conocimiento
+
+El Framework distingue:
+
+- **Patrimonio epistemológico común:** conocimiento vigente disponible transversalmente.
+- **Conocimiento especializado:** saberes, métodos y artefactos propios de PH, IT y AT.
+- **Base federada de conocimiento:** acceso a conocimiento distribuido sin exigir centralización.
+- **Conocimiento situado:** aprendizajes producidos en una implementación concreta.
+
+Un conocimiento puede:
+
+```text
+permanecer especializado
+→ circular
+→ contrastarse
+→ convertirse en candidato compartido
+→ validarse
+→ eventualmente incorporarse al patrimonio común
+```
+
+Pero no tiene que hacerlo.
+
+```text
+Memoria != canon
+Aporte != conocimiento validado
+Registro != verdad
+```
+
+## 🧳 El Portafolio: orientación humana dentro de la complejidad
+
+El **PORTAFOLIO** no es la Base de Conocimiento.
+
+Pertenece a la implementación situada y ayuda a cada participante a conservar su trayectoria dentro del sistema:
+
+- decisiones;
+- dudas;
+- tensiones;
+- cambios de interpretación;
+- artefactos;
+- elecciones de lente;
+- justificaciones;
+- aprendizajes.
+
+> **La macroestructura preserva la continuidad del sistema; el Portafolio preserva la continuidad de la experiencia humana dentro del sistema.**
+
+Esa memoria situada puede ayudar a estudiar cuándo y cómo aparece una transformación caleidoscópica.
+
+## 🤖 Humano · máquina · IA
+
+El Framework trabaja con una **ecología cognitiva gobernada**, no con una división rígida del trabajo.
+
+```text
+Framework → estructura y reglas
+IA        → analiza, contrasta y genera alternativas
+Máquina   → ejecuta, registra, persiste y evidencia
+Humano    → interpreta, decide, autoriza y responde
+```
+
+La cognición puede distribuirse. La responsabilidad no debe evaporarse.
+
+> **human oversight ≠ human agency**
+
+La agencia exige comprender, cuestionar, decidir, justificar, revisar y reabrir.
+
 ## 🔁 Transferencia simétrica reversible
 
-Los proyectos no devuelven su contenido completo al Framework.
+```text
+Framework ↔ Proyecto
+```
 
-Pueden retornar:
+El Framework puede llevar a un proyecto principios, estructuras, conocimiento, métodos y artefactos. El proyecto puede devolver hallazgos, tensiones, contraejemplos, mejoras y nuevo conocimiento situado.
 
-- patrones;
-- métodos;
-- criterios;
-- hallazgos;
-- problemas recurrentes;
-- mejoras de contracts/schemas;
-- casos y contraejemplos;
-- aprendizajes pedagógicos.
+Pero lo que vuelve no entra automáticamente al canon.
 
 ```text
 experiencia situada
 → aprendizaje candidato
 → contraste
 → gate humano
-→ posible integración
+→ permanecer local | especializarse | integrarse
 ```
 
-## 🚀 Cómo empezar
+La transferencia es **simétrica** porque ambos lados pueden transformarse y **reversible** porque ningún aprendizaje local obtiene autoridad permanente por defecto.
 
-No necesitas leer todo el repositorio.
+## 🧩 Las materializaciones
+
+| Pieza | Qué hace |
+|---|---|
+| **Framework** | sistema completo, principios, arquitectura, memoria y gobernanza |
+| **Repositorio maestro** | fuente canónica y memoria evolutiva |
+| **00–21 + 99** | cuerpo estructural, operativo y memorial |
+| **Paquete autosostenido** | incorpora el Framework de forma portable |
+| **Repositorio del proyecto** | conserva la verdad versionada de esa implementación |
+| **App** | superficie operativa para START, INTEGRATE y AUDIT |
+| **Release** | fotografía reproducible de un estado estable |
+| **Portafolio** | memoria situada del participante |
+| **Transferencia reversible** | conecta aprendizaje local y evolución del Framework |
+
+```text
+Framework maestro
+→ paquete autosostenido
+→ proyecto real
+↔ app
+→ práctica + evidencia + Portafolio
+→ aprendizaje candidato
+→ transferencia simétrica reversible
+→ posible evolución del Framework
+```
+
+## 🖥️ START · INTEGRATE · AUDIT
+
+No son niveles de experiencia. Son tres relaciones posibles con un proyecto.
+
+### START
+Crear una implementación desde cero.
+
+### INTEGRATE
+Incorporar el Framework a un proyecto existente sin forzarlo a reorganizarse por completo.
+
+### AUDIT
+Contrastar un proyecto maduro mediante estado, evidencia e historia relevante.
+
+La aplicación ayuda con activación, Portafolio, decisiones humanas, conocimiento, transferencias, candidatos caleidoscópicos y exportación/importación.
+
+> El proyecto debe poder salir de la aplicación sin salir del Framework.
+
+## 🧑‍🤝‍🧑 Hacia una comunidad de práctica
+
+La ambición comunitaria del Framework no consiste en acumular usuarios.
+
+Consiste en que personas y equipos puedan:
+
+- compartir repertorios sin borrar diferencias;
+- aprender de casos ajenos sin copiar contextos;
+- conservar procedencia;
+- debatir principios;
+- contrastar patrones;
+- devolver mejoras;
+- reconocer errores;
+- y transformar el propio Framework.
+
+Una comunidad de práctica real aparecería cuando exista participación sostenida y un repertorio compartido que evoluciona mediante uso, discusión y retorno de experiencia.
+
+Esto significa que tú no necesitas “dominar el Framework” antes de participar. Puedes entrar desde un problema, una lente, un proyecto, una pregunta, un artefacto o una crítica bien trazada.
+
+## 🧪 Estudios Generales: raíz y laboratorio
+
+Estudios Generales ocupa un lugar especial porque reúne humanidades, ciencias, arte, tecnología, cultura, ciudadanía y reflexión ética alrededor de problemas que desbordan fronteras disciplinares.
+
+En este ecosistema puede funcionar como:
+
+- raíz del Marco Teórico Longitudinal;
+- espacio de integración epistemológica;
+- laboratorio de ecologías cognitivas humano–máquina–IA;
+- espacio de formación;
+- y lugar de retorno y revisión.
+
+No es el único contexto posible ni se afirma superioridad empírica. Es un territorio especialmente fértil para investigar cómo aprendemos, creamos y respondemos ante complejidad.
+
+## 🚀 Cómo empezar sin perderse
+
+No necesitas leer los 23 cartapacios antes de hacer algo útil.
+
+Empieza con cinco preguntas:
 
 ```text
 1. ¿Cuál es el problema real?
-2. ¿Qué propósito tenemos?
-3. ¿Qué lente o lentes hacen falta?
+2. ¿Por qué importa y para quién?
+3. ¿Qué lentes hacen falta ahora?
 4. ¿Qué evidencia demostraría avance?
-5. ¿Qué decisión requiere autoridad humana?
+5. ¿Qué decisiones necesitan responsabilidad humana explícita?
 ```
 
 Después elige:
@@ -252,12 +359,41 @@ START | INTEGRATE | AUDIT
 
 y activa solo lo necesario.
 
-## 📖 Documentación humana
+### Rutas recomendadas
 
+- **Quiero entender la arquitectura:** empieza por el documento canónico integrado en Cartapacio 02.
+- **Quiero usarlo en un proyecto:** abre la aplicación o el paquete autosostenido.
+- **Quiero comprender los perfiles:** explora Cartapacio 05 y los perfiles transversales en Cartapacio 02.
+- **Quiero investigar evidencia:** ve a Cartapacio 13.
+- **Quiero entender transferencia/comunidad:** ve a Cartapacio 14.
+- **Quiero documentación humana:** ve a Cartapacio 21.
+- **Quiero estudiar cómo evolucionó:** revisa Cartapacio 20 y 99_ARCHIVO_HISTORICO.
+
+## 📖 Documentos de referencia
+
+- Arquitectura Conceptual Integrada: `02_ARQUITECTURA_CONCEPTUAL/Arquitecturas_Referencia/2026-10-08_Arquitectura_Conceptual_Integrada_Framework_Canon_v1_0.md`
 - Guía rápida V5: `21_WIKI_DOCUMENTACION_HUMANA/Guias_Framework_V5/2026-10-06_Guia_Rapida_Usuario_Framework_V5_1_v1_0.md`
 - Onboarding usuario/colaborador: `21_WIKI_DOCUMENTACION_HUMANA/Guias_Framework_V5/2026-10-06_Onboarding_Dual_Usuario_Colaborador_Framework_V5_1_v1_0.md`
 - Marco Pedagógico: `12_DISENO_INSTRUCCIONAL_UNIVERSAL/2026-10-05_Marco_Pedagogico_Canonico_Framework_V5_v1_1.md`
 - Arquitectura de distribución: `02_ARQUITECTURA_CONCEPTUAL/Arquitecturas_Referencia/2026-10-06_Arquitectura_Distribucion_Framework_Repositorio_Paquete_App_Transferencia_V5_1_0.md`
+- Núcleo Integral Autosostenido: `00_CONTROL_MAESTRO/Referecias_Base/2026-10-06_Framework_Generico_V5_1_0_Integral_Autosostenido_v1_0.md`
+
+## 📏 Una nota sobre evidencia
+
+El Framework distingue:
+
+```text
+N1 descriptivo    → qué existe
+N2 arquitectónico → qué intenta favorecer
+N3 teórico        → qué relaciones propone
+N4 empírico       → qué efectos han sido comprobados
+```
+
+Regla de trabajo:
+
+> **describir firmemente · proponer precisamente · hipotetizar modestamente**
+
+Por eso el Framework puede describirse como construido, versionado y operacionalizado, pero todavía debe investigar empíricamente cuestiones como efectividad pedagógica general, agencia preservada, transferencia de aprendizaje, comunidad de práctica consolidada y emergencia caleidoscópica consistente.
 
 ## 🏛️ Estado
 
@@ -271,8 +407,14 @@ V4: preservada
 V5.0.0: preservada como release histórica
 ```
 
-La deuda abierta se limita a validaciones que requieren evidencia o herramientas externas: lector de pantalla, verificación primaria completa del corpus bibliográfico, validación pedagógica empírica, comunidad de práctica efectiva, transferencia de aprendizaje y emergencia caleidoscópica real.
-
 ---
 
-**Este README es la puerta humana principal.** El repositorio conserva la profundidad; la app facilita la operación; el paquete autosostenido permite incorporar y continuar; la transferencia reversible mantiene vivo el aprendizaje del ecosistema.
+## 🌌 Una invitación
+
+Este Framework no pretende ser un edificio terminado. Se parece más a una ciudad que conserva planos, memoria y principios mientras sigue aprendiendo de quienes la habitan.
+
+Puedes entrar para resolver un problema. Puedes quedarte para mejorar una lente. Puedes traer una crítica, un contraejemplo, una nueva forma de representar algo que nadie estaba viendo o una implementación que obligue al sistema a reconsiderarse.
+
+Si el Framework funciona como esperamos, su mejor futuro no será tener más documentación.
+
+Será convertirse en un lugar donde una comunidad aprenda a **pensar mejor junta sin dejar de pensar diferente**.
