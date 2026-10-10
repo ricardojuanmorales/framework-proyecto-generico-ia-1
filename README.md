@@ -1,5 +1,11 @@
-# 🌐 Framework Genérico V5.2.0
-## Un ecosistema para pensar, crear, investigar y actuar con humanos · máquinas · IA
+# 🌐 Framework Genérico v5.2.0
+## El Caleidoscopio de la Complejidad
+
+![Un horizonte compartido para aprender, investigar y crear](21_WIKI_DOCUMENTACION_HUMANA/Recursos_Visuales/README_V5_2/hero-horizonte.svg)
+
+**Conocimiento · práctica · comunidad · futuros posibles**
+
+*Un ecosistema para pensar, crear, investigar y actuar en ecologías humano · máquina · IA.*
 
 > Los problemas complejos rara vez caben en una sola disciplina, una sola herramienta o una sola cabeza. Este Framework crea un espacio donde distintas formas de conocer y actuar pueden encontrarse, contrastarse, dejar memoria y evolucionar sin perder responsabilidad humana.
 
@@ -7,7 +13,7 @@ Bienvenido. Si llegaste aquí por curiosidad, por investigación, por docencia, 
 
 Este repositorio no intenta darte una receta universal. Te ofrece una **arquitectura evolutiva** para trabajar con complejidad de forma trazable, humana y transferible.
 
-## 🚪 Entradas rápidas
+## 🚪 Elige tu puerta de entrada
 
 - 🌐 **Aplicación V5:** https://ricardojuanmorales.github.io/framework-proyecto-generico-ia-1/v5/
 - 📦 **Releases estables:** https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1/releases
@@ -26,7 +32,11 @@ telemetry_default: false
 external_AI_required: false
 ```
 
-## 🧭 La idea en tres líneas
+## 🧭 Una brújula antes de comenzar
+
+Imagina un problema que no cabe en una facultad, una profesión o una herramienta. En vez de obligarlo a encajar, el Framework ofrece un **espacio compartido para explorar perspectivas**, discutirlas, actuar y conservar memoria de lo aprendido.
+
+### La idea en tres líneas
 
 ```text
 PERFIL = lente
@@ -37,6 +47,18 @@ PROBLEMA = centro
 El Framework es un **sistema sociotécnico-transdisciplinario evolutivo**. Organiza relaciones entre problemas reales, personas, conocimientos, prácticas, máquinas, inteligencia artificial, memoria, gobernanza y transferencia.
 
 No es solo una app. No es solo un repositorio. No es una metodología lineal. Es el sistema completo que permite que esas piezas trabajen juntas sin confundirse unas con otras.
+
+### Cuatro escenas de una posibilidad
+
+> **1 · El problema llama.** Una comunidad necesita explorar un desafío educativo, tecnológico o ambiental. Ninguna persona posee todas las respuestas.
+>
+> **2 · Llegan las lentes.** PH se pregunta qué construir responsablemente; IT, qué evidencia sostiene nuestras afirmaciones; AT, qué dimensiones podemos percibir o expresar de otro modo.
+>
+> **3 · Surgen tensiones.** Las perspectivas se contrastan y modifican interpretaciones. La diferencia enriquece el proceso; lo novedoso aún debe validarse.
+>
+> **4 · Queda memoria.** Se registran decisiones, dudas, artefactos y aprendizajes. Lo situado puede retornar al Framework como conocimiento candidato.
+
+*Historia ilustrativa de posibilidades, no un caso empírico ni una promesa de emergencia.*
 
 ## 🌱 ¿Para qué sirve?
 
@@ -54,6 +76,14 @@ Puede ayudar a una persona, equipo o comunidad a:
 El Framework no promete automáticamente una comunidad de práctica. Crea condiciones para que pueda emerger mediante participación sostenida, memoria compartida, contraste, colaboración y evolución colectiva.
 
 > **comunidad disponible ≠ comunidad de práctica consolidada**
+
+## 🧬 Figura 1 · El mapa de relaciones
+
+![Adaptación editorial de la Figura 1: problema situado al centro, PH, IT y AT en relación, ecología humano-máquina-IA y posible emergencia caleidoscópica](21_WIKI_DOCUMENTACION_HUMANA/Recursos_Visuales/README_V5_2/figura1-arquitectura-editorial.svg)
+
+*Adaptación editorial esquemática para lectura web basada en la Figura 1 de la ponencia de los autores. No reemplaza la figura académica original ni el canon documental.*
+
+**Lee el mapa:** el problema situado convoca lentes diferentes dentro de una ecología cognitiva gobernada. Pluralidad, contraste y trazabilidad permiten investigar una **posible** emergencia caleidoscópica. Memoria, comunidad y transferencia sostienen el aprendizaje y la continuidad.
 
 ## 🧬 El ADN conceptual
 
@@ -109,10 +139,24 @@ SITUAR
 
 Los seis principios no agotan el Marco Teórico Longitudinal. Son su implementación pedagógica vigente y pueden evolucionar.
 
-## 🔭 Tres lentes, no tres profesiones
+## 🔭 Las tres lentes: identidades que hacen preguntas diferentes
 
-### PH · Programador Humanista
-Convierte intención humana en mediación tecnológica comprensible, sostenible y responsable.
+![Tres lentes con identidad propia: PH azul, IT verde y AT naranja](21_WIKI_DOCUMENTACION_HUMANA/Recursos_Visuales/README_V5_2/tres-lentes.svg)
+
+Son **lentes funcionales y capacidades de actuación**, no profesiones rígidas, agentes ni casillas obligatorias. Una persona puede activar varias; un equipo puede distribuirlas; un problema puede requerir solo algunas. Ninguna gobierna jerárquicamente a las demás.
+
+| Lente | Contribución propia | Pregunta |
+|---|---|---|
+| 🔵 **PH** | Construir mediaciones tecnológicas responsables | ¿Cómo puede construirse? |
+| 🟢 **IT** | Interrogar conocimiento, evidencia y validez | ¿Qué sabemos y cómo lo sabemos? |
+| 🟠 **AT** | Investigar mediante percepción y creación | ¿Qué otra configuración revela el problema? |
+
+
+### 🔵 PH · Programador Humanista
+
+**Identidad.** Transforma intención humana en mediación tecnológica comprensible, sostenible y responsable. No es únicamente «quien programa»: hace visibles los supuestos y consecuencias humanas de las decisiones técnicas.
+
+**Capacidades.** Arquitectura, diseño, programación, implementación, interoperabilidad, automatización proporcional, experiencia de uso, accesibilidad, seguridad, privacidad, mantenibilidad y sostenibilidad.
 
 Preguntas típicas:
 - ¿podemos construirlo?;
@@ -120,8 +164,11 @@ Preguntas típicas:
 - ¿qué decisiones técnicas tienen consecuencias humanas?;
 - ¿cómo evitamos que la tecnología opaque el propósito?
 
-### IT · Investigador Transdisciplinario
-Interroga preguntas, métodos, evidencia, incertidumbre, procedencia, contraste y validez.
+### 🟢 IT · Investigador Transdisciplinario
+
+**Identidad.** Investiga cómo se construyen, contrastan y justifican afirmaciones en situaciones complejas. Gobierna epistemológicamente **su contribución** y aporta vigilancia al trabajo colectivo, sin imponerse a las otras lentes.
+
+**Capacidades.** Preguntas y problemas de investigación, métodos, fuentes y procedencia, análisis, síntesis, incertidumbre, triangulación, contraste, interpretación, validación y reconocimiento de límites.
 
 Preguntas típicas:
 - ¿qué sabemos?;
@@ -129,8 +176,11 @@ Preguntas típicas:
 - ¿qué no sabemos?;
 - ¿qué afirmación necesita más contraste?
 
-### AT · Artista Transdisciplinario
-Aporta percepción, imaginación, materialidad, simbolización, representación y experiencia.
+### 🟠 AT · Artista Transdisciplinario
+
+**Identidad.** Produce conocimiento mediante percepción, imaginación, simbolización, materialidad y experiencia. No decora resultados terminados: puede transformar cómo el problema se reconoce, se representa y se experimenta.
+
+**Capacidades.** Investigación-creación, sensibilidad, narrativas, visualización, simbolización, materialidad, representación multimodal, prototipado expresivo, interpretación cultural y diseño de experiencias.
 
 Preguntas típicas:
 - ¿qué todavía no estamos viendo?;
@@ -143,7 +193,9 @@ Una persona puede activar más de una lente. Un equipo puede distribuirlas. No s
 PH + IT + AT != Caleidoscopio automático
 ```
 
-El valor está en el **contraste real** entre perspectivas suficientemente distintas.
+El valor está en el **contraste real** entre perspectivas suficientemente distintas. Un desacuerdo fundamentado puede ser más fértil que un consenso apresurado.
+
+> **Tres lentes no son tres formularios que completar.** Son maneras de conocer y actuar que pueden transformarse mutuamente sin perder su identidad.
 
 ## 🔮 El Caleidoscopio de la Complejidad
 
@@ -243,6 +295,8 @@ La cognición puede distribuirse. La responsabilidad no debe evaporarse.
 
 La agencia exige comprender, cuestionar, decidir, justificar, revisar y reabrir.
 
+![Árbol que conecta memoria, comunidad y transferencia reversible](21_WIKI_DOCUMENTACION_HUMANA/Recursos_Visuales/README_V5_2/memoria-comunidad-transferencia.svg)
+
 ## 🔁 Transferencia simétrica reversible
 
 ```text
@@ -288,7 +342,7 @@ Framework maestro
 → posible evolución del Framework
 ```
 
-## 🖥️ START · INTEGRATE · AUDIT
+## 🖥️ Tres puertas operativas: START · INTEGRATE · AUDIT
 
 No son niveles de experiencia. Son tres relaciones posibles con un proyecto.
 
@@ -324,7 +378,7 @@ Una comunidad de práctica real aparecería cuando exista participación sosteni
 
 Esto significa que tú no necesitas “dominar el Framework” antes de participar. Puedes entrar desde un problema, una lente, un proyecto, una pregunta, un artefacto o una crítica bien trazada.
 
-## 🧪 Estudios Generales: raíz y laboratorio
+## 🌳 Estudios Generales: raíz y laboratorio
 
 Estudios Generales ocupa un lugar especial porque reúne humanidades, ciencias, arte, tecnología, cultura, ciudadanía y reflexión ética alrededor de problemas que desbordan fronteras disciplinares.
 
@@ -338,7 +392,7 @@ En este ecosistema puede funcionar como:
 
 No es el único contexto posible ni se afirma superioridad empírica. Es un territorio especialmente fértil para investigar cómo aprendemos, creamos y respondemos ante complejidad.
 
-## 🚀 Cómo empezar sin perderse
+## 🚀 Tu primera expedición: empieza sin perderte
 
 No necesitas leer los 23 cartapacios antes de hacer algo útil.
 
@@ -370,7 +424,7 @@ y activa solo lo necesario.
 - **Quiero documentación humana:** ve a Cartapacio 21.
 - **Quiero estudiar cómo evolucionó:** revisa Cartapacio 20 y 99_ARCHIVO_HISTORICO.
 
-## 📖 Documentos de referencia
+## 📖 Documentación y rutas canónicas
 
 - Arquitectura Conceptual Integrada: `02_ARQUITECTURA_CONCEPTUAL/Arquitecturas_Referencia/2026-10-08_Arquitectura_Conceptual_Integrada_Framework_Canon_v1_0.md`
 - Guía rápida V5: `21_WIKI_DOCUMENTACION_HUMANA/Guias_Framework_V5/2026-10-06_Guia_Rapida_Usuario_Framework_V5_1_v1_0.md`
@@ -381,7 +435,7 @@ y activa solo lo necesario.
 - Núcleo v5.1.0 (histórico): `00_CONTROL_MAESTRO/Referecias_Base/2026-10-06_Framework_Generico_V5_1_0_Integral_Autosostenido_v1_0.md`
 - Auditoría de la transición v5.1.0 → v5.2.0: `18_DOCUMENTACION_ACTIVA/Cierres_Reportes/2026-10-09_Auditoria_Desfase_Framework_V5_2_0.md`
 
-## 📏 Una nota sobre evidencia
+## 📏 Evidencia: lo que existe y lo que aún falta demostrar
 
 El Framework distingue:
 
@@ -424,3 +478,11 @@ Puedes entrar para resolver un problema. Puedes quedarte para mejorar una lente.
 Si el Framework funciona como esperamos, su mejor futuro no será tener más documentación.
 
 Será convertirse en un lugar donde una comunidad aprenda a **pensar mejor junta sin dejar de pensar diferente**.
+
+---
+
+### 🎨 Procedencia visual y transparencia
+
+Las ilustraciones son **recursos editoriales explicativos**, no evidencias empíricas. La adaptación esquemática de la **Figura 1** se basa en la ponencia académica *El Caleidoscopio de la Complejidad*, de Ricardo Juan Morales De Jesús y Manuel de J. Reyes Guzmán. La figura académica original y el documento canónico conservan precedencia conceptual. Los SVG editables se versionan en `21_WIKI_DOCUMENTACION_HUMANA/Recursos_Visuales/README_V5_2/`.
+
+La IA puede apoyar análisis, redacción, programación y creación visual; las decisiones, comprobaciones y responsabilidad permanecen humanas. La existencia de esta arquitectura no demuestra automáticamente efectividad pedagógica, comunidad de práctica consolidada ni emergencia caleidoscópica validada.
