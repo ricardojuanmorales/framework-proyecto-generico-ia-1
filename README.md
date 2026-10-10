@@ -1,4 +1,4 @@
-# 🌐 Framework Genérico V5.1.0
+# 🌐 Framework Genérico V5.2.0
 ## Un ecosistema para pensar, crear, investigar y actuar con humanos · máquinas · IA
 
 > Los problemas complejos rara vez caben en una sola disciplina, una sola herramienta o una sola cabeza. Este Framework crea un espacio donde distintas formas de conocer y actuar pueden encontrarse, contrastarse, dejar memoria y evolucionar sin perder responsabilidad humana.
@@ -13,10 +13,11 @@ Este repositorio no intenta darte una receta universal. Te ofrece una **arquitec
 - 📦 **Releases estables:** https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1/releases
 - 📚 **Repositorio maestro:** https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1
 - 🏛️ **V4 histórica:** https://ricardojuanmorales.github.io/framework-proyecto-generico-ia-1/v4/
+- 📜 **Notas de release v5.2.0:** [Arquitectura Conceptual Integrada](18_DOCUMENTACION_ACTIVA/Cierres_Reportes/2026-10-09_GitHub_Release_Framework_V5_2_0.md)
 - 🧬 **Arquitectura conceptual integrada:** `02_ARQUITECTURA_CONCEPTUAL/Arquitecturas_Referencia/2026-10-08_Arquitectura_Conceptual_Integrada_Framework_Canon_v1_0.md`
 
 ```text
-framework: 5.1.0
+framework: 5.2.0
 architecture: LOCAL_FIRST
 backend_required: false
 cloud_required: false
@@ -376,7 +377,9 @@ y activa solo lo necesario.
 - Onboarding usuario/colaborador: `21_WIKI_DOCUMENTACION_HUMANA/Guias_Framework_V5/2026-10-06_Onboarding_Dual_Usuario_Colaborador_Framework_V5_1_v1_0.md`
 - Marco Pedagógico: `12_DISENO_INSTRUCCIONAL_UNIVERSAL/2026-10-05_Marco_Pedagogico_Canonico_Framework_V5_v1_1.md`
 - Arquitectura de distribución: `02_ARQUITECTURA_CONCEPTUAL/Arquitecturas_Referencia/2026-10-06_Arquitectura_Distribucion_Framework_Repositorio_Paquete_App_Transferencia_V5_1_0.md`
-- Núcleo Integral Autosostenido: `00_CONTROL_MAESTRO/Referecias_Base/2026-10-06_Framework_Generico_V5_1_0_Integral_Autosostenido_v1_0.md`
+- Núcleo Integral Autosostenido v5.2.0: `00_CONTROL_MAESTRO/Referecias_Base/2026-10-09_Framework_Generico_V5_2_0_Integral_Autosostenido_v1_0.md`
+- Núcleo v5.1.0 (histórico): `00_CONTROL_MAESTRO/Referecias_Base/2026-10-06_Framework_Generico_V5_1_0_Integral_Autosostenido_v1_0.md`
+- Auditoría de la transición v5.1.0 → v5.2.0: `18_DOCUMENTACION_ACTIVA/Cierres_Reportes/2026-10-09_Auditoria_Desfase_Framework_V5_2_0.md`
 
 ## 📏 Una nota sobre evidencia
 
@@ -397,14 +400,17 @@ Por eso el Framework puede describirse como construido, versionado y operacional
 
 ## 🏛️ Estado
 
+La versión v5.2.0 consolida la Arquitectura Conceptual Integrada del 8 de octubre de 2026. El esquema de proyectos y el paquete portable conservan su contrato 0.1.0, con compatibilidad para proyectos 5.0.0 y 5.1.0. Las evidencias técnicas finales de publicación deben consultarse en GitHub Actions y en los assets verificables del release.
+
+
 ```text
-Framework: 5.1.0
-App: 5.1.0
+Framework: 5.2.0
+App: 5.2.0
 Schema de proyecto: 0.1.0
 Paquete portable de proyecto: 0.1.0
 Arquitectura: local-first
 V4: preservada
-V5.0.0: preservada como release histórica
+V5.0.0 y V5.1.0: preservadas como releases históricos
 ```
 
 ---
