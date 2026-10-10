@@ -3,7 +3,7 @@ documento: Registro de aprobación y custodia documental
 fecha: 2026-10-10
 framework: 5.2.0
 proyecto_chatgpt: IA_en_Acción_V5_2_0
-estado: APROBADO POR LOS AUTORES; PENDIENTE CARGA ÍNTEGRA DE ARCHIVOS
+estado: APROBADO POR LOS AUTORES; APROBADO; SOLO MARKDOWN PARA REPOSITORIO
 ---
 # 📚 Registro de aprobación · Memoria histórica del Framework v5.2.0
 
@@ -14,9 +14,9 @@ estado: APROBADO POR LOS AUTORES; PENDIENTE CARGA ÍNTEGRA DE ARCHIVOS
 
 Preservar la aprobación humana del resumen histórico con fecha de corte 2026-10-10, que incluye cronología, arquitectura conceptual, perfiles PH/IT/AT, hitos v4→v5.2, pruebas, límites, deuda abierta, próximos pasos y declaración de uso responsable de IA.
 
-**Fuente aprobada:** `Resumen_Ejecutivo_Historico_Framework_V5_2_0_2026-10-10_APROBADO.md`. También aprobados: `.docx`, `.pdf` y ZIP Markdown con figuras.
+**Fuente aprobada:** `Resumen_Ejecutivo_Historico_Framework_V5_2_0_2026-10-10_APROBADO.md`. Word, PDF y ZIP ilustrado son copias para uso personal de los autores y no se incorporarán al repositorio.
 
-## Integridad de los originales aprobados
+## Integridad de los originales aprobados (copias personales y MD)
 
 | Archivo | Bytes | SHA-256 |
 |---|---:|---|
@@ -29,9 +29,9 @@ Preservar la aprobación humana del resumen histórico con fecha de corte 2026-1
 
 La aprobación humana corresponde **al contenido integral de los cuatro archivos**, no a un resumen que los sustituya. Los hashes son huellas del conjunto recibido y permiten comprobar futuras transferencias exactas.
 
-**Limitación del acto de incorporación:** esta integración en GitHub registra la aprobación, procedencia, integridad y deuda, pero **no constituye todavía la carga de los cuatro archivos aprobados en GitHub**. El conector disponible admite contenido textual y no expone carga directa desde los archivos locales de esta sesión, especialmente DOCX/PDF/PNG. No indicar `ARCHIVADO EN GITHUB` hasta verificar los cuatro objetos y las imágenes por SHA-256. Se proporciona un ZIP íntegro externo para que los autores puedan completar su incorporación.
+**Alcance autorizado:** guardar únicamente documentos `.md` en el repositorio. Los archivos DOCX, PDF y ZIP con figuras permanecen fuera de GitHub por decisión de los autores. La carga del Markdown histórico íntegro debe confirmarse mediante comparación SHA-256 con el original aprobado.
 
-**Residencia canónica propuesta para los originales:** `18_DOCUMENTACION_ACTIVA/Cierres_Reportes/Registros_Historicos/2026-10-10_Framework_V5_2_0/`; para preservar figuras y copias definitivas en el paquete ZIP junto al Markdown. La decisión de colocación física definitiva se ratifica con verificación de enlaces y tamaño del repositorio.
+**Residencia canónica propuesta para el Markdown:** `18_DOCUMENTACION_ACTIVA/Cierres_Reportes/Registros_Historicos/2026-10-10_Framework_V5_2_0/`. Las figuras permanecen con las copias personales; las cuatro rutas `figuras/*.png` en el Markdown necesitan resolución o una aclaración de visualización. La decisión de colocación física definitiva se ratifica con verificación de enlaces y tamaño del repositorio.
 
 ## Accesos públicos
 
