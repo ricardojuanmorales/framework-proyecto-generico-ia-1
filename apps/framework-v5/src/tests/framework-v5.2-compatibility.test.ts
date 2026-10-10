@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { createProject, exportProject, stageImport } from "../application/project-service";
 import { buildPortableZip, stagePortableZipImport } from "../application/portable-zip";
+import projectSchema from "../schemas/project.schema.json";
 
 const project = () => createProject({
   name: "Compatibilidad histórica",
@@ -12,6 +13,9 @@ const project = () => createProject({
 }, "2026-10-09T12:00:00.000Z");
 
 describe("Framework v5.2.0: continuidad de versiones", () => {
+  it("el contrato JSON incluye todas las versiones admitidas", () => {
+    expect(projectSchema.properties.frameworkVersion.enum).toEqual(["5.0.0", "5.1.0", "5.2.0"]);
+  });
   it("crea proyectos nuevos con version 5.2.0 sin cambiar schema 0.1.0", () => {
     const candidate = project();
     expect(candidate.frameworkVersion).toBe("5.2.0");
