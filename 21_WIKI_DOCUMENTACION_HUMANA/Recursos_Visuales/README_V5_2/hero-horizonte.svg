@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 410" role="img" aria-labelledby="title desc">
+<title id="title">Framework Genérico: un horizonte compartido</title><desc id="desc">Paisaje ilustrado de montañas, ciudad y río al amanecer, con tres círculos que representan las lentes PH, IT y AT.</desc>
+<defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#0e274c"/><stop offset=".55" stop-color="#467da9"/><stop offset="1" stop-color="#ffcb91"/></linearGradient><linearGradient id="land" x2="0" y2="1"><stop stop-color="#30677c"/><stop offset="1" stop-color="#12334c"/></linearGradient><linearGradient id="river" x2="0" y2="1"><stop stop-color="#f7ca8b"/><stop offset="1" stop-color="#3389ae"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="13"/></filter></defs>
+<rect width="1200" height="410" rx="22" fill="url(#sky)"/>
+<circle cx="876" cy="167" r="75" fill="#ffe4a6" opacity=".25" filter="url(#glow)"/><circle cx="876" cy="167" r="36" fill="#ffe1a1"/>
+<path d="M0 255 155 124 260 226 391 116 515 235 673 100 820 224 970 142 1200 256V410H0Z" fill="#7e9eb2" opacity=".5"/>
+<path d="M0 301 177 210 288 266 445 178 598 292 760 217 938 280 1102 185 1200 243V410H0Z" fill="#2b617e"/>
+<path d="M0 338Q240 298 460 348T890 330Q1040 305 1200 339V410H0Z" fill="url(#land)"/>
+<path d="M542 410Q620 315 730 323T960 410Z" fill="url(#river)" opacity=".87"/>
+<g fill="#193c57"><rect x="948" y="204" width="30" height="89"/><rect x="980" y="175" width="22" height="115"/><rect x="1008" y="216" width="29" height="75"/><rect x="1041" y="194" width="31" height="102"/><rect x="1080" y="159" width="23" height="140"/><rect x="1110" y="209" width="38" height="87"/></g>
+<g fill="none" stroke="#d9f8ff" opacity=".7" stroke-width="2"><circle cx="1000" cy="105" r="65"/><circle cx="1000" cy="105" r="90" stroke-dasharray="4 9"/><path d="M910 105H1090M1000 15V195"/></g>
+<g font-family="Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle"><circle cx="968" cy="81" r="29" fill="#266bb1" stroke="#bfeaff" stroke-width="3"/><text x="968" y="88" fill="white">PH</text><circle cx="1033" cy="81" r="29" fill="#28835a" stroke="#c8f9da" stroke-width="3"/><text x="1033" y="88" fill="white">IT</text><circle cx="1000" cy="137" r="29" fill="#d97828" stroke="#ffdcac" stroke-width="3"/><text x="1000" y="144" fill="white">AT</text></g>
+<rect x="38" y="40" width="705" height="192" rx="18" fill="#071e38" opacity=".79"/>
+<g fill="white" font-family="Georgia,serif"><text x="66" y="93" font-size="37" font-weight="700">Framework Genérico</text><text x="66" y="139" font-size="34">El Caleidoscopio de la Complejidad</text></g>
+<g font-family="Arial,sans-serif" fill="#d7edff"><text x="67" y="176" font-size="20">Pensar · crear · investigar · actuar</text><text x="67" y="202" font-size="17">En ecologías humano · máquina · inteligencia artificial</text></g>
+<rect x="50" y="339" width="520" height="38" rx="19" fill="#0a2545" opacity=".82"/><text x="73" y="364" fill="#f6db99" font-family="Arial,sans-serif" font-size="16" letter-spacing="2">CONOCIMIENTO  ·  PRÁCTICA  ·  COMUNIDAD</text>
+</svg>
