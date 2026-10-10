@@ -44,7 +44,7 @@ export const createProject = (
     name: input.name.trim(),
     mode,
     status: mode === "AUDIT" ? "review" : "active",
-    frameworkVersion: "5.1.0",
+    frameworkVersion: "5.2.0",
     createdAt: now,
     updatedAt: now,
     state: {
