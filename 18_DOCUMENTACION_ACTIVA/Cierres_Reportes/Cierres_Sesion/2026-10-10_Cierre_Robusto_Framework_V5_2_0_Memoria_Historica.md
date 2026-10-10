@@ -19,7 +19,7 @@ Esta sesión reconcilió la arquitectura conceptual integrada con la versión op
 | Núcleo | Nuevo Integral Autosostenido v5.2.0 sin destruir v5.1.0 |
 | README narrativo | PR #11 aprobado e integrado; SVG de portada, Figura 1 editorial, PH/IT/AT y memoria |
 | Registro histórico | Documento de 2026-10-10 elaborado y aprobado en MD, DOCX, PDF y paquete de figuras |
-| Custodia | Hashes SHA-256 registrados en `2026-10-10_Registro_Aprobacion_Resumen_Historico_Framework_V5_2_0.md`; carga física de binarios en GitHub pendiente |
+| Custodia | Hashes SHA-256 registrados en `2026-10-10_Registro_Aprobacion_Resumen_Historico_Framework_V5_2_0.md`; solo Markdown autorizado para GitHub; verificar la incorporación del texto integral aprobado |
 | Deuda | Reabierta auditoría proporcional: accesibilidad, corpus, README inglés, evidencia y archivos aprobados |
 
 ## III. Estado conceptual vigente
@@ -46,7 +46,7 @@ La arquitectura es **un canon vigente y revisable**, no una verdad absoluta; el 
 
 **Aprobado:** contenido del registro histórico y proyecto de evolución conceptual.  
 **Ejecutado:** publicación v5.2.0 en GitHub, README editorial en main y metadatos de la aprobación en rama de cierre.  
-**Pendiente de comprobar:** carga íntegra de los cuatro archivos aprobados, pruebas de accesibilidad con personas y lectores reales, referencia inglesa y evidencia empírica.  
+**Pendiente de comprobar:** carga íntegra del Markdown aprobado, pruebas de accesibilidad con personas y lectores reales, referencia inglesa y evidencia empírica.  
 **No afirmar:** validación universal de agencia, eficacia pedagógica, comunidad consolidada, transferibilidad o emergencia caleidoscópica consistente.
 
 ## V. Cierre epistemológico, técnico y humano
@@ -58,7 +58,7 @@ La arquitectura es **un canon vigente y revisable**, no una verdad absoluta; el 
 
 ## VI. Siguiente prioridad
 
-Custodiar físicamente los cuatro archivos aprobados con sus figuras; cerrar D01–D04 mediante evidencia; activar uso real y observación antes de nuevas expansiones. No modificar canones ni releases históricos sin propuesta, pruebas y gate humano.
+Custodiar en GitHub solo el Markdown aprobado y mantener DOCX, PDF y paquete visual para uso personal; cerrar D01–D04 mediante evidencia; activar uso real y observación antes de nuevas expansiones. No modificar canones ni releases históricos sin propuesta, pruebas y gate humano.
 
 ## VII. Declaración de transparencia
 
