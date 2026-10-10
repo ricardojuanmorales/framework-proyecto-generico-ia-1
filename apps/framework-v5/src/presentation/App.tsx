@@ -342,7 +342,7 @@ export function App({ repository, persistenceMode }: Props) {
   return (
     <main className="shell">
       <header>
-        <p className="eyebrow">Framework Genérico V5 · v5.1.0</p>
+        <p className="eyebrow">Framework Genérico V5 · v5.2.0</p>
         <h1>{mode} local-first</h1>
         <p>Activar, persistir, exportar e importar sin backend ni IA externa.</p>
         <p className="mode">Persistencia: <strong>{persistenceMode}</strong></p>
