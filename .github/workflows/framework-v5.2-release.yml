@@ -35,7 +35,7 @@ jobs:
           test -f 02_ARQUITECTURA_CONCEPTUAL/Arquitecturas_Referencia/2026-10-08_Arquitectura_Conceptual_Integrada_Framework_Canon_v1_0.md
           test -f 01_FUNDAMENTO_FILOSOFICO/Marcos_Referencia/2026-10-08_Repositorio_Epistemologico_Fundacional_Framework_Canon_v1_0.md
           test -f 00_CONTROL_MAESTRO/Referecias_Base/2026-10-09_Framework_Generico_V5_2_0_Integral_Autosostenido_v1_0.md
-          test -f 18_DOCUMENTACION_ACTIVA/Cierres_Reportes/2026-10-09_GitHub_Release_Framework_V5_2_0_CANDIDATO.md
+          test -f 18_DOCUMENTACION_ACTIVA/Cierres_Reportes/2026-10-09_GitHub_Release_Framework_V5_2_0.md
           grep -q "Framework Genérico V5.2.0" README.md
           node -e "const p=require('./apps/framework-v5/package.json'); if(p.version!=='5.2.0') process.exit(1)"
       - name: Build reproducible source archive
@@ -59,5 +59,5 @@ jobs:
             echo "Release already exists; refusing overwrite."
             exit 1
           fi
-          NOTES="18_DOCUMENTACION_ACTIVA/Cierres_Reportes/2026-10-09_GitHub_Release_Framework_V5_2_0_CANDIDATO.md"
+          NOTES="18_DOCUMENTACION_ACTIVA/Cierres_Reportes/2026-10-09_GitHub_Release_Framework_V5_2_0.md"
           gh release create "$TAG" "${{ steps.package.outputs.zip }}" "${{ steps.package.outputs.sha }}" --target "$GITHUB_SHA" --title "Framework Genérico V5.2.0 · Arquitectura Conceptual Integrada" --notes-file "$NOTES"
