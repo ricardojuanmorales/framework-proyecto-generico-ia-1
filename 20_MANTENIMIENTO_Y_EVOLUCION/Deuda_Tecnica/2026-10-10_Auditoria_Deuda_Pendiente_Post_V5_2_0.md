@@ -17,7 +17,7 @@ El Framework se encuentra consolidado arquitectónicamente y tiene aplicación v
 | D06 | Alta de investigación | Emergencias caleidoscópicas reales y transferibilidad entre casos sin prueba sistemática | Protocolos cualitativos, múltiples casos, trazabilidad, triangulación, límites de generalización | ABIERTA POR EVIDENCIA |
 | D07 | Media | Comunidad de práctica efectiva e indicadores de madurez no acreditados | Observar participación sostenida, reciprocidad y repertorio compartido | ABIERTA POR EVIDENCIA |
 | D08 | Media | Verificación independiente de los ZIP/checksums y publicación v5.2.0 no adjunta aquí | Descargar artefactos, comprobar sha256sum, comparar commit/tag, comprobar Pages | REVISIÓN REQUERIDA |
-| D09 | Alta archivística | Copias MD, DOCX, PDF y ZIP aprobados no cargadas físicamente en repositorio mediante el conector textual disponible | Cargar binarios mediante flujo autorizado y comparar los cuatro SHA-256 | ABIERTA |
+| D09 | Alta archivística | Markdown histórico íntegro pendiente de verificación de carga en el repositorio; Word/PDF/ZIP se mantienen para uso personal | Verificar presencia y SHA-256 del único documento Markdown de archivo; no cargar formatos personales | ABIERTA |
 | D10 | Media | Diferenciar versiones V5.2 de esquema 0.1.0 y archivos históricos con nombres v5.1 en guías | Añadir advertencias/versionado contextual en índices humanos sin reescribir documentos históricos | ABIERTA |
 | D11 | Media | Comprobación humana de experiencias completas START, INTEGRATE, AUDIT, export/import fuera de pruebas automáticas | Pilotos situados, documentación de errores y bitácoras de usuario | ABIERTA POR USO |
 
@@ -30,7 +30,7 @@ El Framework se encuentra consolidado arquitectónicamente y tiene aplicación v
 
 ## Ruta de acción priorizada
 
-1. **Custodia**: incorporación exacta de archivos aprobados y verificación de hashes (D09).
+1. **Custodia**: incorporación exacta del Markdown aprobado y verificación de hash (D09).
 2. **Accesibilidad y base documental**: lector de pantalla (D01) y bibliografía BA-003 (D02).
 3. **Coherencia editorial**: README inglés, enlaces, versiones cartapacios (D03, D04, D10).
 4. **Validación técnica situada**: piloto START/INTEGRATE/AUDIT, checksums y Pages (D08, D11).
