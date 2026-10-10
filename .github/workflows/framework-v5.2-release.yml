@@ -1,0 +1,63 @@
+name: Publish Framework V5.2.0 Release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".release/v5.2.0"
+      - ".github/workflows/framework-v5.2-release.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact release commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Verify Framework V5.2
+        working-directory: apps/framework-v5
+        run: |
+          npm install --global npm@11.19.0
+          npm ci --ignore-scripts
+          npm run verify
+      - name: Check 5.2.0 distribution contract
+        run: |
+          test -f .release/v5.2.0
+          test -f 02_ARQUITECTURA_CONCEPTUAL/Arquitecturas_Referencia/2026-10-08_Arquitectura_Conceptual_Integrada_Framework_Canon_v1_0.md
+          test -f 01_FUNDAMENTO_FILOSOFICO/Marcos_Referencia/2026-10-08_Repositorio_Epistemologico_Fundacional_Framework_Canon_v1_0.md
+          test -f 00_CONTROL_MAESTRO/Referecias_Base/2026-10-09_Framework_Generico_V5_2_0_Integral_Autosostenido_v1_0.md
+          test -f 18_DOCUMENTACION_ACTIVA/Cierres_Reportes/2026-10-09_GitHub_Release_Framework_V5_2_0.md
+          grep -q "Framework Genérico V5.2.0" README.md
+          node -e "const p=require('./apps/framework-v5/package.json'); if(p.version!=='5.2.0') process.exit(1)"
+      - name: Build reproducible source archive
+        id: package
+        run: |
+          SHORT_SHA="$(git rev-parse --short=12 HEAD)"
+          ZIP="framework-generico-v5.2.0_${SHORT_SHA}.zip"
+          git archive --format=zip --output="${ZIP}" HEAD
+          sha256sum "${ZIP}" > "${ZIP}.sha256"
+          sha256sum -c "${ZIP}.sha256"
+          unzip -l "${ZIP}" | grep -q '2026-10-08_Arquitectura_Conceptual_Integrada_Framework_Canon_v1_0.md'
+          unzip -l "${ZIP}" | grep -q '2026-10-09_Framework_Generico_V5_2_0_Integral_Autosostenido_v1_0.md'
+          echo "zip=${ZIP}" >> "$GITHUB_OUTPUT"
+          echo "sha=${ZIP}.sha256" >> "$GITHUB_OUTPUT"
+      - name: Publish new immutable GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="v5.2.0"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release already exists; refusing overwrite."
+            exit 1
+          fi
+          NOTES="18_DOCUMENTACION_ACTIVA/Cierres_Reportes/2026-10-09_GitHub_Release_Framework_V5_2_0.md"
+          gh release create "$TAG" "${{ steps.package.outputs.zip }}" "${{ steps.package.outputs.sha }}" --target "$GITHUB_SHA" --title "Framework Genérico V5.2.0 · Arquitectura Conceptual Integrada" --notes-file "$NOTES"
