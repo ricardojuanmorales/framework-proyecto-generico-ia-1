@@ -9,7 +9,7 @@ try {
   for (const mode of ["START", "INTEGRATE", "AUDIT"]) {
     const context = await browser.newContext({ acceptDownloads: true });
     const page = await context.newPage();
-    page.on("dialog", dialog => dialog.dismiss());
+
     const browserErrors = [];
     page.on("pageerror", err => browserErrors.push(String(err)));
     page.on("console", m => { if (m.type() === "error") browserErrors.push(m.text()); });
@@ -43,8 +43,20 @@ try {
     const chooser = page.locator('input[type="file"]');
     await chooser.setInputFiles({name:"invalid.json", mimeType:"application/json",buffer:Buffer.from('{"untrusted":true}')});
     await page.getByText(/Rechazado: invalid.json/).waitFor();
+    page.once("dialog", dialog => dialog.dismiss());
     await chooser.setInputFiles({name:"valid.json", mimeType:"application/json",buffer:Buffer.from(JSON.stringify(pkg))});
     await page.getByText(/Importación cancelada: valid.json/).waitFor();
+    const zipPromise = page.waitForEvent("download");
+    await page.getByRole("button", { name: "Exportar paquete ZIP" }).click();
+    const zipDownload = await zipPromise;
+    const zipChunks = await (await zipDownload.createReadStream()).toArray();
+    const zipBuffer = Buffer.concat(zipChunks);
+    assert.equal(zipBuffer[0], 0x50);
+    assert.equal(zipBuffer[1], 0x4b);
+    page.once("dialog", dialog => dialog.accept());
+    await chooser.setInputFiles({name:"restored.zip",mimeType:"application/zip",buffer:zipBuffer});
+    await page.getByText(/Importación completada: restored.zip/).waitFor();
+    assert.equal((await page.locator('section').filter({ has: page.locator('h2', { hasText: "Estado" }) }).first().innerText()).includes("Prueba E2E " + mode),true);
     await context.close();
     process.stdout.write("PASS "+mode+" browser persistence/export/import rejection & cancellation\n");
   }
