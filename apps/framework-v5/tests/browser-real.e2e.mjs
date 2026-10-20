@@ -1,5 +1,7 @@
 import assert from "node:assert/strict";
-import { chromium } from "playwright";
+import { createRequire } from "node:module";
+const require = createRequire(import.meta.url);
+const { chromium } = require("/tmp/fw53-playwright/node_modules/playwright");
 
 const base = process.env.E2E_BASE_URL || "http://127.0.0.1:4173/";
 const browser = await chromium.launch({ headless: true });
