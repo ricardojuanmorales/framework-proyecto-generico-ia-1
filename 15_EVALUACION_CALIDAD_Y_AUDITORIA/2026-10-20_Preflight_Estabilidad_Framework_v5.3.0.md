@@ -21,3 +21,10 @@
 **Decisión:** no crear tag ni release **v5.3.0** estable, no cambiar `package.json` como sustituto de pruebas. Conservar `main` v5.2.0. El Gate humano autorizó proceder **condicionado a evidencia**; la condición técnica de estabilidad no ha sido satisfecha. Enlace PR de documentación: https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1/pull/13.
 
 **Transparencia:** no se ejecutó `npm ci` / `npm run verify` en checkout completo porque este contenedor no tiene acceso a clonación directa GitHub; los archivos de proyecto se inspeccionaron mediante GitHub connector. Esto no equivale a un fallo del software, pero impide certificar sus pruebas aquí.
+
+## Rectificación de lectura de código · 2026-10-20
+**CORRECCIÓN TRAZABLE DEL JUICIO ANTERIOR:** la afirmación «INTEGRATE y AUDIT no implementados» estaba basada en `apps/framework-v5/README.md`, cuyo texto sigue etiquetándolos como deuda. La inspección directa de **`apps/framework-v5/src/presentation/App.tsx`** y **`src/application/project-service.ts`** muestra código para seleccionar `START`, `INTEGRATE` y `AUDIT`, solicitar contexto de origen en los dos últimos, preservar el origen (`preservationRule: preserve_source`) y solicitar foco de auditoría para AUDIT; `createProject` asigna a AUDIT el estado `review`.
+
+**Nuevo dictamen V53-T2:** **IMPLEMENTACIÓN PARCIAL VERIFICADA ESTÁTICAMENTE, VALIDACIÓN FUNCIONAL PENDIENTE**. No afirmar inexistencia de los modos. No afirmar equivalencia/ejecución integral validada sin ensayos.
+
+**Deuda adicional concreta:** actualizar README de la app después de pruebas; crear matriz de correspondencia START/INTEGRATE/AUDIT frente a contratos y casos de prueba; medir cobertura UI → servicio → esquema → portabilidad → reconstrucción. La compatibilidad histórica de proyectos `5.0.0`, `5.1.0` y `5.2.0` se comprueba como intención de prueba explícita en `src/tests/framework-v5.2-compatibility.test.ts`; **no se ejecutaron esas pruebas en este entorno**.
