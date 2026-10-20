@@ -31,6 +31,6 @@ describe("G-FW53: interfaz de los tres modos en DOM aislado", () => {
     expect(buttons.find((b) => b.textContent?.includes("Crear START"))?.disabled).toBe(true);
     expect(buttons.find((b) => b.textContent?.includes("Exportar paquete ZIP"))?.disabled).toBe(true);
     expect(buttons.find((b) => b.textContent?.includes("Exportar JSON técnico"))?.disabled).toBe(true);
-    expect(host.textContent).toContain("Local");
+    expect(host.textContent).toContain("local-first");
   });
 });
