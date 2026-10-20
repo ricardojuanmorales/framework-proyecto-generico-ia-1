@@ -10,9 +10,16 @@ try {
     const context = await browser.newContext({ acceptDownloads: true });
     const page = await context.newPage();
     page.on("dialog", dialog => dialog.dismiss());
+    const browserErrors = [];
+    page.on("pageerror", err => browserErrors.push(String(err)));
+    page.on("console", m => { if (m.type() === "error") browserErrors.push(m.text()); });
     await page.goto(base);
+    await page.waitForLoadState("networkidle");
+    const selectors = await page.locator("select").count();
+    process.stdout.write("DIAG "+mode+" select-count="+selectors+" title="+await page.title()+" body="+(await page.locator("body").innerText()).slice(0,250)+" errors="+browserErrors.join("|")+"\\n");
+    assert.ok(selectors > 0, "No select elements rendered: " + browserErrors.join("|"));
     const label = (name) => page.getByLabel(name, { exact: true });
-    await label("Modo").selectOption(mode);
+    await page.locator("select").first().selectOption(mode);
     await label("Nombre").fill("Prueba E2E " + mode);
     await label("Problema").fill("Verificar persistencia en Chromium");
     await label("Propósito").fill("Ensayo sintético sin datos personales");
