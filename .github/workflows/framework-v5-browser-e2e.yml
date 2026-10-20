@@ -1,0 +1,47 @@
+name: Framework V5 Browser E2E Pilot
+on:
+  pull_request:
+    paths:
+      - 'apps/framework-v5/**'
+      - '.github/workflows/framework-v5-browser-e2e.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  chromium-real:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/framework-v5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Reproducible project dependencies
+        run: |
+          npm install --global npm@11.19.0
+          npm ci --ignore-scripts
+      - name: Install isolated browser runner
+        run: |
+          mkdir -p /tmp/fw53-playwright
+          cd /tmp/fw53-playwright
+          npm install --no-save playwright@1.56.1
+          echo "/tmp/fw53-playwright/node_modules" >> "$GITHUB_PATH"
+      - name: Install Chromium
+        run: npx --yes playwright@1.56.1 install --with-deps chromium
+      - name: Build app
+        run: npm run build
+      - name: Start local preview
+        run: |
+          npm run preview -- --host 127.0.0.1 --port 4173 > /tmp/fw53-preview.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:4173/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/fw53-preview.log
+          exit 1
+      - name: Run real Chromium three-mode contract
+        env:
+          NODE_PATH: /tmp/fw53-playwright/node_modules
+        run: node tests/browser-real.e2e.mjs
