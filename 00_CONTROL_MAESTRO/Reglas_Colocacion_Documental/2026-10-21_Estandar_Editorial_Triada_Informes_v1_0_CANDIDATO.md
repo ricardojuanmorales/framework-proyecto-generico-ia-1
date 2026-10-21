@@ -1,6 +1,6 @@
 # Estándar editorial de la tríada documental · v1.0
 
-**Estado:** APROBADO por autoridad humana el 2026-10-21; gate de canonización autorizado.\\
+**Estado:** APROBADO por autoridad humana el 2026-10-21; gate de canonización autorizado.\
 **Edición:** v1.0 del estándar documental transversal. **Ámbito:** modelos transferibles a distintos proyectos y versiones; la adopción al Framework v5.3.0 se registra por separado.
 **Principio:** tres miradas autónomas; una identidad editorial; cero sustitución de juicio humano.
 
