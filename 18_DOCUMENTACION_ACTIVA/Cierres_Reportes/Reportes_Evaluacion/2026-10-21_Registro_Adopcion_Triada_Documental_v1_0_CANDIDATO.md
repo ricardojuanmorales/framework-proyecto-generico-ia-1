@@ -1,6 +1,6 @@
 # Registro de adopción · Tríada documental v1.0
 
-**Estado:** APROBADO por autoridad humana el 2026-10-21; gate de canonización autorizado.\\
+**Estado:** APROBADO por autoridad humana el 2026-10-21; gate de canonización autorizado.\
 **Corte:** 2026-10-21. **Ámbito:** Framework Genérico v5.3.0, informes posteriores sin reescritura de pilotos previos.\
 **Principio:** tres miradas autónomas; una identidad editorial; cero sustitución de juicio humano.
 
