@@ -15,6 +15,8 @@ Este repositorio no intenta darte una receta universal. Te ofrece una **arquitec
 
 ## 🚪 Elige tu puerta de entrada
 
+- 📚 **Tríada documental MH · IEISP · PIEF (modelos v1.0):** [Portal humano, guías y esquemas](21_WIKI_DOCUMENTACION_HUMANA/Guias_Framework_V5/2026-10-21_Portal_Triada_Documental_v1_0.md)
+
 - 🌐 **Aplicación V5:** https://ricardojuanmorales.github.io/framework-proyecto-generico-ia-1/v5/
 - 📦 **Release estable actual v5.3.0:** https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1/releases/tag/v5.3.0
 - 🗃️ **Historial de releases:** https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1/releases
