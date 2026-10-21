@@ -14,17 +14,17 @@ const project = () => createProject({
 
 describe("Framework v5.2.0: continuidad de versiones", () => {
   it("el contrato JSON incluye todas las versiones admitidas", () => {
-    expect(projectSchema.properties.frameworkVersion.enum).toEqual(["5.0.0", "5.1.0", "5.2.0"]);
+    expect(projectSchema.properties.frameworkVersion.enum).toEqual(["5.0.0", "5.1.0", "5.2.0", "5.3.0"]);
   });
   it("crea proyectos nuevos con version 5.2.0 sin cambiar schema 0.1.0", () => {
     const candidate = project();
-    expect(candidate.frameworkVersion).toBe("5.2.0");
+    expect(candidate.frameworkVersion).toBe("5.3.0");
     expect(candidate.schemaVersion).toBe("0.1.0");
     const staged = stageImport(exportProject(candidate));
-    expect(staged.project.frameworkVersion).toBe("5.2.0");
+    expect(staged.project.frameworkVersion).toBe("5.3.0");
   });
 
-  for (const historicalVersion of ["5.0.0", "5.1.0"] as const) {
+  for (const historicalVersion of ["5.0.0", "5.1.0", "5.2.0"] as const) {
     it(`acepta proyecto historico ${historicalVersion} sin migracion forzada`, () => {
       const historical = { ...project(), frameworkVersion: historicalVersion };
       const staged = stageImport(exportProject(historical));
@@ -36,7 +36,7 @@ describe("Framework v5.2.0: continuidad de versiones", () => {
 
   it("exporta e importa ZIP v5.2.0 con version manifiesto 0.1.0", () => {
     const staged = stagePortableZipImport(buildPortableZip(project()));
-    expect(staged.project.frameworkVersion).toBe("5.2.0");
+    expect(staged.project.frameworkVersion).toBe("5.3.0");
     expect(staged.packageVersion).toBe("0.1.0");
   });
 });
