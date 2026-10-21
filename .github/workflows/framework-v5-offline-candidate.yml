@@ -59,3 +59,65 @@ jobs:
             /tmp/fw53-candidate-artifacts/INDEX.json
           if-no-files-found: error
           retention-days: 14
+
+  independent-restore-no-external-requests:
+    needs: build-and-restore
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: fw53-offline-pilot-candidate
+          path: /tmp/fw53-recipient
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install Chromium for recipient-only verification
+        run: |
+          mkdir -p /tmp/fw53-recipient-playwright
+          cd /tmp/fw53-recipient-playwright
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Verify recipient package, network policy and browser restoration
+        run: |
+          set -euo pipefail
+          cd /tmp/fw53-recipient
+          sha256sum -c SHA256SUMS
+          mkdir restored
+          unzip -q framework-v5.3-piloto-offline-app_*.zip -d restored
+          cd restored
+          sha256sum -c MANIFEST.sha256
+          python3 -m http.server 4177 --bind 127.0.0.1 > /tmp/fw53-recipient-http.log 2>&1 &
+          server=$!
+          trap 'kill $server || true' EXIT
+          for i in $(seq 1 15); do if curl -fsS http://127.0.0.1:4177/ >/dev/null; then break; fi; sleep 1; done
+          node --input-type=module <<'JS'
+          import assert from 'node:assert/strict';
+          import { createRequire } from 'node:module';
+          const require=createRequire(import.meta.url);
+          const { chromium }=require('/tmp/fw53-recipient-playwright/node_modules/playwright');
+          const browser=await chromium.launch({headless:true});
+          try {
+            const context=await browser.newContext();
+            let rejectedExternal=0;
+            await context.route('**/*',route=>{
+              const url=new URL(route.request().url());
+              if(url.protocol==='http:' && url.hostname==='127.0.0.1' && url.port==='4177')return route.continue();
+              rejectedExternal++;return route.abort('blockedbyclient');
+            });
+            const page=await context.newPage();
+            const errors=[];page.on('pageerror',e=>errors.push(String(e)));
+            await page.goto('http://127.0.0.1:4177/');
+            await page.locator('select').first().selectOption('START');
+            await page.getByLabel('Nombre',{exact:true}).fill('Receptor independiente ZIP');
+            await page.getByLabel('Problema',{exact:true}).fill('Validar recuperación aislada');
+            await page.getByLabel('Propósito',{exact:true}).fill('Conservar estado local sin servicios remotos');
+            await page.getByRole('button',{name:'Crear START'}).click();
+            await page.getByText('Proyecto START creado y persistido.').waitFor();
+            await page.reload();
+            await page.getByText('Proyecto local restaurado.').waitFor();
+            assert.equal(errors.length,0,errors.join('|'));
+            assert.equal(rejectedExternal,0,'External request attempted: '+rejectedExternal);
+            console.log('PASS INDEPENDENT RUNNER: restored ZIP starts and reloads; no external requests');
+            await context.close();
+          }finally{await browser.close()}
+          JS
