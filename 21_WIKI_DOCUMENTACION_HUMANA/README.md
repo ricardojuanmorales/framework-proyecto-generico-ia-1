@@ -11,7 +11,6 @@ Este cartapacio reúne la documentación destinada a personas que quieren usar, 
 3. **Onboarding dual** → diferencia entre usar el Framework y contribuir al Framework.
 4. **Documentación especializada** → guías por perfil, transferencia, wiki y continuidad.
 
-5. **Ponencia académica v1.5** → [manuscrito íntegro y figura original](../11_MULTIMODALIDAD_Y_PUBLICACION/Documentos_Publicos/Caleidoscopio_Complejidad_Ponencia_v1_5_Final_CANON_BASE.md), referente conceptual conservado como versión base, sin implicar aceptación editorial.
 
 ## Principio
 
