@@ -16,6 +16,7 @@ Este repositorio no intenta darte una receta universal. Te ofrece una **arquitec
 ## 🚪 Elige tu puerta de entrada
 
 - 🌐 **Aplicación V5:** https://ricardojuanmorales.github.io/framework-proyecto-generico-ia-1/v5/
+- 📄 **Ponencia académica v1.5 (texto íntegro · referencia canónica base):** [El Caleidoscopio de la Complejidad](11_MULTIMODALIDAD_Y_PUBLICACION/Documentos_Publicos/Caleidoscopio_Complejidad_Ponencia_v1_5_Final_CANON_BASE.md) · [Guía en Wiki Humana](21_WIKI_DOCUMENTACION_HUMANA/Guias_Caleidoscopio/README.md)
 - 📦 **Release estable actual v5.3.0:** https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1/releases/tag/v5.3.0
 - 🗃️ **Historial de releases:** https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1/releases
 - 📚 **Repositorio maestro:** https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1
