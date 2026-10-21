@@ -45,7 +45,7 @@ jobs:
           from pathlib import Path
           record=json.loads(Path('RECORD.json').read_text())
           assert record["release_status"]=="NOT_RELEASED"
-          assert record["original_app_version"]=="5.2.0"
+          assert record["original_app_version"]=="5.3.0"
           assert record["external_services_required"] is False
           print("PASS ZIP extraction and local server, metadata scope confirmed")
           PY

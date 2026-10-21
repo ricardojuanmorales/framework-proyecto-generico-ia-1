@@ -1,0 +1,56 @@
+name: Publish Framework V5.3.0 Release (Human Gate)
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".release/v5.3.0"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  release:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Assert human gate marker and exact release contract
+        run: |
+          set -euo pipefail
+          test -f .release/v5.3.0
+          grep -Fxq 'GATE_RELEASE_V5_3_0=APPROVED' .release/v5.3.0
+          grep -Fxq 'HUMAN_AUTHORIZATION=YES' .release/v5.3.0
+          test -f 19_IMPLEMENTACION_Y_DESPLIEGUE/2026-10-20_RESULTADO_PRE_RELEASE_V5_3_0_RC.md
+          test -f 07_PLANTILLAS_Y_MODELOS/Plantillas_Evaluacion/Framework_v0.5.3/IEISP_Framework_V0.5.3.md
+          test -f 07_PLANTILLAS_Y_MODELOS/Plantillas_Evaluacion/Framework_v0.5.3/PIEF_Framework_V0.5.3.md
+          node -e "const p=require('./apps/framework-v5/package.json'); if(p.version!=='5.3.0')process.exit(1)"
+          node -e "const p=require('./apps/framework-v5/package-lock.json');if(p.version!=='5.3.0'||p.packages[''].version!=='5.3.0')process.exit(1)"
+      - name: Verify application
+        working-directory: apps/framework-v5
+        run: |
+          npm install --global npm@11.19.0
+          npm ci --ignore-scripts
+          npm run verify
+      - name: Package immutable source release
+        id: bundle
+        run: |
+          set -euo pipefail
+          SHA="$(git rev-parse --short=12 HEAD)"
+          ZIP="framework-generico-v5.3.0_${SHA}.zip"
+          git archive --format=zip --output="$ZIP" HEAD
+          sha256sum "$ZIP" > "$ZIP.sha256"
+          sha256sum -c "$ZIP.sha256"
+          unzip -l "$ZIP" | grep -q 'IEISP_Framework_V0.5.3.md'
+          unzip -l "$ZIP" | grep -q 'PIEF_Framework_V0.5.3.md'
+          echo "zip=$ZIP" >> "$GITHUB_OUTPUT"
+      - name: Publish immutable release only once
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release view v5.3.0 >/dev/null 2>&1 && { echo 'Release exists; refusing overwrite'; exit 1; }
+          gh release create v5.3.0 "${{ steps.bundle.outputs.zip }}" "${{ steps.bundle.outputs.zip }}.sha256" --target "$GITHUB_SHA" --title "Framework Genérico V5.3.0" --notes-file 19_IMPLEMENTACION_Y_DESPLIEGUE/2026-10-20_NOTAS_RELEASE_V5_3_0_CANDIDATO.md

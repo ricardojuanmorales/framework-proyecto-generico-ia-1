@@ -1,6 +1,6 @@
-# Framework V5 App · Estado verificable v5.2.0 y preparación v5.3
+# Framework V5 App · Candidata técnica v5.3.0
 
-**Versión técnica declarada:** `5.2.0`. **Estado de este documento:** actualización de lectura técnica para el piloto documental v0.5.3; no constituye una release v5.3.0.
+**Versión técnica candidata:** `5.3.0`. **Estado:** rama de estabilización sin tag ni release; la edición documental v0.5.3 permanece experimental. No implica certificación de TSR semántica ni publicación estable.
 
 ## Modos presentes en el código
 
