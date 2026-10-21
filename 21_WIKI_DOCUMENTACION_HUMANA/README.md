@@ -10,6 +10,7 @@ Este cartapacio reúne la documentación destinada a personas que quieren usar, 
 2. **Guía rápida V5** → uso cotidiano de START, INTEGRATE y AUDIT.
 3. **Onboarding dual** → diferencia entre usar el Framework y contribuir al Framework.
 4. **Documentación especializada** → guías por perfil, transferencia, wiki y continuidad.
+5. **Tríada documental (MH · IEISP · PIEF):** [portal humano, plantillas y resúmenes visuales](Guias_Framework_V5/2026-10-21_Portal_Triada_Documental_v1_0.md).
 
 
 ## Principio
