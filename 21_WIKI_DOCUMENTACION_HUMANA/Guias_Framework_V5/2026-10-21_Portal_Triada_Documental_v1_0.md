@@ -1,6 +1,6 @@
 # 📚 Tríada documental del Framework · Portal humano
 
-**Modelos:** plantillas y guías genéricas v1.0, aprobadas conceptualmente el 2026-10-21; publicación canónica pendiente.
+**Modelos:** plantillas y guías genéricas v1.0, aprobadas por gate humano el 2026-10-21; integración canónica verificable en `main` mediante PR #18.
 **Adopción situada:** Framework v5.3.0, documentada separadamente; los tres informes completos para ese corte **aún no se han producido**.
 **Principio:** tres miradas autónomas, una identidad editorial y responsabilidad humana.
 
@@ -19,13 +19,13 @@
 
 | Nivel | Qué existe | Estado |
 |---|---|---|
-| **Modelos reutilizables (07)** | Norma, plantillas, guías y gráficos | Aprobación conceptual; publicación pendiente |
+| **Modelos reutilizables (07)** | Norma, plantillas, guías y gráficos | Aprobados para uso canónico tras integración en `main` |
 | **Antecedentes documentales** | MH v5.2.0 e IEISP/PIEF piloto v0.5.3 | Cortes históricos preservados |
 | **Primera ejecución con modelos v1.0** | MH, IEISP y PIEF situados en Framework v5.3.0 | **Pendiente de elaboración y validación** |
 
 ## Genealogía documental, no sustitución
 - **Memoria histórica v5.2.0, 10-X-2026:** informe fuente PDF aportado por los autores; *no se replica en este portal*, pues su ubicación pública canónica y permisos de difusión no fueron confirmados.
 - [IEISP piloto v0.5.3](../../07_PLANTILLAS_Y_MODELOS/Plantillas_Evaluacion/Framework_v0.5.3/IEISP_Framework_V0.5.3.md) y [PIEF piloto v0.5.3](../../07_PLANTILLAS_Y_MODELOS/Plantillas_Evaluacion/Framework_v0.5.3/PIEF_Framework_V0.5.3.md) son registros históricos de corte, no dictámenes actualizados a v5.3.0 estable.
-- Norma editorial aprobada conceptualmente (publicación pendiente): [estándar editorial v1.0](../../00_CONTROL_MAESTRO/Reglas_Colocacion_Documental/2026-10-21_Estandar_Editorial_Triada_Informes_v1_0_CANDIDATO.md).
+- Norma editorial aprobada mediante gate humano: [estándar editorial v1.0](../../00_CONTROL_MAESTRO/Reglas_Colocacion_Documental/2026-10-21_Estandar_Editorial_Triada_Informes_v1_0_CANDIDATO.md).
 
 **Protección editorial:** el manuscrito en revisión por revista no aparece aquí, ni se enlaza por esta tríada.
