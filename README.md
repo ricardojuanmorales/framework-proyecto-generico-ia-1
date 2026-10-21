@@ -22,6 +22,25 @@ Este repositorio no intenta darte una receta universal. Te ofrece una **arquitec
 - 📜 **Notas de release v5.2.0:** [Arquitectura Conceptual Integrada](18_DOCUMENTACION_ACTIVA/Cierres_Reportes/2026-10-09_GitHub_Release_Framework_V5_2_0.md)
 - 🧬 **Arquitectura conceptual integrada:** `02_ARQUITECTURA_CONCEPTUAL/Arquitecturas_Referencia/2026-10-08_Arquitectura_Conceptual_Integrada_Framework_Canon_v1_0.md`
 
+- 📖 **IEISP Framework v0.5.3 · informe integral piloto:** [Leer completo](07_PLANTILLAS_Y_MODELOS/Plantillas_Evaluacion/Framework_v0.5.3/IEISP_Framework_V0.5.3.md) · [Lectura breve](07_PLANTILLAS_Y_MODELOS/Plantillas_Evaluacion/Framework_v0.5.3/README_IEISP_Framework_v0.5.3.md)
+- 🧬 **PIEF Framework v0.5.3 · informe fractal piloto:** [Leer completo](07_PLANTILLAS_Y_MODELOS/Plantillas_Evaluacion/Framework_v0.5.3/PIEF_Framework_V0.5.3.md) · [Lectura breve](07_PLANTILLAS_Y_MODELOS/Plantillas_Evaluacion/Framework_v0.5.3/README_PIEF_Framework_v0.5.3.md)
+- 📚 **Wiki_Humana · Guías IEISP/PIEF:** [Portal de instrumentos](21_WIKI_DOCUMENTACION_HUMANA/Guias_Framework_V5/2026-10-20_Portal_Instrumentos_Fractales_v0.5.3.md)
+
+## 🤝 Colaboraciones en Prototipo Experimental
+
+El Framework v5.2 reúne una constelación inicial de **cuatro implementaciones públicas situadas**, con distintas preguntas, métodos y estados de desarrollo. Cada proyecto conserva identidad y gobernanza propia. Los encuentros entre PH, IT y AT son oportunidades de estudio, no prueba automática de autonomía, emergencia caleidoscópica, madurez N3/N4, revisión por pares independiente ni Transferencia Simétrica Reversible completada.
+
+| Proyecto | Campo de colaboración | Situación documentada |
+|---|---|---|
+| [Estudio Metodológico-Estadístico (EME)](https://github.com/ricardojuanmorales/estudio-metodologico-estadistico-1) | Investigación y formación metodológico-estadística | START completado; madurez y productos por desarrollar |
+| [IA en Acción](https://github.com/ricardojuanmorales/educacion-universitaria-iag-1) | Educación universitaria, investigación y mediación con IA | INTEGRATE aprobado; pruebas app/entrevista pendientes |
+| [RIB-EG-IA](https://github.com/ricardojuanmorales/repositorio-institucional-eg-ia-1) | Curaduría, colecciones y patrimonio bibliográfico | Integración técnica documentada; plataforma interactiva pendiente |
+| [EugenIA / Biblioteca Viva](https://github.com/ricardojuanmorales/eugenia-lab-aplicacion-agentica-1) | Investigación bibliométrica y defendibilidad | Montaje INTEGRATE paralelo; ejecución funcional pendiente |
+
+🌱 **¿Qué estamos aprendiendo juntos?** Cómo conservar procedencias, confrontar perspectivas y hacer evolucionar métodos sin sustituir la responsabilidad humana. La **multivalidación de TSR**, la comparación de la estructura/nomenclatura y la consolidación de la comunidad permanecen como [deuda de investigación](20_MANTENIMIENTO_Y_EVOLUCION/Deuda_Tecnica/2026-10-20_Deuda_Sistemica_FW53_v0.5.3.md). No se incluyen aquí fuentes externas NotebookLM ni el asistente cuantitativo.
+
+**Nota de estado:** los informes documentales v0.5.3 están aprobados para piloto experimental. La última release técnica pública estable comprobada sigue siendo **v5.2.0**; la acreditación de **v5.3.0 estable** exige pruebas independientes de aplicación, paquete y custodia Local_First.
+
 ```text
 framework: 5.2.0
 architecture: LOCAL_FIRST

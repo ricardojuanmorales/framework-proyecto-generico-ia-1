@@ -1,53 +1,45 @@
-# Framework V5 App · Vertical Slice 0.1
+# Framework V5 App · Estado verificable v5.2.0 y preparación v5.3
 
-Primer vertical slice funcional de Fase 3.
+**Versión técnica declarada:** `5.2.0`. **Estado de este documento:** actualización de lectura técnica para el piloto documental v0.5.3; no constituye una release v5.3.0.
 
-## Alcance
+## Modos presentes en el código
 
-```text
-START
-→ crear proyecto mínimo
-→ persistir localmente
-→ visualizar estado
-→ exportar paquete JSON
-→ staging de importación
-→ confirmación humana
-→ importar
-→ roundtrip
-```
+La interfaz `src/presentation/App.tsx` permite seleccionar los modos **START**, **INTEGRATE** y **AUDIT**. El servicio `src/application/project-service.ts` implementa la creación de proyectos en los tres modos, con reglas iniciales diferentes:
 
-## Guardarraíles
+- **START:** proyecto nuevo, nombre, problema, propósito, contexto y perfiles activos.
+- **INTEGRATE:** añade datos de proyecto preexistente y `preservationRule: preserve_source`; el flujo completo de no invasión requiere prueba situada.
+- **AUDIT:** requiere contexto del origen y foco de auditoría; crea un registro con estado `review`, sin constituir por sí solo un dictamen de auditoría terminado.
 
-- local-first;
-- sin backend;
-- sin cuentas;
-- sin IA externa;
-- importación tratada como no confiable;
-- schemas JSON versionados;
-- decisión humana antes de persistir importaciones.
+Las tres rutas usan una infraestructura compartida de persistencia y exportación/importación. Se observan mecanismos para ZIP y JSON técnicos, prevalidación y confirmación humana antes de guardar una importación. **La presencia de estos mecanismos en el código no equivale a certificar una evaluación funcional completa o TSR T1–T8**.
 
-## Desarrollo
+## Contratos de integridad y gobernanza
+
+- Diseño **Local_First**, sin backend ni cuenta obligatoria según contrato vigente.
+- Datos importados tratados como no confiables y validados antes de persistir.
+- Conservar identidad, fuente, historial y decisiones humanas.
+- Mantener compatibilidad con proyectos históricos v5.0.0, v5.1.0 y v5.2.0; existen pruebas de compatibilidad en `src/tests/framework-v5.2-compatibility.test.ts`.
+- Madurez `N1–N4` es estado a examinar, no acreditación automática.
+
+## Desarrollo y verificación
 
 ```bash
-npm install --ignore-scripts
-npm run dev
+cd apps/framework-v5
+npm ci --ignore-scripts
 npm run verify
 ```
 
-## Estado
+El comando `verify` contempla TypeScript, build, Vitest y auditorías de arquitectura, secretos, privacidad, accesibilidad y dependencias. El workflow `.github/workflows/framework-v5-verify.yml` lo ejecuta en Node 22 y 24 cuando un PR cambia archivos bajo `apps/framework-v5/**`.
 
-Este slice valida decisiones arquitectónicas tempranas. No representa todavía el MVP completo de V5.
+## Deuda para la release estable v5.3.0
 
-Deuda conocida:
+1. Obtener y conservar resultados CI verificables sobre el commit de la rama.
+2. Ejecutar pruebas E2E reales de los tres modos, persistencia y recuperación.
+3. Probar fallos, importación cancelada, fuentes restringidas y operación sin red.
+4. Verificar paquetes ZIP, integridad y retorno con receptor independiente.
+5. Reconciliar cartapacio raíz Local_First con repositorio GitHub.
+6. Examinar TSR T1–T8 y límites de madurez, aplicados a implementaciones piloto.
+7. Realizar un Gate de estabilidad específico antes de etiquetar/released v5.3.0.
 
-- generar y comprometer lockfile reproducible;
-- ampliar auditorías security/privacy/accessibility;
-- empaquetado multiarchivo final;
-- INTEGRATE y AUDIT;
-- preservación legacy V4 física.
+La documentación histórica del primer vertical slice v0.1 sigue respaldada por los commits y archivos de versiones anteriores. La actualización editorial no altera el código de la aplicación.
 
-## Seguridad de packaging
-
-El packaging ZIP usa `fflate 0.8.3` o superior compatible. La versión 0.8.2 fue descartada durante hardening por el advisory `GHSA-px8p-9vwx-vf98` relacionado con ZIP64 malformado.
-
-El gate `npm run verify` incluye ahora auditoría de dependencias runtime con severidad moderada o mayor.
+[Auditoría preflight del piloto](../../15_EVALUACION_CALIDAD_Y_AUDITORIA/2026-10-20_Preflight_Estabilidad_Framework_v5.3.0.md) · [Matriz de los tres modos](../../15_EVALUACION_CALIDAD_Y_AUDITORIA/2026-10-20_Matriz_START_INTEGRATE_AUDIT_v5.3_Piloto.md).
