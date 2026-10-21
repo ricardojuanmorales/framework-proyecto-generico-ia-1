@@ -16,10 +16,12 @@ Este repositorio no intenta darte una receta universal. Te ofrece una **arquitec
 ## 🚪 Elige tu puerta de entrada
 
 - 🌐 **Aplicación V5:** https://ricardojuanmorales.github.io/framework-proyecto-generico-ia-1/v5/
-- 📦 **Releases estables:** https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1/releases
+- 📦 **Release estable actual v5.3.0:** https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1/releases/tag/v5.3.0
+- 🗃️ **Historial de releases:** https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1/releases
 - 📚 **Repositorio maestro:** https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1
 - 🏛️ **V4 histórica:** https://ricardojuanmorales.github.io/framework-proyecto-generico-ia-1/v4/
-- 📜 **Notas de release v5.2.0:** [Arquitectura Conceptual Integrada](18_DOCUMENTACION_ACTIVA/Cierres_Reportes/2026-10-09_GitHub_Release_Framework_V5_2_0.md)
+- 📜 **Notas de release v5.3.0:** [Alcance y reservas verificadas](19_IMPLEMENTACION_Y_DESPLIEGUE/2026-10-20_NOTAS_RELEASE_V5_3_0_CANDIDATO.md)
+- 📚 **Antecedente v5.2.0:** [Arquitectura Conceptual Integrada](18_DOCUMENTACION_ACTIVA/Cierres_Reportes/2026-10-09_GitHub_Release_Framework_V5_2_0.md)
 - 🧬 **Arquitectura conceptual integrada:** `02_ARQUITECTURA_CONCEPTUAL/Arquitecturas_Referencia/2026-10-08_Arquitectura_Conceptual_Integrada_Framework_Canon_v1_0.md`
 
 - 📖 **IEISP Framework v0.5.3 · informe integral piloto:** [Leer completo](07_PLANTILLAS_Y_MODELOS/Plantillas_Evaluacion/Framework_v0.5.3/IEISP_Framework_V0.5.3.md) · [Lectura breve](07_PLANTILLAS_Y_MODELOS/Plantillas_Evaluacion/Framework_v0.5.3/README_IEISP_Framework_v0.5.3.md)
@@ -28,7 +30,7 @@ Este repositorio no intenta darte una receta universal. Te ofrece una **arquitec
 
 ## 🤝 Colaboraciones en Prototipo Experimental
 
-El Framework v5.2 reúne una constelación inicial de **cuatro implementaciones públicas situadas**, con distintas preguntas, métodos y estados de desarrollo. Cada proyecto conserva identidad y gobernanza propia. Los encuentros entre PH, IT y AT son oportunidades de estudio, no prueba automática de autonomía, emergencia caleidoscópica, madurez N3/N4, revisión por pares independiente ni Transferencia Simétrica Reversible completada.
+El Framework v5.3.0 documenta una constelación inicial de **cuatro implementaciones públicas situadas**, con distintas preguntas, métodos y estados de desarrollo. Cada proyecto conserva identidad y gobernanza propia. Los encuentros entre PH, IT y AT son oportunidades de estudio, no prueba automática de autonomía, emergencia caleidoscópica, madurez N3/N4, revisión por pares independiente ni Transferencia Simétrica Reversible completada.
 
 | Proyecto | Campo de colaboración | Situación documentada |
 |---|---|---|
@@ -39,10 +41,10 @@ El Framework v5.2 reúne una constelación inicial de **cuatro implementaciones 
 
 🌱 **¿Qué estamos aprendiendo juntos?** Cómo conservar procedencias, confrontar perspectivas y hacer evolucionar métodos sin sustituir la responsabilidad humana. La **multivalidación de TSR**, la comparación de la estructura/nomenclatura y la consolidación de la comunidad permanecen como [deuda de investigación](20_MANTENIMIENTO_Y_EVOLUCION/Deuda_Tecnica/2026-10-20_Deuda_Sistemica_FW53_v0.5.3.md). No se incluyen aquí fuentes externas NotebookLM ni el asistente cuantitativo.
 
-**Nota de estado:** los informes documentales v0.5.3 están integrados como piloto. La release v5.3.0 se publica mediante el Gate humano G-REL53 y controles automáticos sobre su commit. Los informes documentales v0.5.3 permanecen identificados como piloto experimental; TSR semántica multicaso y acreditación N3/N4 no se declaran validadas.
+**Nota de estado:** la **release técnica v5.3.0 está publicada como estable** mediante el Gate humano G-REL53 y verificaciones automáticas del commit de lanzamiento. Los informes IEISP/PIEF de edición **v0.5.3** están integrados como **piloto documental**, no como validación empírica interproyectos. TSR semántica multicaso y acreditación transversal N3/N4 siguen pendientes.
 
 ```text
-framework: 5.2.0
+framework: 5.3.0
 architecture: LOCAL_FIRST
 backend_required: false
 cloud_required: false
@@ -473,17 +475,23 @@ Por eso el Framework puede describirse como construido, versionado y operacional
 
 ## 🏛️ Estado
 
-La versión v5.2.0 consolida la Arquitectura Conceptual Integrada del 8 de octubre de 2026. El esquema de proyectos y el paquete portable conservan su contrato 0.1.0, con compatibilidad para proyectos 5.0.0 y 5.1.0. Las evidencias técnicas finales de publicación deben consultarse en GitHub Actions y en los assets verificables del release.
+La **versión técnica estable vigente es v5.3.0**, publicada el **20 de octubre de 2026 (hora de Puerto Rico)** a partir del commit `bdc7d9d7bfd2f923b5af9b50154cda378928ce06`, tras la aprobación humana G-REL53. Integra la arquitectura consolidada en v5.2.0, los informes piloto IEISP y PIEF v0.5.3 y la aplicación verificada en START, INTEGRATE y AUDIT. El esquema de proyecto y el paquete portable mantienen su contrato `0.1.0`, con compatibilidad para proyectos 5.0.0, 5.1.0 y 5.2.0. Las pruebas de Node 22/24, Chromium real y recuperación ZIP en un segundo ejecutor corresponden al alcance técnico ensayado; no acreditan por sí mismas TSR semántica ni madurez N3/N4 entre proyectos.
+
+**Trazabilidad:** [Release estable v5.3.0](https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1/releases/tag/v5.3.0) · [verificación y publicación](https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1/actions/runs/39532231260) · [despliegue GitHub Pages](https://github.com/ricardojuanmorales/framework-proyecto-generico-ia-1/actions/runs/39532231233) · [cierre histórico](18_DOCUMENTACION_ACTIVA/Cierres_Reportes/Cierres_Sesion/2026-10-20_Cierre_Fuerte_PostRelease_Framework_V5_3_0.md).
 
 
 ```text
-Framework: 5.2.0
-App: 5.2.0
+Framework: 5.3.0 (release estable)
+App: 5.3.0 (desplegada en GitHub Pages)
 Schema de proyecto: 0.1.0
 Paquete portable de proyecto: 0.1.0
 Arquitectura: local-first
 V4: preservada
-V5.0.0 y V5.1.0: preservadas como releases históricos
+V5.0.0, V5.1.0 y V5.2.0: preservadas como releases históricas
+IEISP/PIEF: edición documental v0.5.3 (piloto integrado)
+TSR T1–T8 multicaso: pendiente de validación semántica independiente
+N3/N4 interproyectos: no certificados
+Local_First: archivos Git versionados cotejados; archivos privados/ignorados no certificados
 ```
 
 ---
