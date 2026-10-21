@@ -1,0 +1,61 @@
+name: Framework V5 Offline Candidate Pilot
+on:
+  pull_request:
+    paths:
+      - 'apps/framework-v5/**'
+      - '.github/workflows/framework-v5-offline-candidate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build-and-restore:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/framework-v5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Build static portable relative-path app
+        run: |
+          npm install --global npm@11.19.0
+          npm ci --ignore-scripts
+          FRAMEWORK_V5_BASE_PATH=./ npm run build
+      - name: Build candidate ZIPs and SHA256
+        run: python3 tools/build-offline-candidate.py
+      - name: Verify hashes, extraction and launch without network access
+        run: |
+          set -euo pipefail
+          cd /tmp/fw53-candidate-artifacts
+          sha256sum -c SHA256SUMS
+          mkdir unpacked
+          unzip -q framework-v5.3-piloto-offline-app_*.zip -d unpacked
+          cd unpacked
+          sha256sum -c MANIFEST.sha256
+          python3 -m http.server 4176 --bind 127.0.0.1 >/tmp/fw53-offline.log 2>&1 &
+          server=$!
+          trap 'kill $server || true' EXIT
+          for i in $(seq 1 15); do curl -fsS http://127.0.0.1:4176/ >/dev/null && break || sleep 1; done
+          curl -fsS http://127.0.0.1:4176/ | grep -q '<div id="root"'
+          test -n "$(find assets -name '*.js' -type f -print -quit)"
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          record=json.loads(Path('RECORD.json').read_text())
+          assert record["release_status"]=="NOT_RELEASED"
+          assert record["original_app_version"]=="5.2.0"
+          assert record["external_services_required"] is False
+          print("PASS ZIP extraction and local server, metadata scope confirmed")
+          PY
+      - name: Upload candidate artifacts, not GitHub Release
+        uses: actions/upload-artifact@v4
+        with:
+          name: fw53-offline-pilot-candidate
+          path: |
+            /tmp/fw53-candidate-artifacts/*.zip
+            /tmp/fw53-candidate-artifacts/SHA256SUMS
+            /tmp/fw53-candidate-artifacts/INDEX.json
+          if-no-files-found: error
+          retention-days: 14
