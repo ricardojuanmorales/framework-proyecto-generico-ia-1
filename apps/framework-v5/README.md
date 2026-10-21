@@ -1,6 +1,6 @@
 # Framework V5 App · Candidata técnica v5.3.0
 
-**Versión técnica candidata:** `5.3.0`. **Estado:** rama de estabilización sin tag ni release; la edición documental v0.5.3 permanece experimental. No implica certificación de TSR semántica ni publicación estable.
+**Versión técnica:** `5.3.0`. **Estado:** publicación estable sujeta al Gate G-REL53 y a la ejecución exitosa del workflow sobre el commit definitivo. La edición documental v0.5.3 permanece experimental. No implica certificación de TSR semántica ni publicación estable.
 
 ## Modos presentes en el código
 

@@ -1,5 +1,5 @@
-# Framework Genérico v5.3.0 · Notas candidatas de publicación
-**Estado:** BORRADOR · publicación pendiente del Gate humano G-REL53. **No distribuir como release estable hasta su aprobación.**
+# Framework Genérico v5.3.0 · Notas de publicación
+**Estado:** Gate humano G-REL53 aprobado explícitamente el 2026-10-20. Publicación estable condicionada a controles de CI, integridad y artefactos del commit definitivo.
 
 ## Alcance
 - Integración de los informes IEISP y PIEF edición documental **v0.5.3**, guías y Wiki_Humana con autonomía y genealogía preservadas.
@@ -17,4 +17,4 @@ CI del commit candidato previo al registro: Node 22 y 24, Chromium E2E con datos
 - La app local-first no es un agente autónomo de investigación.
 - Ejecutar verificaciones sobre commit exacto de lanzamiento, comprobar SHA-256 y validación de la página pública después de publicación.
 
-**Gobernanza:** la decisión humana de publicar v5.3.0 requiere Gate G-REL53 separado de la AHE experimental G-FW53-EXEC-01.
+**Gobernanza:** Gate G-REL53 aprobado y distinto de la AHE experimental G-FW53-EXEC-01. Este documento acompaña la release únicamente si el workflow de publicación concluye con éxito.
