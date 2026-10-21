@@ -15,6 +15,8 @@ Este repositorio no intenta darte una receta universal. Te ofrece una **arquitec
 
 ## 🚪 Elige tu puerta de entrada
 
+- 🏛️ **Tríada situada MH · IEISP · PIEF v5.3.0 (aprobada para piloto experimental):** [Informes, resúmenes y acta](18_DOCUMENTACION_ACTIVA/Cierres_Reportes/Reportes_Evaluacion/Triada_Situada_Framework_v5_3_0_2026-10-21/README.md)
+
 - 📚 **Tríada documental MH · IEISP · PIEF (modelos v1.0):** [Portal humano, guías y esquemas](21_WIKI_DOCUMENTACION_HUMANA/Guias_Framework_V5/2026-10-21_Portal_Triada_Documental_v1_0.md)
 
 - 🌐 **Aplicación V5:** https://ricardojuanmorales.github.io/framework-proyecto-generico-ia-1/v5/
