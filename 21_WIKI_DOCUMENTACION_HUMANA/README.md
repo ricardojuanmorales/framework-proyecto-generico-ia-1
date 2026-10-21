@@ -13,6 +13,8 @@ Este cartapacio reúne la documentación destinada a personas que quieren usar, 
 5. **Tríada documental (MH · IEISP · PIEF):** [portal humano, plantillas y resúmenes visuales](Guias_Framework_V5/2026-10-21_Portal_Triada_Documental_v1_0.md).
 
 
+6. **Tríada situada MH · IEISP · PIEF, v5.3.0 (piloto aprobado):** [Informes, resúmenes y acta](../18_DOCUMENTACION_ACTIVA/Cierres_Reportes/Reportes_Evaluacion/Triada_Situada_Framework_v5_3_0_2026-10-21/README.md).
+
 ## Principio
 
 ```text
