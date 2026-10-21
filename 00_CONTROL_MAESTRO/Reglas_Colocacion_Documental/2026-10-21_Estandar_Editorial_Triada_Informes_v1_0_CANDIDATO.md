@@ -1,6 +1,6 @@
 # Estándar editorial de la tríada documental · v1.0
 
-**Estado:** APROBADO CONCEPTUALMENTE por autoridad humana el 2026-10-21; integración y gate de publicación pendientes.\
+**Estado:** APROBADO por autoridad humana el 2026-10-21; gate de canonización autorizado.\\
 **Edición:** v1.0 del estándar documental transversal. **Ámbito:** modelos transferibles a distintos proyectos y versiones; la adopción al Framework v5.3.0 se registra por separado.
 **Principio:** tres miradas autónomas; una identidad editorial; cero sustitución de juicio humano.
 
@@ -50,7 +50,7 @@ Paleta conceptual sobria (azul MH, verde IEISP, violeta PIEF) con significado en
 1. Identificar problema, destinatario, corte y fuentes. 2. Aplicar plantilla sin sobredocumentar. 3. Conservar hechos y separar inferencias. 4. Crear resumen visual con alt-text. 5. Auditar rutas y trazabilidad. 6. Gate humano: aprobar, devolver o archivar. 7. Publicar una sola copia por lugar canónico. 8. Registrar versión y evolución sin sobrescribir cortes anteriores.
 
 ## 9. Criterios de aceptación del estándar
-Las tres plantillas tienen propósito distinto, guías ejecutables, visuales interpretables, trazabilidad; enlaces comprobados; Word/MD concordantes; no se toca el material en revisión editorial. La aprobación conceptual humana consta el 2026-10-21; su publicación canónica en `main` permanece pendiente de gate documental y validación.
+Las tres plantillas tienen propósito distinto, guías ejecutables, visuales interpretables, trazabilidad; enlaces comprobados; Word/MD concordantes; no se toca el material en revisión editorial. La aprobación conceptual y el gate humano de canonización constan el 2026-10-21. La vigencia en `main` se comprueba por el commit de fusión y la revisión de los enlaces publicados.
 
 ## 10. Antecedentes
 Informe histórico v5.2.0 fechado 10-X-2026 (PDF proporcionado por autores); `IEISP_Framework_V0.5.3.md`, `PIEF_Framework_V0.5.3.md` y sus guías de 20-X-2026 en repositorio maestro. La propia evaluación cambia con nuevos datos, sin retroescribir los textos de corte.
