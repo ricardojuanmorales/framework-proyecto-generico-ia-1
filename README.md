@@ -1,4 +1,4 @@
-# 🌐 Framework Genérico v5.2.0 · Piloto documental v0.5.3 integrado
+# 🌐 Framework Genérico v5.3.0
 ## El Caleidoscopio de la Complejidad
 
 ![Un horizonte compartido para aprender, investigar y crear](21_WIKI_DOCUMENTACION_HUMANA/Recursos_Visuales/README_V5_2/hero-horizonte.svg)
@@ -39,7 +39,7 @@ El Framework v5.2 reúne una constelación inicial de **cuatro implementaciones 
 
 🌱 **¿Qué estamos aprendiendo juntos?** Cómo conservar procedencias, confrontar perspectivas y hacer evolucionar métodos sin sustituir la responsabilidad humana. La **multivalidación de TSR**, la comparación de la estructura/nomenclatura y la consolidación de la comunidad permanecen como [deuda de investigación](20_MANTENIMIENTO_Y_EVOLUCION/Deuda_Tecnica/2026-10-20_Deuda_Sistemica_FW53_v0.5.3.md). No se incluyen aquí fuentes externas NotebookLM ni el asistente cuantitativo.
 
-**Nota de estado:** los informes documentales v0.5.3 están integrados como piloto. La última release pública estable es **v5.2.0**. La candidata técnica v5.3.0 está en rama de release y exige Gate específico antes de publicarse.
+**Nota de estado:** los informes documentales v0.5.3 están integrados como piloto. La release v5.3.0 se publica mediante el Gate humano G-REL53 y controles automáticos sobre su commit. Los informes documentales v0.5.3 permanecen identificados como piloto experimental; TSR semántica multicaso y acreditación N3/N4 no se declaran validadas.
 
 ```text
 framework: 5.2.0
