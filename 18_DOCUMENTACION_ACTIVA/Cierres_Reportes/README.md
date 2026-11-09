@@ -1,7 +1,7 @@
 # Cierres, reportes y memoria documental activa
 
 **Índice transversal de navegación** · Actualización editorial: 2026-11-09.  
-**Estado:** índice federado integrado en `main` mediante PR #20; ampliación candidata E06 en rama propia, pendiente de fusión.
+**Estado:** índice federado integrado en `main` mediante PR #20; ampliación documental E06 íntegra y verificada en rama propia, pendiente de revisión y fusión.
 
 Esta área conserva bitácoras, informes, compendios y cierres situados. Los protocolos, kits reutilizables y documentos normativos mantienen su **ruta funcional primaria** en otras áreas del Framework y se referencian aquí mediante enlaces; no se duplican.
 
@@ -18,7 +18,7 @@ Esta área conserva bitácoras, informes, compendios y cierres situados. Los pro
 | --- | --- | --- |
 | E04 · Museo del Color | [Expediente situado](Reportes_Evaluacion/Entrevista_4_Cocreacion_CEA_2026-10-26/README.md) | Edición Markdown integrada en `main` mediante PR #20; AHE para piloto G0–G2; G3 y validaciones pendientes |
 | E01–E03 y E05 | Aún no inventariados ni incorporados a este índice | **No verificados**; la secuencia de numeración no demuestra existencia ni integridad documental |
-| E06 · Investigación Educativa y TSR | [Ficha de recuperación y custodia](Reportes_Evaluacion/Entrevista_Investigacion_Educativa_TSR_E06_2026-11-09/README.md) | Registro candidato en rama; **expediente íntegro todavía no importado**; revisión y fusión pendientes |
+| E06 · Investigación Educativa y TSR | [Ficha de recuperación y custodia](Reportes_Evaluacion/Entrevista_Investigacion_Educativa_TSR_E06_2026-11-09/README.md) | Expediente candidato íntegro incorporado en rama propia y cotejado; revisión de publicación y fusión pendientes |
 
 Este índice no certifica que los expedientes históricos estén completos ni que las fuentes de terceros puedan publicarse.
 
@@ -43,7 +43,7 @@ Este índice no certifica que los expedientes históricos estén completos ni qu
 ## Etapas futuras, sin activación automática
 
 - **Integrado:** PR #20 incorporó E04 y la edición experimental v0.2 a `main`.
-- **En curso:** recuperación retrospectiva de E06 en rama propia, pendiente de su expediente íntegro y aprobación para fusionar; recuperar después los demás casos uno a uno.
+- **En curso:** recuperación retrospectiva de E06 con expediente íntegro en rama propia, pendiente de revisión y autorización para fusionar; recuperar después los demás casos uno a uno.
 - **Posterior:** comparar longitudinalmente el desempeño de v0.2 antes de valorar una eventual v0.3 más sencilla y flexible.
 
 ## Otros productos de esta área
